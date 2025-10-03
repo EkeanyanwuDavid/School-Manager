@@ -1,217 +1,796 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admissions - School Pass</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-</head>
-<body>
-    <!-- Header (same structure as students.html) -->
-     <div data-include="header.html"></div>
+  </head>
+  <body class="bg-gray-50 text-gray-900">
+    <header class="bg-green-900 text-white shadow-md w-screen">
+      <div
+        class="container mx-auto flex items-center justify-between px-6 py-3"
+      >
+        <!-- Logo -->
+        <h2 class="text-xl font-bold text-gray-200">School Pass</h2>
 
-    <!-- Main Content -->
-    <main id="mainContent">
-        <div class="container">
-            <div class="page-header">
-                <h1 class="page-title">Admissions</h1>
-                <p class="page-description">Manage student admissions and registrations</p>
+        <!-- Nav Links -->
+        <nav class="hidden lg:flex items-center space-x-3">
+          <!-- Dashboard -->
+          <a
+            href="index.html"
+            class="relative flex items-center space-x-2 text-white hover:text-gray-200 transition"
+          >
+            <i class="bi bi-house"></i><span>Dashboard</span>
+          </a>
+          <!-- Administration Dropdown -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition nav-link nav-active"
+              data-dropdown="adminMenu"
+            >
+              <i class="bi bi-gear"></i><span>Administration</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="adminMenu"
+            >
+              <a
+                href="students.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-people"></i><span>Students</span>
+              </a>
+              <a
+                href="admissions.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-person-plus"></i><span>Admissions</span>
+              </a>
+              <a
+                href="attendance.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-calendar-check"></i><span>Attendance</span>
+              </a>
+              <a
+                href="exams.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Exams & Results</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-box-arrow-up-right"></i
+                ><span>External Exams</span>
+              </a>
+              <a
+                href="academic-calendar.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-calendar-event"></i
+                ><span>Academic Calendar</span>
+              </a>
             </div>
+          </div>
 
-            <div class="card">
-                <div class="card-content">
-                    <form id="admissionForm" class="admission-form">
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label for="firstName">First Name</label>
-                                <input type="text" id="firstName" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName">Last Name</label>
-                                <input type="text" id="lastName" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="dateOfBirth">Date of Birth</label>
-                                <input type="date" id="dateOfBirth" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="gender">Gender</label>
-                                <select id="gender" class="form-input" required>
-                                    <option value="">Select Gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="class">Class</label>
-                                <select id="class" class="form-input" required>
-                                    <option value="">Select Class</option>
-                                    <option value="JSS 1A">JSS 1A</option>
-                                    <option value="JSS 1B">JSS 1B</option>
-                                    <option value="JSS 1C">JSS 1C</option>
-                                    <option value="JSS 2A">JSS 2A</option>
-                                    <option value="JSS 2B">JSS 2B</option>
-                                    <option value="JSS 3A">JSS 3A</option>
-                                    <option value="SS1A">SS1A</option>
-                                    <option value="SS1B">SS1B</option>
-                                    <option value="SS2A">SS2A</option>
-                                    <option value="SS2B">SS2B</option>
-                                    <option value="SS3A">SS3A</option>
-                                    <option value="SS3B">SS3B</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="parentName">Parent/Guardian Name</label>
-                                <input type="text" id="parentName" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="parentPhone">Parent Phone Number</label>
-                                <input type="tel" id="parentPhone" class="form-input" required>
-                            </div>
-                            <div class="form-group full-width">
-                                <label for="address">Address</label>
-                                <textarea id="address" class="form-input" rows="3" required></textarea>
-                            </div>
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">Register Student</button>
-                            <button type="reset" class="btn btn-outline">Clear Form</button>
-                        </div>
-                    </form>
-                </div>
+          <!-- Finance -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="financeMenu"
+            >
+              <i class="bi bi-wallet2"></i><span>Finance</span>
+            </button>
+            <div
+              id="financeMenu"
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+            >
+              <a
+                href="fees.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-credit-card"></i><span>Fee Management</span>
+              </a>
+              <a
+                href="f_debtors.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-exclamation-triangle"></i
+                ><span>Debtor Management</span>
+              </a>
+              <a
+                href="f_expense_record.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-receipt"></i><span>Expense Records</span>
+              </a>
+              <a
+                href="f_fee_structure.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Fee Structure</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Financial Statement</span>
+              </a>
             </div>
+          </div>
+
+          <!-- Personnel -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="personnelMenu"
+            >
+              <i class="bi bi-briefcase"></i><span>Personnel</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="personnelMenu"
+            >
+              <a
+                href="personnel.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-people"></i><span>Staff Management</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Asset & Inventory -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="assetMenu"
+            >
+              <i class="bi bi-box-seam"></i><span>Asset & Inventory</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="assetMenu"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-building"></i><span>Asset Management</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-laptop"></i><span>IT Equipment</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-building"></i
+                ><span>Buildings & Facilities</span>
+              </a>
+              <a
+                href="transportation.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-bus-front"></i><span>Transportation</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-book"></i><span>Educational Materials</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-egg-fried"></i><span>Cafeteria Inventory</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-box-seam"></i><span>General Inventory</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-shop"></i><span>Uniform & Merchandise</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Communication -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+            >
+              <i class="bi bi-chat-dots"></i><span>Communication</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-chat-dots"></i><span>Communication</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-heart"></i><span>Parent Engagement</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Meal Tickets -->
+          <a
+            href="#"
+            class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+          >
+            <i class="bi bi-ticket"></i><span>Meal Tickets</span>
+          </a>
+        </nav>
+
+        <!-- Right Side User Section -->
+        <!-- Right Side User Section + Theme + Burger -->
+        <div class="flex items-center space-x-4">
+          <!-- User Dropdown -->
+          <div class="relative group hidden lg:flex items-center">
+            <button
+              id="userMenuToggle"
+              class="flex items-center space-x-2 bg-green-800 px-3 py-2 rounded-lg hover:bg-green-700"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center rounded-full bg-green-700"
+              >
+                <i class="bi bi-person"></i>
+              </div>
+              <span class="hidden sm:block">Welcome, Admin</span>
+              <i class="bi bi-chevron-down text-sm"></i>
+            </button>
+
+            <div
+              id="userMenu"
+              class="absolute hidden right-0 mt-2 bg-green-800 rounded-lg shadow-lg w-56 overflow-hidden"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-person"></i><span>My Profile</span>
+              </a>
+              <a
+                href="settings.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-gear"></i><span>Settings</span>
+              </a>
+              <a
+                href="support.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-headset"></i><span>Support</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-bell"></i><span>Notifications</span>
+              </a>
+              <div class="border-t border-green-700"></div>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 text-red-400 hover:bg-red-600"
+              >
+                <i class="bi bi-box-arrow-right"></i><span>Logout</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button
+            id="themeToggle"
+            title="Toggle dark mode"
+            class="cursor-pointer p-2 rounded-full transition"
+          >
+            <i class="bi bi-moon"></i>
+          </button>
+
+          <!-- Mobile Burger Menu -->
+          <button
+            id="mobileMenuToggle"
+            class="lg:hidden p-2 rounded-lg hover:bg-green-800 focus:outline-none"
+          >
+            <i class="bi bi-list text-2xl"></i>
+          </button>
         </div>
+      </div>
+    </header>
+    <!-- Main Content -->
+    <main id="mainContent" class="max-w-6xl mx-auto px-4 py-10">
+      <!-- Page header -->
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-bold text-green-700">Admissions</h1>
+        <p class="text-gray-600">Manage student admissions and registrations</p>
+      </div>
+
+      <!-- Card -->
+      <div class="bg-white shadow rounded-lg p-6">
+        <form id="admissionForm" class="space-y-6">
+          <!-- Grid form -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- First Name -->
+            <div>
+              <label for="firstName" class="block font-medium mb-1"
+                >First Name</label
+              >
+              <input
+                type="text"
+                id="firstName"
+                required
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+
+            <!-- Last Name -->
+            <div>
+              <label for="lastName" class="block font-medium mb-1"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                id="lastName"
+                required
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+
+            <!-- Date of Birth -->
+            <div>
+              <label for="dateOfBirth" class="block font-medium mb-1"
+                >Date of Birth</label
+              >
+              <input
+                type="date"
+                id="dateOfBirth"
+                required
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+
+            <!-- Gender -->
+            <div>
+              <label for="gender" class="block font-medium mb-1">Gender</label>
+              <select
+                id="gender"
+                required
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              >
+                <option value="">Select Gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+            <!-- Class -->
+            <div>
+              <label for="class" class="block font-medium mb-1">Class</label>
+              <select
+                id="class"
+                required
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              >
+                <option value="">Select Class</option>
+                <option value="JSS 1A">JSS 1A</option>
+                <option value="JSS 1B">JSS 1B</option>
+                <option value="JSS 1C">JSS 1C</option>
+                <option value="JSS 2A">JSS 2A</option>
+                <option value="JSS 2B">JSS 2B</option>
+                <option value="JSS 3A">JSS 3A</option>
+                <option value="SS1A">SS1A</option>
+                <option value="SS1B">SS1B</option>
+                <option value="SS2A">SS2A</option>
+                <option value="SS2B">SS2B</option>
+                <option value="SS3A">SS3A</option>
+                <option value="SS3B">SS3B</option>
+              </select>
+            </div>
+
+            <!-- Parent Name -->
+            <div>
+              <label for="parentName" class="block font-medium mb-1"
+                >Parent/Guardian Name</label
+              >
+              <input
+                type="text"
+                id="parentName"
+                required
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+
+            <!-- Parent Phone -->
+            <div>
+              <label for="parentPhone" class="block font-medium mb-1"
+                >Parent Phone Number</label
+              >
+              <input
+                type="tel"
+                id="parentPhone"
+                required
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+
+            <!-- Address (full width) -->
+            <div class="md:col-span-2">
+              <label for="address" class="block font-medium mb-1"
+                >Address</label
+              >
+              <textarea
+                id="address"
+                rows="3"
+                required
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              ></textarea>
+            </div>
+
+            <!-- State of Origin -->
+            <div>
+              <label for="stateOfOrigin" class="block font-medium mb-1">
+                State of Origin
+              </label>
+              <select
+                id="stateOfOrigin"
+                required
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              >
+                <option value="">Select State</option>
+                <option value="Abia">Abia</option>
+                <option value="Adamawa">Adamawa</option>
+                <option value="Akwa Ibom">Akwa Ibom</option>
+                <option value="Anambra">Anambra</option>
+                <option value="Bauchi">Bauchi</option>
+                <option value="Bayelsa">Bayelsa</option>
+                <option value="Benue">Benue</option>
+                <option value="Borno">Borno</option>
+                <option value="Cross River">Cross River</option>
+                <option value="Delta">Delta</option>
+                <option value="Ebonyi">Ebonyi</option>
+                <option value="Edo">Edo</option>
+                <option value="Ekiti">Ekiti</option>
+                <option value="Enugu">Enugu</option>
+                <option value="Gombe">Gombe</option>
+                <option value="Imo">Imo</option>
+                <option value="Jigawa">Jigawa</option>
+                <option value="Kaduna">Kaduna</option>
+                <option value="Kano">Kano</option>
+                <option value="Katsina">Katsina</option>
+                <option value="Kebbi">Kebbi</option>
+                <option value="Kogi">Kogi</option>
+                <option value="Kwara">Kwara</option>
+                <option value="Lagos">Lagos</option>
+                <option value="Nasarawa">Nasarawa</option>
+                <option value="Niger">Niger</option>
+                <option value="Ogun">Ogun</option>
+                <option value="Ondo">Ondo</option>
+                <option value="Osun">Osun</option>
+                <option value="Oyo">Oyo</option>
+                <option value="Plateau">Plateau</option>
+                <option value="Rivers">Rivers</option>
+                <option value="Sokoto">Sokoto</option>
+                <option value="Taraba">Taraba</option>
+                <option value="Yobe">Yobe</option>
+                <option value="Zamfara">Zamfara</option>
+                <option value="FCT">FCT (Abuja)</option>
+              </select>
+            </div>
+
+            <!-- LGA -->
+            <div>
+              <label for="lga" class="block font-medium mb-1"
+                >Local Government Area</label
+              >
+              <input
+                type="text"
+                id="lga"
+                placeholder="Enter LGA"
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              />
+            </div>
+
+            <!-- Medical Information / Special Needs -->
+            <div class="md:col-span-2">
+              <label
+                for="medicalInfo"
+                class="font-medium mb-1 flex items-center gap-2"
+              >
+                <i class="bi bi-heart-pulse"></i> Medical Information & Special
+                Needs
+              </label>
+              <textarea
+                id="medicalInfo"
+                rows="4"
+                placeholder="Enter any medical condition, allergies, or special needs"
+                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              ></textarea>
+            </div>
+          </div>
+
+          <!-- Form Actions -->
+          <div class="flex gap-4">
+            <button
+              type="submit"
+              class="bg-green-600 text-white px-5 py-2 rounded-md hover:bg-green-700 transition"
+            >
+              Register Student
+            </button>
+            <button
+              type="reset"
+              class="border border-gray-400 px-5 py-2 rounded-md hover:bg-gray-100 transition"
+            >
+              Clear Form
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Student Directory Card -->
+      <div class="bg-white border-white rounded-lg shadow p-6 mb-6 mt-6">
+        <!-- Header -->
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between mb-6 gap-4"
+        >
+          <!-- Left: Icon + Title -->
+          <div class="flex items-start md:items-center gap-3">
+            <i class="bi bi-journal-check text-green-700 text-2xl"></i>
+
+            <div class="flex flex-col">
+              <h2 class="text-2xl md:text-3xl font-bold text-gray-700">
+                Recent Applications
+              </h2>
+              <p class="text-gray-600 text-sm">
+                Track status of recent admission applications
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Cards Grid -->
+        <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Student Card -->
+          <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">Fatima Hassan</h3>
+              <button
+                class="text-sm text-white px-3 bg-gray-500 rounded-2xl py-1"
+              >
+                Under Review
+              </button>
+            </div>
+            <p class="text-sm text-gray-500">APP003</p>
+
+            <div class="mt-3 space-y-1 text-sm text-gray-700">
+              <p class="flex items-center gap-2">
+                <i class="bi bi-mortarboard"></i> JSS 2
+              </p>
+              <p class="flex items-center gap-2">
+                <i class="bi bi-calendar-date"></i> 2024-01-18
+              </p>
+              <p class="flex items-center gap-2">
+                <i class="bi bi-telephone"></i> 08098765432
+              </p>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="mt-4 flex justify-between">
+              <button
+                class="flex items-center gap-1 text-sm bg-gray-300 text-gray-600 px-3 py-1 rounded-lg"
+              >
+                <i class="bi bi-check"></i> Approve
+              </button>
+              <button
+                class="flex items-center gap-1 text-sm bg-yellow-600 text-white px-3 py-1 rounded-lg"
+              >
+                <i class="bi bi-eye"></i> Review
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">Chidi Okafor</h3>
+              <button
+                class="text-sm px-3 bg-green-700 text-white rounded-2xl py-1"
+              >
+                Approved
+              </button>
+            </div>
+            <p class="text-sm text-gray-500">APP002</p>
+
+            <div class="mt-3 space-y-1 text-sm text-gray-700">
+              <p class="flex items-center gap-2">
+                <i class="bi bi-mortarboard"></i> SS 2
+              </p>
+              <p class="flex items-center gap-2">
+                <i class="bi bi-calendar-date"></i> 2024-01-18
+              </p>
+              <p class="flex items-center gap-2">
+                <i class="bi bi-telephone"></i> 08098765432
+              </p>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="mt-4 flex justify-between">
+              <button
+                class="flex items-center gap-1 text-sm bg-gray-300 text-gray-600 px-3 py-1 rounded-lg"
+              >
+                <i class="bi bi-check"></i> Approve
+              </button>
+              <button
+                class="flex items-center gap-1 text-sm bg-yellow-600 text-white px-3 py-1 rounded-lg"
+              >
+                <i class="bi bi-eye"></i> Review
+              </button>
+            </div>
+          </div>
+
+          <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">Kemi Adebayo</h3>
+              <button
+                class="text-sm px-3 bg-yellow-700 text-white rounded-2xl py-1"
+              >
+                Pending
+              </button>
+            </div>
+            <p class="text-sm text-gray-500">APP001</p>
+
+            <div class="mt-3 space-y-1 text-sm text-gray-700">
+              <p class="flex items-center gap-2">
+                <i class="bi bi-mortarboard"></i> JSS 2
+              </p>
+              <p class="flex items-center gap-2">
+                <i class="bi bi-calendar-date"></i> 2024-01-18
+              </p>
+              <p class="flex items-center gap-2">
+                <i class="bi bi-telephone"></i> 08098765432
+              </p>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="mt-4 flex justify-between">
+              <button
+                class="flex items-center gap-1 text-sm bg-gray-300 text-gray-600 px-3 py-1 rounded-lg"
+              >
+                <i class="bi bi-check"></i> Approve
+              </button>
+              <button
+                class="flex items-center gap-1 text-sm bg-yellow-600 text-white px-3 py-1 rounded-lg"
+              >
+                <i class="bi bi-eye"></i> Review
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-content">
-            <p>Powered by <a href="https://veritas.com" target="_blank" class="veritas-link">Veritas</a></p>
-        </div>
+    <footer class="bg-green-700 mt-10 py-4">
+      <div class="text-center text-gray-600">
+        <p>
+          Powered by
+          <a
+            href="https://veritas.com"
+            target="_blank"
+            class="text-black hover:underline"
+            >Veritas</a
+          >
+        </p>
+      </div>
     </footer>
 
     <script src="include.js"></script>
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            lucide.createIcons();
-        });
-
-        // Admissions page specific functionality
-class AdmissionsPage {
-    constructor() {
-        this.init();
-    }
-
-    init() {
-        this.initializeForm();
-    }
-
-    initializeForm() {
-        const form = document.getElementById('admissionForm');
-        if (form) {
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                this.handleFormSubmission(form);
-            });
-        }
-    }
-
-    handleFormSubmission(form) {
-        const formData = new FormData(form);
-        const data = Object.fromEntries(formData);
-        
-        // Validate form data
-        if (this.validateForm(data)) {
-            // Simulate API call
-            this.submitAdmission(data);
-        }
-    }
-
-    validateForm(data) {
-        const required = ['firstName', 'lastName', 'dateOfBirth', 'gender', 'class', 'parentName', 'parentPhone', 'address'];
-        for (let field of required) {
-            if (!data[field] || data[field].trim() === '') {
-                this.showNotification(`Please fill in the ${field} field`, 'error');
-                return false;
-            }
-        }
-
-        // Validate phone number
-        const phoneRegex = /^[0-9+\-\s()]{10,}$/;
-        if (!phoneRegex.test(data.parentPhone)) {
-            this.showNotification('Please enter a valid phone number', 'error');
-            return false;
-        }
-
-        return true;
-    }
-
-    submitAdmission(data) {
-        // Simulate API call
-        setTimeout(() => {
-            this.showNotification('Student registered successfully!', 'success');
-            document.getElementById('admissionForm').reset();
-            
-            // Generate student ID (in real app, this would come from backend)
-            const studentId = 'STD' + Math.random().toString(36).substr(2, 9).toUpperCase();
-            console.log('Student registered:', { ...data, studentId });
-            
-        }, 1000);
-    }
-
-    showNotification(message, type = 'info') {
-        // Create notification element
-        const notification = document.createElement('div');
-        notification.className = `notification ${type}`;
-        notification.textContent = message;
-        notification.style.cssText = `
-            position: fixed;
-            top: 100px;
-            right: 20px;
-            padding: 12px 20px;
-            border-radius: 4px;
-            color: white;
-            font-weight: 500;
-            z-index: 1000;
-            opacity: 0;
-            transform: translateX(100%);
-            transition: all 0.3s ease;
-        `;
-
-        // Set background color based on type
-        const colors = {
-            success: '#10b981',
-            error: '#ef4444',
-            info: '#3b82f6',
-            warning: '#f59e0b'
-        };
-        notification.style.backgroundColor = colors[type] || colors.info;
-
-        document.body.appendChild(notification);
-
-        // Animate in
-        setTimeout(() => {
-            notification.style.opacity = '1';
-            notification.style.transform = 'translateX(0)';
-        }, 100);
-
-        // Remove after 3 seconds
-        setTimeout(() => {
-            notification.style.opacity = '0';
-            notification.style.transform = 'translateX(100%)';
-            setTimeout(() => notification.remove(), 300);
-        }, 3000);
-    }
-}
-
-    // Initialize admissions page when DOM is loaded
-    document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
         new AdmissionsPage();
-    });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        lucide.createIcons();
+      });
+
+      const navLink = document.querySelectorAll(".nav-link");
+
+      navLink.forEach((link) => {
+        link.addEventListener("click", () => {
+          navLink.forEach((l) => l.classList.remove("nav-active"));
+          link.classList.add("nav-active");
+        });
+      });
+
+      const userMenuToggle = document.getElementById("userMenuToggle");
+      const userMenu = document.getElementById("userMenu");
+
+      userMenuToggle.addEventListener("click", () => {
+        userMenu.classList.toggle("hidden");
+      });
+
+      // NEW: Close dropdown if clicked outside
+      document.addEventListener("click", (e) => {
+        if (
+          !userMenuToggle.contains(e.target) &&
+          !userMenu.contains(e.target)
+        ) {
+          userMenu.classList.add("hidden");
+        }
+      });
+      // Mobile Menu Toggle
+
+      const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+
+      mobileMenuToggle.addEventListener("click", () => {
+        // Show/hide with slide animation
+        mobileMenu.classList.toggle("hidden");
+        setTimeout(() => {
+          mobileMenu.classList.toggle("-translate-y-full");
+        }, 10);
+      });
     </script>
-</body>
+
+    <style>
+      .nav-link.nav-active::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        height: 3px;
+        background-color: #333;
+        border-radius: 2px;
+      }
+
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+      }
+
+      header,
+      main,
+      footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
+    </style>
+  </body>
 </html>
