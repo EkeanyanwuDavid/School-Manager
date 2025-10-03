@@ -5,20 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Students - School Pass</title>
     <link rel="stylesheet" href="/src/output.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
-    />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
   </head>
-  <body class="bg-gray-50 text-gray-900">
+  <body class="bg-gray-50 text-gray-900 w-screen overflow-x-hidden m-0 p-0">
     <!-- Header -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     />
 
-    <header class="bg-green-900 text-white shadow-md">
+    <header class="bg-green-900 text-white shadow-md w-screen">
       <div
         class="container mx-auto flex items-center justify-between px-6 py-3"
       >
@@ -26,7 +22,7 @@
         <h2 class="text-xl font-bold text-gray-200">School Pass</h2>
 
         <!-- Nav Links -->
-        <nav class="hidden md:flex items-center space-x-3">
+        <nav class="hidden lg:flex items-center space-x-3">
           <!-- Dashboard -->
           <a
             href="index.html"
@@ -253,18 +249,10 @@
         </nav>
 
         <!-- Right Side User Section -->
-        <div class="flex items-center space-x-4 ml-10">
-          <!-- Theme Toggle -->
-          <button
-            id="themeToggle"
-            title="Toggle dark mode"
-            class="cursor-pointer p-2 rounded-full transition"
-          >
-            <i class="bi bi-moon"></i>
-          </button>
-
+        <!-- Right Side User Section + Theme + Burger -->
+        <div class="flex items-center space-x-4">
           <!-- User Dropdown -->
-          <div class="relative group">
+          <div class="relative group hidden lg:flex items-center">
             <button
               id="userMenuToggle"
               class="flex items-center space-x-2 bg-green-800 px-3 py-2 rounded-lg hover:bg-green-700"
@@ -275,7 +263,6 @@
                 <i class="bi bi-person"></i>
               </div>
               <span class="hidden sm:block">Welcome, Admin</span>
-
               <i class="bi bi-chevron-down text-sm"></i>
             </button>
 
@@ -316,16 +303,27 @@
               </a>
             </div>
           </div>
+
+          <!-- Theme Toggle -->
+          <button
+            id="themeToggle"
+            title="Toggle dark mode"
+            class="cursor-pointer p-2 rounded-full transition"
+          >
+            <i class="bi bi-moon"></i>
+          </button>
+
+          <!-- Mobile Burger Menu -->
+          <button
+            id="mobileMenuToggle"
+            class="lg:hidden p-2 rounded-lg hover:bg-green-800 focus:outline-none"
+          >
+            <i class="bi bi-list text-2xl"></i>
+          </button>
         </div>
-        <button
-          id="mobileMenuToggle"
-          class="md:hidden p-2 rounded-lg hover:bg-green-800 focus:outline-none"
-        >
-          <i class="bi bi-list text-2xl"></i>
-        </button>
       </div>
     </header>
-    <main class="max-w-full mx-auto p-6 bg-gray-50 min-h-screen">
+    <main class="max-w-full mx-auto p-6 bg-gray-50 min-h-screen w-screen">
       <!-- Page Header -->
       <header class="mb-6">
         <div
@@ -362,7 +360,7 @@
       <!-- Mobile Menu (hidden initially) -->
       <div
         id="mobileMenu"
-        class="md:hidden hidden absolute top-16 left-0 w-full bg-green-900 text-white px-6 py-4 space-y-4 shadow-lg transform -translate-y-full transition-all duration-300 ease-in-out z-50"
+        class="lg:hidden hidden absolute top-16 left-0 w-full bg-green-900 text-white px-6 py-4 space-y-4 shadow-lg transform -translate-y-full transition-all duration-300 ease-in-out z-50"
       >
         <a href="index.html" class="block py-2 px-3 rounded hover:bg-green-800">
           <i class="bi bi-house"></i> Dashboard
@@ -605,8 +603,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-green-700 mt-10">
-      <div class="max-w-7xl mx-auto p-4 text-center text-black text-sm">
+    <footer class="bg-green-700 mt-10 w-screen">
+      <div class="w-full mx-auto p-4 text-center text-black text-sm">
         Powered by
         <a href="https://veritas.com" target="_blank" class="font-semibold">
           Veritas
@@ -668,6 +666,27 @@
         background-color: #333;
         border-radius: 2px;
       }
+
+      html,
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+      }
+
+      header,
+      main,
+      footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+      }
     </style>
+    <script src="script.js"></script>
+    <script src="include.js"></script>
   </body>
 </html>
