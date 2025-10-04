@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Admissions - School Pass</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="src/output.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
@@ -268,9 +268,10 @@
               <i class="bi bi-chevron-down text-sm"></i>
             </button>
 
+            <!-- FIXED -->
             <div
               id="userMenu"
-              class="absolute hidden right-0 mt-2 bg-green-800 rounded-lg shadow-lg w-56 overflow-hidden"
+              class="absolute hidden right-0 top-full mt-2 bg-green-800 rounded-lg shadow-lg w-56 overflow-hidden z-50"
             >
               <a
                 href="#"
@@ -347,7 +348,7 @@
                 type="text"
                 id="firstName"
                 required
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
 
@@ -360,7 +361,7 @@
                 type="text"
                 id="lastName"
                 required
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
 
@@ -373,7 +374,7 @@
                 type="date"
                 id="dateOfBirth"
                 required
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
 
@@ -383,7 +384,7 @@
               <select
                 id="gender"
                 required
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               >
                 <option value="">Select Gender</option>
                 <option value="male">Male</option>
@@ -397,7 +398,7 @@
               <select
                 id="class"
                 required
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               >
                 <option value="">Select Class</option>
                 <option value="JSS 1A">JSS 1A</option>
@@ -424,7 +425,7 @@
                 type="text"
                 id="parentName"
                 required
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
 
@@ -437,7 +438,7 @@
                 type="tel"
                 id="parentPhone"
                 required
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
 
@@ -450,7 +451,7 @@
                 id="address"
                 rows="3"
                 required
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               ></textarea>
             </div>
 
@@ -462,7 +463,7 @@
               <select
                 id="stateOfOrigin"
                 required
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               >
                 <option value="">Select State</option>
                 <option value="Abia">Abia</option>
@@ -514,7 +515,7 @@
                 type="text"
                 id="lga"
                 placeholder="Enter LGA"
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
 
@@ -531,7 +532,7 @@
                 id="medicalInfo"
                 rows="4"
                 placeholder="Enter any medical condition, allergies, or special needs"
-                class="w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
               ></textarea>
             </div>
           </div>

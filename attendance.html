@@ -264,9 +264,10 @@
               <i class="bi bi-chevron-down text-sm"></i>
             </button>
 
+            <!-- FIXED -->
             <div
               id="userMenu"
-              class="absolute hidden right-0 mt-2 bg-green-800 rounded-lg shadow-lg w-56 overflow-hidden"
+              class="absolute hidden right-0 top-full mt-2 bg-green-800 rounded-lg shadow-lg w-56 overflow-hidden z-50"
             >
               <a
                 href="#"
@@ -415,163 +416,90 @@
 
         <!-- Tabs Content -->
         <div id="tabsContent" class="space-y-6 px-6">
-          <!-- Take Attendance Card -->
-          <div id="takeAttendance" class="bg-gray-100 shadow rounded-lg p-6">
-            <h2 class="text-2xl font-bold text-green-700 mb-2">
-              Mark Attendance
-            </h2>
-            <p class="text-gray-600 mb-4">Select date to mark attendance</p>
+          <!-- Take Attendance Content -->
+          <div id="takeAttendanceTab" class="bg-white p-6 rounded-lg shadow">
+            <h2 class="text-xl font-bold mb-2">Mark Attendance</h2>
+            <p class="mb-4 text-gray-600">Select date to mark attendance</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-              <div>
-                <label class="block font-medium mb-1">Date</label>
-                <input
-                  type="date"
-                  class="w-full border text-gray-500 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-                />
-              </div>
-              <div>
-                <label class="block font-medium mb-1">Class</label>
-                <select
-                  id="classSelect"
-                  class="w-full border rounded-md text-gray-500 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-                >
-                  <option value="">Select Class</option>
-                  <option value="JSS1">JSS1</option>
-                  <option value="JSS2">JSS2</option>
-                  <option value="JSS3">JSS3</option>
-                  <option value="SS1">SS1</option>
-                  <option value="SS2">SS2</option>
-                  <option value="SS3">SS3</option>
-                </select>
-              </div>
-            </div>
+            <input
+              type="date"
+              id="date"
+              class="border date border-gray-400 rounded-md px-3 focus:outline-none focus:ring-2 focus:ring-green-500 py-2 mb-3 block w-full"
+            />
+            <select
+              id="classSelect"
+              class="border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 px-3 py-2 mb-3 block w-full"
+            >
+              <option value="">Select Class</option>
+              <option value="JSS1">JSS1</option>
+              <option value="JSS2">JSS2</option>
+              <option value="JSS3">JSS3</option>
+              <option value="SS1">SS1</option>
+              <option value="SS2">SS2</option>
+              <option value="SS3">SS3</option>
+            </select>
+
             <button
-              id="loadClass"
-              class="bg-green-600 text-white px-5 py-2 rounded-md hover:bg-green-700 transition"
+              id="loadClassBtn"
+              class="bg-green-600 text-white px-4 py-2 rounded-md"
             >
               Load Class
             </button>
+
+            <!-- Student Table Placeholder -->
+            <div id="studentTable" class="mt-6 hidden"></div>
           </div>
 
-          <!-- Attendance Table Card -->
+          <!-- Staff Attendance Content -->
           <div
-            id="attendanceTable"
-            class="bg-white shadow rounded-lg p-6 hidden"
+            id="staffAttendanceTab"
+            class="bg-white p-6 rounded-lg shadow hidden"
           >
-            <h2 class="text-2xl font-bold text-green-700 mb-2">
-              JSS1A - Mark Attendance
-            </h2>
-            <p class="text-gray-600 mb-4">Mark attendance for each student</p>
+            <h2 class="text-xl font-bold mb-2">Staff Attendance</h2>
+            <p class="mb-4 text-gray-600">Mark attendance for staff members</p>
 
-            <div class="overflow-x-auto">
-              <table class="w-full border border-gray-200 rounded-lg text-left">
-                <thead class="bg-gray-100">
-                  <tr>
-                    <th class="px-4 py-2 border">Roll</th>
-                    <th class="px-4 py-2 border">Student Name</th>
-                    <th class="px-4 py-2 border">Status</th>
-                    <th class="px-4 py-2 border">Check In Time</th>
-                    <th class="px-4 py-2 border">Actions</th>
-                  </tr>
-                </thead>
-                <tbody id="attendanceBody">
-                  <tr>
-                    <td class="px-4 py-2 border">1</td>
-                    <td class="px-4 py-2 border">Chioma Okeke</td>
-                    <td class="px-4 py-2 border text-black font-semibold">
-                      <button
-                        class="bg-green-600 text-white px-2 py-1 rounded-md hover:bg-green-700"
-                      >
-                        Present
-                      </button>
-                    </td>
-                    <td class="px-4 py-2 border">08:00 AM</td>
-                    <td class="px-4 py-2 border flex gap-2">
-                      <button
-                        class="bg-green-600 text-white px-2 py-1 rounded-md hover:bg-green-700"
-                      >
-                        Early
-                      </button>
-                      <button
-                        class="bg-yellow-600 text-white px-2 py-1 rounded-md hover:bg-yellow-700"
-                      >
-                        Late
-                      </button>
-                      <button
-                        class="bg-red-600 text-white px-2 py-1 rounded-md hover:bg-red-700"
-                      >
-                        Absent
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="px-4 py-2 border">2</td>
-                    <td class="px-4 py-2 border">Felix Samantha</td>
-                    <td class="px-4 py-2 border text-black font-semibold">
-                      <button
-                        class="bg-red-600 text-white px-2 py-1 rounded-md hover:bg-red-700"
-                      >
-                        Absent
-                      </button>
-                    </td>
-                    <td class="px-4 py-2 border">12:00 AM</td>
-                    <td class="px-4 py-2 border flex gap-2">
-                      <button
-                        class="bg-green-600 text-white px-2 py-1 rounded-md hover:bg-green-700"
-                      >
-                        Early
-                      </button>
-                      <button
-                        class="bg-yellow-600 text-white px-2 py-1 rounded-md hover:bg-yellow-700"
-                      >
-                        Late
-                      </button>
-                      <button
-                        class="bg-red-600 text-white px-2 py-1 rounded-md hover:bg-red-700"
-                      >
-                        Absent
-                      </button>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td class="px-4 py-2 border">3</td>
-                    <td class="px-4 py-2 border">Wisdom Okeke</td>
-                    <td class="px-4 py-2 border text-black font-semibold">
-                      <button
-                        class="bg-yellow-600 text-white px-2 py-1 rounded-md hover:bg-yellow-700"
-                      >
-                        Late
-                      </button>
-                    </td>
-                    <td class="px-4 py-2 border">10:00 AM</td>
-                    <td class="px-4 py-2 border text-black flex gap-2">
-                      <button
-                        class="bg-green-600 text-white px-2 py-1 rounded-md hover:bg-green-700"
-                      >
-                        Early
-                      </button>
-                      <button
-                        class="bg-yellow-600 text-white px-2 py-1 rounded-md hover:bg-yellow-700"
-                      >
-                        Late
-                      </button>
-                      <button
-                        class="bg-red-600 text-white px-2 py-1 rounded-md hover:bg-red-700"
-                      >
-                        Absent
-                      </button>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            <!-- Staff Table Placeholder -->
+            <div id="staffTable"></div>
           </div>
 
-          <!-- Placeholder for View Records and Staff Attendance -->
-          <div id="viewRecords" class="bg-white shadow rounded-lg p-6 hidden">
-            <h2 class="text-2xl font-bold text-green-700 mb-2">View Records</h2>
-            <p class="text-gray-600">Attendance records will appear here.</p>
+          <!-- View Records Content -->
+          <div
+            id="viewRecordsTab"
+            class="bg-white p-6 rounded-lg shadow hidden"
+          >
+            <h2 class="text-xl text-green-500 font-bold">View Records</h2>
+            <p class="text-gray-600">
+              Search attendance history by date and class
+            </p>
+
+            <input
+              id="recordDate"
+              type="date"
+              class="border border-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-md px-3 py-2 mb-2 block"
+            />
+
+            <select
+              id="recordClass"
+              class="w-full border border-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-md px-3 py-2 mb-2"
+            >
+              <option value="">Select Class</option>
+              <option value="JSS1">JSS1</option>
+              <option value="JSS2">JSS2</option>
+              <option value="JSS3">JSS3</option>
+              <option value="SS1">SS1</option>
+              <option value="SS2">SS2</option>
+              <option value="SS3">SS3</option>
+            </select>
+
+            <button
+              id="viewRecordsBtn"
+              class="bg-green-600 text-white px-4 py-2 rounded-md mb-4"
+            >
+              View Records
+            </button>
+
+            <!-- Records Table Container -->
+            <div id="recordsTable" class="hidden"></div>
           </div>
 
           <div
@@ -586,27 +514,148 @@
         </div>
       </header>
     </main>
+    <script src="app.js"></script>
   </body>
 
   <script>
     const tabs = {
-      btnTakeAttendance: "takeAttendance",
-      btnViewRecords: "viewRecords",
-      btnStaffAttendance: "staffAttendance",
+      take: document.getElementById("takeAttendanceTab"),
+      staff: document.getElementById("staffAttendanceTab"),
+      records: document.getElementById("viewRecordsTab"),
     };
 
-    Object.keys(tabs).forEach((btnId) => {
-      document.getElementById(btnId).addEventListener("click", () => {
-        Object.values(tabs).forEach((tab) =>
-          document.getElementById(tab).classList.add("hidden")
-        );
-        document.getElementById(tabs[btnId]).classList.remove("hidden");
+    document
+      .getElementById("btnTakeAttendance")
+      .addEventListener("click", () => {
+        showTab("take");
       });
+    document
+      .getElementById("btnStaffAttendance")
+      .addEventListener("click", () => {
+        showTab("staff");
+        loadStaffTable(); // load staff automatically when staff tab is clicked
+      });
+    document.getElementById("btnViewRecords").addEventListener("click", () => {
+      showTab("records");
     });
 
+    function showTab(tabName) {
+      Object.values(tabs).forEach((tab) => tab.classList.add("hidden"));
+      tabs[tabName].classList.remove("hidden");
+    }
+
     // Load class table
-    document.getElementById("loadClass").addEventListener("click", () => {
-      document.getElementById("attendanceTable").classList.remove("hidden");
+    document.getElementById("loadClassBtn").addEventListener("click", () => {
+      const selectedClass = document.getElementById("classSelect").value;
+      const studentTable = document.getElementById("studentTable");
+      const date = document.getElementById("date").value;
+
+      if (!selectedClass) {
+        alert("Please select a class before loading!");
+        return;
+      }
+
+      if (!date) {
+        alert("Please select a date before loading!");
+        return; // stop further execution
+      }
+
+      studentTable.innerHTML = `
+    <h2 class="text-lg font-bold text-green-600 mb-2">${selectedClass}</h2>
+    <p class="mb-4 text-gray-600">Mark attendance for each student</p>
+    <table class="w-full border-collapse border border-gray-400">
+      <thead>
+        <tr class="bg-gray-100 border-b border-gray-400">
+          <th class="py-2 px-3 border border-gray-400">Roll No</th>
+          <th class="py-2 px-3 border border-gray-400">Student Name</th>
+          <th class="py-2 px-3 border border-gray-400">Status</th>
+          <th class="py-2 px-3 border border-gray-400">Check-in Time</th>
+          <th class="py-2 px-3 border border-gray-400">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-gray-400 px-3 py-2">1</td>
+          <td class="border border-gray-400 px-3 py-2">Chioma Okeke</td>
+          <td class="border border-gray-400 px-3 py-2">Present</td>
+          <td class="border border-gray-400 px-3 py-2">08:05 AM</td>
+          <td class="border px-3 py-2 border-gray-400 flex gap-2">
+            <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
+            <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
+            <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
+          </td>
+        </tr>
+      </tbody>
+      <tbody>
+        <tr>
+          <td class="border border-gray-400 px-3 py-2">2</td>
+          <td class="border border-gray-400 px-3 py-2">Wisdom Okeke</td>
+          <td class="border border-gray-400 px-3 py-2">Absent</td>
+          <td class="border border-gray-400 px-3 py-2">Null</td>
+          <td class="border px-3 py-2 border-gray-400 flex gap-2">
+            <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
+            <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
+            <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
+          </td>
+        </tr>
+      </tbody>
+        <tr>
+          <td class="border border-gray-400 px-3 py-2">3</td>
+          <td class="border border-gray-400 px-3 py-2">Michael Okeke</td>
+          <td class="border border-gray-400 px-3 py-2">Late</td>
+          <td class="border border-gray-400 px-3 py-2">13:05 PM</td>
+          <td class="border px-3 py-2 border-gray-400 flex gap-2">
+            <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
+            <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
+            <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  `;
+      studentTable.classList.remove("hidden");
     });
+
+    // Load staff table
+    function loadStaffTable() {
+      const staffTable = document.getElementById("staffTable");
+      staffTable.innerHTML = `
+    <table class="w-full border-collapse border border-gray-400">
+      <thead>
+        <tr class="bg-gray-100 border-b border-gray-400">
+          <th class="py-2 px-3 border border-gray-400">Staff ID</th>
+          <th class="py-2 px-3 border border-gray-400">Staff Name</th>
+          <th class="py-2 px-3 border border-gray-400">Status</th>
+          <th class="py-2 px-3 border border-gray-400">Check-in Time</th>
+          <th class="py-2 px-3 border border-gray-400">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="border border-gray-400 px-3 py-2">STF001</td>
+          <td class="border border-gray-400 px-3 py-2">Mr. James</td>
+          <td class="border border-gray-400 px-3 py-2">Present</td>
+          <td class="border border-gray-400 px-3 py-2">07:45 AM</td>
+          <td class="border border-gray-400 px-3 py-2 flex gap-2">
+            <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
+            <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
+            <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="border border-gray-400 px-3 py-2">STF002</td>
+          <td class="border border-gray-400 px-3 py-2">Mrs. Janet</td>
+          <td class="border border-gray-400 px-3 py-2">Absent</td>
+          <td class="border border-gray-400 px-3 py-2">--</td>
+          <td class="border border-gray-400 px-3 py-2 flex gap-2">
+            <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
+            <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
+            <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  `;
+    }
   </script>
 </html>
