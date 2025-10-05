@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Exam</title>
+  </head>
+  <body class="bg-gray-50 text-gray-900 w-screen overflow-x-hidden m-0 p-0">
+    <!-- Header -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+
+    <link rel="stylesheet" href="src/output.css" />
+    <header class="bg-green-900 text-white shadow-md w-full">
+      <div
+        class="container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <!-- Logo -->
+        <h2 class="text-xl font-bold text-gray-200">School Pass</h2>
+
+        <!-- Desktop Nav Links -->
+        <nav class="hidden lg:flex items-center space-x-3">
+          <!-- Dashboard -->
+          <a
+            href="index.html"
+            class="relative flex items-center space-x-2 text-white hover:text-gray-200 transition"
+          >
+            <i class="bi bi-house"></i><span>Dashboard</span>
+          </a>
+          <!-- Administration Dropdown -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition nav-link nav-active"
+              data-dropdown="adminMenu"
+            >
+              <i class="bi bi-gear"></i><span>Administration</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="adminMenu"
+            >
+              <a
+                href="students.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-people"></i><span>Students</span>
+              </a>
+              <a
+                href="admissions.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-person-plus"></i><span>Admissions</span>
+              </a>
+              <a
+                href="attendance.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-calendar-check"></i><span>Attendance</span>
+              </a>
+              <a
+                href="exams.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Exams & Results</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-box-arrow-up-right"></i
+                ><span>External Exams</span>
+              </a>
+              <a
+                href="academic-calendar.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-calendar-event"></i
+                ><span>Academic Calendar</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Finance -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="financeMenu"
+            >
+              <i class="bi bi-wallet2"></i><span>Finance</span>
+            </button>
+            <div
+              id="financeMenu"
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+            >
+              <a
+                href="fees.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-credit-card"></i><span>Fee Management</span>
+              </a>
+              <a
+                href="f_debtors.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-exclamation-triangle"></i
+                ><span>Debtor Management</span>
+              </a>
+              <a
+                href="f_expense_record.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-receipt"></i><span>Expense Records</span>
+              </a>
+              <a
+                href="f_fee_structure.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Fee Structure</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Financial Statement</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Personnel -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="personnelMenu"
+            >
+              <i class="bi bi-briefcase"></i><span>Personnel</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="personnelMenu"
+            >
+              <a
+                href="personnel.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-people"></i><span>Staff Management</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Asset & Inventory -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="assetMenu"
+            >
+              <i class="bi bi-box-seam"></i><span>Asset & Inventory</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="assetMenu"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-building"></i><span>Asset Management</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-laptop"></i><span>IT Equipment</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-building"></i
+                ><span>Buildings & Facilities</span>
+              </a>
+              <a
+                href="transportation.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-bus-front"></i><span>Transportation</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-book"></i><span>Educational Materials</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-egg-fried"></i><span>Cafeteria Inventory</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-box-seam"></i><span>General Inventory</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-shop"></i><span>Uniform & Merchandise</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Communication -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+            >
+              <i class="bi bi-chat-dots"></i><span>Communication</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-chat-dots"></i><span>Communication</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-heart"></i><span>Parent Engagement</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Meal Tickets -->
+          <a
+            href="#"
+            class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+          >
+            <i class="bi bi-ticket"></i><span>Meal Tickets</span>
+          </a>
+        </nav>
+
+        <!-- Right Side User Section -->
+        <!-- Right Side User Section + Theme + Burger -->
+        <div class="flex items-center space-x-4">
+          <!-- User Dropdown -->
+          <div class="relative group hidden lg:flex items-center">
+            <button
+              id="userMenuToggle"
+              class="flex items-center space-x-2 bg-green-800 px-3 py-2 rounded-lg hover:bg-green-700"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center rounded-full bg-green-700"
+              >
+                <i class="bi bi-person"></i>
+              </div>
+              <span class="hidden sm:block">Welcome, Admin</span>
+              <i class="bi bi-chevron-down text-sm"></i>
+            </button>
+
+            <!-- FIXED -->
+            <div
+              id="userMenu"
+              class="absolute hidden right-0 top-full mt-2 bg-green-800 rounded-lg shadow-lg w-56 overflow-hidden z-50"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-person"></i><span>My Profile</span>
+              </a>
+              <a
+                href="settings.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-gear"></i><span>Settings</span>
+              </a>
+              <a
+                href="support.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-headset"></i><span>Support</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-bell"></i><span>Notifications</span>
+              </a>
+              <div class="border-t border-green-700"></div>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 text-red-400 hover:bg-red-600"
+              >
+                <i class="bi bi-box-arrow-right"></i><span>Logout</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button
+            id="themeToggle"
+            title="Toggle dark mode"
+            class="cursor-pointer p-2 rounded-full transition"
+            aria-label="Toggle dark mode"
+          >
+            <i id="themeIcon" class="bi bi-moon"></i>
+          </button>
+
+          <!-- Mobile Burger Menu -->
+          <button
+            id="mobileMenuToggle"
+            class="lg:hidden p-2 rounded-lg hover:bg-green-800 focus:outline-none"
+            aria-label="Open menu"
+          >
+            <i class="bi bi-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Side Menu (hidden by default) -->
+      <div
+        id="mobileMenuOverlay"
+        class="fixed inset-0 bg-black bg-opacity-40 z-40 transition-opacity duration-300 opacity-0 pointer-events-none lg:hidden"
+      ></div>
+      <nav
+        id="mobileMenu"
+        class="fixed top-0 left-0 h-full w-72 max-w-[80vw] bg-green-900 z-50 flex flex-col pt-8 px-6 space-y-4 text-white text-lg font-semibold transform -translate-x-full transition-transform duration-300 ease-in-out shadow-lg lg:hidden"
+      >
+        <button
+          id="mobileMenuClose"
+          class="absolute top-4 right-4 p-2 rounded-full hover:bg-green-800 focus:outline-none"
+          aria-label="Close menu"
+        >
+          <i class="bi bi-x-lg text-2xl"></i>
+        </button>
+        <a href="index.html" class="hover:text-green-300 transition"
+          >Dashboard</a
+        >
+        <a href="students.html" class="hover:text-green-300 transition"
+          >Students</a
+        >
+        <a href="admissions.html" class="hover:text-green-300 transition"
+          >Admissions</a
+        >
+        <a href="attendance.html" class="hover:text-green-300 transition"
+          >Attendance</a
+        >
+        <a href="exams.html" class="hover:text-green-300 transition"
+          >Exams & Results</a
+        >
+        <a href="#" class="hover:text-green-300 transition">External Exams</a>
+        <a href="academic-calendar.html" class="hover:text-green-300 transition"
+          >Academic Calendar</a
+        >
+        <a href="fees.html" class="hover:text-green-300 transition"
+          >Fee Management</a
+        >
+        <a href="f_debtors.html" class="hover:text-green-300 transition"
+          >Debtor Management</a
+        >
+        <a href="f_expense_record.html" class="hover:text-green-300 transition"
+          >Expense Records</a
+        >
+        <a href="f_fee_structure.html" class="hover:text-green-300 transition"
+          >Fee Structure</a
+        >
+        <a href="#" class="hover:text-green-300 transition"
+          >Financial Statement</a
+        >
+        <a href="personnel.html" class="hover:text-green-300 transition"
+          >Staff Management</a
+        >
+        <a href="#" class="hover:text-green-300 transition">Asset Management</a>
+        <a href="#" class="hover:text-green-300 transition">IT Equipment</a>
+        <a href="#" class="hover:text-green-300 transition"
+          >Buildings & Facilities</a
+        >
+        <a href="transportation.html" class="hover:text-green-300 transition"
+          >Transportation</a
+        >
+        <a href="#" class="hover:text-green-300 transition"
+          >Educational Materials</a
+        >
+        <a href="#" class="hover:text-green-300 transition"
+          >Cafeteria Inventory</a
+        >
+        <a href="#" class="hover:text-green-300 transition"
+          >General Inventory</a
+        >
+        <a href="#" class="hover:text-green-300 transition"
+          >Uniform & Merchandise</a
+        >
+        <a href="#" class="hover:text-green-300 transition">Communication</a>
+        <a href="#" class="hover:text-green-300 transition"
+          >Parent Engagement</a
+        >
+        <a href="#" class="hover:text-green-300 transition">Meal Tickets</a>
+      </nav>
+    </header>
+
+    <main class="max-w-full mx-auto p-6 bg-gray-50 min-h-screen w-full">
+      <!-- Page Header -->
+      <header class="mb-6">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <!-- Title + Description -->
+          <div class="ml-4">
+            <h2 class="text-3xl text-green-700 font-bold">
+              Schedule Examination
+            </h2>
+            <p class="text-gray-600">Create and configure a new examination</p>
+          </div>
+
+          <!-- Action Buttons -->
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center gap-3"
+          >
+            <button
+              class="border rounded-lg px-4 py-2 text-sm hover:bg-gray-100 flex items-center gap-2 w-full sm:w-auto"
+            >
+              <i class="bi bi-file-earmark-arrow-down"></i>
+              <a href="exam.html">Back to Exams</a>
+            </button>
+          </div>
+        </div>
+        <div class="bg-white mt-7 shadow rounded-lg p-6">
+          <div class="mb-6">
+            <h2 class="text-green-700 text-2xl font-bold">Basic Information</h2>
+            <p class="text-gray-500">
+              Enter the fundamental details of the examination
+            </p>
+          </div>
+
+          <form id="admissionForm" class="space-y-6">
+            <!-- Grid form -->
+            <div class="">
+              <!-- First Name -->
+              <div>
+                <label for="firstName" class="block font-medium mb-1"
+                  >First Name</label
+                >
+                <input
+                  type="text"
+                  id="firstName"
+                  required
+                  class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+
+              <div class="mt-3">
+                <label
+                  for="medicalInfo"
+                  class="font-medium mb-1 flex items-center gap-2"
+                >
+                  Description (Optional)
+                </label>
+                <textarea
+                  id="medicalInfo"
+                  rows="4"
+                  placeholder="Additional details about this examination"
+                  ;
+                  class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                ></textarea>
+              </div>
+
+              <div class="mt-4">
+                <label for="examType" class="block font-bold"
+                  >Examination Type</label
+                >
+                <select
+                  id="examType"
+                  name="examType"
+                  class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                >
+                  <option>First Term Exam</option>
+                  <option>Second Term Exam</option>
+                  <option>Third Term Exam</option>
+                  <option>Continuous Assessment</option>
+                  <option>Mock NECO</option>
+                  <option>Mock WAEC</option>
+                  <option>WAEC</option>
+                  <option>WAEC Preparatory</option>
+                  <option>NECO Preparatory</option>
+                  <option>Mid Term Test</option>
+                  <option>Promotion Exam</option>
+                </select>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="bg-white mt-7 shadow rounded-lg p-6">
+          <h2 class="text-green-600 font-bold text-2xl">Schedule & Venue</h2>
+          <p class="text-gray-500">
+            Set the timing and location for the examination
+          </p>
+
+          <form id="admissionForm" class="mt-5 space-y-6">
+            <!-- Grid form -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="StartDate" class="block font-medium mb-1"
+                  >Start Date</label
+                >
+                <input
+                  type="date"
+                  id=""
+                  required
+                  class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+              <div>
+                <label for="EndDate" class="block font-medium mb-1"
+                  >End Date</label
+                >
+                <input
+                  type="date"
+                  id="EndDate"
+                  required
+                  class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+              </div>
+
+              <div>
+                <label for="class" class="block font-medium mb-1"
+                  >Start Time</label
+                >
+                <select
+                  id="class"
+                  required
+                  class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                >
+                  <option value="">Select Start Time</option>
+                  <option value="8:00">8:00</option>
+                  <option value="9:00">9:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                </select>
+              </div>
+              <div>
+                <label for="class" class="block font-medium mb-1"
+                  >End Time</label
+                >
+                <select
+                  id="class"
+                  required
+                  class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                >
+                  <option value="">End Time</option>
+                  <option value="8:00">8:00</option>
+                  <option value="9:00">9:00</option>
+                  <option value="10:00">10:00</option>
+                  <option value="11:00">11:00</option>
+                  <option value="12:00">12:00</option>
+                  <option value="13:00">13:00</option>
+                  <option value="14:00">14:00</option>
+                  <option value="15:00">15:00</option>
+                </select>
+              </div>
+            </div>
+          </form>
+
+          <div class="mt-5">
+            <label for="class" class="block font-medium mb-1">Venue</label>
+            <select
+              id="class"
+              required
+              class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
+              <option value="">Select Examination Venue</option>
+              <option value="JSS 1A">JSS 1A</option>
+              <option value="JSS 1B">JSS 1B</option>
+              <option value="JSS 1C">JSS 1C</option>
+              <option value="JSS 2A">JSS 2A</option>
+              <option value="JSS 2B">JSS 2B</option>
+              <option value="JSS 3A">JSS 3A</option>
+              <option value="SS1A">SS1A</option>
+              <option value="SS1B">SS1B</option>
+              <option value="SS2A">SS2A</option>
+              <option value="SS2B">SS2B</option>
+              <option value="SS3A">SS3A</option>
+              <option value="SS3B">SS3B</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- subjects -->
+        <div class="bg-white mt-7 shadow rounded-lg p-6">
+          <h2 class="text-green-600 font-bold text-2xl">Subjects & Classes</h2>
+          <p class="text-gray-500">
+            Select the subject and classes for this examination
+          </p>
+          <div class="mt-5">
+            <h3 class="font-bold text-gray-600">Subjects</h3>
+            <p class="text-gray-500">
+              Select the subjects that will be examined
+            </p>
+          </div>
+          <!-- Subjects Card with Radio Buttons -->
+          <div class="bg-gray-100 shadow mt-7 rounded p-6 w-full">
+            <h3
+              class="text-lg font-semibold text-green-700 mb-4 flex items-center gap-2"
+            >
+              <i class="bi bi-book"></i> Select Class
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="Mathematics"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >Mathematics</span
+                >
+              </label>
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="English"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >English</span
+                >
+              </label>
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="Biology"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >Biology</span
+                >
+              </label>
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="Chemistry"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >Chemistry</span
+                >
+              </label>
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="Physics"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >Physics</span
+                >
+              </label>
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="Economics"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >Economics</span
+                >
+              </label>
+            </div>
+          </div>
+          <div class="mt-7">
+            <h2 class="font-bold text-green-700">Classes</h2>
+            <p class="text-gray-500">
+              Select all classes that will take the examination
+            </p>
+          </div>
+          <div class="bg-gray-100 shadow mt-7 rounded p-6 w-full">
+            <h3
+              class="text-lg font-semibold text-green-700 mb-4 flex items-center gap-2"
+            >
+              <i class="bi bi-book"></i> Select Class
+            </h3>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="Mathematics"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >JSS1</span
+                >
+              </label>
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="JSS2"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >JSS2</span
+                >
+              </label>
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="JSS3"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >JSS3</span
+                >
+              </label>
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="SS1"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >SS1</span
+                >
+              </label>
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="SS1"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >SS2</span
+                >
+              </label>
+              <label
+                class="flex items-center gap-3 cursor-pointer p-2 rounded-lg transition-colors subject-checkbox"
+              >
+                <input
+                  type="checkbox"
+                  name="subjects"
+                  value="SS3"
+                  class="peer accent-green-600 w-5 h-5"
+                />
+                <span class="peer-checked:text-green-700 text-gray-700"
+                  >SS3</span
+                >
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white mt-7 shadow rounded-lg p-6">
+          <div>
+            <h2 class="font-bold text-green-700 text-2xl">
+              Special Instruction
+            </h2>
+            <p class="text-gray-500">
+              Additional instruction for student and invigilators
+            </p>
+          </div>
+
+          <form id="admissionForm" class="space-y-6 mt-5">
+            <div class="">
+              <label
+                for="medicalInfo"
+                class="font-medium mb-1 flex items-center gap-2"
+              >
+                Instructions(Optional)
+              </label>
+              <textarea
+                id="medicalInfo"
+                rows="4"
+                placeholder="eg. Student must bring calculators, No mobile phones allowed..."
+                class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+              ></textarea>
+            </div>
+          </form>
+        </div>
+        <div class="flex justify-end gap-4 mt-4">
+          <button class="px-3 py-2 rounded text-white bg-green-700">
+            Schedule Examination
+          </button>
+          <button class="px-3 py-2 bg-gray-500 text-white rounded">
+            Clear Form
+          </button>
+        </div>
+
+        <div class="bg-white mt-7 shadow rounded-lg p-6">
+          <h2 class="text-green-700 text-2xl font-bold mb-6">Exam Summary</h2>
+          <div>
+            <h4 class="text-gray-500">
+              Title
+              <p class="font-bold text-black">Not entered</p>
+            </h4>
+            <h4 class="text-gray-500">
+              Type
+              <p class="font-bold text-black">Not entered</p>
+            </h4>
+            <h4 class="text-gray-500">
+              Subjects
+              <p class="font-bold text-black">Not entered</p>
+            </h4>
+            <h4 class="text-gray-500">
+              Venue
+              <p class="font-bold text-black">Not entered</p>
+            </h4>
+            <h4 class="text-gray-500">
+              Duration
+              <p class="font-bold text-black">Oct 05 - Oct 08,2025</p>
+            </h4>
+            <h4 class="text-gray-500">
+              Classes
+              <p class="font-bold text-black">Not entered</p>
+            </h4>
+          </div>
+        </div>
+
+        <div class="bg-white mt-7 rounded-lg p-6 shadow">
+          <h2 class="text-2xl text-green-700 font-bold mb-5">
+            Scheduling Tips
+          </h2>
+
+          <li class="text-gray-500">Ensure adequate time between subjects</li>
+          <li class="text-gray-500">
+            Consider venue capacity for selected classes
+          </li>
+          <li class="text-gray-500">
+            Verify teacher availabilty for supervision
+          </li>
+          <li class="text-gray-500">Schedule breaks for longer examinations</li>
+          <li class="text-gray-500">Coordinate with other school activities</li>
+        </div>
+      </header>
+    </main>
+
+    <script>
+      // Hamburger side menu logic
+      const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileMenuClose = document.getElementById("mobileMenuClose");
+      const mobileMenuOverlay = document.getElementById("mobileMenuOverlay");
+      function openMobileMenu() {
+        mobileMenu.classList.remove("-translate-x-full");
+        mobileMenuOverlay.classList.remove("opacity-0", "pointer-events-none");
+        mobileMenuOverlay.classList.add("opacity-100");
+      }
+      function closeMobileMenu() {
+        mobileMenu.classList.add("-translate-x-full");
+        mobileMenuOverlay.classList.add("opacity-0", "pointer-events-none");
+        mobileMenuOverlay.classList.remove("opacity-100");
+      }
+      if (
+        mobileMenuToggle &&
+        mobileMenu &&
+        mobileMenuClose &&
+        mobileMenuOverlay
+      ) {
+        mobileMenuToggle.addEventListener("click", openMobileMenu);
+        mobileMenuClose.addEventListener("click", closeMobileMenu);
+        mobileMenuOverlay.addEventListener("click", closeMobileMenu);
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", closeMobileMenu);
+        });
+      }
+      // Dark mode toggle logic
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const root = document.documentElement;
+      function setDarkMode(enabled) {
+        if (enabled) {
+          root.classList.add("dark");
+          themeIcon.classList.remove("bi-moon");
+          themeIcon.classList.add("bi-sun");
+          localStorage.setItem("theme", "dark");
+        } else {
+          root.classList.remove("dark");
+          themeIcon.classList.remove("bi-sun");
+          themeIcon.classList.add("bi-moon");
+          localStorage.setItem("theme", "light");
+        }
+      }
+      // Initial theme
+      const userPref = localStorage.getItem("theme");
+      const systemPref = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      setDarkMode(userPref === "dark" || (!userPref && systemPref));
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          setDarkMode(!root.classList.contains("dark"));
+        });
+      }
+    </script>
+  </body>
+</html>
