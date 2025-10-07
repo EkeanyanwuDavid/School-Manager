@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <header class="bg-green-900 text-white shadow-md w-screen">
+      <div
+        class="container mx-auto flex items-center justify-between px-6 py-3"
+      >
+        <!-- Logo -->
+        <h2 class="text-xl font-bold text-gray-200">School Pass</h2>
+
+        <!-- Nav Links -->
+        <nav class="hidden lg:flex items-center space-x-3">
+          <!-- Dashboard -->
+          <a
+            href="index.html"
+            class="relative flex items-center space-x-2 text-white hover:text-gray-200 transition"
+          >
+            <i class="bi bi-house"></i><span>Dashboard</span>
+          </a>
+          <!-- Administration Dropdown -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition nav-link nav-active"
+              data-dropdown="adminMenu"
+            >
+              <i class="bi bi-gear"></i><span>Administration</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="adminMenu"
+            >
+              <a
+                href="students.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-people"></i><span>Students</span>
+              </a>
+              <a
+                href="admissions.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-person-plus"></i><span>Admissions</span>
+              </a>
+              <a
+                href="attendance.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-calendar-check"></i><span>Attendance</span>
+              </a>
+              <a
+                href="exams.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Exams & Results</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-box-arrow-up-right"></i
+                ><span>External Exams</span>
+              </a>
+              <a
+                href="academic-calendar.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-calendar-event"></i
+                ><span>Academic Calendar</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Finance -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="financeMenu"
+            >
+              <i class="bi bi-wallet2"></i><span>Finance</span>
+            </button>
+            <div
+              id="financeMenu"
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+            >
+              <a
+                href="fees.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-credit-card"></i><span>Fee Management</span>
+              </a>
+              <a
+                href="f_debtors.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-exclamation-triangle"></i
+                ><span>Debtor Management</span>
+              </a>
+              <a
+                href="f_expense_record.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-receipt"></i><span>Expense Records</span>
+              </a>
+              <a
+                href="f_fee_structure.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Fee Structure</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Financial Statement</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Personnel -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="personnelMenu"
+            >
+              <i class="bi bi-briefcase"></i><span>Personnel</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="personnelMenu"
+            >
+              <a
+                href="personnel.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-people"></i><span>Staff Management</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Asset & Inventory -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="assetMenu"
+            >
+              <i class="bi bi-box-seam"></i><span>Asset & Inventory</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="assetMenu"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-building"></i><span>Asset Management</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-laptop"></i><span>IT Equipment</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-building"></i
+                ><span>Buildings & Facilities</span>
+              </a>
+              <a
+                href="transportation.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-bus-front"></i><span>Transportation</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-book"></i><span>Educational Materials</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-egg-fried"></i><span>Cafeteria Inventory</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-box-seam"></i><span>General Inventory</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-shop"></i><span>Uniform & Merchandise</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Communication -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+            >
+              <i class="bi bi-chat-dots"></i><span>Communication</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-chat-dots"></i><span>Communication</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-heart"></i><span>Parent Engagement</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Meal Tickets -->
+          <a
+            href="#"
+            class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+          >
+            <i class="bi bi-ticket"></i><span>Meal Tickets</span>
+          </a>
+        </nav>
+
+        <!-- Right Side User Section -->
+        <!-- Right Side User Section + Theme + Burger -->
+        <div class="flex items-center space-x-4">
+          <!-- User Dropdown -->
+          <div class="relative group hidden lg:flex items-center">
+            <button
+              id="userMenuToggle"
+              class="flex items-center space-x-2 bg-green-800 px-3 py-2 rounded-lg hover:bg-green-700"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center rounded-full bg-green-700"
+              >
+                <i class="bi bi-person"></i>
+              </div>
+              <span class="hidden sm:block">Welcome, Admin</span>
+              <i class="bi bi-chevron-down text-sm"></i>
+            </button>
+
+            <!-- FIXED -->
+            <div
+              id="userMenu"
+              class="absolute hidden right-0 top-full mt-2 bg-green-800 rounded-lg shadow-lg w-56 overflow-hidden z-50"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-person"></i><span>My Profile</span>
+              </a>
+              <a
+                href="settings.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-gear"></i><span>Settings</span>
+              </a>
+              <a
+                href="support.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-headset"></i><span>Support</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-bell"></i><span>Notifications</span>
+              </a>
+              <div class="border-t border-green-700"></div>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 text-red-400 hover:bg-red-600"
+              >
+                <i class="bi bi-box-arrow-right"></i><span>Logout</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button
+            id="themeToggle"
+            title="Toggle dark mode"
+            class="cursor-pointer p-2 rounded-full transition"
+          >
+            <i class="bi bi-moon"></i>
+          </button>
+
+          <!-- Mobile Burger Menu -->
+          <button
+            id="mobileMenuToggle"
+            class="lg:hidden p-2 rounded-lg hover:bg-green-800 focus:outline-none"
+          >
+            <i class="bi bi-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- main -->
+    <main class="max-w-full mx-auto p-6 bg-gray-50 min-h-screen w-full">
+      <!-- Page Header -->
+      <header class="mb-6">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <!-- Title + Description -->
+          <div class="ml-4">
+            <h2 class="text-3xl text-green-700 font-bold">
+              External Exam Integration
+            </h2>
+            <p class="text-gray-600">
+              Connect and manage external examination systems
+            </p>
+          </div>
+        </div>
+      </header>
+      <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-8">
+        <!-- Connected Systems Card -->
+        <div class="bg-gray-200 border border-gray-200 rounded-lg shadow p-4">
+          <div class="items-center justify-between">
+            <i
+              class="bi bi-diagram-3 w-10 h-10 text-green-700 mb-3 text-4xl"
+            ></i>
+            <p class="text-gray-600">Connected Systems</p>
+            <h2 class="font-semibold">2</h2>
+          </div>
+        </div>
+        <!-- Active Exams Card -->
+        <div class="bg-gray-200 border border-gray-200 rounded-lg shadow p-4">
+          <div class="items-center justify-between">
+            <i
+              class="bi bi-clipboard-check w-10 h-10 text-green-700 mb-3 text-4xl"
+            ></i>
+            <p class="text-gray-600">Active Exams</p>
+            <h2 class="font-semibold">2</h2>
+          </div>
+        </div>
+        <!-- Registered Students Card -->
+        <div class="bg-gray-200 border border-gray-200 rounded-lg shadow p-4">
+          <div class="items-center justify-between">
+            <i class="bi bi-people w-10 h-10 text-green-700 mb-3 text-4xl"></i>
+            <p class="text-gray-600">Registered Students</p>
+            <h2 class="font-semibold">2</h2>
+          </div>
+        </div>
+        <!-- Last Sync Card -->
+        <div class="bg-gray-200 border border-gray-200 rounded-lg shadow p-4">
+          <div class="items-center justify-between">
+            <i
+              class="bi bi-clock-history w-10 h-10 text-green-700 mb-3 text-4xl"
+            ></i>
+            <p class="text-gray-600">Last Sync</p>
+            <h2 class="font-semibold">2 hours ago</h2>
+          </div>
+        </div>
+      </section>
+
+      <div
+        id="tabButtons"
+        class="flex flex-wrap justify-center gap-4 mt-8 px-6 py-4 bg-gray-100 rounded-xl shadow"
+      >
+        <button
+          id="btnOverview"
+          class="tab-btn bg-green-600 text-white px-6 py-2 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-400 transition font-semibold"
+        >
+          Overview
+        </button>
+        <button
+          id="btnExamSystems"
+          class="tab-btn bg-gray-200 text-green-700 px-6 py-2 rounded-lg shadow hover:bg-green-100 hover:text-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition font-semibold"
+        >
+          Exam Systems
+        </button>
+        <button
+          id="btnRegistrations"
+          class="tab-btn bg-gray-200 text-green-700 px-6 py-2 rounded-lg shadow hover:bg-green-100 hover:text-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition font-semibold"
+        >
+          Registrations
+        </button>
+        <button
+          id="btnResults"
+          class="tab-btn bg-gray-200 text-green-700 px-6 py-2 rounded-lg shadow hover:bg-green-100 hover:text-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition font-semibold"
+        >
+          Results
+        </button>
+      </div>
+      <div
+        id="overviewContent"
+        class="w-full mt-6 bg-white rounded-xl shadow-lg p-4 sm:p-8"
+      >
+        <h2 class="text-2xl font-bold text-green-700 mb-2">
+          External Exam Dashboard
+        </h2>
+        <p class="text-gray-600 mb-6">
+          Overview of all external examinations and integrations
+        </p>
+        <div class="bg-gray-50 rounded-lg shadow p-4">
+          <table class="w-full border-collapse border border-gray-300">
+            <thead>
+              <tr class="bg-green-100">
+                <th class="py-2 px-3 border border-gray-300">Exam Name</th>
+                <th class="py-2 px-3 border border-gray-300">System</th>
+                <th class="py-2 px-3 border border-gray-300">Date</th>
+                <th class="py-2 px-3 border border-gray-300">Registered</th>
+                <th class="py-2 px-3 border border-gray-300">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="border border-gray-300 px-3 py-2">
+                  CBSE Class 12 Board Exam
+                </td>
+                <td class="border border-gray-300 px-3 py-2">CBSE Board</td>
+                <td class="border border-gray-300 px-3 py-2">2025-10-10</td>
+                <td class="border border-gray-300 px-3 py-2">45 Students</td>
+                <td
+                  class="border border-gray-300 px-3 py-2 text-green-600 font-semibold"
+                >
+                  <button class="px-3 py-2 bg-blue-200 text-black rounded">
+                    Upcoming
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 px-3 py-2">
+                  SAT Subject Test
+                </td>
+                <td class="border border-gray-300 px-3 py-2">SAT</td>
+                <td class="border border-gray-300 px-3 py-2">2025-12-15</td>
+                <td class="border border-gray-300 px-3 py-2">12 Students</td>
+                <td class="border border-gray-300 px-3 py-2 font-semibold">
+                  <button class="px-3 py-2 bg-green-200 text-black rounded">
+                    Registration Open
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <td class="border border-gray-300 px-3 py-2">IELTS Academic</td>
+                <td class="border border-gray-300 px-3 py-2">IELTS</td>
+                <td class="border border-gray-300 px-3 py-2">2025-12-15</td>
+                <td class="border border-gray-300 px-3 py-2">12 Students</td>
+                <td class="border border-gray-300 px-3 py-2 font-semibold">
+                  <button class="px-3 py-2 bg-gray-200 text-black rounded">
+                    Completed
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div
+        id="examSystemsContent"
+        class="w-full mt-6 bg-white rounded-xl shadow-lg p-4 sm:p-8 hidden"
+      >
+        <!-- Exam Systems tab content here -->
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Card 1 -->
+          <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">CBSE Board</h3>
+              <button
+                class="flex items-center gap-2 text-sm px-3 bg-green-100 border border-green-400 text-green-800 font-bold rounded-2xl py-1"
+              >
+                <i class="bi bi-check-circle-fill text-green-600"></i> Connected
+              </button>
+            </div>
+            <p class="text-sm text-gray-500">
+              Central Board of Secondary Education
+            </p>
+
+            <div class="mt-3 space-y-1 text-sm text-gray-700">
+              <p class="flex items-center gap-2">API Endpoint:</p>
+              <p class="flex items-center bg-gray-300 rounded px-3 py-2 gap-2">
+                https://api.cbse.gov.in
+              </p>
+              <p class="flex items-center gap-2">
+                Last Sync: 2024-01-15 10:30AM
+              </p>
+            </div>
+
+            <!-- Card Actions -->
+            <div class="mt-4 flex justify-between">
+              <button
+                class="flex items-center gap-1 text-sm bg-green-600 text-white px-4 py-2 rounded-lg"
+              >
+                <i class="bi bi-arrow-repeat"></i> Sync
+              </button>
+              <button
+                class="flex items-center gap-1 text-sm bg-gray-300 text-gray-600 px-4 py-2 rounded-lg"
+              >
+                <i class="bi bi-gear"></i> Configure
+              </button>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">SAT</h3>
+              <button
+                class="flex items-center gap-2 text-sm px-3 bg-red-100 border border-red-400 text-red-600 font-bold rounded-2xl py-1"
+              >
+                <i class="bi bi-x-circle-fill text-red-600"></i> Disconnected
+              </button>
+            </div>
+            <p class="text-sm text-gray-500">Scholastic Assessment Test</p>
+
+            <div class="mt-3 space-y-1 text-sm text-gray-700">
+              <p class="flex items-center gap-2">API Endpoint:</p>
+              <p class="flex items-center bg-gray-300 rounded px-3 py-2 gap-2">
+                https://api.collegeboard.org
+              </p>
+              <p class="flex items-center gap-2">Last Sync: Never</p>
+            </div>
+            <div class="mt-4 flex justify-between">
+              <button
+                class="flex items-center gap-1 text-sm bg-green-600 text-white px-4 py-2 rounded-lg"
+              >
+                <i class="bi bi-plug"></i> Connect
+              </button>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">IELTS</h3>
+              <button
+                class="flex items-center gap-2 text-sm px-3 bg-green-100 border border-green-400 text-green-800 font-bold rounded-2xl py-1"
+              >
+                <i class="bi bi-check-circle-fill text-green-600"></i> Connected
+              </button>
+            </div>
+            <p class="text-sm text-gray-500">
+              International English Language Testing System
+            </p>
+
+            <div class="mt-3 space-y-1 text-sm text-gray-700">
+              <p class="flex items-center gap-2">API Endpoint:</p>
+              <p class="flex items-center bg-gray-300 rounded px-3 py-2 gap-2">
+                https://api.collegeboard.org
+              </p>
+              <p class="flex items-center gap-2">Last Sync: Never</p>
+            </div>
+            <!-- Card Actions -->
+            <div class="mt-4 flex justify-between">
+              <button
+                class="flex items-center gap-1 text-sm bg-green-600 text-white px-4 py-2 rounded-lg"
+              >
+                <i class="bi bi-arrow-repeat"></i> Sync
+              </button>
+              <button
+                class="flex items-center gap-1 text-sm bg-gray-300 text-gray-600 px-4 py-2 rounded-lg"
+              >
+                <i class="bi bi-gear"></i> Configure
+              </button>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-white border border-gray-200 rounded-lg shadow p-4">
+            <div class="flex items-center justify-between">
+              <h3 class="font-semibold">TOEFL</h3>
+              <button
+                class="flex items-center gap-2 text-sm px-3 bg-yellow-100 border border-yellow-400 text-yellow-800 font-bold rounded-2xl py-1"
+              >
+                <i class="bi bi-hourglass-split text-yellow-700"></i> Pending
+              </button>
+            </div>
+            <p class="text-sm text-gray-500">
+              Test of English as a Foreign Language
+            </p>
+
+            <div class="mt-3 space-y-1 text-sm text-gray-700">
+              <p class="flex items-center gap-2">API Endpoint:</p>
+              <p class="flex items-center bg-gray-300 rounded px-3 py-2 gap-2">
+                https://api.ets.org
+              </p>
+              <p class="flex items-center gap-2">Last Sync: Never</p>
+            </div>
+            <!-- Card Actions -->
+            <div class="mt-4 flex justify-between">
+              <button
+                class="flex items-center gap-1 text-sm bg-green-600 text-white px-4 py-2 rounded-lg"
+              >
+                <i class="bi bi-plug"></i> Connect
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="registrationsContent"
+        class="w-full mt-6 bg-white rounded-xl shadow-lg p-4 sm:p-8 hidden"
+      >
+        <div class="flex flex-col">
+          <h2 class="font-bold text-2xl">Student Registrations</h2>
+          <p class="text-gray-400">
+            Manage student registrations for external exams
+          </p>
+        </div>
+        <div class="mt-4 flex flex-wrap items-center gap-3">
+          <select
+            id="FilterByExam"
+            required
+            class="w-48 bg-gray-100 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+          >
+            <option value="">Filter by exam</option>
+            <option value="All Exams">All Exams</option>
+            <option value="CBSE Board">CBSE Board</option>
+            <option value="SAT">SAT</option>
+          </select>
+          <select
+            id="Status"
+            required
+            class="w-48 bg-gray-100 border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+          >
+            <option value="">Status</option>
+            <option value="All Status">All Status</option>
+            <option value="Registered">Registered</option>
+            <option value="Pending">Pending</option>
+          </select>
+          <div class="flex-1"></div>
+          <button
+            class="flex items-center px-4 bg-green-700 text-white rounded py-2"
+          >
+            <i class="bi bi-person-plus px-1"></i>
+            Bulk Register
+          </button>
+        </div>
+        <div class="flex flex-col items-center justify-center py-16">
+          <i class="bi bi-people text-6xl text-gray-300 mb-4"></i>
+          <p class="text-lg text-gray-500 font-semibold mb-2">
+            No registrations found.
+          </p>
+          <p class="text-gray-400 text-center max-w-md">
+            Select filters or register students for external exams.
+          </p>
+        </div>
+      </div>
+      <div
+        id="resultsContent"
+        class="w-full mt-6 bg-white rounded-xl shadow-lg p-4 sm:p-8 hidden"
+      >
+        <div class="flex flex-col">
+          <h2 class="font-bold text-2xl">Exam Results</h2>
+          <p class="text-gray-400">
+            Import and manage results from extenal examination systems
+          </p>
+        </div>
+        <div class="mt-4 flex flex-wrap items-center gap-3">
+          <input
+            type="text"
+            class="w-65 bg-gray-100 border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            placeholder="Search by student name or exam"
+            id=""
+          />
+          <select
+            id="Status"
+            required
+            class="w-48 bg-gray-100 border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+          >
+            <option value="">Exam System</option>
+            <option value="All Systems">All Systems</option>
+            <option value="CBSE">CBSE</option>
+            <option value="IELTS">IELTS</option>
+          </select>
+          <div class="flex-1"></div>
+          <button
+            class="flex items-center px-4 bg-green-700 text-white rounded py-2"
+          >
+            <i class="bi bi-download px-1"></i>
+            Import Results
+          </button>
+        </div>
+        <div class="flex flex-col items-center justify-center py-16">
+          <i class="bi bi-journal text-6xl text-gray-300 mb-4"></i>
+          <p class="text-lg text-gray-500 font-semibold mb-2">
+            No registrations found.
+          </p>
+          <p class="text-gray-400 text-center max-w-md">
+            No results available. Import results from external systems or wait
+            for automatic sync
+          </p>
+        </div>
+      </div>
+    </main>
+    <script src="tabswitch.js"></script>
+  </body>
+</html>

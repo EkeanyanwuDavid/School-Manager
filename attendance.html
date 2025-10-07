@@ -516,9 +516,7 @@
         </div>
       </header>
     </main>
-
-
-      <!-- Footer -->
+    <!-- Footer -->
     <footer class="bg-green-700 mt-10 py-4">
       <div class="text-center text-gray-600">
         <p>
@@ -583,46 +581,43 @@
     <p class="mb-4 text-gray-600">Mark attendance for each student</p>
     <table class="w-full border-collapse border border-gray-400">
       <thead>
-        <tr class="bg-gray-100 border-b border-gray-400">
-          <th class="py-2 px-3 border border-gray-400">Roll No</th>
-          <th class="py-2 px-3 border border-gray-400">Student Name</th>
-          <th class="py-2 px-3 border border-gray-400">Status</th>
-          <th class="py-2 px-3 border border-gray-400">Check-in Time</th>
-          <th class="py-2 px-3 border border-gray-400">Actions</th>
+        <tr class="bg-gray-100">
+          <th class="py-2 px-3 border-b border-gray-300">Roll No</th>
+          <th class="py-2 px-3 border-b border-gray-300">Student Name</th>
+          <th class="py-2 px-3 border-b border-gray-300">Status</th>
+          <th class="py-2 px-3 border-b border-gray-300">Check-in Time</th>
+          <th class="py-2 px-3 border-b border-gray-300">Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="border border-gray-400 px-3 py-2">1</td>
-          <td class="border border-gray-400 px-3 py-2">Chioma Okeke</td>
-          <td class="border border-gray-400 px-3 py-2">Present</td>
-          <td class="border border-gray-400 px-3 py-2">08:05 AM</td>
-          <td class="border px-3 py-2 border-gray-400 flex gap-2">
+          <td class="px-3 py-2 border-b border-gray-200">1</td>
+          <td class="px-3 py-2 border-b border-gray-200">Chioma Okeke</td>
+          <td class="px-3 py-2 border-b border-gray-200">Present</td>
+          <td class="px-3 py-2 border-b border-gray-200">08:05 AM</td>
+          <td class="px-3 py-2 border-b border-gray-200 flex gap-2">
             <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
             <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
             <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
           </td>
         </tr>
-      </tbody>
-      <tbody>
         <tr>
-          <td class="border border-gray-400 px-3 py-2">2</td>
-          <td class="border border-gray-400 px-3 py-2">Wisdom Okeke</td>
-          <td class="border border-gray-400 px-3 py-2">Absent</td>
-          <td class="border border-gray-400 px-3 py-2">Null</td>
-          <td class="border px-3 py-2 border-gray-400 flex gap-2">
+          <td class="px-3 py-2 border-b border-gray-200">2</td>
+          <td class="px-3 py-2 border-b border-gray-200">Wisdom Okeke</td>
+          <td class="px-3 py-2 border-b border-gray-200">Absent</td>
+          <td class="px-3 py-2 border-b border-gray-200">Null</td>
+          <td class="px-3 py-2 border-b border-gray-200 flex gap-2">
             <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
             <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
             <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
           </td>
         </tr>
-      </tbody>
         <tr>
-          <td class="border border-gray-400 px-3 py-2">3</td>
-          <td class="border border-gray-400 px-3 py-2">Michael Okeke</td>
-          <td class="border border-gray-400 px-3 py-2">Late</td>
-          <td class="border border-gray-400 px-3 py-2">13:05 PM</td>
-          <td class="border px-3 py-2 border-gray-400 flex gap-2">
+          <td class="px-3 py-2 border-b border-gray-200">3</td>
+          <td class="px-3 py-2 border-b border-gray-200">Michael Okeke</td>
+          <td class="px-3 py-2 border-b border-gray-200">Late</td>
+          <td class="px-3 py-2 border-b border-gray-200">13:05 PM</td>
+          <td class="px-3 py-2 border-b border-gray-200 flex gap-2">
             <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
             <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
             <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
@@ -640,32 +635,32 @@
       staffTable.innerHTML = `
     <table class="w-full border-collapse border border-gray-400">
       <thead>
-        <tr class="bg-gray-100 border-b border-gray-400">
-          <th class="py-2 px-3 border border-gray-400">Staff ID</th>
-          <th class="py-2 px-3 border border-gray-400">Staff Name</th>
-          <th class="py-2 px-3 border border-gray-400">Status</th>
-          <th class="py-2 px-3 border border-gray-400">Check-in Time</th>
-          <th class="py-2 px-3 border border-gray-400">Actions</th>
+        <tr class="bg-gray-100">
+          <th class="py-2 px-3 border-b border-gray-300">Staff ID</th>
+          <th class="py-2 px-3 border-b border-gray-300">Staff Name</th>
+          <th class="py-2 px-3 border-b border-gray-300">Status</th>
+          <th class="py-2 px-3 border-b border-gray-300">Check-in Time</th>
+          <th class="py-2 px-3 border-b border-gray-300">Actions</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="border border-gray-400 px-3 py-2">STF001</td>
-          <td class="border border-gray-400 px-3 py-2">Mr. James</td>
-          <td class="border border-gray-400 px-3 py-2">Present</td>
-          <td class="border border-gray-400 px-3 py-2">07:45 AM</td>
-          <td class="border border-gray-400 px-3 py-2 flex gap-2">
+          <td class="px-3 py-2 border-b border-gray-200">STF001</td>
+          <td class="px-3 py-2 border-b border-gray-200">Mr. James</td>
+          <td class="px-3 py-2 border-b border-gray-200">Present</td>
+          <td class="px-3 py-2 border-b border-gray-200">07:45 AM</td>
+          <td class="px-3 py-2 border-b border-gray-200 flex gap-2">
             <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
             <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
             <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
           </td>
         </tr>
         <tr>
-          <td class="border border-gray-400 px-3 py-2">STF002</td>
-          <td class="border border-gray-400 px-3 py-2">Mrs. Janet</td>
-          <td class="border border-gray-400 px-3 py-2">Absent</td>
-          <td class="border border-gray-400 px-3 py-2">--</td>
-          <td class="border border-gray-400 px-3 py-2 flex gap-2">
+          <td class="px-3 py-2 border-b border-gray-200">STF002</td>
+          <td class="px-3 py-2 border-b border-gray-200">Mrs. Janet</td>
+          <td class="px-3 py-2 border-b border-gray-200">Absent</td>
+          <td class="px-3 py-2 border-b border-gray-200">--</td>
+          <td class="px-3 py-2 border-b border-gray-200 flex gap-2">
             <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
             <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
             <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
