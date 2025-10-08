@@ -69,7 +69,7 @@ function renderCalendar(year, month) {
             class="w-10 h-10 transition 
               ${
                 isToday
-                  ? "bg-blue-500 text-white font-bold"
+                  ? "bg-blue-500 text-black font-bold transition"
                   : "bg-white text-gray-700"
               } 
               ${
