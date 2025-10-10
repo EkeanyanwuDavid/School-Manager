@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Debtor Management - School Manager</title>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body>
+    <header class="bg-green-900 text-white shadow-md w-screen">
+      <div
+        class="container mx-auto flex items-center justify-between px-6 py-3"
+      >
+        <!-- Logo -->
+        <h2 class="text-xl font-bold text-gray-200">School Pass</h2>
+
+        <!-- Nav Links -->
+        <nav class="hidden lg:flex items-center space-x-3">
+          <!-- Dashboard -->
+          <a
+            href="index.html"
+            class="relative flex items-center space-x-2 text-white hover:text-gray-200 transition"
+          >
+            <i class="bi bi-house"></i><span>Dashboard</span>
+          </a>
+          <!-- Administration Dropdown -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition nav-link nav-active"
+              data-dropdown="adminMenu"
+            >
+              <i class="bi bi-gear"></i><span>Administration</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="adminMenu"
+            >
+              <a
+                href="students.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-people"></i><span>Students</span>
+              </a>
+              <a
+                href="admissions.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-person-plus"></i><span>Admissions</span>
+              </a>
+              <a
+                href="attendance.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-calendar-check"></i><span>Attendance</span>
+              </a>
+              <a
+                href="exams.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Exams & Results</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-box-arrow-up-right"></i
+                ><span>External Exams</span>
+              </a>
+              <a
+                href="academic-calendar.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-calendar-event"></i
+                ><span>Academic Calendar</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Finance -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="financeMenu"
+            >
+              <i class="bi bi-wallet2"></i><span>Finance</span>
+            </button>
+            <div
+              id="financeMenu"
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+            >
+              <a
+                href="fees.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-credit-card"></i><span>Fee Management</span>
+              </a>
+              <a
+                href="f_debtors.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-exclamation-triangle"></i
+                ><span>Debtor Management</span>
+              </a>
+              <a
+                href="f_expense_record.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-receipt"></i><span>Expense Records</span>
+              </a>
+              <a
+                href="f_fee_structure.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Fee Structure</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-file-text"></i><span>Financial Statement</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Personnel -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="personnelMenu"
+            >
+              <i class="bi bi-briefcase"></i><span>Personnel</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="personnelMenu"
+            >
+              <a
+                href="personnel.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-people"></i><span>Staff Management</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Asset & Inventory -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+              data-dropdown="assetMenu"
+            >
+              <i class="bi bi-box-seam"></i><span>Asset & Inventory</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+              id="assetMenu"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-building"></i><span>Asset Management</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-laptop"></i><span>IT Equipment</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-building"></i
+                ><span>Buildings & Facilities</span>
+              </a>
+              <a
+                href="transportation.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-bus-front"></i><span>Transportation</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-book"></i><span>Educational Materials</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-egg-fried"></i><span>Cafeteria Inventory</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-box-seam"></i><span>General Inventory</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-shop"></i><span>Uniform & Merchandise</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Communication -->
+          <div class="relative group">
+            <button
+              class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+            >
+              <i class="bi bi-chat-dots"></i><span>Communication</span>
+            </button>
+            <div
+              class="absolute hidden group-hover:block bg-green-800 mt-2 rounded-lg shadow-lg w-56 overflow-hidden"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-chat-dots"></i><span>Communication</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-heart"></i><span>Parent Engagement</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Meal Tickets -->
+          <a
+            href="#"
+            class="flex items-center space-x-2 bg-green-800 hover:bg-white hover:text-green-800 px-4 py-2 rounded-lg transition"
+          >
+            <i class="bi bi-ticket"></i><span>Meal Tickets</span>
+          </a>
+        </nav>
+
+        <!-- Right Side User Section -->
+        <!-- Right Side User Section + Theme + Burger -->
+        <div class="flex items-center space-x-4">
+          <!-- User Dropdown -->
+          <div class="relative group hidden lg:flex items-center">
+            <button
+              id="userMenuToggle"
+              class="flex items-center space-x-2 bg-green-800 px-3 py-2 rounded-lg hover:bg-green-700"
+            >
+              <div
+                class="w-8 h-8 flex items-center justify-center rounded-full bg-green-700"
+              >
+                <i class="bi bi-person"></i>
+              </div>
+              <span class="hidden sm:block">Welcome, Admin</span>
+              <i class="bi bi-chevron-down text-sm"></i>
+            </button>
+
+            <!-- FIXED -->
+            <div
+              id="userMenu"
+              class="absolute hidden right-0 top-full mt-2 bg-green-800 rounded-lg shadow-lg w-56 overflow-hidden z-50"
+            >
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-person"></i><span>My Profile</span>
+              </a>
+              <a
+                href="settings.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-gear"></i><span>Settings</span>
+              </a>
+              <a
+                href="support.html"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-headset"></i><span>Support</span>
+              </a>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 hover:bg-green-700"
+              >
+                <i class="bi bi-bell"></i><span>Notifications</span>
+              </a>
+              <div class="border-t border-green-700"></div>
+              <a
+                href="#"
+                class="flex items-center space-x-2 px-4 py-2 text-red-400 hover:bg-red-600"
+              >
+                <i class="bi bi-box-arrow-right"></i><span>Logout</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Theme Toggle -->
+          <button
+            id="themeToggle"
+            title="Toggle dark mode"
+            class="cursor-pointer p-2 rounded-full transition"
+          >
+            <i class="bi bi-moon"></i>
+          </button>
+
+          <!-- Mobile Burger Menu -->
+          <button
+            id="mobileMenuToggle"
+            class="lg:hidden p-2 rounded-lg hover:bg-green-800 focus:outline-none"
+          >
+            <i class="bi bi-list text-2xl"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+    <main class="max-w-full mx-auto p-6 bg-gray-50 min-h-screen w-full">
+      <header class="mb-6">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <!-- Title + Description -->
+          <div class="flex items-center gap-3 ml-4">
+            <i data-lucide="wallet" class="text-green-600 w-8 h-8"></i>
+            <div>
+              <h2 class="text-3xl text-green-700 font-bold">
+                Debtor Management
+              </h2>
+              <p class="text-gray-600">
+                Track and manage outstanding fee payments
+              </p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div
+        id="tabButtons"
+        class="flex flex-wrap justify-center gap-4 mt-8 px-6 py-4 bg-gray-100 rounded-xl shadow"
+      >
+        <!-- Export Debtors -->
+        <a
+          href=""
+          class="tab-btn cursor-pointer hover:bg-green-100 bg-gray-200 text-green-700 px-6 py-2 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-green-400 transition font-semibold flex items-center gap-2"
+        >
+          <i data-lucide="download" class="w-5 h-5"></i>
+          <span>Export Debtors</span>
+        </a>
+
+        <!-- Send Reminders -->
+        <a
+          href=""
+          class="tab-btn bg-gray-200 cursor-pointer text-green-700 px-6 py-2 rounded-lg shadow hover:bg-green-100 hover:text-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition font-semibold flex items-center gap-2"
+        >
+          <i data-lucide="send" class="w-5 h-5"></i>
+          <span>Send Reminders</span>
+        </a>
+        <a
+          href="record_payment.html"
+          class="tab-btn bg-green-600 cursor-pointer text-white px-6 py-2 rounded-lg shadow hover:bg-green-100 hover:text-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 transition font-semibold flex items-center gap-2"
+        >
+          <i data-lucide="wallet" class="w-5 h-5"></i>
+          <span>Record Payment</span>
+        </a>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-7">
+        <!-- Card 1: Total Outstanding -->
+        <div class="bg-yellow-200 rounded-lg shadow p-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-500">Total Outstanding</h4>
+            <button
+              class="flex items-center gap-2 text-sm bg-yellow-300 font-bold rounded py-3 px-3"
+            >
+              <i data-lucide="credit-card" class="text-yellow-600 w-6 h-6"></i>
+            </button>
+          </div>
+          <p class="text-2xl mt-5 font-bold text-black">₦2.1M</p>
+          <div class="mt-3 space-y-1 text-sm text-gray-500">
+            <p class="flex items-center gap-2">Across all students</p>
+            <p class="flex items-center gap-2">
+              <span class="text-red-600">-8%</span> from last month
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2: Students Paid -->
+        <div class="bg-blue-200 rounded-lg shadow p-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-500">Students Paid</h4>
+            <button
+              class="flex items-center gap-2 text-sm bg-blue-300 font-bold rounded py-3 px-3"
+            >
+              <i data-lucide="users" class="text-blue-600 w-6 h-6"></i>
+            </button>
+          </div>
+          <p class="text-2xl mt-5 font-bold text-black">355</p>
+          <div class="mt-3 space-y-1 text-sm text-gray-500">
+            <p class="flex items-center gap-2">
+              Students with outstanding fees
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3: Overdue Payments -->
+        <div class="bg-red-100 rounded-lg shadow p-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-500">Overdue Payments</h4>
+            <button
+              class="flex items-center gap-2 text-sm bg-red-200 font-bold rounded py-3 px-3"
+            >
+              <i data-lucide="alert-triangle" class="text-red-600 w-6 h-6"></i>
+            </button>
+          </div>
+          <p class="text-2xl mt-5 font-bold text-black">127</p>
+          <div class="mt-3 space-y-1 text-sm text-gray-500">
+            <p class="flex items-center gap-2">Past due date</p>
+            <p class="flex items-center gap-2">
+              <span class="text-red-600">12%</span> from last month
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4: Recovery Rate -->
+        <div class="bg-green-200 rounded-lg shadow p-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-500">Recovery Rate</h4>
+            <button
+              class="flex items-center gap-2 text-sm bg-green-300 font-bold rounded py-3 px-3"
+            >
+              <i data-lucide="trending-up" class="text-green-600 w-6 h-6"></i>
+            </button>
+          </div>
+          <p class="text-2xl mt-5 font-bold text-black">67%</p>
+          <div class="mt-3 space-y-1 text-sm text-gray-500">
+            <p class="flex items-center gap-2">This term</p>
+            <p class="flex items-center gap-2">
+              <span class="text-green-600">+5%</span> from last month
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Debtors Overview -->
+      <div class="mt-10 bg-gray-50 p-6 rounded-xl shadow">
+        <div class="flex items-center gap-3 mb-6 mt-8">
+          <i data-lucide="wallet" class="text-green-600 w-6 h-6"></i>
+          <div>
+            <h1 class="text-2xl font-bold">Outstanding Payments Tracker</h1>
+            <p class="text-gray-500 text-sm">
+              Monitor and manage students with unpaid fees
+            </p>
+          </div>
+        </div>
+
+        <!-- Search and Filters -->
+        <div
+          class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5"
+        >
+          <div class="relative flex-1">
+            <i
+              data-lucide="search"
+              class="absolute left-3 top-2.5 w-5 h-5 text-gray-400"
+            ></i>
+            <input
+              type="text"
+              placeholder="Search by student name, parent, or class..."
+              class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:outline-none"
+            />
+          </div>
+
+          <div id="debtorTabs">
+            <div class="flex flex-wrap gap-2 mt-2 sm:mt-0">
+              <button
+                class="px-4 py-2 tab-btn bg-green-100 text-green-700 rounded-lg font-medium"
+              >
+                All Debtors (5)
+              </button>
+              <button
+                class="px-4 py-2 tab-btn bg-red-100 text-red-700 rounded-lg font-medium"
+              >
+                Overdue (3)
+              </button>
+              <button
+                class="px-4 py-2 tab-btn bg-orange-100 text-orange-700 rounded-lg font-medium"
+              >
+                Critical (1)
+              </button>
+              <button
+                class="px-4 py-2 tab-btn bg-blue-100 text-blue-700 rounded-lg font-medium"
+              >
+                Payment Plans
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Debtor List -->
+        <div class="space-y-4">
+          <!-- Student Card -->
+          <div id="AllDebtors">
+            <div
+              class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Adebayo Taiwo</h2>
+                <p class="text-sm text-gray-500">JSS 1A • ID: STU001</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Mr. Adebayo Johnson</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 4567</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>adebayo.johnson@email.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦110,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 31%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">
+                  31% paid • ₦50,000 / ₦160,000
+                </p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-orange-100 text-orange-700 rounded-full"
+                >
+                  Overdue (15 days)
+                </span>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Chioma Okeke</h2>
+                <p class="text-sm text-gray-500">SS 2B • ID: STU002</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Mrs. Chioma Okeke</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 7890</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>chiomaokeke@email.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦83,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 55%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">
+                  55% paid • ₦100,000 / ₦183,000
+                </p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-white text-gray-500 border border-gray-300 rounded-full"
+                >
+                  Pending
+                </span>
+                <button
+                  class="mt-2 px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-lg"
+                >
+                  Payment Plan
+                </button>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="bg-gray-100 border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Ibrahim Musa</h2>
+                <p class="text-sm text-gray-500">SS 1C • ID: STU002</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Mallam Ibrahim Musa</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 7890</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>ibrahmmusa@gmail.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦183,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 0%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">0% paid • ₦0 / ₦183,000</p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-red-600 text-white rounded-full"
+                >
+                  Critical (31 days overdue)
+                </span>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Fatima Aliyu</h2>
+                <p class="text-sm text-gray-500">SS 1C • ID: STU004</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Dr. Aliyu Hassan</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 7890</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>aliyuhassan@gmail.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦25,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 85%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">
+                  85% paid • ₦140,000 / ₦165,000
+                </p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-white text-gray-700 border border-gray-500 rounded-full"
+                >
+                  Pending
+                </span>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Emeka Okafor</h2>
+                <p class="text-sm text-gray-500">SS 3A • ID: STU006</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Prof. Okafor Emeka</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 7890</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>emekaokafor@gmail.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦125,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 36%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">
+                  36% paid • ₦70,000 / ₦195,000
+                </p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-orange-100 text-orange-700 rounded-full"
+                >
+                  Overdue (5 days)
+                </span>
+
+                <button
+                  class="mt-2 px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-lg"
+                >
+                  Payment Plan
+                </button>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="Overdue">
+            <div
+              class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Adebayo Taiwo</h2>
+                <p class="text-sm text-gray-500">JSS 1A • ID: STU001</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Mr. Adebayo Johnson</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 4567</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>adebayo.johnson@email.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦110,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 31%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">
+                  31% paid • ₦50,000 / ₦160,000
+                </p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-orange-100 text-orange-700 rounded-full"
+                >
+                  Overdue (15 days)
+                </span>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-gray-100 border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Ibrahim Musa</h2>
+                <p class="text-sm text-gray-500">SS 1C • ID: STU002</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Mallam Ibrahim Musa</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 7890</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>ibrahmmusa@gmail.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦183,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 0%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">0% paid • ₦0 / ₦183,000</p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-red-600 text-white rounded-full"
+                >
+                  Critical (31 days overdue)
+                </span>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Emeka Okafor</h2>
+                <p class="text-sm text-gray-500">SS 3A • ID: STU006</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Prof. Okafor Emeka</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 7890</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>emekaokafor@gmail.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦125,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 36%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">
+                  36% paid • ₦70,000 / ₦195,000
+                </p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-orange-100 text-orange-700 rounded-full"
+                >
+                  Overdue (5 days)
+                </span>
+
+                <button
+                  class="mt-2 px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-lg"
+                >
+                  Payment Plan
+                </button>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="Critical">
+            <div
+              class="bg-gray-100 border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Ibrahim Musa</h2>
+                <p class="text-sm text-gray-500">SS 1C • ID: STU002</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Mallam Ibrahim Musa</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 7890</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>ibrahmmusa@gmail.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦183,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 0%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">0% paid • ₦0 / ₦183,000</p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-red-600 text-white rounded-full"
+                >
+                  Critical (31 days overdue)
+                </span>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div id="PaymentPlans">
+            <div
+              class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Chioma Okeke</h2>
+                <p class="text-sm text-gray-500">SS 2B • ID: STU002</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Mrs. Chioma Okeke</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 7890</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>chiomaokeke@email.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦83,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 55%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">
+                  55% paid • ₦100,000 / ₦183,000
+                </p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-white text-gray-500 border border-gray-300 rounded-full"
+                >
+                  Pending
+                </span>
+                <button
+                  class="mt-2 px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-lg"
+                >
+                  Payment Plan
+                </button>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-white border border-gray-200 rounded-xl shadow-sm p-4 flex flex-col md:flex-row md:items-center md:justify-between"
+            >
+              <div class="flex flex-col gap-2 flex-1">
+                <h2 class="font-semibold text-gray-800">Emeka Okafor</h2>
+                <p class="text-sm text-gray-500">SS 3A • ID: STU006</p>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="user" class="w-4 h-4"></i>
+                  <span>Parent: Prof. Okafor Emeka</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="phone" class="w-4 h-4"></i>
+                  <span>+234 803 123 7890</span>
+                </div>
+                <div class="flex items-center text-sm text-gray-600 gap-2">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  <span>emekaokafor@gmail.com</span>
+                </div>
+              </div>
+
+              <div class="flex flex-col md:items-end gap-2 mt-3 md:mt-0">
+                <p class="text-sm text-gray-600">
+                  Outstanding:
+                  <span class="text-red-600 font-semibold">₦125,000</span>
+                </p>
+                <div class="w-40 bg-gray-100 rounded-full h-2">
+                  <div
+                    class="bg-green-500 h-2 rounded-full"
+                    style="width: 36%"
+                  ></div>
+                </div>
+                <p class="text-xs text-gray-500">
+                  36% paid • ₦70,000 / ₦195,000
+                </p>
+                <div class="flex items-center gap-2 mt-2">
+                  <i data-lucide="calendar" class="w-4 h-4 text-gray-500"></i>
+                  <span class="text-sm text-gray-600">Due: 2024-01-31</span>
+                </div>
+                <span
+                  class="px-3 py-1 text-xs font-medium bg-orange-100 text-orange-700 rounded-full"
+                >
+                  Overdue (5 days)
+                </span>
+
+                <button
+                  class="mt-2 px-3 py-1 text-xs font-medium bg-blue-100 text-blue-700 rounded-lg"
+                >
+                  Payment Plan
+                </button>
+              </div>
+
+              <!-- Actions -->
+              <div class="flex items-center gap-3 mt-3 md:mt-0">
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="eye" class="w-5 h-5 text-gray-600"></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i
+                    data-lucide="phone-call"
+                    class="w-5 h-5 text-green-600"
+                  ></i>
+                </button>
+                <button class="p-2 rounded-full hover:bg-gray-100">
+                  <i data-lucide="mail" class="w-5 h-5 text-gray-600"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 p-6 rounded mt-7 shadow-md">
+        <div class="flex-col flex mb-5">
+          <h3 class="font-bold text-2xl text-gray-700 flex items-center gap-2">
+            Upcoming Due Dates
+            <i data-lucide="clock" class="text-green-600"></i>
+          </h3>
+
+          <p class="text-gray-500">Students with payment due soon</p>
+        </div>
+        <div class="space-y-3">
+          <div
+            class="flex justify-between items-center border border-gray-300 rounded-xl p-4 hover:bg-gray-50 transition"
+          >
+            <div>
+              <p class="font-medium text-gray-800">Chioma Okeke</p>
+              <p class="text-sm text-gray-500">Due: 2024-02-15</p>
+            </div>
+            <div>
+              <p class="font-medium text-gray-800">₦83,000</p>
+              <p class="text-sm text-gray-500">603 days left</p>
+            </div>
+          </div>
+          <div
+            class="flex justify-between items-center border border-gray-300 rounded-xl p-4 hover:bg-gray-50 transition"
+          >
+            <div>
+              <p class="font-medium text-gray-800">Fatima Aliyu</p>
+              <p class="text-sm text-gray-500">Due: 2024-02-28</p>
+            </div>
+            <div>
+              <p class="font-medium text-gray-800">₦25,000</p>
+              <p class="text-sm text-gray-500">590 days left</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="bg-white border border-gray-200 rounded-xl mt-7 p-6 shadow-sm"
+      >
+        <h2 class="text-lg font-semibold text-gray-800 flex items-center gap-2">
+          <i data-lucide="alert-triangle" class="text-red-600"></i>
+          Priority Follow-ups
+        </h2>
+        <p class="text-sm text-gray-500 mb-4">
+          Students requiring immediate attention
+        </p>
+        <div class="space-y-3">
+          <div
+            class="flex justify-between items-center border border-gray-200 rounded-xl p-4 bg-red-50 hover:bg-red-100 transition"
+          >
+            <div>
+              <p class="font-medium text-gray-800">Ibrahim Musa</p>
+              <p class="text-sm text-gray-600">31 days overdue</p>
+            </div>
+
+            <div class="text-right">
+              <p class="font-semibold text-red-600">₦183,000</p>
+              <button
+                class="flex items-center gap-2 px-3 py-1.5 text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition"
+              >
+                <i data-lucide="send" class="w-4 h-4"></i>Remind
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex justify-between items-center border border-gray-200 rounded-xl p-4 bg-red-50 hover:bg-red-100 transition"
+          >
+            <div>
+              <p class="font-medium text-gray-800">Adebayo Taiwo</p>
+              <p class="text-sm text-gray-600">15 days overdue</p>
+            </div>
+
+            <div class="text-right">
+              <p class="font-semibold text-red-600">₦110,000</p>
+              <button
+                class="flex items-center gap-2 px-3 py-1.5 text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition"
+              >
+                <i data-lucide="send" class="w-4 h-4"></i>Remind
+              </button>
+            </div>
+          </div>
+          <div
+            class="flex justify-between items-center border border-gray-200 rounded-xl p-4 bg-red-50 hover:bg-red-100 transition"
+          >
+            <div>
+              <p class="font-medium text-gray-800">Emeka Okafor</p>
+              <p class="text-sm text-gray-600">5 days overdue</p>
+            </div>
+
+            <div class="text-right">
+              <p class="font-semibold text-red-600">₦125,000</p>
+              <button
+                class="flex items-center gap-2 px-3 py-1.5 text-sm bg-white border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition"
+              >
+                <i data-lucide="send" class="w-4 h-4"></i>Remind
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      lucide.createIcons();
+
+      const debtorTabButtons = document.querySelectorAll(
+        "#debtorTabs .tab-btn"
+      );
+      const debtorTabContents = [
+        document.getElementById("AllDebtors"),
+        document.getElementById("Overdue"),
+        document.getElementById("Critical"),
+        document.getElementById("PaymentPlans"),
+      ];
+
+      const originalClasses = [];
+      debtorTabButtons.forEach((btn) => {
+        originalClasses.push(btn.className);
+      });
+
+      const activeClasses = [
+        "bg-green-600 text-white", // All Debtors
+        "bg-red-600 text-white", // Overdue
+        "bg-yellow-500 text-white", // Critical
+        "bg-blue-600 text-white", // Payment Plans
+      ];
+
+      debtorTabButtons.forEach((btn, idx) => {
+        btn.addEventListener("click", () => {
+          // Reset all buttons to their original classes
+          debtorTabButtons.forEach((b, i) => {
+            b.className = originalClasses[i];
+          });
+
+          // Apply active color and bold style
+          btn.classList.add(...activeClasses[idx].split(" "), "font-bold");
+
+          // Hide all content
+          debtorTabContents.forEach((c) => c.classList.add("hidden"));
+
+          debtorTabContents[idx].classList.remove("hidden");
+        });
+      });
+
+      if (debtorTabButtons.length > 0) debtorTabButtons[0].click();
+    });
+  </script>
+</html>
