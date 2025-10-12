@@ -331,7 +331,10 @@
           <!-- Title + Description -->
           <div class="ml-4 flex items-center gap-2">
             <div>
-              <h2 class="text-3xl text-green-700 font-bold">
+              <h2
+                class="flex items-center gap-2 text-3xl text-green-700 font-bold"
+              >
+                <i data-lucide="banknote" class="w-8 h-8 text-green-700"></i>
                 Financial Statements
               </h2>
               <p class="text-gray-600">
@@ -706,22 +709,22 @@
                 <span>Total Expenses</span>
                 <span>₦39,800,000</span>
               </div>
-              <div
-                class="flex justify-between border-t uppercase border-gray-200 font-bold pt-3 mt-6"
-              >
-                <span>Net Income</span>
-                <span
-                  >₦17,000,000
-                  <button
-                    class="ml-4 px-6 py-1 text-[0.8rem] rounded-full text-white bg-green-700"
-                  >
-                    <i
-                      data-lucide="trending-up"
-                      class="w-3 h-3 mr-2 text-white"
-                    ></i>
-                    Profit
-                  </button></span
+            </div>
+            <div
+              class="flex justify-between border-t uppercase border-gray-200 font-bold pt-3 mt-6"
+            >
+              <span>Net Income</span>
+              <div class="flex items-center space-x-3">
+                <span>₦17,000,000</span>
+                <button
+                  class="flex items-center gap-1 px-3 py-1 rounded-full text-xs text-white bg-green-700"
                 >
+                  <i
+                    data-lucide="trending-up"
+                    class="w-3 h-3 mr-2 text-white"
+                  ></i>
+                  Profit
+                </button>
               </div>
             </div>
           </div>
@@ -762,10 +765,11 @@
       tabBtns.forEach((btn, idx) => {
         btn.addEventListener("click", () => {
           tabBtns.forEach((b) => {
-            b.classList.remove("bg-gray-600", "text-gray-100");
-            b.classList.add("bg-gray-200", "text-gray-200");
+            b.classList.remove("bg-green-600", "text-white");
+            b.classList.add("bg-gray-200", "text-gray-400");
           });
-          btn.classList.add("bg-gray-300", "text-gray-100");
+
+          btn.classList.add("bg-green-600", "text-gray-400");
           btn.classList.remove("bg-gray-200", "text-green-700");
           tabContent.forEach((content) => content.classList.add("hidden"));
           tabContent[idx].classList.remove("hidden");
