@@ -622,9 +622,21 @@
     }, 10);
   });
 
+  lucide.createIcons();
+
   fetch("navbar.html")
     .then((response) => response.text())
     .then((data) => {
       document.getElementById("navbar").innerHTML = data;
-    });
+
+      if (
+        typeof lucide !== "undefined" &&
+        typeof lucide.createIcons === "function"
+      ) {
+        lucide.createIcons();
+      } else {
+        console.error("Lucide is not found");
+      }
+    })
+    .catch((error) => console.error("error loading navbar"));
 </script>
