@@ -59,3 +59,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set default tab on page load
   tabButtons[0].click();
 });
+
+fetch("navbar.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("navbar").innerHTML = data;
+  });

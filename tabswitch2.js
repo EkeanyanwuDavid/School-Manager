@@ -74,12 +74,12 @@ function renderCalendar(year, month) {
               } 
               ${
                 isSelected
-                  ? "bg-blue-950 text-black rounded font-bold"
-                  : "hover:bg-blue-100 hover:border hover:border-blue-400"
+                  ? "bg-blue-950 text-gray-900 rounded font-bold"
+                  : "hover:bg-red-100 hover:border hover:border-red-500"
               }
               ${
                 isSelected
-                  ? "border border-blue-500"
+                  ? "border border-red-500"
                   : "border border-transparent"
               }
               "
@@ -173,3 +173,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // Set default tab on page load
   tabButtons[0].click();
 });
+
+fetch("navbar.html")
+  .then((response) => response.text())
+  .then((data) => {
+    document.getElementById("navbar").innerHTML = data;
+  });

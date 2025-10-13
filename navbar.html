@@ -1,1 +1,630 @@
-    
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>School Pass - Navbar</title>
+
+    <link rel="stylesheet" href="src/output.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  </head>
+
+  <body class="bg-gray-100">
+    <!-- NAVBAR -->
+    <header class="bg-green-800 text-white shadow sticky top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <!-- Logo -->
+          <div class="flex items-center mr-6">
+            <h2 class="text-[1.3rem] font-bold">School Pass</h2>
+          </div>
+
+          <!-- Desktop nav -->
+          <nav class="hidden lg:flex lg:items-center lg:gap-6">
+            <!-- Dashboard -->
+            <a
+              href="index.html"
+              class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+            >
+              <i data-lucide="home" class="w-5 h-5"></i>
+              <span class="text-sm">Dashboard</span>
+            </a>
+
+            <!-- Administration -->
+            <div class="relative group">
+              <button
+                data-dropdown-toggle="adminMenu"
+                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+              >
+                <i data-lucide="settings" class="w-5 h-5"></i>
+                <span class="text-sm">Administration</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+
+              <div
+                id="adminMenu"
+                class="absolute left-0 mt-2 w-64 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+              >
+                <a
+                  href="students.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="users" class="w-4 h-4"></i> Students
+                </a>
+                <a
+                  href="admissions.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="user-plus" class="w-4 h-4"></i> Admissions
+                </a>
+                <a
+                  href="attendance.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="calendar-check" class="w-4 h-4"></i>
+                  Attendance
+                </a>
+                <a
+                  href="exams.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="file-text" class="w-4 h-4"></i> Exams &
+                  Results
+                </a>
+                <a
+                  href="externalexam.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="external-link" class="w-4 h-4"></i> External
+                  Exams
+                </a>
+                <a
+                  href="academiccalendar.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="calendar" class="w-4 h-4"></i> Academic
+                  Calendar
+                </a>
+              </div>
+            </div>
+
+            <!-- Finance -->
+            <div class="relative group">
+              <button
+                data-dropdown-toggle="financeMenu"
+                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+              >
+                <i data-lucide="wallet" class="w-5 h-5"></i>
+                <span class="text-sm">Finance</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+
+              <div
+                id="financeMenu"
+                class="absolute left-0 mt-2 w-56 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+              >
+                <a
+                  href="fee_management.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="credit-card" class="w-4 h-4"></i> Fee
+                  Management
+                </a>
+                <a
+                  href="trackdebtors.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="alert-triangle" class="w-4 h-4"></i> Debtor
+                  Management
+                </a>
+                <a
+                  href="record_expense.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="receipt" class="w-4 h-4"></i> Expense Records
+                </a>
+                <a
+                  href="record_payment.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="file-text" class="w-4 h-4"></i> Payment
+                  Records
+                </a>
+                <a
+                  href="financial_statement.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="bar-chart-2" class="w-4 h-4"></i> Financial
+                  Statement
+                </a>
+              </div>
+            </div>
+
+            <!-- Personnel -->
+            <div class="relative group">
+              <button
+                data-dropdown-toggle="personnelMenu"
+                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+              >
+                <i data-lucide="briefcase" class="w-5 h-5"></i>
+                <span class="text-sm">Personnel</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+
+              <div
+                id="personnelMenu"
+                class="absolute left-0 mt-2 w-44 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+              >
+                <a
+                  href="staff_management.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="users" class="w-4 h-4"></i> Staff Management
+                </a>
+              </div>
+            </div>
+
+            <!-- Asset & Inventory -->
+            <div class="relative group">
+              <button
+                data-dropdown-toggle="assetMenu"
+                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+              >
+                <i data-lucide="package" class="w-5 h-5"></i>
+                <span class="text-sm">Asset & Inventory</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+
+              <div
+                id="assetMenu"
+                class="absolute left-0 mt-2 w-64 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="building" class="w-4 h-4"></i> Asset
+                  Management
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="laptop" class="w-4 h-4"></i> IT Equipment
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="home" class="w-4 h-4"></i> Buildings &
+                  Facilities
+                </a>
+                <a
+                  href="transportation.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="bus" class="w-4 h-4"></i> Transportation
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="book" class="w-4 h-4"></i> Educational
+                  Materials
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="coffee" class="w-4 h-4"></i> Cafeteria
+                  Inventory
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="package" class="w-4 h-4"></i> General
+                  Inventory
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="shopping-bag" class="w-4 h-4"></i> Uniform &
+                  Merchandise
+                </a>
+              </div>
+            </div>
+
+            <!-- Communication -->
+            <div class="relative group">
+              <button
+                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+              >
+                <i data-lucide="message-circle" class="w-5 h-5"></i>
+                <span class="text-sm">Communication</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+
+              <div
+                class="absolute left-0 mt-2 w-44 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                  Communication
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="heart" class="w-4 h-4"></i> Parent Engagement
+                </a>
+              </div>
+            </div>
+
+            <!-- Meal Tickets -->
+            <a
+              href="#"
+              class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+            >
+              <i data-lucide="ticket" class="w-5 h-5"></i>
+              <span class="text-sm">Meal Tickets</span>
+            </a>
+          </nav>
+
+          <!-- Right actions: theme + user -->
+          <div class="hidden lg:flex lg:items-center lg:gap-4">
+            <button
+              id="themeToggle"
+              class="p-2 rounded text-white hover:bg-green-700 transition cursor-pointer"
+              title="Toggle theme"
+            >
+              <i data-lucide="moon" class="w-5 h-5"></i>
+            </button>
+
+            <div class="relative group">
+              <button
+                data-dropdown-toggle="admin"
+                class="flex items-center gap-3 px-2 py-1 rounded hover:bg-green-700 transition"
+              >
+                <div
+                  class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-green-700 ring-2"
+                >
+                  <i data-lucide="user" class="w-5 h-5 text-green-700"></i>
+                </div>
+                <span class="text-sm">Welcome, Admin</span>
+                <i data-lucide="chevron-down" class="w-4 h-4"></i>
+              </button>
+
+              <div
+                id="admin"
+                class="absolute right-0 mt-2 w-48 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+              >
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="user" class="w-4 h-4"></i> My Profile
+                </a>
+                <a
+                  href="settings.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="settings" class="w-4 h-4"></i> Settings
+                </a>
+                <a
+                  href="support.html"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="headphones" class="w-4 h-4"></i> Support
+                </a>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="bell" class="w-4 h-4"></i> Notifications
+                </a>
+                <div class="border-t border-green-700 my-1"></div>
+                <a
+                  href="#"
+                  class="flex items-center gap-2 px-4 py-2 text-red-200 hover:bg-green-700 transition"
+                >
+                  <i data-lucide="log-out" class="w-4 h-4"></i> Logout
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mobile menu button (right side) -->
+          <div class="lg:hidden flex items-center">
+            <button
+              id="mobileMenuButton"
+              class="p-2 rounded text-white hover:bg-green-700"
+            >
+              <i data-lucide="menu" class="w-7 h-7"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile main menu -->
+      <div
+        id="mobileMenu"
+        class="lg:hidden hidden border-t border-green-800 bg-green-800"
+      >
+        <nav class="px-4 py-4 space-y-1">
+          <a
+            href="index.html"
+            class="flex items-center gap-3 text-white px-2 py-2 rounded hover:bg-green-700"
+          >
+            <i data-lucide="home" class="w-5 h-5"></i> Dashboard
+          </a>
+
+          <!-- Admin mobile -->
+          <div>
+            <button
+              data-target="adminMobile"
+              class="w-full flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
+            >
+              <span class="flex items-center gap-3"
+                ><i data-lucide="settings" class="w-5 h-5"></i>
+                Administration</span
+              >
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+            <div id="adminMobile" class="hidden pl-8 mt-1 space-y-1">
+              <a
+                href="students.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Students</a
+              >
+              <a
+                href="admissions.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Admissions</a
+              >
+              <a
+                href="attendance.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Attendance</a
+              >
+              <a
+                href="exams.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Exams & Results</a
+              >
+              <a
+                href="externalexam.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >External Exams</a
+              >
+              <a
+                href="academiccalendar.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Academic Calendar</a
+              >
+            </div>
+          </div>
+
+          <!-- Finance mobile -->
+          <div>
+            <button
+              data-target="financeMobile"
+              class="w-full flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
+            >
+              <span class="flex items-center gap-3"
+                ><i data-lucide="wallet" class="w-5 h-5"></i> Finance</span
+              >
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+            <div id="financeMobile" class="hidden pl-8 mt-1 space-y-1">
+              <a
+                href="fee_management.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Fee Management</a
+              >
+              <a
+                href="trackdebtors.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Debtor Management</a
+              >
+              <a
+                href="record_expense.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Expense Records</a
+              >
+              <a
+                href="record_payment.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Record Payment</a
+              >
+              <a
+                href="financial_statement.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Financial Statement</a
+              >
+            </div>
+          </div>
+
+          <!-- Personnel mobile -->
+          <div>
+            <button
+              data-target="personnelMobile"
+              class="w-full flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
+            >
+              <span class="flex items-center gap-3"
+                ><i data-lucide="briefcase" class="w-5 h-5"></i> Personnel</span
+              >
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+            <div id="personnelMobile" class="hidden pl-8 mt-1 space-y-1">
+              <a
+                href="staff_management.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Staff Management</a
+              >
+            </div>
+          </div>
+
+          <!-- Assets mobile -->
+          <div>
+            <button
+              data-target="assetsMobile"
+              class="w-full flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
+            >
+              <span class="flex items-center gap-3"
+                ><i data-lucide="package" class="w-5 h-5"></i> Asset &
+                Inventory</span
+              >
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+            <div id="assetsMobile" class="hidden pl-8 mt-1 space-y-1">
+              <a class="block text-white py-1 hover:text-gray-200"
+                >Asset Management</a
+              >
+              <a class="block text-white py-1 hover:text-gray-200"
+                >IT Equipment</a
+              >
+              <a class="block text-white py-1 hover:text-gray-200"
+                >Buildings & Facilities</a
+              >
+              <a
+                href="transportation.html"
+                class="block text-white py-1 hover:text-gray-200"
+                >Transportation</a
+              >
+              <a class="block text-white py-1 hover:text-gray-200"
+                >Educational Materials</a
+              >
+              <a class="block text-white py-1 hover:text-gray-200"
+                >Cafeteria Inventory</a
+              >
+              <a class="block text-white py-1 hover:text-gray-200"
+                >General Inventory</a
+              >
+              <a class="block text-white py-1 hover:text-gray-200"
+                >Uniform & Merchandise</a
+              >
+            </div>
+          </div>
+
+          <!-- Communication mobile -->
+          <div>
+            <button
+              data-target="commMobile"
+              class="w-full flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
+            >
+              <span class="flex items-center gap-3"
+                ><i data-lucide="message-circle" class="w-5 h-5"></i>
+                Communication</span
+              >
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+            <div id="commMobile" class="hidden pl-8 mt-1 space-y-1">
+              <a class="block text-white py-1 hover:text-gray-200"
+                >Communication</a
+              >
+              <a class="block text-white py-1 hover:text-gray-200"
+                >Parent Engagement</a
+              >
+            </div>
+          </div>
+
+          <a
+            href="#"
+            class="flex items-center gap-3 text-white px-2 py-2 rounded hover:bg-green-700"
+          >
+            <i data-lucide="ticket" class="w-5 h-5"></i> Meal Tickets
+          </a>
+
+          <!-- Mobile profile links -->
+          <div class="pt-3 border-t border-green-700">
+            <a href="#" class="block text-white py-2 hover:text-gray-200"
+              >My Profile</a
+            >
+            <a
+              href="settings.html"
+              class="block text-white py-2 hover:text-gray-200"
+              >Settings</a
+            >
+            <a
+              href="support.html"
+              class="block text-white py-2 hover:text-gray-200"
+              >Support</a
+            >
+            <a href="#" class="block text-red-200 py-2">Logout</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Lucide + JS -->
+    <script>
+      // init lucide icons
+      lucide.createIcons();
+
+      // toggle mobile main menu
+      const mobileMenuToggle =
+        document.getElementById("menuToggle") ||
+        document.getElementById("mobileMenuButton");
+      const mobileMenu = document.getElementById("mobileMenu");
+      // two possible buttons depending on markup above
+      document
+        .querySelectorAll("#menuToggle, #mobileMenuButton")
+        .forEach((btn) => {
+          btn?.addEventListener("click", () => {
+            mobileMenu?.classList.toggle("hidden");
+          });
+        });
+
+      // mobile submenu toggles
+      document.querySelectorAll("[data-target]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-target");
+          const el = document.getElementById(id);
+          if (el) el.classList.toggle("hidden");
+        });
+      });
+
+      // theme toggle placeholder
+      const themeBtn = document.getElementById("themeToggle");
+      themeBtn?.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+      });
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const dropdownToggles = document.querySelectorAll(
+          "[data-dropdown-toggle]"
+        );
+
+        dropdownToggles.forEach((toggle) => {
+          const menuId = toggle.getAttribute("data-dropdown-toggle");
+          const menu = document.getElementById(menuId);
+
+          if (!menu) return;
+
+          // Toggle on click
+          toggle.addEventListener("click", (e) => {
+            e.stopPropagation();
+            menu.classList.toggle("hidden");
+          });
+
+          // Prevent menu from closing instantly when clicking inside
+          menu.addEventListener("click", (e) => {
+            e.stopPropagation();
+          });
+
+          // Close when clicking outside
+          document.addEventListener("click", () => {
+            if (!menu.classList.contains("hidden")) {
+              menu.classList.add("hidden");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
