@@ -34,7 +34,7 @@
             <div class="relative group">
               <button
                 data-dropdown-toggle="adminMenu"
-                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+                class="dropdown-btn flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
               >
                 <i data-lucide="settings" class="w-5 h-5"></i>
                 <span class="text-sm">Administration</span>
@@ -43,7 +43,7 @@
 
               <div
                 id="adminMenu"
-                class="absolute left-0 mt-2 w-64 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+                class="absolute dropdown-menu left-0 mt-2 w-64 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
               >
                 <a
                   href="students.html"
@@ -92,7 +92,7 @@
             <div class="relative group">
               <button
                 data-dropdown-toggle="financeMenu"
-                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+                class="flex dropdown-btn items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
               >
                 <i data-lucide="wallet" class="w-5 h-5"></i>
                 <span class="text-sm">Finance</span>
@@ -101,7 +101,7 @@
 
               <div
                 id="financeMenu"
-                class="absolute left-0 mt-2 w-56 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+                class="absolute dropdown-menu left-0 mt-2 w-56 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
               >
                 <a
                   href="fee_management.html"
@@ -144,7 +144,7 @@
             <div class="relative group">
               <button
                 data-dropdown-toggle="personnelMenu"
-                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+                class="flex dropdown-btn items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
               >
                 <i data-lucide="briefcase" class="w-5 h-5"></i>
                 <span class="text-sm">Personnel</span>
@@ -153,7 +153,7 @@
 
               <div
                 id="personnelMenu"
-                class="absolute left-0 mt-2 w-44 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+                class="absolute dropdown-menu left-0 mt-2 w-44 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
               >
                 <a
                   href="staff_management.html"
@@ -168,7 +168,7 @@
             <div class="relative group">
               <button
                 data-dropdown-toggle="assetMenu"
-                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+                class="flex dropdown-btn items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
               >
                 <i data-lucide="package" class="w-5 h-5"></i>
                 <span class="text-sm">Asset & Inventory</span>
@@ -177,7 +177,7 @@
 
               <div
                 id="assetMenu"
-                class="absolute left-0 mt-2 w-64 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+                class="absolute dropdown-menu left-0 mt-2 w-64 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
               >
                 <a
                   href="#"
@@ -239,7 +239,7 @@
             <!-- Communication -->
             <div class="relative group">
               <button
-                class="flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
+                class="dropdown-btn flex items-center gap-2 px-2 py-1 rounded hover:bg-green-700 transition"
               >
                 <i data-lucide="message-circle" class="w-5 h-5"></i>
                 <span class="text-sm">Communication</span>
@@ -247,7 +247,7 @@
               </button>
 
               <div
-                class="absolute left-0 mt-2 w-44 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+                class="absolute dropdown-menu left-0 mt-2 w-44 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
               >
                 <a
                   href="#"
@@ -288,7 +288,7 @@
             <div class="relative group">
               <button
                 data-dropdown-toggle="admin"
-                class="flex items-center gap-3 px-2 py-1 rounded hover:bg-green-700 transition"
+                class="flex items-center dropdown-btn gap-3 px-2 py-1 rounded hover:bg-green-700 transition"
               >
                 <div
                   class="w-6 h-6 rounded-full bg-gray-100 flex items-center justify-center text-green-700 ring-2"
@@ -301,7 +301,7 @@
 
               <div
                 id="admin"
-                class="absolute right-0 mt-2 w-48 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
+                class="absolute dropdown-menu right-0 mt-2 w-48 bg-green-800 border border-green-800 rounded-lg shadow-lg hidden group-hover:block"
               >
                 <a
                   href="#"
@@ -367,7 +367,7 @@
           <div>
             <button
               data-target="adminMobile"
-              class="w-full flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
+              class="w-full dropdown-btn flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
             >
               <span class="flex items-center gap-3"
                 ><i data-lucide="settings" class="w-5 h-5"></i>
@@ -375,7 +375,10 @@
               >
               <i data-lucide="chevron-down" class="w-4 h-4"></i>
             </button>
-            <div id="adminMobile" class="hidden pl-8 mt-1 space-y-1">
+            <div
+              id="adminMobile"
+              class="hidden dropdown-menu pl-8 mt-1 space-y-1"
+            >
               <a
                 href="students.html"
                 class="block text-white py-1 hover:text-gray-200"
@@ -413,14 +416,17 @@
           <div>
             <button
               data-target="financeMobile"
-              class="w-full flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
+              class="w-full flex items-center dropdown-btn justify-between px-2 py-2 text-white rounded hover:bg-green-700"
             >
               <span class="flex items-center gap-3"
                 ><i data-lucide="wallet" class="w-5 h-5"></i> Finance</span
               >
               <i data-lucide="chevron-down" class="w-4 h-4"></i>
             </button>
-            <div id="financeMobile" class="hidden pl-8 mt-1 space-y-1">
+            <div
+              id="financeMobile"
+              class="hidden dropdown-menu pl-8 mt-1 space-y-1"
+            >
               <a
                 href="fee_management.html"
                 class="block text-white py-1 hover:text-gray-200"
@@ -453,14 +459,17 @@
           <div>
             <button
               data-target="personnelMobile"
-              class="w-full flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
+              class="w-full flex items-center dropdown-btn justify-between px-2 py-2 text-white rounded hover:bg-green-700"
             >
               <span class="flex items-center gap-3"
                 ><i data-lucide="briefcase" class="w-5 h-5"></i> Personnel</span
               >
               <i data-lucide="chevron-down" class="w-4 h-4"></i>
             </button>
-            <div id="personnelMobile" class="hidden pl-8 mt-1 space-y-1">
+            <div
+              id="personnelMobile"
+              class="hidden dropdown-menu pl-8 mt-1 space-y-1"
+            >
               <a
                 href="staff_management.html"
                 class="block text-white py-1 hover:text-gray-200"
@@ -473,7 +482,7 @@
           <div>
             <button
               data-target="assetsMobile"
-              class="w-full flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
+              class="w-full flex items-center dropdown-btn justify-between px-2 py-2 text-white rounded hover:bg-green-700"
             >
               <span class="flex items-center gap-3"
                 ><i data-lucide="package" class="w-5 h-5"></i> Asset &
@@ -481,7 +490,10 @@
               >
               <i data-lucide="chevron-down" class="w-4 h-4"></i>
             </button>
-            <div id="assetsMobile" class="hidden pl-8 mt-1 space-y-1">
+            <div
+              id="assetsMobile"
+              class="hidden dropdown-menu pl-8 mt-1 space-y-1"
+            >
               <a class="block text-white py-1 hover:text-gray-200"
                 >Asset Management</a
               >
@@ -562,69 +574,6 @@
     </header>
 
     <!-- Lucide + JS -->
-    <script>
-      // init lucide icons
-      lucide.createIcons();
-
-      // toggle mobile main menu
-      const mobileMenuToggle =
-        document.getElementById("menuToggle") ||
-        document.getElementById("mobileMenuButton");
-      const mobileMenu = document.getElementById("mobileMenu");
-      // two possible buttons depending on markup above
-      document
-        .querySelectorAll("#menuToggle, #mobileMenuButton")
-        .forEach((btn) => {
-          btn?.addEventListener("click", () => {
-            mobileMenu?.classList.toggle("hidden");
-          });
-        });
-
-      // mobile submenu toggles
-      document.querySelectorAll("[data-target]").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const id = btn.getAttribute("data-target");
-          const el = document.getElementById(id);
-          if (el) el.classList.toggle("hidden");
-        });
-      });
-
-      // theme toggle placeholder
-      const themeBtn = document.getElementById("themeToggle");
-      themeBtn?.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark");
-      });
-
-      document.addEventListener("DOMContentLoaded", () => {
-        const dropdownToggles = document.querySelectorAll(
-          "[data-dropdown-toggle]"
-        );
-
-        dropdownToggles.forEach((toggle) => {
-          const menuId = toggle.getAttribute("data-dropdown-toggle");
-          const menu = document.getElementById(menuId);
-
-          if (!menu) return;
-
-          // Toggle on click
-          toggle.addEventListener("click", (e) => {
-            e.stopPropagation();
-            menu.classList.toggle("hidden");
-          });
-
-          // Prevent menu from closing instantly when clicking inside
-          menu.addEventListener("click", (e) => {
-            e.stopPropagation();
-          });
-
-          // Close when clicking outside
-          document.addEventListener("click", () => {
-            if (!menu.classList.contains("hidden")) {
-              menu.classList.add("hidden");
-            }
-          });
-        });
-      });
-    </script>
+    <script></script>
   </body>
 </html>
