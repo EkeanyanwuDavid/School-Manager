@@ -499,11 +499,18 @@
             typeof lucide.createIcons === "function"
           ) {
             lucide.createIcons();
+          }
+          const mobileMenuButton = document.getElementById("mobileMenuButton");
+          const mobileMenu = document.getElementById("mobileMenu");
+          if (mobileMenu && mobileMenuButton) {
+            mobileMenuButton.addEventListener("click", () => {
+              mobileMenu.classList.toggle("hidden");
+            });
           } else {
             console.error("Lucide is not found");
           }
         })
-        .catch((error) => console.error("error loading navbar"));
+        .catch((error) => console.error("error loading navbar", error));
     </script>
   </body>
 </html>
