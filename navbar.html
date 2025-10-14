@@ -543,7 +543,7 @@
           <div>
             <button
               data-target="commsMobile"
-              class="w-full flex items-center justify-between px-2 py-2 text-white rounded hover:bg-green-700"
+              class="w-full flex items-center dropdown-btn justify-between px-2 py-2 text-white rounded hover:bg-green-700"
             >
               <span class="flex items-center gap-3"
                 ><i data-lucide="message-circle" class="w-5 h-5"></i>
@@ -551,7 +551,10 @@
               >
               <i data-lucide="chevron-down" class="w-4 h-4"></i>
             </button>
-            <div id="commsMobile" class="hidden pl-8 mt-1 space-y-1">
+            <div
+              id="commsMobile"
+              class="hidden dropdown-menu pl-8 mt-1 space-y-1"
+            >
               <a
                 href="communication.html"
                 class="block text-white py-1 hover:text-gray-200"
@@ -592,8 +595,5 @@
         </nav>
       </div>
     </header>
-
-    <!-- Lucide + JS -->
-    <script></script>
   </body>
 </html>
