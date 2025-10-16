@@ -266,6 +266,808 @@
           </div>
         </div>
       </header>
+
+      <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-10 mt-18">
+        <div
+          class="bg-green-100 rounded-lg shadow p-6 flex items-center gap-3 transition"
+        >
+          <div>
+            <p class="text-gray-500 font-semibold mb-2">
+              Total Inventory Value
+            </p>
+            <p class="text-3xl font-bold">₦5,727,500</p>
+            <p
+              class="flex items-center mt-2 gap-1 rounded-full text-xs text-green-600"
+            >
+              <i
+                data-lucide="trending-up"
+                class="w-3 h-3 mr-2 text-green-600"
+              ></i>
+              +12% from last month
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow p-6 flex items-center gap-3 transition"
+        >
+          <div>
+            <p class="text-gray-500 font-semibold mb-2">Total Items</p>
+            <p class="text-3xl font-bold">776</p>
+
+            <p class="text-sm text-gray-500 mt-2">Across all categories</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow p-6 flex items-center gap-3 transition"
+        >
+          <div>
+            <p class="text-gray-500 font-semibold mb-2">In Stock</p>
+            <p class="text-3xl font-bold">7</p>
+            <p
+              class="flex items-center mt-2 gap-1 rounded-full text-xs text-green-600"
+            >
+              <i
+                data-lucide="check-circle"
+                class="w-3 h-3 mr-2 text-green-600"
+              ></i>
+              Available items
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow p-6 flex items-center gap-3 transition"
+        >
+          <div>
+            <p class="text-gray-500 font-semibold mb-2">Low Stock</p>
+            <p class="text-3xl font-bold">1</p>
+            <p
+              class="flex items-center mt-2 gap-1 rounded-full text-xs text-yellow-600"
+            >
+              <i
+                data-lucide="alert-triangle"
+                class="w-3 h-3 mr-2 text-yellow-600"
+              ></i>
+              Need reorder
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow p-6 flex items-center gap-3 transition"
+        >
+          <div>
+            <p class="text-gray-500 font-semibold mb-2">Out of Stock</p>
+            <p class="text-3xl font-bold">0</p>
+            <p
+              class="flex items-center mt-2 gap-1 rounded-full text-xs text-red-600"
+            >
+              <i
+                data-lucide="trending-down"
+                class="w-3 h-3 mr-2 text-red-600"
+              ></i>
+              Urgent attention
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="flex flex-wrap items-center gap-3 bg-white border border-gray-200 rounded-xl shadow-md p-3"
+      >
+        <div class="relative flex-1 min-w-[180px]">
+          <i
+            data-lucide="search"
+            class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+          ></i>
+
+          <input
+            type="text"
+            placeholder="Search materials..."
+            class="w-full pl-10 pr-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+          />
+        </div>
+
+        <button
+          class="p-2 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-200"
+          title="Filter options"
+        >
+          <i data-lucide="filter" class="1-4 h-4 text-gray-600"></i>
+        </button>
+        <select
+          class="text-sm border border-gray-300 rounded-lg h-[42px] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+        >
+          <option>All</option>
+          <option>Textbooks</option>
+          <option>Stationary</option>
+          <option>Science Equipment</option>
+          <option>Art Supplies</option>
+          <option>Sports Equipment</option>
+          <option>Music Instruments</option>
+          <option>Digital Resources</option>
+          <option>Teaching Aids</option>
+          <option>Other</option>
+        </select>
+        <select
+          class="text-sm border border-gray-300 rounded-lg px-3 h-[42px] py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+        >
+          <option>All</option>
+          <option>In Stock</option>
+          <option>Low Stock</option>
+          <option>Out of Stock</option>
+          <option>Ordered</option>
+          <option>Damaged</option>
+        </select>
+      </div>
+
+      <!-- Education Table -->
+      <div
+        class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mt-8"
+      >
+        <div class="flex flex-col mb-6">
+          <h2 class="font-semibold text-2xl text-gray-700">
+            Educational Materials Inventory
+          </h2>
+          <p class="text-gray-500">
+            Comprehensive overview of all educational materials, supplies and
+            equipment
+          </p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full border-collapse">
+            <thead>
+              <tr class="text-sm text-gray-800 border-b border-gray-200">
+                <th class="py-3 px-4 text-left font-medium">Material</th>
+                <th class="py-3 px-4 text-left font-medium">Category</th>
+                <th class="py-3 px-4 text-left font-medium">Subject/Grade</th>
+                <th class="py-3 px-4 text-left font-medium">Quantity</th>
+                <th class="py-3 px-4 text-left font-medium">Unit Price</th>
+                <th class="py-3 px-4 text-left font-medium">Total Value</th>
+                <th class="py-3 px-4 text-left font-medium">Status</th>
+                <th class="py-3 px-4 text-left font-medium">Condition</th>
+                <th class="py-3 px-4 text-left font-medium">Location</th>
+                <th class="py-3 px-4 text-left font-medium">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-700">
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="book"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Mathematics Textbook Grade 10</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Macmillian &centerdot; ISBN:978-0230434874
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">Textbooks</td>
+
+                <!-- Subject/Grade -->
+                <td class="py-3 px-4 font-semibold align-middle">
+                  Mathematics
+                  <p class="text-sm text-gray-500">Grade 10</p>
+                </td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                    150
+                  </span>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 font-semibold align-middle">₦2,500</td>
+
+                <!-- Total Value -->
+
+                <td class="py-3 px-4 font-semibold align-middle">₦375,000</td>
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >New</span
+                  >
+                </td>
+                <!-- Location -->
+                <td class="py-3 px-4 align-middle">
+                  Main Library &centerdot; Section A
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="calculator"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Scientific Calculator</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Casio FX-991EX
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">Science Equipment</td>
+
+                <!-- Subject/Grade -->
+                <td class="py-3 px-4 font-semibold align-middle">
+                  Mathematics
+                </td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                    45
+                  </span>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 font-semibold align-middle">₦8,500</td>
+
+                <!-- Total Value -->
+
+                <td class="py-3 px-4 font-semibold align-middle">₦382,000</td>
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                    >Good</span
+                  >
+                </td>
+                <!-- Location -->
+                <td class="py-3 px-4 align-middle">Mathematics Department</td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="flask-conical"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Chemistry Laboratory Set</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">Lab Pro</p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">Science Equipment</td>
+
+                <!-- Subject/Grade -->
+                <td class="py-3 px-4 font-semibold align-middle">Chemistry</td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                    8
+                  </span>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 font-semibold align-middle">₦125,500</td>
+
+                <!-- Total Value -->
+
+                <td class="py-3 px-4 font-semibold align-middle">₦1,000,000</td>
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                    >Good</span
+                  >
+                </td>
+                <!-- Location -->
+                <td class="py-3 px-4 align-middle">Chemistry Laboratory</td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="palette"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Art Supplies Kit</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">Creative Arts</p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">Art Supplies</td>
+
+                <!-- Subject/Grade -->
+                <td class="py-3 px-4 font-semibold align-middle">
+                  Visual Arts
+                </td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                    25
+                  </span>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 font-semibold align-middle">₦15,500</td>
+
+                <!-- Total Value -->
+
+                <td class="py-3 px-4 font-semibold align-middle">₦375,000</td>
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >New</span
+                  >
+                </td>
+                <!-- Location -->
+                <td class="py-3 px-4 align-middle">Art Studio</td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="book"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Exercise Books (40 leaves)</span
+                      >
+                    </div>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">Stationary</td>
+
+                <!-- Subject/Grade -->
+                <td class="py-3 px-4 font-semibold align-middle">All Grades</td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                    500
+                  </span>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 font-semibold align-middle">₦350</td>
+
+                <!-- Total Value -->
+
+                <td class="py-3 px-4 font-semibold align-middle">₦175,000</td>
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="alert-triangle"
+                      class="w-4 h-4 text-yellow-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-yellow-700 font-medium"
+                      >Low Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >New</span
+                  >
+                </td>
+                <!-- Location -->
+                <td class="py-3 px-4 align-middle">Store Room A</td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="tablet"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Digital Learning Tablets</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Samsung Galaxy Tab A8
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">Digital Resources</td>
+
+                <!-- Subject/Grade -->
+                <td class="py-3 px-4 font-semibold align-middle">All Grades</td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                    30
+                  </span>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 font-semibold align-middle">₦85,000</td>
+
+                <!-- Total Value -->
+
+                <td class="py-3 px-4 font-semibold align-middle">₦2,550,000</td>
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                    >Good</span
+                  >
+                </td>
+                <!-- Location -->
+                <td class="py-3 px-4 align-middle">IT Department</td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="dribbble"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Basketball Set</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">Spalding</p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">Sports Equipment</td>
+
+                <!-- Subject/Grade -->
+                <td class="py-3 px-4 font-semibold align-middle">
+                  Physical Education
+                </td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                    12
+                  </span>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 font-semibold align-middle">₦25,000</td>
+
+                <!-- Total Value -->
+
+                <td class="py-3 px-4 font-semibold align-middle">₦300,000</td>
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                    >Good</span
+                  >
+                </td>
+                <!-- Location -->
+                <td class="py-3 px-4 align-middle">Sports Equipment Store</td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="music"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Piano Keyboards</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Yamaha PSR-E273
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">Music Instruments</td>
+
+                <!-- Subject/Grade -->
+                <td class="py-3 px-4 font-semibold align-middle">Music</td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                    6
+                  </span>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 font-semibold align-middle">₦95,000</td>
+
+                <!-- Total Value -->
+
+                <td class="py-3 px-4 font-semibold align-middle">₦570,000</td>
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >New</span
+                  >
+                </td>
+                <!-- Location -->
+                <td class="py-3 px-4 align-middle">Music Room</td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </main>
   </body>
   <script src="navbar.js"></script>
