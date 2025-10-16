@@ -13,6 +13,962 @@
   </head>
   <body>
     <div id="navbar"></div>
+
+    <main class="max-w-full mx-auto p-6 bg-gray-50 min-h-screen w-full">
+      <header class="mb-6">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <!-- Title + Description -->
+          <div class="ml-4 flex items-center gap-2">
+            <div>
+              <h2
+                class="flex items-center gap-2 text-3xl text-green-700 font-bold"
+              >
+                Transportation Management
+              </h2>
+              <p class="text-gray-500">
+                Manage school fleet, vehicle and transportation services
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center gap-3"
+          >
+            <button
+              id="openModal"
+              class="bg-green-700 font-semibold rounded-lg px-4 py-2 text-sm text-white flex items-center gap-2 w-full sm:w-auto"
+            >
+              <i class="bi bi-plus"></i> Add Vehicle
+            </button>
+          </div>
+          <!-- Modal -->
+          <div
+            id="modal"
+            class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+          >
+            <!-- Close button -->
+            <button
+              id="closeModal"
+              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            >
+              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
+            </button>
+
+            <div class="flex flex-col h-full w-full">
+              <!-- Header -->
+              <div class="flex flex-col mb-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="truck" class="w-6 h-6 text-green-700"></i>
+                  <h2 class="text-2xl font-semibold text-gray-700">
+                    Add New Vehicle
+                  </h2>
+                </div>
+                <p class="text-gray-400">
+                  Add a new vehicle to the school's transportation fleet
+                </p>
+              </div>
+
+              <!-- Form card -->
+              <div class="bg-white shadow rounded-lg p-8 w-full">
+                <form id="" class="space-y-10 w-full">
+                  <!-- Basic Information -->
+                  <div>
+                    <div class="flex items-center gap-2 mb-4">
+                      <i data-lucide="file" class="w-6 h-6 text-gray-700"></i>
+                      <h2 class="text-2xl font-medium text-gray-700">
+                        Basic Information
+                      </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                      <!-- Vehicle Name -->
+                      <div class="w-full">
+                        <label class="block font-medium mb-1"
+                          >Vehicle Name *</label
+                        >
+                        <input
+                          type="text"
+                          required
+                          placeholder="e.g., School Bus Alpha"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <!-- Equipment Type -->
+                      <div class="w-full">
+                        <label class="block font-medium mb-1"
+                          >Equipment Type *</label
+                        >
+                        <select
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        >
+                          <option value="">Select vehicle type</option>
+                          <option value="">School Bus</option>
+                          <option value="">Staff Car</option>
+                          <option value="">Delivery Van</option>
+                          <option value="">Maintenance Vehicle</option>
+                          <option value="">Emergency Vehicle</option>
+                          <option value="">Other</option>
+                        </select>
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block font-medium mb-1">Make *</label>
+                        <input
+                          type="text"
+                          placeholder="e.g., Mercedes, Toyota"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block font-medium mb-1">Model *</label>
+                        <input
+                          type="text"
+                          placeholder="e.g., Sprinter 515, Camry"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block font-medium mb-1">Year *</label>
+                        <input
+                          type="number"
+                          placeholder="e.g., 2023"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block font-medium mb-1"
+                          >Plate Number *</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="e.g., EDU-001-AA"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block font-medium mb-1"
+                          >Capacity (Passengers) *</label
+                        >
+                        <input
+                          type="number"
+                          placeholder="e.g., 34"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block font-medium mb-1"
+                          >Fuel Type *</label
+                        >
+                        <select
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        >
+                          <option value="">Select Fuel Type</option>
+                          <option value="">Petrol</option>
+                          <option value="">Diesel</option>
+                          <option value="">Electric</option>
+                          <option value="">Hybrid</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Status & Condition -->
+                  <div class="pt-8 border-t border-gray-200">
+                    <div class="flex items-center gap-2 mb-8">
+                      <i
+                        data-lucide="settings"
+                        class="w-5 h-5 text-gray-700"
+                      ></i>
+                      <h2 class="text-xl font-semibold text-gray-700">
+                        Status & Condition
+                      </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <!-- Condition -->
+                      <div>
+                        <label class="block font-medium mb-1"
+                          >Condition *</label
+                        >
+                        <select
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        >
+                          <option value="">Select Condition</option>
+                          <option value="">Excellent</option>
+                          <option value="">Good</option>
+                          <option value="">Fair</option>
+                          <option value="">Poor</option>
+                        </select>
+                      </div>
+
+                      <!-- Status -->
+                      <div>
+                        <label class="block font-medium mb-1">Status *</label>
+                        <select
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        >
+                          <option value="">Select Status</option>
+                          <option value="">Active</option>
+                          <option value="">Under Maintenance</option>
+                          <option value="">Renovation</option>
+                          <option value="">Closed</option>
+                        </select>
+                      </div>
+
+                      <!-- Mileage -->
+                      <div>
+                        <label class="block font-medium mb-1"
+                          >Current Mileage (km) *</label
+                        >
+                        <input
+                          type="number"
+                          placeholder="e.g., 120000"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+                    </div>
+
+                    <!-- Service & Documentation -->
+                    <div>
+                      <div class="flex items-center gap-2 mt-7 mb-8">
+                        <i data-lucide="file" class="w-6 h-6 text-gray-700"></i>
+                        <h2 class="text-xl font-semibold text-gray-700">
+                          Service & Documentation
+                        </h2>
+                      </div>
+
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                        <div class="w-full">
+                          <label class="block font-medium mb-1"
+                            >Last Service Date *</label
+                          >
+                          <input
+                            type="date"
+                            required
+                            placeholder="e.g., School Bus Alpha"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                        <div class="w-full">
+                          <label class="block font-medium mb-1"
+                            >Next Service Date *</label
+                          >
+                          <input
+                            type="date"
+                            required
+                            placeholder="e.g., School Bus Alpha"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                        <div class="w-full">
+                          <label class="block font-medium mb-1"
+                            >Insurance Expiry *</label
+                          >
+                          <input
+                            type="date"
+                            required
+                            placeholder="e.g., School Bus Alpha"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                        <div class="w-full">
+                          <label class="block font-medium mb-1"
+                            >Roadworthy Expiry *</label
+                          >
+                          <input
+                            type="date"
+                            required
+                            placeholder="e.g., School Bus Alpha"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Assignment & Operation -->
+                    <div>
+                      <div class="flex items-center gap-2 mt-7 mb-8">
+                        <i data-lucide="file" class="w-6 h-6 text-gray-700"></i>
+                        <h2 class="text-xl font-semibold text-gray-700">
+                          Assignment & Operations
+                        </h2>
+                      </div>
+
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                        <div class="w-full">
+                          <label class="block font-medium mb-1"
+                            >Assigned Route*</label
+                          >
+                          <input
+                            type="text"
+                            required
+                            placeholder="e.g., Route A Main Campus"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                        <div class="w-full">
+                          <label class="block font-medium mb-1"
+                            >Assigned Driver *</label
+                          >
+                          <input
+                            type="text"
+                            required
+                            placeholder="e.g., John Adebayo"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="flex items-center gap-2 mt-7 mb-8">
+                        <i
+                          data-lucide="wallet"
+                          class="w-6 h-6 text-gray-700"
+                        ></i>
+                        <h2 class="text-xl font-semibold text-gray-700">
+                          Financial Information
+                        </h2>
+                      </div>
+
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                        <div class="w-full">
+                          <label class="block font-medium mb-1"
+                            >Purchase Date*</label
+                          >
+                          <input
+                            type="date"
+                            required
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                        <div class="w-full">
+                          <label class="block font-medium mb-1"
+                            >Purchase Value (₦)*</label
+                          >
+                          <input
+                            type="number"
+                            required
+                            placeholder="e.g., 180,000,000"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                        <div class="w-full">
+                          <label class="block font-medium mb-1"
+                            >Current Value (₦)*</label
+                          >
+                          <input
+                            type="number"
+                            required
+                            placeholder="e.g., 150,000,000"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                        <div class="w-full">
+                          <label class="block font-medium mb-1"
+                            >Monthly Fuel Cost (₦)*</label
+                          >
+                          <input
+                            type="number"
+                            required
+                            placeholder="e.g., 250,000,000"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Buttons -->
+                  <div class="flex justify-end gap-4 mt-8">
+                    <button
+                      type="reset"
+                      class="border border-gray-400 px-6 py-2 rounded-md hover:bg-gray-100 cursor-pointer transition"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition flex items-center gap-2"
+                    >
+                      <i data-lucide="plus" class="w-5 h-5"></i>
+                      Add Vehicle
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Cards -->
+      <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-10 mt-18">
+        <div
+          class="bg-green-100 rounded-lg shadow p-6 flex items-center gap-3 transition"
+        >
+          <div>
+            <p class="text-gray-500 font-semibold mb-2">Fleet Value</p>
+            <p class="text-3xl font-bold">₦49,000,000</p>
+            <p
+              class="flex items-center mt-2 gap-1 rounded-full text-xs text-green-600"
+            >
+              <i
+                data-lucide="trending-up"
+                class="w-3 h-3 mr-2 text-green-600"
+              ></i>
+              Total current value
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow p-6 flex items-center gap-3 transition"
+        >
+          <div>
+            <p class="text-gray-500 font-semibold mb-2">Active Vehicles</p>
+            <p class="text-3xl font-bold">4</p>
+
+            <p class="text-gray-500 mt-2 text-xs">1 in maintenance</p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow p-6 flex items-center gap-3 transition"
+        >
+          <div>
+            <p class="text-gray-500 font-semibold mb-2">Total Capacity</p>
+            <p class="text-3xl font-bold">76</p>
+            <p
+              class="flex items-center mt-2 gap-1 rounded-full text-xs text-gray-500"
+            >
+              <i data-lucide="users" class="w-3 h-3 mr-2 text-gray-500"></i>
+              Passenger seats
+            </p>
+          </div>
+        </div>
+        <div
+          class="bg-white rounded-lg shadow p-6 flex items-center gap-3 transition"
+        >
+          <div>
+            <p class="text-gray-500 font-semibold mb-2">Monthly Fuel</p>
+            <p class="text-3xl font-bold">₦1,000,000</p>
+            <p
+              class="flex items-center mt-2 gap-1 rounded-full text-xs text-yellow-500"
+            >
+              <i data-lucide="fuel" class="w-3 h-3 mr-2 text-yellow-500"></i>
+              Estimated cost
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-white rounded-lg shadow p-6 flex items-center gap-3 transition"
+        >
+          <div>
+            <p class="text-gray-500 font-semibold mb-2">Fleet Size</p>
+            <p class="text-3xl font-bold">5</p>
+
+            <p class="text-gray-500 mt-2 text-xs">Total vehicles</p>
+          </div>
+        </div>
+      </section>
+
+      <div
+        class="flex flex-wrap items-center gap-3 bg-white border border-gray-200 rounded-xl shadow-md p-3"
+      >
+        <div class="relative flex-1 min-w-[180px]">
+          <i
+            data-lucide="search"
+            class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+          ></i>
+
+          <input
+            type="text"
+            placeholder="Search vehicles..."
+            class="w-full pl-10 pr-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+          />
+        </div>
+
+        <button
+          class="p-2 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-200"
+          title="Filter options"
+        >
+          <i data-lucide="filter" class="1-4 h-4 text-gray-600"></i>
+        </button>
+        <select
+          class="text-sm border border-gray-300 rounded-lg h-[42px] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+        >
+          <option>All</option>
+          <option>School Bus</option>
+          <option>Staff Car</option>
+          <option>Delivery Van</option>
+          <option>Maintenance Vehicle</option>
+          <option>Emergency Vehicle</option>
+          <option>Other</option>
+        </select>
+        <select
+          class="text-sm border border-gray-300 rounded-lg px-3 h-[42px] py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+        >
+          <option>All</option>
+          <option>Active</option>
+          <option>Maintenance</option>
+          <option>Out of Service</option>
+          <option>Retired</option>
+        </select>
+      </div>
+
+      <!-- Transport Table -->
+      <div
+        class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mt-8"
+      >
+        <div class="flex flex-col mb-6">
+          <h2 class="font-semibold text-2xl text-gray-700">Fleet Inventory</h2>
+          <p class="text-gray-500">
+            Complete overview of all school vehicles and transportation assets
+          </p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full border-collapse">
+            <thead>
+              <tr class="text-sm text-gray-800 border-b border-gray-200">
+                <th class="py-3 px-4 text-left font-medium">Vehicle</th>
+                <th class="py-3 px-4 text-left font-medium">Type</th>
+                <th class="py-3 px-4 text-left font-medium">Plate Number</th>
+                <th class="py-3 px-4 text-left font-medium">Capacity</th>
+                <th class="py-3 px-4 text-left font-medium">Fuel Type</th>
+                <th class="py-3 px-4 text-left font-medium">Status</th>
+                <th class="py-3 px-4 text-left font-medium">Condition</th>
+                <th class="py-3 px-4 text-left font-medium">Assigned Route</th>
+                <th class="py-3 px-4 text-left font-medium">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-700">
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="truck"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Delivery Van</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Hyundai H100 (2020)
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Type -->
+                <td class="py-3 px-4 align-middle">Delivery Van</td>
+
+                <!-- Plate Number -->
+                <td class="py-3 px-4 font-semibold align-middle">EDU-004-DD</td>
+
+                <!-- Capacity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="users" class="w-4 h-4 text-gray-400"></i>
+                    3
+                  </span>
+                </td>
+
+                <!-- Fuel Type -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-yellow-50 text-yellow-700 font-medium"
+                    >Diesel</span
+                  >
+                </td>
+                <!-- Status -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >Active</span
+                  >
+                </td>
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                    >Good</span
+                  >
+                </td>
+
+                <!-- Assigned Route -->
+
+                <td class="py-3 px-4 align-middle">
+                  Supply Chain Operations
+                  <p class="text-xs text-gray-500">Driver: Supply Manager</p>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i
+                        data-lucide="calendar"
+                        class="w-4 h-4 text-gray-600"
+                      ></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i data-lucide="bus" class="w-4 h-4 text-green-700"></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >School Bus Beta B</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Isuzu NPR 400 (2021)
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Type -->
+                <td class="py-3 px-4 align-middle">School Bus</td>
+
+                <!-- Plate Number -->
+                <td class="py-3 px-4 font-semibold align-middle">EDU-002-DD</td>
+
+                <!-- Capacity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="users" class="w-4 h-4 text-gray-400"></i>
+                    35
+                  </span>
+                </td>
+
+                <!-- Fuel Type -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-yellow-50 text-yellow-700 font-medium"
+                    >Diesel</span
+                  >
+                </td>
+                <!-- Status -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >Active</span
+                  >
+                </td>
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                    >Good</span
+                  >
+                </td>
+
+                <!-- Assigned Route -->
+
+                <td class="py-3 px-4 align-middle">
+                  Route B Residential Area
+                  <p class="text-xs text-gray-500">Driver: John Adebayo</p>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i
+                        data-lucide="calendar"
+                        class="w-4 h-4 text-gray-600"
+                      ></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i data-lucide="bus" class="w-4 h-4 text-green-700"></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >School Bus Beta A</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Mercedes Sprinter 515 (2022)
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Type -->
+                <td class="py-3 px-4 align-middle">School Bus</td>
+
+                <!-- Plate Number -->
+                <td class="py-3 px-4 font-semibold align-middle">EDU-001-DD</td>
+
+                <!-- Capacity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="users" class="w-4 h-4 text-gray-400"></i>
+                    35
+                  </span>
+                </td>
+
+                <!-- Fuel Type -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-yellow-50 text-yellow-700 font-medium"
+                    >Diesel</span
+                  >
+                </td>
+                <!-- Status -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >Active</span
+                  >
+                </td>
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                    >Good</span
+                  >
+                </td>
+
+                <!-- Assigned Route -->
+
+                <td class="py-3 px-4 align-middle">
+                  Route A Residential Area
+                  <p class="text-xs text-gray-500">Driver: Mary Okafor</p>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i
+                        data-lucide="calendar"
+                        class="w-4 h-4 text-gray-600"
+                      ></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i data-lucide="car" class="w-4 h-4 text-green-700"></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Administrative Vehicle</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Toyota Camry (2023)
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Type -->
+                <td class="py-3 px-4 align-middle">Staff Car</td>
+
+                <!-- Plate Number -->
+                <td class="py-3 px-4 font-semibold align-middle">EDU-003-DD</td>
+
+                <!-- Capacity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="users" class="w-4 h-4 text-gray-400"></i>
+                    3
+                  </span>
+                </td>
+
+                <!-- Fuel Type -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-800 font-medium"
+                    >Petrol</span
+                  >
+                </td>
+                <!-- Status -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >Active</span
+                  >
+                </td>
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                    >Good</span
+                  >
+                </td>
+
+                <!-- Assigned Route -->
+
+                <td class="py-3 px-4 align-middle">
+                  Not assigned
+                  <p class="text-xs text-gray-500">
+                    Driver: Principal's Driver
+                  </p>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i
+                        data-lucide="calendar"
+                        class="w-4 h-4 text-gray-600"
+                      ></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="truck"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Maintenance Pickup</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Ford Ranger (2019)
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Type -->
+                <td class="py-3 px-4 align-middle">Maintenance Vehicle</td>
+
+                <!-- Plate Number -->
+                <td class="py-3 px-4 font-semibold align-middle">EDU-005-DD</td>
+
+                <!-- Capacity -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="users" class="w-4 h-4 text-gray-400"></i>
+                    5
+                  </span>
+                </td>
+
+                <!-- Fuel Type -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-yellow-50 text-yellow-800 font-medium"
+                    >Diesel</span
+                  >
+                </td>
+                <!-- Status -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-yellow-50 text-yellow-700 font-medium"
+                    >Maintenance</span
+                  >
+                </td>
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-yellow-50 text-yellow-700 font-medium"
+                    >Fair</span
+                  >
+                </td>
+
+                <!-- Assigned Route -->
+
+                <td class="py-3 px-4 align-middle">
+                  Facilities Maintenance
+                  <p class="text-xs text-gray-500">Driver: Maintenance Team</p>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i
+                        data-lucide="calendar"
+                        class="w-4 h-4 text-gray-600"
+                      ></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
   </body>
   <script src="navbar.js"></script>
+  <script>
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    const modal = document.getElementById("modal");
+
+    openModal.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    });
+
+    // Optional: close modal when clicking outside
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    });
+  </script>
 </html>
