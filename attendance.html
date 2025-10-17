@@ -84,7 +84,9 @@
           </div>
         </section>
         <!-- Attendance Tabs -->
-        <div class="flex gap-3 mb-6 px-6">
+        <div
+          class="flex flex-wrap justify-center gap-4 px-6 mb-8 py-4 bg-gray-50 rounded-xl shadow"
+        >
           <button
             id="btnTakeAttendance"
             class="bg-gray-400 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition"
@@ -109,8 +111,10 @@
         <div id="tabsContent" class="space-y-6 px-6">
           <!-- Take Attendance Content -->
           <div id="takeAttendanceTab" class="bg-white p-6 rounded-lg shadow">
-            <h2 class="text-xl font-bold mb-2">Mark Attendance</h2>
-            <p class="mb-4 text-gray-600">Select date to mark attendance</p>
+            <h2 class="text-xl font-bold mb-2 text-green-500">
+              Mark Attendance
+            </h2>
+            <p class="mb-4 text-gray-400">Select date to mark attendance</p>
 
             <input
               type="date"
@@ -147,8 +151,10 @@
             id="staffAttendanceTab"
             class="bg-white p-6 rounded-lg shadow hidden"
           >
-            <h2 class="text-xl font-bold mb-2">Staff Attendance</h2>
-            <p class="mb-4 text-gray-600">Mark attendance for staff members</p>
+            <h2 class="text-xl font-bold mb-2 text-green-500">
+              Staff Attendance
+            </h2>
+            <p class="mb-4 text-gray-400">Mark attendance for staff members</p>
 
             <!-- Staff Table Placeholder -->
             <div id="staffTable"></div>
@@ -270,52 +276,42 @@
       studentTable.innerHTML = `
     <h2 class="text-lg font-bold text-green-600 mb-2">${selectedClass}</h2>
     <p class="mb-4 text-gray-600">Mark attendance for each student</p>
-    <table class="w-full border-collapse border border-gray-400">
-      <thead>
-        <tr class="bg-gray-100">
-          <th class="py-2 px-3 border-b border-gray-300">Roll No</th>
-          <th class="py-2 px-3 border-b border-gray-300">Student Name</th>
-          <th class="py-2 px-3 border-b border-gray-300">Status</th>
-          <th class="py-2 px-3 border-b border-gray-300">Check-in Time</th>
-          <th class="py-2 px-3 border-b border-gray-300">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="px-3 py-2 border-b border-gray-200">1</td>
-          <td class="px-3 py-2 border-b border-gray-200">Chioma Okeke</td>
-          <td class="px-3 py-2 border-b border-gray-200">Present</td>
-          <td class="px-3 py-2 border-b border-gray-200">08:05 AM</td>
-          <td class="px-3 py-2 border-b border-gray-200 flex gap-2">
+   <table class="w-full border border-gray-400 text-left">
+        <thead class="bg-gray-400 text-white">
+          <tr>
+            <th class="p-2 border border-gray-400">Roll No</th>
+            <th class="p-2 border border-gray-400">Name</th>
+            <th class="p-2 border border-gray-400">Status</th>
+            <th class="p-2 border border-gray-400">Check-in Time</th>
+            <th class="p-2 border border-gray-400">Actions</th>
+         
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-2 border border-gray-400">1</td>
+            <td class="p-2 border border-gray-400">Micheal Okeke</td>
+            <td class="p-2 border border-gray-400">Present</td>
+            <td class="p-2 border border-gray-400">08:00 AM</td>
+            <td class="p-2   border border-gray-400 gap-2">
             <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
             <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
             <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
           </td>
-        </tr>
-        <tr>
-          <td class="px-3 py-2 border-b border-gray-200">2</td>
-          <td class="px-3 py-2 border-b border-gray-200">Wisdom Okeke</td>
-          <td class="px-3 py-2 border-b border-gray-200">Absent</td>
-          <td class="px-3 py-2 border-b border-gray-200">Null</td>
-          <td class="px-3 py-2 border-b border-gray-200 flex gap-2">
+          </tr>
+          <tr>
+            <td class="p-2 border border-gray-400">2</td>
+            <td class="p-2 border border-gray-400">Amadi Ukoha</td>
+            <td class="p-2 border border-gray-400">Late</td>
+            <td class="p-2 border border-gray-400">08:30 AM</td>
+            <td class="p-2  border-gray-400 flex gap-2">
             <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
             <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
             <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
           </td>
-        </tr>
-        <tr>
-          <td class="px-3 py-2 border-b border-gray-200">3</td>
-          <td class="px-3 py-2 border-b border-gray-200">Michael Okeke</td>
-          <td class="px-3 py-2 border-b border-gray-200">Late</td>
-          <td class="px-3 py-2 border-b border-gray-200">13:05 PM</td>
-          <td class="px-3 py-2 border-b border-gray-200 flex gap-2">
-            <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
-            <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
-            <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+          </tr>
+        </tbody>
+      </table>
   `;
       studentTable.classList.remove("hidden");
     });
@@ -324,41 +320,42 @@
     function loadStaffTable() {
       const staffTable = document.getElementById("staffTable");
       staffTable.innerHTML = `
-    <table class="w-full border-collapse border border-gray-400">
-      <thead>
-        <tr class="bg-gray-100">
-          <th class="py-2 px-3 border-b border-gray-300">Staff ID</th>
-          <th class="py-2 px-3 border-b border-gray-300">Staff Name</th>
-          <th class="py-2 px-3 border-b border-gray-300">Status</th>
-          <th class="py-2 px-3 border-b border-gray-300">Check-in Time</th>
-          <th class="py-2 px-3 border-b border-gray-300">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="px-3 py-2 border-b border-gray-200">STF001</td>
-          <td class="px-3 py-2 border-b border-gray-200">Mr. James</td>
-          <td class="px-3 py-2 border-b border-gray-200">Present</td>
-          <td class="px-3 py-2 border-b border-gray-200">07:45 AM</td>
-          <td class="px-3 py-2 border-b border-gray-200 flex gap-2">
+ <table class="w-full border border-gray-400 text-left">
+        <thead class="bg-gray-400 text-white">
+          <tr>
+            <th class="p-2 border border-gray-400">Staff ID</th>
+            <th class="p-2 border border-gray-400">Staff Name</th>
+            <th class="p-2 border border-gray-400">Status</th>
+            <th class="p-2 border border-gray-400">Check-in Time</th>
+            <th class="p-2 border border-gray-400">Actions</th>
+         
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="p-2 border border-gray-400">1</td>
+            <td class="p-2 border border-gray-400">Mr. Justice</td>
+            <td class="p-2 border border-gray-400">Present</td>
+            <td class="p-2 border border-gray-400">08:00 AM</td>
+            <td class="p-2   border border-gray-400 gap-2">
             <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
             <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
             <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
           </td>
-        </tr>
-        <tr>
-          <td class="px-3 py-2 border-b border-gray-200">STF002</td>
-          <td class="px-3 py-2 border-b border-gray-200">Mrs. Janet</td>
-          <td class="px-3 py-2 border-b border-gray-200">Absent</td>
-          <td class="px-3 py-2 border-b border-gray-200">--</td>
-          <td class="px-3 py-2 border-b border-gray-200 flex gap-2">
+          </tr>
+          <tr>
+            <td class="p-2 border border-gray-400">2</td>
+            <td class="p-2 border border-gray-400">Mr. Ukoha</td>
+            <td class="p-2 border border-gray-400">Late</td>
+            <td class="p-2 border border-gray-400">12:30 AM</td>
+            <td class="p-2  border-gray-400 flex gap-2">
             <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
             <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
             <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
           </td>
-        </tr>
-      </tbody>
-    </table>
+          </tr>
+        </tbody>
+      </table>
   `;
     }
     fetch("navbar.html")
