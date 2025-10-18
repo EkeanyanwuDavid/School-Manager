@@ -78,17 +78,19 @@
                   <div class="flex flex-col mb-6">
                     <div class="flex items-center gap-2 mb-2">
                       <i data-lucide="file" class="w-6 h-6 text-gray-700"></i>
-                      <h2 class="text-2xl font-medium text-gray-700">
+                      <h3 class="text-xl font-medium text-gray-700">
                         Basic Information
-                      </h2>
+                      </h3>
                     </div>
-                    <p class="text-gray-400">Essential asset details</p>
+                    <p class="text-gray-400 text-sm">Essential asset details</p>
                   </div>
 
                   <!-- Form Fields -->
                   <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                     <div class="w-full md:col-span-2">
-                      <label for="assetName" class="block font-medium mb-1"
+                      <label
+                        for="assetName"
+                        class="block text-sm font-medium mb-1"
                         >Asset Name *</label
                       >
                       <input
@@ -96,15 +98,15 @@
                         id="assetName"
                         required
                         placeholder="e.g., Dell Laptops (Computer Lab 1)"
-                        class="w-full border border-gray-400 rounded-md px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                       />
                     </div>
                     <div class="w-full md:col-span-2">
-                      <label for="" class="block font-medium mb-1"
+                      <label for="" class="block text-sm font-medium mb-1"
                         >Category*</label
                       >
                       <select
-                        class="w-full border border-gray-400 rounded-md px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                       >
                         <option>Select asset category</option>
                         <option>IT Equipment</option>
@@ -115,7 +117,7 @@
                       </select>
                     </div>
                     <div class="w-full md:col-span-2">
-                      <label for="" class="block font-medium mb-1">
+                      <label for="" class="block text-sm font-medium mb-1">
                         Purchase Value (₦)*
                       </label>
                       <input
@@ -123,16 +125,16 @@
                         id=""
                         required
                         placeholder="Enter purchase amount"
-                        class="w-full border border-gray-400 rounded-md px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                       />
                     </div>
 
                     <div class="w-full md:col-span-2">
-                      <label for="" class="block font-medium mb-1"
+                      <label for="" class="block text-sm font-medium mb-1"
                         >Category*</label
                       >
                       <select
-                        class="w-full border border-gray-400 rounded-md px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                       >
                         <option>Select condition</option>
                         <option>Excellent</option>
@@ -149,9 +151,9 @@
                 <div class="flex flex-col mb-6">
                   <div class="flex items-center gap-2 mb-2">
                     <i data-lucide="map-pin" class="w-6 h-6 text-gray-700"></i>
-                    <h2 class="text-2xl font-medium text-gray-700">
+                    <h3 class="text-xl font-semibold text-gray-700">
                       Location & Details
-                    </h2>
+                    </h3>
                   </div>
                   <p class="text-gray-400">
                     Physical location and additional information
@@ -159,7 +161,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
                   <div class="w-full md:col-span-2">
-                    <label for="" class="block font-medium mb-1"
+                    <label for="" class="block text-sm font-semibold mb-1"
                       >Location *</label
                     >
                     <input
@@ -167,11 +169,11 @@
                       id=""
                       required
                       placeholder="e.g., Computer Lab 1, Administrative Block"
-                      class="w-full border border-gray-400 rounded-md px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
                   </div>
                   <div class="w-full md:col-span-2">
-                    <label for="" class="block font-medium mb-1"
+                    <label for="" class="block text-sm font-semibold mb-1"
                       >Supplier/Vendor</label
                     >
                     <input
@@ -179,11 +181,11 @@
                       id=""
                       required
                       placeholder="Name of supplier or vendor"
-                      class="w-full border border-gray-400 rounded-md px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
                   </div>
                   <div class="w-full md:col-span-2">
-                    <label for="" class="block font-medium mb-1"
+                    <label for="" class="block text-sm font-semibold mb-1"
                       >Serial Number</label
                     >
                     <input
@@ -191,11 +193,11 @@
                       id=""
                       required
                       placeholder="Asset serial or model number"
-                      class="w-full border border-gray-400 rounded-md px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
                   </div>
                   <div class="w-full md:col-span-2">
-                    <label for="" class="block font-medium mb-1"
+                    <label for="" class="block text-sm font-semibold mb-1"
                       >Description</label
                     >
                     <textarea
@@ -213,9 +215,9 @@
                 <div class="flex flex-col mb-6">
                   <div class="flex items-center gap-2 mb-2">
                     <i data-lucide="calendar" class="w-6 h-6 text-gray-700"></i>
-                    <h2 class="text-2xl font-medium text-gray-700">
+                    <h3 class="text-lg font-semibold text-gray-700">
                       Important Dates
-                    </h2>
+                    </h3>
                   </div>
                   <p class="text-gray-400">Purchase and warranty information</p>
                 </div>
@@ -223,7 +225,10 @@
                 <!-- Dates Row -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div class="w-full">
-                    <label for="purchaseDate" class="block font-medium mb-1">
+                    <label
+                      for="purchaseDate"
+                      class="block text-sm font-semibold mb-1"
+                    >
                       Purchase Date *
                     </label>
                     <input
@@ -234,7 +239,10 @@
                   </div>
 
                   <div class="w-full">
-                    <label for="warrantyExpiry" class="block font-medium mb-1">
+                    <label
+                      for="warrantyExpiry"
+                      class="block text-sm font-semibold mb-1"
+                    >
                       Warranty Expiry (Optional)*
                     </label>
                     <input

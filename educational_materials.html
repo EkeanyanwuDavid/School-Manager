@@ -60,44 +60,46 @@
               <div class="flex flex-col mb-6">
                 <div class="flex items-center gap-2 mb-2">
                   <i data-lucide="school" class="w-6 h-6 text-green-700"></i>
-                  <h2 class="text-2xl font-semibold text-gray-700">
+                  <h2 class="text-xl font-semibold text-gray-700">
                     Add New Educational Material
                   </h2>
                 </div>
-                <p class="text-gray-400">
+                <p class="text-gray-400 text-sm">
                   Add new educational material, supply, or equipment to the
                   inventory
                 </p>
               </div>
 
               <!-- Form card -->
-              <div class="bg-white shadow rounded-lg p-8 w-full">
+              <div class="bg-white shadow rounded-lg p-6 w-full">
                 <form id="" class="space-y-10 w-full">
                   <!-- Basic Information -->
                   <div>
                     <div class="flex items-center gap-2 mb-4">
                       <i data-lucide="file" class="w-6 h-6 text-gray-700"></i>
-                      <h2 class="text-2xl font-medium text-gray-700">
+                      <h2 class="font-semibold text-gray-700">
                         Basic Information
                       </h2>
                     </div>
                     <div class="w-full mb-6">
-                      <label class="block font-medium mb-1"
+                      <label class="block text-sm font-semibold mb-1"
                         >Material Name *</label
                       >
                       <input
                         type="text"
                         required
                         placeholder="e.g., Mathematics Textboook Grade 10"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                       />
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                       <!-- Category -->
                       <div class="w-full">
-                        <label class="block font-medium mb-1">Category *</label>
+                        <label class="block text-sm font-semibold mb-1"
+                          >Category *</label
+                        >
                         <select
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                         >
                           <option value="">Select Category</option>
                           <option>Textbooks</option>
@@ -113,9 +115,11 @@
                       </div>
 
                       <div class="w-full">
-                        <label class="block font-medium mb-1">Subject *</label>
+                        <label class="block text-sm font-semibold mb-1"
+                          >Subject *</label
+                        >
                         <select
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                         >
                           <option value="">Select Subject (optional)</option>
                           <option>Mathematics</option>
@@ -143,12 +147,12 @@
                       </div>
 
                       <div class="w-full">
-                        <label class="block font-medium mb-1"
+                        <label class="block text-sm font-semibold mb-1"
                           >Grade Level *</label
                         >
 
                         <select
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                         >
                           <option>Nursery 1</option>
                           <option>Nursery 2</option>
@@ -168,45 +172,45 @@
                       </div>
 
                       <div class="w-full">
-                        <label class="block font-medium mb-1"
+                        <label class="block text-sm font-semibold mb-1"
                           >Brand/Manufacturer *</label
                         >
                         <input
                           type="text"
                           placeholder="e.g., Macmillan, Casio"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
                       </div>
 
                       <div class="w-full">
-                        <label class="block font-medium mb-1"
+                        <label class="block text-sm font-semibold mb-1"
                           >Model/Edition *</label
                         >
                         <input
                           type="text"
                           placeholder="e.g., 2024 Edition, FX-991EX"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
                       </div>
 
                       <div class="w-full">
-                        <label class="block font-medium mb-1"
+                        <label class="block text-sm font-semibold mb-1"
                           >ISBN (for books) *</label
                         >
                         <input
                           type="number"
                           placeholder="e.g., 978-0230434874"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
                       </div>
 
                       <div class="w-full">
-                        <label class="block font-medium mb-1"
+                        <label class="block text-sm font-semibold mb-1"
                           >Barcode/SKU *</label
                         >
                         <input
                           type="text"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                           placeholder="e.g., SCU001234567"
                         />
                       </div>
@@ -216,63 +220,65 @@
                   <!-- Inventiry Details -->
                   <div class="pt-8 border-t border-gray-200">
                     <div class="items-center gap-2 mb-8">
-                      <h2 class="text-xl font-semibold text-gray-700">
+                      <h3 class="font-semibold text-gray-700">
                         Inventory Details
-                      </h2>
+                      </h3>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                       <div>
-                        <label class="block font-medium mb-1">Quantity *</label>
+                        <label class="block text-sm font-semibold mb-1"
+                          >Quantity *</label
+                        >
                         <input
                           type="number"
                           name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                           id=""
                           placeholder="e.g, 150"
                         />
                       </div>
 
                       <div>
-                        <label class="block font-medium mb-1"
+                        <label class="block text-sm font-semibold mb-1"
                           >Unit Price (₦) *</label
                         >
                         <input
                           type="number"
                           name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                           id=""
                           placeholder="e.g, 2500"
                         />
                       </div>
 
                       <div>
-                        <label class="block font-medium mb-1"
+                        <label class="block text-sm font-semibold mb-1"
                           >Total Value (₦) *</label
                         >
                         <input
                           type="text"
                           placeholder="e.g., ₦0"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
                       </div>
                       <div>
-                        <label class="block font-medium mb-1"
+                        <label class="block text-sm font-semibold mb-1"
                           >Minimum Stock Level *</label
                         >
                         <input
                           type="number"
                           placeholder="e.g., 20"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
                       </div>
                       <div>
-                        <label class="block font-medium mb-1"
+                        <label class="block text-sm font-semibold mb-1"
                           >Condition *</label
                         >
                         <select
                           name=""
-                          class="w-full border border-gray-400 rounded-md px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                           id=""
                         >
                           <option value="">Select Condition</option>
@@ -284,12 +290,12 @@
                         </select>
                       </div>
                       <div>
-                        <label class="block font-medium mb-1"
+                        <label class="block text-sm font-semibold mb-1"
                           >Stock Status *</label
                         >
                         <select
                           name=""
-                          class="w-full border border-gray-400 rounded-md px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                           id=""
                         >
                           <option value="">Select Status</option>
@@ -305,52 +311,52 @@
                     <!-- Purchase & Location -->
                     <div>
                       <div class="items-center gap-2 mt-7 mb-8">
-                        <h2 class="text-xl font-semibold text-gray-700">
+                        <h3 class="font-semibold text-gray-700">
                           Purchase & Location
-                        </h2>
+                        </h3>
                       </div>
 
                       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                         <div class="w-full">
-                          <label class="block font-medium mb-1"
+                          <label class="block text-sm font-semibold mb-1"
                             >Supplier *</label
                           >
                           <input
                             type="text"
                             required
                             placeholder="e.g., Educational Publishers Ltd"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                           />
                         </div>
                         <div class="w-full">
-                          <label class="block font-medium mb-1"
+                          <label class="block text-sm font-semibold mb-1"
                             >Storage Location *</label
                           >
                           <input
                             type="text"
                             required
                             placeholder="e.g., Main Library - Section A"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                           />
                         </div>
                         <div class="w-full">
-                          <label class="block font-medium mb-1"
+                          <label class="block text-sm font-semibold mb-1"
                             >Purchase Date *</label
                           >
                           <input
                             type="date"
                             required
-                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                           />
                         </div>
                         <div class="w-full">
-                          <label class="block font-medium mb-1"
+                          <label class="block text-sm font-semibold mb-1"
                             >Expiry Date (if applicable) *</label
                           >
                           <input
                             type="date"
                             required
-                            class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                           />
                         </div>
                       </div>
@@ -358,7 +364,7 @@
                     <div>
                       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
                         <div class="w-full md:col-span-2 mt-6">
-                          <label for="" class="block font-medium mb-1"
+                          <label for="" class="block text-sm font-semibold mb-1"
                             >Description *</label
                           >
                           <textarea
@@ -391,8 +397,6 @@
                   </div>
                 </form>
               </div>
-
-              <!-- Form Actions -->
             </div>
           </div>
         </div>

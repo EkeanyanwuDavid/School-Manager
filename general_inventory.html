@@ -13,6 +13,1698 @@
   </head>
   <body>
     <div id="navbar"></div>
+
+    <main class="max-w-full mx-auto p-6 bg-gray-50 min-h-screen w-full">
+      <header class="mb-6">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <!-- Title + Description -->
+          <div class="ml-4 flex items-center gap-2">
+            <div>
+              <h2
+                class="flex items-center gap-2 text-3xl text-green-700 font-bold"
+              >
+                Inventory Management
+              </h2>
+              <p class="text-gray-500">
+                Manage educational, materials and cafeteria inventory
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center gap-3"
+          >
+            <button
+              class="border border-gray-500 font-semibold rounded-lg px-4 py-2 text-sm text-gray-700 flex items-center gap-2 w-full sm:w-auto"
+            >
+              <i class="bi bi-download"></i> Export Report
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div
+        class="flex flex-wrap justify-center gap-6 px-6 mb-8 py-4 rounded-xl shadow"
+      >
+        <button
+          id="btnEducational"
+          class="bg-gray-100 border tab-btns font-medium border-gray-300 text-gray-700 px-4 flex gap-2 py-2 rounded-md transition"
+        >
+          <i data-lucide="book" class="w-5 h-5"></i>
+          Educational Materials
+        </button>
+        <button
+          id="btnMaterials"
+          class="bg-gray-100 tab-btns border font-medium border-gray-300 text-gray-700 px-4 flex gap-2 py-2 rounded-md transition"
+        >
+          <i data-lucide="utensils-crossed" class="w-5 h-5"></i>
+          Cafeteria Inventory
+        </button>
+      </div>
+      <div id="Materials">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-7">
+          <!-- Card 1 -->
+          <div
+            class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between">
+              <h4 class="text-gray-600 font-medium">Total Items</h4>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-green-200 transition"
+              >
+                <i data-lucide="box" class="w-5 h-5 text-gray-600"></i>
+              </button>
+            </div>
+            <p class="text-3xl mt-4 font-bold text-gray-900">4</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between">
+              <h4 class="text-gray-600 font-medium">Available</h4>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-emerald-100 rounded-full hover:bg-emerald-200 transition"
+              >
+                <i
+                  data-lucide="check-circle"
+                  class="text-green-700 w-5 h-5"
+                ></i>
+              </button>
+            </div>
+            <p class="text-3xl mt-4 font-bold text-green-600">2</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between">
+              <h4 class="text-gray-600 font-medium">Low Stock</h4>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-yellow-100 rounded-full hover:bg-blue-200 transition"
+              >
+                <i
+                  data-lucide="alert-triangle"
+                  class="w-5 h-5 text-yellow-500"
+                ></i>
+              </button>
+            </div>
+            <p class="text-3xl mt-4 font-bold text-yellow-600">1</p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between">
+              <h4 class="text-gray-600 font-medium">Out of Stock</h4>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-red-100 rounded-full hover:bg-blue-200 transition"
+              >
+                <i data-lucide="clock" class="w-5 h-5 text-red-600"></i>
+              </button>
+            </div>
+            <p class="text-3xl mt-4 font-bold text-red-600">1</p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between">
+              <h4 class="text-gray-600 font-medium">Total Value</h4>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+              >
+                <i data-lucide="box" class="w-5 h-5 text-gray-600"></i>
+              </button>
+            </div>
+            <p class="text-3xl mt-4 font-bold text-gray-800">₦3,225,000</p>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-wrap items-center gap-3 mt-8 bg-white border border-gray-200 rounded-xl shadow-md p-3"
+        >
+          <div class="relative flex-1 min-w-[180px]">
+            <i
+              data-lucide="search"
+              class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+            ></i>
+
+            <input
+              type="text"
+              placeholder="Search educational materials..."
+              class="w-full pl-10 pr-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+            />
+          </div>
+
+          <button
+            class="p-2 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-200"
+            title="Filter options"
+          >
+            <i data-lucide="filter" class="1-4 h-4 text-gray-600"></i>
+          </button>
+          <select
+            class="text-sm border border-gray-300 rounded-lg h-[42px] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+          >
+            <option>All Categories</option>
+            <option>Textbooks</option>
+            <option>Lab Equipment</option>
+            <option>Reference Books</option>
+            <option>Technology</option>
+          </select>
+          <select
+            class="text-sm border border-gray-300 rounded-lg px-3 h-[42px] py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+          >
+            <option>All Status</option>
+            <option>Available</option>
+            <option>Low Stock</option>
+            <option>Out of Stock</option>
+          </select>
+
+          <button
+            id="openModal"
+            class="bg-green-700 font-semibold rounded-lg px-4 py-2 text-sm text-white flex items-center gap-2 w-full sm:w-auto"
+          >
+            <i class="bi bi-plus"></i> Add Material
+          </button>
+
+          <!-- Modal -->
+          <div
+            id="modal"
+            class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+          >
+            <!-- Close button -->
+            <button
+              id="closeModal"
+              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            >
+              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
+            </button>
+
+            <div class="flex flex-col h-full w-full">
+              <!-- Header -->
+              <div class="flex flex-col mb-6">
+                <div class="flex items-center gap-2 mb-2">
+                  <i data-lucide="school" class="w-6 h-6 text-green-700"></i>
+                  <h2 class="text-xl font-semibold text-gray-700">
+                    Add New Educational Material
+                  </h2>
+                </div>
+                <p class="text-gray-400 text-sm">
+                  Add new educational material, supply, or equipment to the
+                  inventory
+                </p>
+              </div>
+
+              <!-- Form card -->
+              <div class="bg-white shadow rounded-lg p-6 w-full">
+                <form id="" class="space-y-10 w-full">
+                  <!-- Basic Information -->
+                  <div>
+                    <div class="flex items-center gap-2 mb-4">
+                      <i data-lucide="file" class="w-6 h-6 text-gray-700"></i>
+                      <h2 class="font-semibold text-gray-700">
+                        Basic Information
+                      </h2>
+                    </div>
+                    <div class="w-full mb-6">
+                      <label class="block text-sm font-semibold mb-1"
+                        >Material Name *</label
+                      >
+                      <input
+                        type="text"
+                        required
+                        placeholder="e.g., Mathematics Textboook Grade 10"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                      <!-- Category -->
+                      <div class="w-full">
+                        <label class="block text-sm font-semibold mb-1"
+                          >Category *</label
+                        >
+                        <select
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        >
+                          <option value="">Select Category</option>
+                          <option>Textbooks</option>
+                          <option>Stationary</option>
+                          <option>Science Equipment</option>
+                          <option>Art Supplies</option>
+                          <option>Sports Equipment</option>
+                          <option>Music Instruments</option>
+                          <option>Digital Resources</option>
+                          <option>Teaching Aids</option>
+                          <option value="">Other</option>
+                        </select>
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block text-sm font-semibold mb-1"
+                          >Subject *</label
+                        >
+                        <select
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        >
+                          <option value="">Select Subject (optional)</option>
+                          <option>Mathematics</option>
+                          <option>English</option>
+                          <option>Science</option>
+                          <option>Physics</option>
+                          <option>Chemistry</option>
+                          <option>Biology</option>
+                          <option>History</option>
+                          <option>Geography</option>
+                          <option value="">Civic Education</option>
+                          <option>French</option>
+                          <option>Economics</option>
+                          <option>Government</option>
+                          <option>Computer Science</option>
+                          <option>Technical Drawing</option>
+                          <option>Visual Arts</option>
+                          <option>Music</option>
+                          <option>Physical Education</option>
+                          <option>Agricultural Science</option>
+                          <option>Home Economics</option>
+                          <option>Business Studies</option>
+                          <option>Accounting</option>
+                        </select>
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block text-sm font-semibold mb-1"
+                          >Grade Level *</label
+                        >
+
+                        <select
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        >
+                          <option>Nursery 1</option>
+                          <option>Nursery 2</option>
+                          <option>Primary 1</option>
+                          <option>Primary 2</option>
+                          <option>Primary 3</option>
+                          <option>Primary 4</option>
+                          <option>Primary 5</option>
+                          <option>Primary 6</option>
+                          <option>JSS 1</option>
+                          <option>JSS 2</option>
+                          <option>JSS 3</option>
+                          <option>SS 1</option>
+                          <option>SS 2</option>
+                          <option>SS 3</option>
+                        </select>
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block text-sm font-semibold mb-1"
+                          >Brand/Manufacturer *</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="e.g., Macmillan, Casio"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block text-sm font-semibold mb-1"
+                          >Model/Edition *</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="e.g., 2024 Edition, FX-991EX"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block text-sm font-semibold mb-1"
+                          >ISBN (for books) *</label
+                        >
+                        <input
+                          type="number"
+                          placeholder="e.g., 978-0230434874"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div class="w-full">
+                        <label class="block text-sm font-semibold mb-1"
+                          >Barcode/SKU *</label
+                        >
+                        <input
+                          type="text"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          placeholder="e.g., SCU001234567"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Inventiry Details -->
+                  <div class="pt-8 border-t border-gray-200">
+                    <div class="items-center gap-2 mb-8">
+                      <h3 class="font-semibold text-gray-700">
+                        Inventory Details
+                      </h3>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      <div>
+                        <label class="block text-sm font-semibold mb-1"
+                          >Quantity *</label
+                        >
+                        <input
+                          type="number"
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                          placeholder="e.g, 150"
+                        />
+                      </div>
+
+                      <div>
+                        <label class="block text-sm font-semibold mb-1"
+                          >Unit Price (₦) *</label
+                        >
+                        <input
+                          type="number"
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                          placeholder="e.g, 2500"
+                        />
+                      </div>
+
+                      <div>
+                        <label class="block text-sm font-semibold mb-1"
+                          >Total Value (₦) *</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="e.g., ₦0"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+                      <div>
+                        <label class="block text-sm font-semibold mb-1"
+                          >Minimum Stock Level *</label
+                        >
+                        <input
+                          type="number"
+                          placeholder="e.g., 20"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+                      <div>
+                        <label class="block text-sm font-semibold mb-1"
+                          >Condition *</label
+                        >
+                        <select
+                          name=""
+                          class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        >
+                          <option value="">Select Condition</option>
+                          <option value="">New</option>
+                          <option value="">Good</option>
+                          <option value="">Fair</option>
+                          <option value="">Poor</option>
+                          <option value="">Damaged</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label class="block text-sm font-semibold mb-1"
+                          >Stock Status *</label
+                        >
+                        <select
+                          name=""
+                          class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        >
+                          <option value="">Select Status</option>
+                          <option value="">In Stock</option>
+                          <option value="">Low Stock</option>
+                          <option value="">Out of Stock</option>
+                          <option value="">Ordered</option>
+                          <option value="">Damaged</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <!-- Purchase & Location -->
+                    <div>
+                      <div class="items-center gap-2 mt-7 mb-8">
+                        <h3 class="font-semibold text-gray-700">
+                          Purchase & Location
+                        </h3>
+                      </div>
+
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                        <div class="w-full">
+                          <label class="block text-sm font-semibold mb-1"
+                            >Supplier *</label
+                          >
+                          <input
+                            type="text"
+                            required
+                            placeholder="e.g., Educational Publishers Ltd"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                        <div class="w-full">
+                          <label class="block text-sm font-semibold mb-1"
+                            >Storage Location *</label
+                          >
+                          <input
+                            type="text"
+                            required
+                            placeholder="e.g., Main Library - Section A"
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                        <div class="w-full">
+                          <label class="block text-sm font-semibold mb-1"
+                            >Purchase Date *</label
+                          >
+                          <input
+                            type="date"
+                            required
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                        <div class="w-full">
+                          <label class="block text-sm font-semibold mb-1"
+                            >Expiry Date (if applicable) *</label
+                          >
+                          <input
+                            type="date"
+                            required
+                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                        <div class="w-full md:col-span-2 mt-6">
+                          <label for="" class="block text-sm font-semibold mb-1"
+                            >Description *</label
+                          >
+                          <textarea
+                            id=""
+                            placeholder="Brief description of the education material and its use"
+                            rows="3"
+                            required
+                            class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Buttons -->
+                  <div class="flex justify-end gap-4 mt-8">
+                    <button
+                      type="reset"
+                      class="border border-gray-400 px-6 py-2 rounded-md hover:bg-gray-100 cursor-pointer transition"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition flex items-center gap-2"
+                    >
+                      <i data-lucide="plus" class="w-5 h-5"></i>
+                      Add Material
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Materials Table Tabswitch -->
+        <div
+          class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mt-8"
+        >
+          <div class="flex flex-col mb-6">
+            <h2 class="font-semibold text-2xl text-gray-700">
+              Educational Materials
+            </h2>
+            <p class="text-gray-500">
+              Manage textbooks, equipment, and learning resources
+            </p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full border-collapse">
+              <thead>
+                <tr class="text-sm text-gray-800 border-b border-gray-200">
+                  <th class="py-3 px-4 text-left font-medium">Material Name</th>
+                  <th class="py-3 px-4 text-left font-medium">Category</th>
+                  <th class="py-3 px-4 text-left font-medium">Quantity</th>
+                  <th class="py-3 px-4 text-left font-medium">Available</th>
+                  <th class="py-3 px-4 text-left font-medium">Condition</th>
+                  <th class="py-3 px-4 text-left font-medium">Location</th>
+                  <th class="py-3 px-4 text-left font-medium">Status</th>
+                  <th class="py-3 px-4 text-left font-medium">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm text-gray-700">
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                        >
+                          <i
+                            data-lucide="book"
+                            class="w-4 h-4 text-green-700"
+                          ></i>
+                        </span>
+                        <span class="font-semibold text-gray-900"
+                          >Mathematics Textbook Grade 10</span
+                        >
+                      </div>
+                      <p class="text-gray-500 text-sm mt-1 ml-9">
+                        Macmillian &centerdot; ISBN:978-0230434874
+                      </p>
+                    </div>
+                  </td>
+
+                  <!-- Category -->
+                  <td class="py-3 px-4 align-middle">Textbooks</td>
+
+                  <!-- Quantity -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                      150
+                    </span>
+                  </td>
+
+                  <!-- Available -->
+
+                  <td class="py-3 px-4 font-semibold align-middle">120</td>
+
+                  <!-- Condition -->
+                  <td class="py-3 px-4 align-middle">
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                      >Good</span
+                    >
+                  </td>
+
+                  <!-- Location -->
+
+                  <td class="py-3 px-4 align-middle">
+                    Main Library &centerdot; Section A
+                  </td>
+
+                  <!-- Status -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-4 h-4 text-green-400"
+                      ></i>
+                      <span
+                        class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                        >In Stock</span
+                      >
+                    </span>
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i
+                          data-lucide="edit-3"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-red-100 transition"
+                      >
+                        <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                        >
+                          <i
+                            data-lucide="flask-conical"
+                            class="w-4 h-4 text-green-700"
+                          ></i>
+                        </span>
+                        <span class="font-semibold text-gray-900"
+                          >Chemistry Laboratory Set</span
+                        >
+                      </div>
+                      <p class="text-gray-500 text-sm mt-1 ml-9">Lab Pro</p>
+                    </div>
+                  </td>
+
+                  <!-- Category -->
+                  <td class="py-3 px-4 align-middle">Lab Equipment</td>
+
+                  <!-- Quantity -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                      25
+                    </span>
+                  </td>
+
+                  <!-- Available -->
+                  <td class="py-3 px-4 font-semibold align-middle">20</td>
+
+                  <!-- Condition -->
+                  <td class="py-3 px-4 align-middle">
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >Excellent</span
+                    >
+                  </td>
+
+                  <!-- Location -->
+                  <td class="py-3 px-4 align-middle">Chemistry Laboratory</td>
+
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-4 h-4 text-green-400"
+                      ></i>
+                      <span
+                        class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                        >In Stock</span
+                      >
+                    </span>
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i
+                          data-lucide="edit-3"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-red-100 transition"
+                      >
+                        <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                        >
+                          <i
+                            data-lucide="globe"
+                            class="w-4 h-4 text-green-700"
+                          ></i>
+                        </span>
+                        <span class="font-semibold text-gray-900"
+                          >World Atlas Collection</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Category -->
+                  <td class="py-3 px-4 align-middle">Reference Books</td>
+
+                  <!-- Quantity -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                      30
+                    </span>
+                  </td>
+
+                  <!-- Available -->
+                  <td class="py-3 px-4 font-semibold align-middle">5</td>
+
+                  <!-- Condition -->
+                  <td class="py-3 px-4 align-middle">
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-yellow-50 text-yellow-600 font-medium"
+                      >Fair</span
+                    >
+                  </td>
+
+                  <!-- Location -->
+                  <td class="py-3 px-4 align-middle">Library Section B</td>
+
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i
+                        data-lucide="alert-triangle"
+                        class="w-4 h-4 text-yellow-400"
+                      ></i>
+                      <span
+                        class="px-4 py-1 text-xs rounded-full bg-yellow-50 text-yellow-600 font-medium"
+                        >Low Stock</span
+                      >
+                    </span>
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i
+                          data-lucide="edit-3"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-red-100 transition"
+                      >
+                        <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                        >
+                          <i
+                            data-lucide="television"
+                            class="w-4 h-4 text-green-700"
+                          ></i>
+                        </span>
+                        <span class="font-semibold text-gray-900"
+                          >Digital Projector</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Category -->
+                  <td class="py-3 px-4 align-middle">Technology</td>
+
+                  <!-- Quantity -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                      10
+                    </span>
+                  </td>
+
+                  <!-- Available -->
+                  <td class="py-3 px-4 font-semibold align-middle">0</td>
+
+                  <!-- Condition -->
+                  <td class="py-3 px-4 align-middle">
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-600 font-medium"
+                      >Good</span
+                    >
+                  </td>
+
+                  <!-- Location -->
+                  <td class="py-3 px-4 align-middle">Storage Room</td>
+
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i data-lucide="clock" class="w-4 h-4 text-red-400"></i>
+                      <span
+                        class="px-4 py-1 text-xs rounded-full bg-red-50 text-red-700 font-medium"
+                        >Out of Stock</span
+                      >
+                    </span>
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i
+                          data-lucide="edit-3"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-red-100 transition"
+                      >
+                        <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="Cafeteria">
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-7">
+          <!-- Card 1 -->
+          <div
+            class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between">
+              <h4 class="text-gray-600 font-medium">Total Items</h4>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-green-200 transition"
+              >
+                <i
+                  data-lucide="utensils-crossed"
+                  class="w-5 h-5 text-gray-600"
+                ></i>
+              </button>
+            </div>
+            <p class="text-3xl mt-4 font-bold text-gray-900">4</p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between">
+              <h4 class="text-gray-600 font-medium">In Stock</h4>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-emerald-100 rounded-full hover:bg-emerald-200 transition"
+              >
+                <i
+                  data-lucide="check-circle"
+                  class="text-green-700 w-5 h-5"
+                ></i>
+              </button>
+            </div>
+            <p class="text-3xl mt-4 font-bold text-green-600">2</p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between">
+              <h4 class="text-gray-600 font-medium">Low Stock</h4>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-yellow-100 rounded-full hover:bg-blue-200 transition"
+              >
+                <i
+                  data-lucide="alert-triangle"
+                  class="w-5 h-5 text-yellow-500"
+                ></i>
+              </button>
+            </div>
+            <p class="text-3xl mt-4 font-bold text-yellow-600">1</p>
+          </div>
+
+          <div
+            class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between">
+              <h4 class="text-gray-600 font-medium">Out of Stock</h4>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-red-100 rounded-full hover:bg-blue-200 transition"
+              >
+                <i data-lucide="clock" class="w-5 h-5 text-red-600"></i>
+              </button>
+            </div>
+            <p class="text-3xl mt-4 font-bold text-red-600">1</p>
+          </div>
+          <div
+            class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition"
+          >
+            <div class="flex items-center justify-between">
+              <h4 class="text-gray-600 font-medium">Total Value</h4>
+              <button
+                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+              >
+                <i
+                  data-lucide="utensils-crossed"
+                  class="w-5 h-5 text-gray-600"
+                ></i>
+              </button>
+            </div>
+            <p class="text-3xl mt-4 font-bold text-gray-800">₦633,500</p>
+          </div>
+        </div>
+
+        <div
+          class="flex flex-wrap items-center gap-3 mt-8 bg-white border border-gray-200 rounded-xl shadow-md p-3"
+        >
+          <div class="relative flex-1 min-w-[180px]">
+            <i
+              data-lucide="search"
+              class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+            ></i>
+
+            <input
+              type="text"
+              placeholder="Search cafeteria items..."
+              class="w-full pl-10 pr-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+            />
+          </div>
+
+          <button
+            class="p-2 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-200"
+            title="Filter options"
+          >
+            <i data-lucide="filter" class="1-4 h-4 text-gray-600"></i>
+          </button>
+          <select
+            class="text-sm border border-gray-300 rounded-lg h-[42px] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+          >
+            <option>All Categories</option>
+            <option>Grains</option>
+            <option>Oils</option>
+            <option>Vegetables</option>
+            <option>Bakery</option>
+          </select>
+          <select
+            class="text-sm border border-gray-300 rounded-lg px-3 h-[42px] py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+          >
+            <option>All Status</option>
+            <option>In Stock</option>
+            <option>Low Stock</option>
+            <option>Out of Stock</option>
+          </select>
+
+          <button
+            id="openModal"
+            class="bg-green-700 font-semibold rounded-lg px-4 py-2 text-sm text-white flex items-center gap-2 w-full sm:w-auto"
+          >
+            <i class="bi bi-plus"></i> Add Material
+          </button>
+
+          <div
+            id="modal"
+            class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+          >
+            <!-- Close button -->
+            <button
+              id="closeModal"
+              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            >
+              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
+            </button>
+
+            <div class="p-6 bg-white rounded-2xl shadow-sm">
+              <h2
+                class="text-xl font-semibold text-gray-800 flex items-center gap-2 mb-1"
+              >
+                <i
+                  data-lucide="utensils-crossed"
+                  class="w-5 h-5 text-green-600"
+                ></i>
+                Add New Cafeteria Item
+              </h2>
+              <p class="text-gray-500 text-sm mb-6">
+                Enter the details of the new cafeteria item
+              </p>
+
+              <form action="" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 class="font-semibold text-gray-700 mb-3">
+                    Basic Information
+                  </h3>
+                  <div class="space-y-4">
+                    <div>
+                      <label for="" class="block text-sm text-gray-600 mb-1"
+                        >Item Name *</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="Enter item name"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Category</label
+                        >
+                        <select
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        >
+                          <option>Select category</option>
+                          <option value="">Fruits & Vegetables</option>
+                          <option value="">Meat & Poultry</option>
+                          <option value="">Dairy Products</option>
+                          <option value="">Grains & Cereals</option>
+                          <option value="">Beverages</option>
+                          <option value="">Spices & Seasonings</option>
+                          <option value="">Frozen Foods</option>
+                          <option value="">Snacks</option>
+                          <option value="">Cleaning Supplies</option>
+                          <option value="">Kitchen Equipments</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Brand</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="Enter brand name"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label for="" class="block text-sm text-gray-600 mb-1"
+                        >Supplier *</label
+                      >
+                      <select
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      >
+                        <option>Select supplier</option>
+                        <option>Main Market Suppliers</option>
+                        <option>Local Poultry Farm</option>
+                        <option>Vegetable Market</option>
+                        <option>Food Distributors Ltd</option>
+                        <option>Local Dairy</option>
+                        <option>Wholesale Food Co.</option>
+                        <option>Fresh Produce Ltd</option>
+                        <option>Meat & More</option>
+                        <option>Dairy Fresh</option>
+                        <option>Spice World</option>
+                        <option>Kitchen Supplies Co.</option>
+                        <option>Frozen Foods Ltd</option>
+                        <option>Beverage Distributors</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-700 mb-3">
+                    Quantity & Pricing
+                  </h3>
+                  <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-3">
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Quantity</label
+                        >
+                        <input
+                          type="number"
+                          name=""
+                          placeholder="0"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        />
+                      </div>
+                      <div>
+                        <label for="" class="text-sm block text-gray-600 mb-1"
+                          >Unit *</label
+                        >
+                        <select
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        >
+                          <option>kg</option>
+                          <option>g</option>
+                          <option>L</option>
+                          <option>ml</option>
+                          <option>pieces</option>
+                          <option>packets</option>
+                          <option>boxes</option>
+                          <option>bottles</option>
+                          <option>cans</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Unit Price (₦)</label
+                        >
+                        <input
+                          type="number"
+                          placeholder="0.00"
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        />
+                      </div>
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Minimum Stock Level *</label
+                        >
+                        <input
+                          type="number"
+                          name=""
+                          placeholder="0"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="font-semibold text-gray-700 mb-3">
+                    Status & Condition
+                  </h3>
+                  <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-3">
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Condition</label
+                        >
+                        <select
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        >
+                          <option value="">Select condition</option>
+                          <option value="">Fresh</option>
+                          <option value="">Good</option>
+                          <option value="">Fair</option>
+                          <option value="">Expired</option>
+                          <option value="">Damaged</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Status
+                        </label>
+                        <select
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        >
+                          <option>Select status</option>
+                          <option>In Stock</option>
+                          <option>Low Stock</option>
+                          <option>Out of Stock</option>
+                          <option>Ordered</option>
+                          <option>Expired</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="" class="block text-sm text-gray-600 mb-1"
+                        >Storage Location *</label
+                      >
+                      <select
+                        name=""
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        id=""
+                      >
+                        <option>Select storage location</option>
+                        <option>Freezer</option>
+                        <option>Refridgerator</option>
+                        <option>Pantry</option>
+                        <option>Dry Storage</option>
+                        <option>Kitchen counter</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="font-semibold text-gray-700 mb-3">
+                    Dates & Additional Info
+                  </h3>
+                  <div class="space-y-3">
+                    <div class="grid grid-cols-2 gap-3">
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Purchase Date</label
+                        >
+                        <input
+                          type="date"
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        />
+                      </div>
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Expiry Date</label
+                        >
+                        <input
+                          type="date"
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label for="" class="block text-sm text-gray-600 mb-1"
+                        >Barcode</label
+                      >
+                      <input
+                        type="text"
+                        name=""
+                        placeholder="Enter barcode"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        id=""
+                      />
+                    </div>
+                    <div>
+                      <label for="" class="block text-sm text-gray-600 mb-1"
+                        >Allergens</label
+                      >
+                      <input
+                        type="text"
+                        name=""
+                        placeholder="e.g., Dairy, Nuts, Gluten"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        id=""
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="md:col-span-2">
+                  <label for="" class="block text-sm text-gray-600 mb-1"
+                    >Description</label
+                  >
+                  <textarea
+                    name=""
+                    placeholder="Enter item description"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    id=""
+                  ></textarea>
+                </div>
+                <div class="md:col-span-2">
+                  <label for="" class="block text-sm text-gray-600 mb-1"
+                    >Nutritional Information</label
+                  >
+                  <textarea
+                    name=""
+                    placeholder="Enter nutritional information (optional)"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    id=""
+                  ></textarea>
+                </div>
+              </form>
+              <div class="flex justify-end gap-3 mt-6">
+                <button
+                  type="button"
+                  class="px-5 py-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  class="px-6 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 flex items-center gap-2"
+                >
+                  <i data-lucide="plus" class="w-4 h-4"></i>
+                  Add item to Inventory
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education Materials Table Tabswitch -->
+        <div
+          class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mt-8"
+        >
+          <div class="flex flex-col mb-6">
+            <h2 class="font-semibold text-2xl text-gray-700">
+              Cafeteria Inventory
+            </h2>
+            <p class="text-gray-500">
+              Manage food, items, supplies and kitchen resources
+            </p>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="min-w-full border-collapse">
+              <thead>
+                <tr class="text-sm text-gray-800 border-b border-gray-200">
+                  <th class="py-3 px-4 text-left font-medium">Item Name</th>
+                  <th class="py-3 px-4 text-left font-medium">Category</th>
+                  <th class="py-3 px-4 text-left font-medium">Quantity</th>
+                  <th class="py-3 px-4 text-left font-medium">Unit</th>
+                  <th class="py-3 px-4 text-left font-medium">Expiry Date</th>
+                  <th class="py-3 px-4 text-left font-medium">Supplied</th>
+                  <th class="py-3 px-4 text-left font-medium">Cost/Unit</th>
+                  <th class="py-3 px-4 text-left font-medium">Status</th>
+                  <th class="py-3 px-4 text-left font-medium">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm text-gray-700">
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                        >
+                          <i
+                            data-lucide="utensils-crossed"
+                            class="w-4 h-4 text-green-700"
+                          ></i>
+                        </span>
+                        <span class="font-semibold text-gray-900">Rice </span>
+                      </div>
+                      <p class="text-gray-500 text-sm mt-1 ml-9">50kg bags</p>
+                    </div>
+                  </td>
+
+                  <!-- Category -->
+                  <td class="py-3 px-4 align-middle">Grains</td>
+
+                  <!-- Quantity -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                      20
+                    </span>
+                  </td>
+
+                  <!-- Unit -->
+
+                  <td class="py-3 px-4 font-semibold align-middle">bags</td>
+
+                  <!-- Expiry Date -->
+                  <td class="py-3 px-4 align-middle">2024-06-15</td>
+
+                  <!-- Supplier -->
+
+                  <td class="py-3 px-4 align-middle">Local Farms Ltd</td>
+
+                  <!-- Cost/Unit -->
+                  <td class="py-3 px-4 align-middle">₦25,000</td>
+
+                  <!-- Status -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-4 h-4 text-green-400"
+                      ></i>
+                      <span
+                        class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                        >In Stock</span
+                      >
+                    </span>
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i
+                          data-lucide="edit-3"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-red-100 transition"
+                      >
+                        <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                        >
+                          <i
+                            data-lucide="droplet"
+                            class="w-4 h-4 text-green-700"
+                          ></i>
+                        </span>
+                        <span class="font-semibold text-gray-900"
+                          >Cooking Oil</span
+                        >
+                      </div>
+                      <p class="text-gray-500 text-sm mt-1 ml-9">5L</p>
+                    </div>
+                  </td>
+
+                  <!-- Category -->
+                  <td class="py-3 px-4 align-middle">Oils</td>
+
+                  <!-- Quantity -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                      15
+                    </span>
+                  </td>
+
+                  <!-- Unit -->
+                  <td class="py-3 px-4 font-semibold align-middle">Bottles</td>
+
+                  <!-- Condition -->
+                  <td class="py-3 px-4 align-middle">2024-06-15</td>
+
+                  <!-- Supplier -->
+                  <td class="py-3 px-4 align-middle">Golden Oil Co.</td>
+                  <td class="py-3 px-4 align-middle">₦8,500</td>
+
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i
+                        data-lucide="check-circle"
+                        class="w-4 h-4 text-green-400"
+                      ></i>
+                      <span
+                        class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                        >In Stock</span
+                      >
+                    </span>
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i
+                          data-lucide="edit-3"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-red-100 transition"
+                      >
+                        <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                        >
+                          <i
+                            data-lucide="apple"
+                            class="w-4 h-4 text-green-700"
+                          ></i>
+                        </span>
+                        <span class="font-semibold text-gray-900"
+                          >Fresh Tomatoes</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Category -->
+                  <td class="py-3 px-4 align-middle">Vegetables</td>
+
+                  <!-- Quantity -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                      5
+                    </span>
+                  </td>
+
+                  <!-- Unit -->
+                  <td class="py-3 px-4 font-semibold align-middle">kg</td>
+
+                  <!-- Expiry Date -->
+                  <td class="py-3 px-4 align-middle">2024-03-18</td>
+
+                  <!-- Supplier -->
+                  <td class="py-3 px-4 align-middle">Farm Fresh Market</td>
+                  <td class="py-3 px-4 align-middle">₦1,200</td>
+
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i
+                        data-lucide="alert-triangle"
+                        class="w-4 h-4 text-yellow-400"
+                      ></i>
+                      <span
+                        class="px-4 py-1 text-xs rounded-full bg-yellow-50 text-yellow-600 font-medium"
+                        >Low Stock</span
+                      >
+                    </span>
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i
+                          data-lucide="edit-3"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-red-100 transition"
+                      >
+                        <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                        >
+                          <i
+                            data-lucide="bread"
+                            class="w-4 h-4 text-green-700"
+                          ></i>
+                        </span>
+                        <span class="font-semibold text-gray-900"
+                          >Bread Loaves</span
+                        >
+                      </div>
+                    </div>
+                  </td>
+
+                  <!-- Category -->
+                  <td class="py-3 px-4 align-middle">Bakery</td>
+
+                  <!-- Quantity -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                      0
+                    </span>
+                  </td>
+
+                  <!-- Unit -->
+                  <td class="py-3 px-4 font-semibold align-middle">loaves</td>
+
+                  <!-- Expiry Date -->
+                  <td class="py-3 px-4 align-middle">2024-06-16</td>
+
+                  <!-- Supplier -->
+                  <td class="py-3 px-4 align-middle">City Bakery</td>
+                  <td class="py-3 px-4 align-middle">₦800</td>
+
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex items-center gap-2">
+                      <i data-lucide="clock" class="w-4 h-4 text-red-400"></i>
+                      <span
+                        class="px-4 py-1 text-xs rounded-full bg-red-50 text-red-700 font-medium"
+                        >Out of Stock</span
+                      >
+                    </span>
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i
+                          data-lucide="edit-3"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                      <button
+                        class="p-2 rounded-lg hover:bg-red-100 transition"
+                      >
+                        <i data-lucide="box" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
   <script src="navbar.js"></script>
+  <script src="tabswitch3.js"></script>
+  <script>
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    const modal = document.getElementById("modal");
+
+    openModal.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    });
+
+    // Optional: close modal when clicking outside
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    });
+  </script>
 </html>

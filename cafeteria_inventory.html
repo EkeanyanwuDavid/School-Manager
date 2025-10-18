@@ -13,6 +13,1010 @@
   </head>
   <body>
     <div id="navbar"></div>
+    <main class="max-w-full mx-auto p-6 bg-gray-50 min-h-screen w-full">
+      <header class="mb-6">
+        <div
+          class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+        >
+          <!-- Title + Description -->
+          <div class="ml-4 flex items-center gap-2">
+            <div>
+              <h2
+                class="flex items-center gap-2 text-3xl text-green-700 font-bold"
+              >
+                Cafeteria Inventory
+              </h2>
+              <p class="text-gray-500">
+                Track and manage food items, ingredients, and kitchen supplies
+              </p>
+            </div>
+          </div>
+          <div
+            class="flex flex-col sm:flex-row items-start sm:items-center gap-3"
+          >
+            <button
+              id="openModal"
+              class="bg-green-700 font-semibold rounded-lg px-4 py-2 text-sm text-white flex items-center gap-2 w-full sm:w-auto"
+            >
+              <i class="bi bi-plus"></i> Add New Item
+            </button>
+          </div>
+
+          <div
+            id="modal"
+            class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+          >
+            <!-- Close button -->
+            <button
+              id="closeModal"
+              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            >
+              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
+            </button>
+
+            <div class="p-6 bg-white rounded-2xl shadow-sm">
+              <h2
+                class="text-xl font-semibold text-gray-800 flex items-center gap-2 mb-1"
+              >
+                <i
+                  data-lucide="utensils-crossed"
+                  class="w-5 h-5 text-green-600"
+                ></i>
+                Add New Cafeteria Item
+              </h2>
+              <p class="text-gray-500 text-sm mb-6">
+                Enter the details of the new cafeteria item
+              </p>
+
+              <form action="" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <h3 class="font-semibold text-gray-700 mb-3">
+                    Basic Information
+                  </h3>
+                  <div class="space-y-4">
+                    <div>
+                      <label for="" class="block text-sm text-gray-600 mb-1"
+                        >Item Name *</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="Enter item name"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      />
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Category</label
+                        >
+                        <select
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        >
+                          <option>Select category</option>
+                          <option value="">Fruits & Vegetables</option>
+                          <option value="">Meat & Poultry</option>
+                          <option value="">Dairy Products</option>
+                          <option value="">Grains & Cereals</option>
+                          <option value="">Beverages</option>
+                          <option value="">Spices & Seasonings</option>
+                          <option value="">Frozen Foods</option>
+                          <option value="">Snacks</option>
+                          <option value="">Cleaning Supplies</option>
+                          <option value="">Kitchen Equipments</option>
+                          <option>Other</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Brand</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="Enter brand name"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label for="" class="block text-sm text-gray-600 mb-1"
+                        >Supplier *</label
+                      >
+                      <select
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                      >
+                        <option>Select supplier</option>
+                        <option>Main Market Suppliers</option>
+                        <option>Local Poultry Farm</option>
+                        <option>Vegetable Market</option>
+                        <option>Food Distributors Ltd</option>
+                        <option>Local Dairy</option>
+                        <option>Wholesale Food Co.</option>
+                        <option>Fresh Produce Ltd</option>
+                        <option>Meat & More</option>
+                        <option>Dairy Fresh</option>
+                        <option>Spice World</option>
+                        <option>Kitchen Supplies Co.</option>
+                        <option>Frozen Foods Ltd</option>
+                        <option>Beverage Distributors</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-gray-700 mb-3">
+                    Quantity & Pricing
+                  </h3>
+                  <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-3">
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Quantity</label
+                        >
+                        <input
+                          type="number"
+                          name=""
+                          placeholder="0"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        />
+                      </div>
+                      <div>
+                        <label for="" class="text-sm block text-gray-600 mb-1"
+                          >Unit *</label
+                        >
+                        <select
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        >
+                          <option>kg</option>
+                          <option>g</option>
+                          <option>L</option>
+                          <option>ml</option>
+                          <option>pieces</option>
+                          <option>packets</option>
+                          <option>boxes</option>
+                          <option>bottles</option>
+                          <option>cans</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Unit Price (₦)</label
+                        >
+                        <input
+                          type="number"
+                          placeholder="0.00"
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        />
+                      </div>
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Minimum Stock Level *</label
+                        >
+                        <input
+                          type="number"
+                          name=""
+                          placeholder="0"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="font-semibold text-gray-700 mb-3">
+                    Status & Condition
+                  </h3>
+                  <div class="space-y-4">
+                    <div class="grid grid-cols-2 gap-3">
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Condition</label
+                        >
+                        <select
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        >
+                          <option value="">Select condition</option>
+                          <option value="">Fresh</option>
+                          <option value="">Good</option>
+                          <option value="">Fair</option>
+                          <option value="">Expired</option>
+                          <option value="">Damaged</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Status
+                        </label>
+                        <select
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        >
+                          <option>Select status</option>
+                          <option>In Stock</option>
+                          <option>Low Stock</option>
+                          <option>Out of Stock</option>
+                          <option>Ordered</option>
+                          <option>Expired</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div>
+                      <label for="" class="block text-sm text-gray-600 mb-1"
+                        >Storage Location *</label
+                      >
+                      <select
+                        name=""
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        id=""
+                      >
+                        <option>Select storage location</option>
+                        <option>Freezer</option>
+                        <option>Refridgerator</option>
+                        <option>Pantry</option>
+                        <option>Dry Storage</option>
+                        <option>Kitchen counter</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="font-semibold text-gray-700 mb-3">
+                    Dates & Additional Info
+                  </h3>
+                  <div class="space-y-3">
+                    <div class="grid grid-cols-2 gap-3">
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Purchase Date</label
+                        >
+                        <input
+                          type="date"
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        />
+                      </div>
+                      <div>
+                        <label for="" class="block text-sm text-gray-600 mb-1"
+                          >Expiry Date</label
+                        >
+                        <input
+                          type="date"
+                          name=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          id=""
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label for="" class="block text-sm text-gray-600 mb-1"
+                        >Barcode</label
+                      >
+                      <input
+                        type="text"
+                        name=""
+                        placeholder="Enter barcode"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        id=""
+                      />
+                    </div>
+                    <div>
+                      <label for="" class="block text-sm text-gray-600 mb-1"
+                        >Allergens</label
+                      >
+                      <input
+                        type="text"
+                        name=""
+                        placeholder="e.g., Dairy, Nuts, Gluten"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        id=""
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="md:col-span-2">
+                  <label for="" class="block text-sm text-gray-600 mb-1"
+                    >Description</label
+                  >
+                  <textarea
+                    name=""
+                    placeholder="Enter item description"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    id=""
+                  ></textarea>
+                </div>
+                <div class="md:col-span-2">
+                  <label for="" class="block text-sm text-gray-600 mb-1"
+                    >Nutritional Information</label
+                  >
+                  <textarea
+                    name=""
+                    placeholder="Enter nutritional information (optional)"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    id=""
+                  ></textarea>
+                </div>
+              </form>
+              <div class="flex justify-end gap-3 mt-6">
+                <button
+                  type="button"
+                  class="px-5 py-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  class="px-6 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 flex items-center gap-2"
+                >
+                  <i data-lucide="plus" class="w-4 h-4"></i>
+                  Add item to Inventory
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-7">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-600 font-medium">Total Items</h4>
+            <button
+              class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-green-200 transition"
+            >
+              <i data-lucide="box" class="w-5 h-5 text-gray-600"></i>
+            </button>
+          </div>
+          <p class="text-3xl mt-4 font-bold text-gray-900">5</p>
+          <p
+            class="flex items-center mt-2 gap-1 rounded-full text-xs text-gray-400"
+          >
+            <i
+              data-lucide="trending-up"
+              class="w-3 h-3 mr-2 text-green-600"
+            ></i>
+            Active inventory items
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-600 font-medium">Total Value</h4>
+            <button
+              class="flex items-center justify-center w-10 h-10 bg-emerald-100 rounded-full hover:bg-emerald-200 transition"
+            >
+              <i data-lucide="trending-up" class="text-green-700 w-5 h-5"></i>
+            </button>
+          </div>
+          <p class="text-3xl mt-4 font-bold text-gray-900">₦86,400</p>
+          <p
+            class="flex items-center mt-2 gap-1 rounded-full text-xs text-gray-400"
+          >
+            <i
+              data-lucide="check-circle"
+              class="w-3 h-3 mr-2 text-green-600"
+            ></i>
+            Current inventory worth
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-600 font-medium">Low Stock Alert</h4>
+            <button
+              class="flex items-center justify-center w-10 h-10 bg-yellow-100 rounded-full hover:bg-blue-200 transition"
+            >
+              <i
+                data-lucide="alert-triangle"
+                class="w-5 h-5 text-yellow-500"
+              ></i>
+            </button>
+          </div>
+          <p class="text-3xl mt-4 font-bold text-yellow-600">1</p>
+          <p
+            class="flex items-center mt-2 gap-1 rounded-full text-xs text-gray-400"
+          >
+            <i
+              data-lucide="trending-down"
+              class="w-3 h-3 mr-2 text-red-600"
+            ></i>
+            Items need restocking
+          </p>
+        </div>
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-600 font-medium">Expiring Soon</h4>
+            <button
+              class="flex items-center justify-center w-10 h-10 bg-red-100 rounded-full hover:bg-blue-200 transition"
+            >
+              <i data-lucide="calendar" class="w-5 h-5 text-red-600"></i>
+            </button>
+          </div>
+          <p class="text-3xl mt-4 font-bold text-red-600">1</p>
+          <p
+            class="flex items-center mt-2 gap-1 rounded-full text-xs text-gray-400"
+          >
+            <i
+              data-lucide="alert-triangle"
+              class="w-3 h-3 mr-2 text-red-600"
+            ></i>
+            Items expire in 3 days
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="flex flex-wrap items-center gap-3 mt-8 bg-white border border-gray-200 rounded-xl shadow-md p-3"
+      >
+        <div class="relative flex-1 min-w-[180px]">
+          <i
+            data-lucide="search"
+            class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+          ></i>
+
+          <input
+            type="text"
+            placeholder="Search items, categories, or supplies..."
+            class="w-full pl-10 pr-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-500 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+          />
+        </div>
+
+        <button
+          class="p-2 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center border border-gray-200"
+          title="Filter options"
+        >
+          <i data-lucide="filter" class="1-4 h-4 text-gray-600"></i>
+        </button>
+        <select
+          class="text-sm border border-gray-300 rounded-lg h-[42px] px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+        >
+          <option>All</option>
+          <option value="">Fruits & Vegetables</option>
+          <option value="">Meat & Poultry</option>
+          <option value="">Dairy Products</option>
+          <option value="">Grains & Cereals</option>
+          <option value="">Beverages</option>
+          <option value="">Spices & Seasonings</option>
+          <option value="">Frozen Foods</option>
+          <option value="">Snacks</option>
+          <option value="">Cleaning Supplies</option>
+          <option value="">Kitchen Equipments</option>
+          <option>Other</option>
+        </select>
+        <select
+          class="text-sm border border-gray-300 rounded-lg px-3 h-[42px] py-2 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+        >
+          <option>All</option>
+          <option>In Stock</option>
+          <option>Low Stock</option>
+          <option>Out of Stock</option>
+          <option>Ordered</option>
+          <option>Expired</option>
+        </select>
+      </div>
+
+      <!-- Cafeteria Table -->
+
+      <div
+        class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mt-8"
+      >
+        <div class="flex flex-col mb-6">
+          <h2 class="font-semibold text-2xl text-gray-700">Inventory Items</h2>
+          <p class="text-gray-500">
+            Complete list of cafeteria inventory items with details
+          </p>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full border-collapse">
+            <thead>
+              <tr class="text-sm text-gray-800 border-b border-gray-200">
+                <th class="py-3 px-4 text-left font-medium">Item Details</th>
+                <th class="py-3 px-4 text-left font-medium">Category</th>
+                <th class="py-3 px-4 text-left font-medium">Quantity</th>
+                <th class="py-3 px-4 text-left font-medium">Unit Price</th>
+                <th class="py-3 px-4 text-left font-medium">Total Value</th>
+                <th class="py-3 px-4 text-left font-medium">Status</th>
+                <th class="py-3 px-4 text-left font-medium">Condition</th>
+                <th class="py-3 px-4 text-left font-medium">Storage</th>
+                <th class="py-3 px-4 text-left font-medium">Expiry Date</th>
+                <th class="py-3 px-4 text-left font-medium">Actions</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm text-gray-700">
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="utensils-crossed"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Rice(Long Grain)</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Golden Harvest Main Market Suppliers
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="wheat" class="w-4 h-4 text-gray-400"></i>
+                    Grains & Cereals
+                  </span>
+                </td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 font-semibold align-middle">
+                  50kg
+                  <p class="text-sm text-gray-500">Min: 20kg</p>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 align-middle">₦800</td>
+
+                <!-- Total Value -->
+                <td class="py-3 px-4 font-semibold align-middle">₦40,000</td>
+
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                    >Good</span
+                  >
+                </td>
+                <!-- Storage -->
+                <td class="py-3 px-4 align-middle">Dry Storage</td>
+
+                <td class="py-3 px-4 font-semibold text-center align-middle">
+                  <div class="flex flex-col items-center">
+                    <span>31/12/2024</span>
+                    <span
+                      class="mt-1 px-3 py-1 text-xs rounded-full bg-red-50 text-red-700 font-medium"
+                    >
+                      Expiring soon
+                    </span>
+                  </div>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="trash-2" class="w-4 h-4 text-red-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="drumstick"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Fresh Chicken</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Farm Fresh Local Poultry Farm
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="beef" class="w-4 h-4 text-gray-400"></i>
+                    Meat & Poultry
+                  </span>
+                </td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 font-semibold align-middle">
+                  8kg
+                  <p class="text-sm text-gray-500">Min: 15kg</p>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 align-middle">₦1,200</td>
+
+                <!-- Total Value -->
+                <td class="py-3 px-4 font-semibold align-middle">₦18,000</td>
+
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >Fresh</span
+                  >
+                </td>
+                <!-- Storage -->
+                <td class="py-3 px-4 align-middle">Freezer</td>
+
+                <td class="py-3 px-4 font-semibold text-center align-middle">
+                  <div class="flex flex-col items-center">
+                    <span>25/01/2024</span>
+                    <span
+                      class="mt-1 px-3 py-1 text-xs rounded-full bg-red-50 text-red-700 font-medium"
+                    >
+                      Expiring soon
+                    </span>
+                  </div>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="trash-2" class="w-4 h-4 text-red-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="apple"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900">Tomatoes</span>
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Vegetable Market
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="leaf" class="w-4 h-4 text-gray-400"></i>
+                    Fruits & Vegetables
+                  </span>
+                </td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 font-semibold align-middle">
+                  8kg
+                  <p class="text-sm text-gray-500">Min: 10kg</p>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 align-middle">₦300</td>
+
+                <!-- Total Value -->
+                <td class="py-3 px-4 font-semibold align-middle">₦2,400</td>
+
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="alert-triangle"
+                      class="w-4 h-4 text-yellow-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-yellow-50 text-yellow-700 font-medium"
+                      >Low Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >Fresh</span
+                  >
+                </td>
+                <!-- Storage -->
+                <td class="py-3 px-4 align-middle">Refridgerator</td>
+
+                <td class="py-3 px-4 font-semibold text-center align-middle">
+                  <div class="flex flex-col items-center">
+                    <span>23/01/2024</span>
+                    <span
+                      class="mt-1 px-3 py-1 text-xs rounded-full bg-red-50 text-red-700 font-medium"
+                    >
+                      Expiring soon
+                    </span>
+                  </div>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="trash-2" class="w-4 h-4 text-red-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="droplet"
+                          class="w-4 h-4 text-green-700"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Cooking Oil</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Kings Oil Food Distributors Ltd
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="box" class="w-4 h-4 text-gray-400"></i>
+                    Other
+                  </span>
+                </td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 font-semibold align-middle">
+                  12L
+                  <p class="text-sm text-gray-500">Min: 5L</p>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 align-middle">₦1,500</td>
+
+                <!-- Total Value -->
+                <td class="py-3 px-4 font-semibold align-middle">₦18,000</td>
+
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-blue-50 text-blue-700 font-medium"
+                    >Good</span
+                  >
+                </td>
+                <!-- Storage -->
+                <td class="py-3 px-4 align-middle">Pantry</td>
+
+                <td class="py-3 px-4 font-semibold text-center align-middle">
+                  <div class="flex flex-col items-center">
+                    <span>10/01/2025</span>
+                    <span
+                      class="mt-1 px-3 py-1 text-xs rounded-full bg-red-50 text-red-700 font-medium"
+                    >
+                      Expiring soon
+                    </span>
+                  </div>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="trash-2" class="w-4 h-4 text-red-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+              <tr class="hover:bg-gray-50 border-b border-gray-100">
+                <td class="py-4 px-6 align-middle">
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                      <span
+                        class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
+                      >
+                        <i
+                          data-lucide="cup-soda"
+                          class="w-4 h-4 text-blue-500"
+                        ></i>
+                      </span>
+                      <span class="font-semibold text-gray-900"
+                        >Milk (Fresh)</span
+                      >
+                    </div>
+                    <p class="text-gray-500 text-sm mt-1 ml-9">
+                      Dairy Farm Local Dairy
+                    </p>
+                  </div>
+                </td>
+
+                <!-- Category -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i data-lucide="bottle" class="w-4 h-4 text-gray-400"></i>
+                    Dairy Products
+                  </span>
+                </td>
+
+                <!-- Quantity -->
+                <td class="py-3 px-4 font-semibold align-middle">
+                  20L
+                  <p class="text-sm text-gray-500">Min: 15L</p>
+                </td>
+
+                <!-- Unit Price -->
+                <td class="py-3 px-4 align-middle">₦400</td>
+
+                <!-- Total Value -->
+                <td class="py-3 px-4 font-semibold align-middle">₦8,000</td>
+
+                <!-- Status -->
+
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex items-center gap-2">
+                    <i
+                      data-lucide="check-circle"
+                      class="w-4 h-4 text-green-400"
+                    ></i>
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                      >In Stock</span
+                    >
+                  </span>
+                </td>
+
+                <!-- Condition -->
+                <td class="py-3 px-4 align-middle">
+                  <span
+                    class="px-4 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                    >Fresh</span
+                  >
+                </td>
+                <!-- Storage -->
+                <td class="py-3 px-4 align-middle">Refridgerator</td>
+
+                <td class="py-3 px-4 font-semibold text-center align-middle">
+                  <div class="flex flex-col items-center">
+                    <span>23/01/2025</span>
+                    <span
+                      class="mt-1 px-3 py-1 text-xs rounded-full bg-red-50 text-red-700 font-medium"
+                    >
+                      Expiring soon
+                    </span>
+                  </div>
+                </td>
+
+                <!-- Actions -->
+                <td class="py-3 px-4 align-middle">
+                  <span class="inline-flex justify-center gap-2">
+                    <button class="p-2 rounded-lg hover:bg-gray-100 transition">
+                      <i data-lucide="edit-3" class="w-4 h-4 text-gray-600"></i>
+                    </button>
+                    <button class="p-2 rounded-lg hover:bg-red-100 transition">
+                      <i data-lucide="trash-2" class="w-4 h-4 text-red-600"></i>
+                    </button>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
   </body>
   <script src="navbar.js"></script>
+
+  <script>
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    const modal = document.getElementById("modal");
+
+    openModal.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    });
+
+    // Optional: close modal when clicking outside
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    });
+  </script>
 </html>
