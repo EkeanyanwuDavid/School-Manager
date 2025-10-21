@@ -9,10 +9,659 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
     />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-    <title>Communication - School Manager</title>
+    <title>Communication- School Manager</title>
   </head>
   <body>
+    <style>
+      .unread-badge {
+        min-width: 1.25rem;
+        height: 1.25rem;
+        line-height: 1.25rem;
+      }
+    </style>
     <div id="navbar"></div>
+
+    <main class="max-w-full mx-auto p-6 bg-gray-50 min-h-screen w-full">
+      <header class="mb-6"></header>
+
+      <div
+        class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+      >
+        <!-- Title + Description -->
+        <div class="ml-4 flex items-center gap-2">
+          <div>
+            <h2
+              class="flex items-center gap-2 text-3xl text-green-700 font-bold"
+            >
+              Communication & Collaboration
+            </h2>
+            <p class="text-gray-500 mt-3">
+              Stay connected with staff, students and parents
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        id="tabButtons"
+        class="flex flex-wrap justify-center gap-4 mt-8 px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl shadow-sm"
+      >
+        <button
+          class="tab-btn cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
+        >
+          <i data-lucide="message-square" class="w-4 h-4"></i>
+          <span>Messages</span>
+        </button>
+
+        <button
+          class="tab-btn cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
+        >
+          <i data-lucide="megaphone" class="w-4 h-4"></i>
+          <span>Announcements</span>
+        </button>
+
+        <button
+          class="tab-btn cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
+        >
+          <i data-lucide="users" class="w-4 h-4"></i>
+          <span>Staff Directory</span>
+        </button>
+
+        <button
+          class="tab-btn cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
+        >
+          <i data-lucide="calendar" class="w-4 h-4"></i>
+          <span>Meetings</span>
+        </button>
+      </div>
+
+      <div id="Messages">
+        <div class="grid gap-3">
+          <!-- Coversation List -->
+          <div
+            class="bg-white rounded-xl border mt-8 border-gray-200 shadow-sm p-4 md:cols-span-1"
+          >
+            <h2
+              class="text-[1.3rem] font-semibold mb-3 flex items-center gap-2"
+            >
+              <i
+                data-lucide="message-square"
+                class="w-5 h-5 text-green-600"
+              ></i>
+              Conversations
+            </h2>
+            <!-- Search bar -->
+            <div class="relative mb-6">
+              <i
+                data-lucide="search"
+                class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400 pointer-events-none"
+              ></i>
+
+              <input
+                type="text"
+                placeholder="Search communications..."
+                class="w-full pl-11 pr-3 py-2.5 border border-gray-200 rounded-lg text-sm text-gray-600 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 focus:bg-white transition"
+              />
+            </div>
+
+            <div id="conversationList" class="space-y-3 mt-7">
+              <div
+                data-name="Mathematics Department"
+                data-message="New curriculumn guidelines"
+                data-unread="3"
+                class="conversation-item flex items-center justify-between p-3 rounded-lg bg-gray-50 hover:bg-gray-200 cursor-pointer"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-11 h-11 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden"
+                  >
+                    <span class="text-sm font-medium text-gray-700">MD</span>
+                  </div>
+                  <div>
+                    <h3 class="font-medium text-gray-900">
+                      Mathematics Department
+                    </h3>
+                    <p class="text-sm text-gray-500">
+                      New curriculumn guidelines uploaded
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end gap-2">
+                  <span class="text-xs text-gray-400">2 min ago</span>
+                  <span
+                    class="unread-badge inline-flex items-center justify-center text-xs font-semibold text-white bg-red-500 rounded-full px-1"
+                    aria-hidden="true"
+                    >3</span
+                  >
+                </div>
+              </div>
+
+              <div
+                data-name="John Smith (Parent)"
+                data-message="Thank you for the update about Sarah's progress"
+                data-unread="3"
+                class="conversation-item flex items-center justify-between p-3 rounded-lg bg-gray-50 hover:bg-gray-200 cursor-pointer"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-11 h-11 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden"
+                  >
+                    <img
+                      src="download (1).jpg"
+                      class="w-full h-full object-cover"
+                      alt=""
+                    />
+                  </div>
+                  <div>
+                    <h3 class="font-medium text-gray-900">
+                      John Smith (Parent)
+                    </h3>
+                    <p class="text-sm text-gray-500">
+                      Thank you for the update about Sarah's progress
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end gap-2">
+                  <span class="text-xs text-gray-400">1 hr ago</span>
+                  <span
+                    class="unread-badge inline-flex items-center justify-center text-xs font-semibold text-white bg-red-500 rounded-full px-1"
+                    aria-hidden="true"
+                    >2</span
+                  >
+                </div>
+              </div>
+
+              <div
+                data-name="Science Lab Team"
+                data-message="Equipment maintenance complete"
+                data-unread="1"
+                class="conversation-item flex items-center justify-between p-3 rounded-lg bg-gray-50 hover:bg-gray-200 cursor-pointer"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-11 h-11 rounded-full bg-gray-100 flex items-center justify-center overflow-hidden"
+                  >
+                    <span class="text-sm font-medium text-gray-700">SL</span>
+                  </div>
+                  <div>
+                    <h3 class="font-medium text-gray-900">Science Lab Team</h3>
+                    <p class="text-sm text-gray-500">
+                      Equipment maintenance complete
+                    </p>
+                  </div>
+                </div>
+                <div class="flex flex-col items-end gap-2">
+                  <span class="text-xs text-gray-400">3 hrs ago</span>
+                  <span
+                    class="unread-badge inline-flex items-center justify-center text-xs font-semibold text-white bg-red-500 rounded-full px-1"
+                    aria-hidden="true"
+                    >1</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white rounded-xl border mt-8 border-gray-200 shadow-sm p-6 flex flex-col"
+            id="chatArea"
+            role="region"
+            aria-label="Selected conversation"
+          >
+            <h2 class="text-[1.3rem] font-semibold mb-3">
+              Select a conversation
+            </h2>
+
+            <div class="bg-white border border-gray-100 py-20 rounded">
+              <div
+                class="flex flex-col justify-center items-center text-center"
+              >
+                <i
+                  data-lucide="message-circle"
+                  class="text-gray-400 w-10 h-10 mb-2"
+                ></i>
+                <p class="text-gray-500">
+                  Select a conversation to start messaging
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="Announcement">
+        <div class="bg-gray-50 p-6 shadow-md mt-7 rounded-lg">
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <h2 class="text-2xl font-bold text-gray-800">
+                School Announcements
+              </h2>
+              <p class="text-gray-500 text-sm">Important updates and notices</p>
+            </div>
+            <button
+              id="openModal"
+              class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg shadow-sm hover:bg-green-700 transition"
+            >
+              <i data-lucide="plus" class="w-4 h-4"></i>
+              <span>New Announcement</span>
+            </button>
+          </div>
+          <!-- Modal -->
+          <div
+            id="modal"
+            class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+          >
+            <!-- Close button -->
+            <button
+              id="closeModal"
+              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            >
+              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
+            </button>
+
+            <div class="flex flex-col h-full w-full">
+              <!-- Header -->
+
+              <!-- Form card -->
+              <div class="p-6 bg-white rounded-2xl shadow-sm">
+                <h2 class="text-xl font-semibold text-gray-800 gap-2 mb-1">
+                  Create New Announcement
+                </h2>
+                <p class="text-gray-500 text-sm mb-6">
+                  Share important information with the school community
+                </p>
+
+                <form class="space-y-4">
+                  <!-- Customer Name -->
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Title</label
+                    >
+                    <input
+                      type="text"
+                      placeholder="Enter announcement title"
+                      class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Content</label
+                    >
+                    <textarea
+                      placeholder="Enter announcement content"
+                      rows="3"
+                      class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                    ></textarea>
+                  </div>
+                  <div
+                    class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
+                  >
+                    <!-- Left Select -->
+                    <div class="flex-1">
+                      <label
+                        class="block text-sm font-medium text-gray-700 mb-1"
+                        >Priority</label
+                      >
+                      <select
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      >
+                        <option>Normal</option>
+                        <option>High</option>
+                        <option>Urgent</option>
+                      </select>
+                    </div>
+
+                    <!-- Right Select -->
+                    <div class="flex-1">
+                      <label
+                        class="block text-sm font-medium text-gray-700 mb-1"
+                        >Target Audience</label
+                      >
+                      <select
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      >
+                        <option>All</option>
+                        <option>Staff Only</option>
+                        <option>Students Only</option>
+                        <option>Parents Only</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <!-- Submit Button -->
+                  <div class="pt-3">
+                    <button
+                      type="submit"
+                      class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-lg shadow-sm transition-all"
+                    >
+                      Publish Announcement
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Announcement Card -->
+          <div class="space-y-4">
+            <!-- Card 1 -->
+            <div
+              class="bg-white border border-green-200 rounded-xl p-5 shadow-sm hover:shadow-md transition"
+            >
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3
+                    class="flex items-center gap-2 text-lg font-semibold text-gray-800"
+                  >
+                    <i
+                      data-lucide="megaphone"
+                      class="w-5 h-5 text-green-600"
+                    ></i>
+                    Parent-Teacher Meeting Scheduled
+                    <span
+                      class="ml-2 text-xs bg-red-100 text-red-700 font-medium px-2 py-0.5 rounded-full"
+                      >High</span
+                    >
+                  </h3>
+                  <p class="text-sm text-gray-500 mt-1">
+                    By <span class="font-medium">Principal Johnson</span> •
+                    2024-03-10
+                  </p>
+                  <p class="mt-3 text-gray-700">
+                    Annual parent-teacher meetings will be held from March
+                    15–20, 2024. Please check the schedule.
+                  </p>
+                </div>
+                <div class="flex items-center gap-1 text-gray-500">
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                  <span class="text-sm font-medium">156</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              class="bg-white border border-gray-200 rounded-xl p-5 shadow-sm hover:shadow-md transition"
+            >
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3
+                    class="flex items-center gap-2 text-lg font-semibold text-gray-800"
+                  >
+                    <i
+                      data-lucide="book-open"
+                      class="w-5 h-5 text-blue-600"
+                    ></i>
+                    New Library Books Available
+                    <span
+                      class="ml-2 text-xs bg-gray-100 text-gray-700 font-medium px-2 py-0.5 rounded-full"
+                      >Normal</span
+                    >
+                  </h3>
+                  <p class="text-sm text-gray-500 mt-1">
+                    By <span class="font-medium">Librarian Smith</span> •
+                    2024-03-08
+                  </p>
+                  <p class="mt-3 text-gray-700">
+                    We've added 200 new books to our library collection.
+                    Students can now borrow them.
+                  </p>
+                </div>
+                <div class="flex items-center gap-1 text-gray-500">
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                  <span class="text-sm font-medium">89</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div
+              class="bg-white border border-gray-100 rounded-xl p-5 shadow-sm hover:shadow-md transition"
+            >
+              <div class="flex items-start justify-between">
+                <div>
+                  <h3
+                    class="flex items-center gap-2 text-lg font-semibold text-gray-800"
+                  >
+                    <i data-lucide="trophy" class="w-5 h-5 text-yellow-600"></i>
+                    Sports Day Event
+                    <span
+                      class="ml-2 text-xs bg-yellow-100 text-yellow-700 font-medium px-2 py-0.5 rounded-full"
+                      >Medium</span
+                    >
+                  </h3>
+                  <p class="text-sm text-gray-500 mt-1">
+                    By <span class="font-medium">Sports Coordinator</span> •
+                    2024-03-05
+                  </p>
+                  <p class="mt-3 text-gray-700">
+                    Annual sports day will be celebrated on March 25, 2024. All
+                    students must participate.
+                  </p>
+                </div>
+                <div class="flex items-center gap-1 text-gray-500">
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                  <span class="text-sm font-medium">234</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="StaffDirectory">
+        <div class="bg-gray-100 rounded-xl p-6 mt-7">
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+          >
+            <div>
+              <h1 class="text-2xl font-bold text-gray-900">Staff Directory</h1>
+              <p class="text-gray-500">
+                Contact information for all staff members
+              </p>
+            </div>
+
+            <div class="w-full md:w-64">
+              <input
+                type="text"
+                placeholder="Search staff..."
+                class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none bg-white shadow-sm"
+              />
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg mt-7 transition-all duration-300"
+            >
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <div
+                    class="w-14 h-14 rounded-full bg-gray-300 flex items-center justify-center text-blue-300 font-semibold text-lg"
+                  >
+                    DEJ
+                  </div>
+                </div>
+
+                <div>
+                  <h2 class="text-lg font-semibold text-gray-900">
+                    Dr. Emily Johnson
+                  </h2>
+                  <p class="text-sm text-gray-500">Principal</p>
+                  <p
+                    class="text-xs text-green-600 flex items-center gap-1 mt-1"
+                  >
+                    <span
+                      class="w-2 h-2 bg-green-500 rounded-full inline-block"
+                    ></span>
+                    Online
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-4 text-sm">
+                <p>
+                  <span class="font-medium text-gray-800">Department:</span>
+                  Administration
+                </p>
+                <p class="flex items-center gap-2 mt-2 text-gray-600">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  emiliyjohnson@school.edu
+                </p>
+                <p class="flex items-center gap-2 mt-2 text-gray-600">
+                  <i data-lucide="phone" class="w-4 h-4"></i> +234565678990
+                </p>
+              </div>
+
+              <div class="mt-5 flex gap-3">
+                <button
+                  class="flex items-center w-full gap-2 px-3 py-2 bg-gray-200 text-gray-900 text-sm border border-green-100 rounded-lg hover:bg-blue-300 transition"
+                >
+                  <i data-lucide="message-square"></i>
+                  Message
+                </button>
+                <button
+                  class="flex items-center gap-2 px-3 py-2 bg-green-50 text-gray-700 text-sm border border-green-100 rounded-lg hover:bg-blue-100 transition"
+                >
+                  <i data-lucide="phone"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg mt-7 transition-all duration-300"
+            >
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <div
+                    class="w-14 h-14 rounded-full bg-gray-300 flex items-center justify-center text-blue-300 font-semibold text-lg"
+                  >
+                    PMB
+                  </div>
+                </div>
+
+                <div>
+                  <h2 class="text-lg font-semibold text-gray-900">
+                    Prof. Michael Brown
+                  </h2>
+                  <p class="text-sm text-gray-500">Head of Mathematics</p>
+                  <p
+                    class="text-xs text-yellow-600 flex items-center gap-1 mt-1"
+                  >
+                    <span
+                      class="w-2 h-2 bg-yellow-500 rounded-full inline-block"
+                    ></span>
+                    Busy
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-4 text-sm">
+                <p>
+                  <span class="font-medium text-gray-800">Department:</span>
+                  Mathematics
+                </p>
+                <p class="flex items-center gap-2 mt-2 text-gray-600">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  michaelbrown@school.edu
+                </p>
+                <p class="flex items-center gap-2 mt-2 text-gray-600">
+                  <i data-lucide="phone" class="w-4 h-4"></i> +234803234565
+                </p>
+              </div>
+
+              <div class="mt-5 flex gap-3">
+                <button
+                  class="flex items-center w-full gap-2 px-3 py-2 bg-gray-200 text-gray-00 text-sm border border-blue-100 rounded-lg hover:bg-blue-300 transition"
+                >
+                  <i data-lucide="message-square"></i>
+                  Message
+                </button>
+                <button
+                  class="flex items-center gap-2 px-3 py-2 bg-green-50 text-gray-700 text-sm border border-green-100 rounded-lg hover:bg-green-100 transition"
+                >
+                  <i data-lucide="phone"></i>
+                </button>
+              </div>
+            </div>
+            <div
+              class="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg mt-7 transition-all duration-300"
+            >
+              <div class="flex items-center gap-4">
+                <div class="relative">
+                  <div
+                    class="w-14 h-14 rounded-full bg-gray-300 flex items-center justify-center text-blue-300 font-semibold text-lg"
+                  >
+                    MSD
+                  </div>
+                </div>
+
+                <div>
+                  <h2 class="text-lg font-semibold text-gray-900">
+                    Mrs. Sarah Davis
+                  </h2>
+                  <p class="text-sm text-gray-500">English Teacher</p>
+                  <p class="text-xs text-gray-600 flex items-center gap-1 mt-1">
+                    <span
+                      class="w-2 h-2 bg-gray-500 rounded-full inline-block"
+                    ></span>
+                    Offline
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-4 text-sm">
+                <p>
+                  <span class="font-medium text-gray-800">Department:</span>
+                  Languages
+                </p>
+                <p class="flex items-center gap-2 mt-2 text-gray-600">
+                  <i data-lucide="mail" class="w-4 h-4"></i>
+                  sarah.davies@school.edu
+                </p>
+                <p class="flex items-center gap-2 mt-2 text-gray-600">
+                  <i data-lucide="phone" class="w-4 h-4"></i> +234803234565
+                </p>
+              </div>
+
+              <div class="mt-5 flex gap-3">
+                <button
+                  class="flex items-center w-full gap-2 px-3 py-2 bg-gray-200 text-gray-00 text-sm border border-green-100 rounded-lg hover:bg-blue-300 transition"
+                >
+                  <i data-lucide="message-square"></i>
+                  Message
+                </button>
+                <button
+                  class="flex items-center gap-2 px-3 py-2 bg-green-50 text-gray-700 text-sm border border-green-100 rounded-lg hover:bg-blue-100 transition"
+                >
+                  <i data-lucide="phone"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="Meetings"></div>
+    </main>
   </body>
   <script src="navbar.js"></script>
+  <script src="communication.js"></script>
+  <script>
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    const modal = document.getElementById("modal");
+
+    openModal.addEventListener("click", () => {
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    });
+
+    // Optional: close modal when clicking outside
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+      }
+    });
+  </script>
 </html>
