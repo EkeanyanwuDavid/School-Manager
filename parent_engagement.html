@@ -115,6 +115,211 @@
           <span>Engagement Analytics</span>
         </button>
       </div>
+
+      <div
+        class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 mt-7 gap-3"
+      >
+        <div
+          class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full"
+        >
+          <!-- Search -->
+          <div class="relative flex-1">
+            <i
+              data-lucide="search"
+              class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+            ></i>
+            <input
+              type="text"
+              placeholder="Search announcements..."
+              class="w-full border border-gray-300 rounded-lg pl-10 pr-3 py-[6px] text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+            />
+          </div>
+
+          <select
+            class="border border-gray-300 rounded-lg px-3 py-[6px] text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+          >
+            <option value="">All Priorities</option>
+            <option value="high">High Priority</option>
+            <option value="medium">Medium Priority</option>
+            <option value="low">Low Priority</option>
+          </select>
+        </div>
+
+        <button
+          class="flex items-center gap-1.5 bg-emerald-600 text-white px-3.5 py-[6px] text-sm rounded-md hover:bg-emerald-700 transition-all"
+        >
+          <i data-lucide="plus" class="w-4 h-4"></i>
+          New
+        </button>
+      </div>
+
+      <div
+        class="bg-gray-50 p-5 rounded shadow-sm hover:shadow-md transition-all"
+      >
+        <div class="space-y-4">
+          <div class="bg-white p-5 rounded shadow-md transition-all">
+            <div
+              class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3"
+            >
+              <div>
+                <h2 class="text-lg font-semibold text-gray-900">
+                  Parent-Teacher Meeting Schedule
+                </h2>
+                <p class="text-sm text-gray-500">
+                  By Admin Office &centerdot; <span>2024-01-15</span>
+                </p>
+                <p class="mt-2 text-gray-700 text-sm">
+                  We have scheduled parent-teacher meetings for all classes.
+                  Please confirm your attendance.
+                </p>
+                <p class="text-gray-500 text-sm mt-1">Audience: All Parents</p>
+              </div>
+              <div class="flex gap-2 flex-wrap sm:justify-end">
+                <span
+                  class="px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-600"
+                  >High</span
+                >
+                <span
+                  class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-600"
+                  >Published</span
+                >
+              </div>
+            </div>
+            <div
+              class="mt-4 flex items-center justify-between text-sm text-gray-500"
+            >
+              <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1"
+                  ><i data-lucide="eye" class="w-4 h-4"></i> 145 views</span
+                >
+                <span class="flex items-center gap-1"
+                  ><i data-lucide="message-square" class="w-4 h-4"></i> 23
+                  responses</span
+                >
+              </div>
+              <div class="flex items-center gap-3 text-gray-500">
+                <button class="hover:text-blue-600">
+                  <i data-lucide="edit" class="w-4 h-4"></i>
+                </button>
+                <button class="hover:text-blue-600">
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                </button>
+                <button class="hover:text-blue-600">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-5 rounded shadow-md transition-all mt-7">
+            <div
+              class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3"
+            >
+              <div>
+                <h2 class="text-lg font-semibold text-gray-900">
+                  School Fee Payment Reminder
+                </h2>
+                <p class="text-sm text-gray-500">
+                  By Accounts Department &centerdot; <span>2024-01-15</span>
+                </p>
+                <p class="mt-2 text-gray-700 text-sm">
+                  Friendly reminder that the second term fees are due by January
+                  30th,2024
+                </p>
+                <p class="text-gray-500 text-sm mt-1">
+                  Audience: Fee Defaulters
+                </p>
+              </div>
+              <div class="flex gap-2 flex-wrap sm:justify-end">
+                <span
+                  class="px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-600"
+                  >Medium</span
+                >
+                <span
+                  class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-600"
+                  >Published</span
+                >
+              </div>
+            </div>
+            <div
+              class="mt-4 flex items-center justify-between text-sm text-gray-500"
+            >
+              <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1"
+                  ><i data-lucide="eye" class="w-4 h-4"></i> 87 views</span
+                >
+                <span class="flex items-center gap-1"
+                  ><i data-lucide="message-square" class="w-4 h-4"></i> 12
+                  responses</span
+                >
+              </div>
+              <div class="flex items-center gap-3 text-gray-500">
+                <button class="hover:text-blue-600">
+                  <i data-lucide="edit" class="w-4 h-4"></i>
+                </button>
+                <button class="hover:text-blue-600">
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                </button>
+                <button class="hover:text-blue-600">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white p-5 rounded shadow-md transition-all mt-7">
+            <div
+              class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3"
+            >
+              <div>
+                <h2 class="text-lg font-semibold text-gray-900">
+                  Sports Day Activities
+                </h2>
+                <p class="text-sm text-gray-500">
+                  By Sports Department &centerdot; <span>2024-01-15</span>
+                </p>
+                <p class="mt-2 text-gray-700 text-sm">
+                  Join us for our annual sports day celebration on February
+                  14th, 2024
+                </p>
+                <p class="text-gray-500 text-sm mt-1">Audience: All Parents</p>
+              </div>
+              <div class="flex gap-2 flex-wrap sm:justify-end">
+                <span
+                  class="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600"
+                  >Low</span
+                >
+                <span
+                  class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-600"
+                  >Published</span
+                >
+              </div>
+            </div>
+            <div
+              class="mt-4 flex items-center justify-between text-sm text-gray-500"
+            >
+              <div class="flex items-center gap-4">
+                <span class="flex items-center gap-1"
+                  ><i data-lucide="eye" class="w-4 h-4"></i> 234 views</span
+                >
+                <span class="flex items-center gap-1"
+                  ><i data-lucide="message-square" class="w-4 h-4"></i> 45
+                  responses</span
+                >
+              </div>
+              <div class="flex items-center gap-3 text-gray-500">
+                <button class="hover:text-blue-600">
+                  <i data-lucide="edit" class="w-4 h-4"></i>
+                </button>
+                <button class="hover:text-blue-600">
+                  <i data-lucide="eye" class="w-4 h-4"></i>
+                </button>
+                <button class="hover:text-blue-600">
+                  <i data-lucide="trash-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
   <script src="navbar.js"></script>
