@@ -668,10 +668,196 @@
               </p>
             </div>
             <button
-              class="flex items-center gap-2 bg-green-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700 transition-all"
+              id="openMeetingModal"
+              class="flex items-center gap-2 bg-emerald-700 text-white px-4 py-2 rounded-lg shadow-md hover:bg-green-700 transition-all"
             >
               <i data-lucide="plus" class="w-4 h-4"></i> Schedule Meeting
             </button>
+
+            <div
+              id="meetingModal"
+              class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm z-50 items-center justify-center"
+            >
+              <div
+                class="relative bg-white rounded-2xl shadow-xl border border-gray-200 w-full max-w-4xl p-8 overflow-y-auto max-h-[90vh]"
+              >
+                <!-- Close Button -->
+                <button
+                  id="closeMeetingModal"
+                  class="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+                >
+                  <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
+                </button>
+
+                <!-- Modal Content -->
+                <div class="flex flex-col w-full h-full">
+                  <!-- Header -->
+                  <div class="flex flex-col mb-6">
+                    <div class="flex items-center gap-2 mb-2">
+                      <i
+                        data-lucide="calendar-clock"
+                        class="w-6 h-6 text-green-700"
+                      ></i>
+                      <h2 class="text-2xl font-semibold text-gray-800">
+                        Schedule New Meeting
+                      </h2>
+                    </div>
+                    <p class="text-gray-500 text-sm">
+                      Plan and organize upcoming meetings with staff,
+                      departments, or administrators.
+                    </p>
+                  </div>
+
+                  <!-- Meeting Details -->
+                  <div
+                    class="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8"
+                  >
+                    <div class="flex flex-col mb-6">
+                      <div class="flex items-center gap-2 mb-2">
+                        <i data-lucide="info" class="w-5 h-5 text-gray-700"></i>
+                        <h3 class="text-lg font-semibold text-gray-700">
+                          Meeting Information
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="md:col-span-2">
+                        <label class="block text-sm font-medium mb-1"
+                          >Meeting Title *</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="e.g., Staff Strategy Discussion"
+                          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div>
+                        <label class="block text-sm font-medium mb-1"
+                          >Date *</label
+                        >
+                        <input
+                          type="date"
+                          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div>
+                        <label class="block text-sm font-medium mb-1"
+                          >Time *</label
+                        >
+                        <input
+                          type="time"
+                          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div class="md:col-span-2">
+                        <label class="block text-sm font-medium mb-1"
+                          >Location *</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="e.g., Conference Room A or Zoom"
+                          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Participants -->
+                  <div
+                    class="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8"
+                  >
+                    <div class="flex flex-col mb-6">
+                      <div class="flex items-center gap-2 mb-2">
+                        <i
+                          data-lucide="users"
+                          class="w-5 h-5 text-gray-700"
+                        ></i>
+                        <h3 class="text-lg font-semibold text-gray-700">
+                          Participants
+                        </h3>
+                      </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label class="block text-sm font-medium mb-1"
+                          >Organizer *</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="e.g., Principal, Admin Officer"
+                          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div>
+                        <label class="block text-sm font-medium mb-1"
+                          >Department/Group *</label
+                        >
+                        <input
+                          type="text"
+                          placeholder="e.g., Academic Staff, IT Department"
+                          class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        />
+                      </div>
+
+                      <div class="md:col-span-2">
+                        <label class="block text-sm font-medium mb-1"
+                          >Invitees</label
+                        >
+                        <textarea
+                          rows="2"
+                          placeholder="Enter names or emails of participants..."
+                          class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Agenda -->
+                  <div
+                    class="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8"
+                  >
+                    <div class="flex flex-col mb-6">
+                      <div class="flex items-center gap-2 mb-2">
+                        <i data-lucide="list" class="w-5 h-5 text-gray-700"></i>
+                        <h3 class="text-lg font-semibold text-gray-700">
+                          Agenda
+                        </h3>
+                      </div>
+                    </div>
+
+                    <textarea
+                      rows="4"
+                      placeholder="e.g., Review goals, set targets, discuss budget..."
+                      class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                    ></textarea>
+                  </div>
+
+                  <!-- Actions -->
+                  <div class="flex justify-end gap-4 mt-6">
+                    <button
+                      id="cancelMeetingModal"
+                      type="button"
+                      class="border border-gray-400 px-6 py-2 rounded-md hover:bg-gray-100 transition"
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      type="submit"
+                      class="bg-emerald-700 text-white px-6 py-2 rounded-md hover:bg-green-700 transition flex items-center gap-2"
+                    >
+                      <i data-lucide="calendar-plus" class="w-5 h-5"></i>
+                      Schedule
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="bg-white rounded-2xl shadow-md p-6">
@@ -771,44 +957,66 @@
   <script src="navbar.js"></script>
   <script src="communication.js"></script>
   <script>
-    const openAnnouncementModal = document.getElementById(
-      "openAnnouncementModal"
-    ); // your open button
-    const announcementModal = document.getElementById("announcementModal");
-    const closeAnnouncementModal = document.getElementById(
-      "closeAnnouncementModal"
-    );
-    const cancelAnnouncementModal = document.getElementById(
-      "cancelAnnouncementModal"
-    );
+    document.addEventListener("DOMContentLoaded", () => {
+      // Reusable open and close functions
+      function openModal(modal) {
+        modal.classList.remove("hidden");
+        modal.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      }
 
-    function openModal(modal) {
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
-      document.body.style.overflow = "hidden";
-    }
+      function closeModal(modal) {
+        modal.classList.add("hidden");
+        modal.classList.remove("flex");
+        document.body.style.overflow = "";
+      }
 
-    function closeModal(modal) {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
-      document.body.style.overflow = "";
-    }
-
-    // Open
-    if (openAnnouncementModal)
-      openAnnouncementModal.addEventListener("click", () =>
-        openModal(announcementModal)
+      // --- ANNOUNCEMENT MODAL ---
+      const openAnnouncementModal = document.getElementById(
+        "openAnnouncementModal"
+      );
+      const announcementModal = document.getElementById("announcementModal");
+      const closeAnnouncementModal = document.getElementById(
+        "closeAnnouncementModal"
+      );
+      const cancelAnnouncementModal = document.getElementById(
+        "cancelAnnouncementModal"
       );
 
-    // Close buttons
-    [closeAnnouncementModal, cancelAnnouncementModal].forEach((btn) => {
-      if (btn)
-        btn.addEventListener("click", () => closeModal(announcementModal));
-    });
+      if (openAnnouncementModal)
+        openAnnouncementModal.addEventListener("click", () =>
+          openModal(announcementModal)
+        );
 
-    // Close on backdrop click
-    announcementModal.addEventListener("click", (e) => {
-      if (e.target === announcementModal) closeModal(announcementModal);
+      [closeAnnouncementModal, cancelAnnouncementModal].forEach((btn) => {
+        if (btn)
+          btn.addEventListener("click", () => closeModal(announcementModal));
+      });
+
+      if (announcementModal)
+        announcementModal.addEventListener("click", (e) => {
+          if (e.target === announcementModal) closeModal(announcementModal);
+        });
+
+      // --- MEETING MODAL ---
+      const openMeetingModal = document.getElementById("openMeetingModal");
+      const meetingModal = document.getElementById("meetingModal");
+      const closeMeetingModal = document.getElementById("closeMeetingModal");
+      const cancelMeetingModal = document.getElementById("cancelMeetingModal");
+
+      if (openMeetingModal)
+        openMeetingModal.addEventListener("click", () =>
+          openModal(meetingModal)
+        );
+
+      [closeMeetingModal, cancelMeetingModal].forEach((btn) => {
+        if (btn) btn.addEventListener("click", () => closeModal(meetingModal));
+      });
+
+      if (meetingModal)
+        meetingModal.addEventListener("click", (e) => {
+          if (e.target === meetingModal) closeModal(meetingModal);
+        });
     });
   </script>
 </html>
