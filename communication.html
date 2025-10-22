@@ -237,106 +237,119 @@
               <p class="text-gray-500 text-sm">Important updates and notices</p>
             </div>
             <button
-              id="openModal"
-              class="flex items-center gap-2 bg-green-600 text-white px-3 py-2 rounded shadow-sm hover:bg-green-700 transition"
+              id="openAnnouncementModal"
+              class="flex items-center gap-2 bg-emerald-600 text-white px-3 py-2 rounded shadow-sm hover:bg-emerald-700 transition"
             >
               <i data-lucide="plus" class="w-4 h-4"></i>
               <span>New</span>
             </button>
           </div>
-          <!-- Modal -->
+          <!-- Announcement Modal -->
           <div
-            id="modal"
-            class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+            id="announcementModal"
+            class="fixed inset-0 hidden items-center justify-center bg-black/40 backdrop-blur-sm z-50"
           >
-            <!-- Close button -->
-            <button
-              id="closeModal"
-              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            <div
+              class="relative bg-white rounded-2xl shadow-xl border border-gray-100 w-full max-w-2xl mx-4 p-6 animate-in fade-in-0 zoom-in-95"
             >
-              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
-            </button>
+              <!-- Close button -->
+              <button
+                id="closeAnnouncementModal"
+                class="absolute top-3 right-3 text-gray-500 hover:text-gray-700 transition-colors"
+              >
+                <i data-lucide="x" class="w-5 h-5"></i>
+              </button>
 
-            <div class="flex flex-col h-full w-full">
               <!-- Header -->
-
-              <!-- Form card -->
-              <div class="p-6 bg-white rounded-2xl shadow-sm">
-                <h2 class="text-xl font-semibold text-gray-800 gap-2 mb-1">
+              <div class="mb-5">
+                <h2
+                  class="text-xl font-semibold text-gray-900 flex items-center gap-2"
+                >
+                  <i
+                    data-lucide="megaphone"
+                    class="w-5 h-5 text-emerald-600"
+                  ></i>
                   Create New Announcement
                 </h2>
-                <p class="text-gray-500 text-sm mb-6">
+                <p class="text-gray-500 text-sm">
                   Share important information with the school community
                 </p>
-
-                <form class="space-y-4">
-                  <!-- Customer Name -->
-                  <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1"
-                      >Title</label
-                    >
-                    <input
-                      type="text"
-                      placeholder="Enter announcement title"
-                      class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
-                    />
-                  </div>
-                  <div>
-                    <label class="block text-sm font-medium text-gray-700 mb-1"
-                      >Content</label
-                    >
-                    <textarea
-                      placeholder="Enter announcement content"
-                      rows="3"
-                      class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
-                    ></textarea>
-                  </div>
-                  <div
-                    class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
-                  >
-                    <!-- Left Select -->
-                    <div class="flex-1">
-                      <label
-                        class="block text-sm font-medium text-gray-700 mb-1"
-                        >Priority</label
-                      >
-                      <select
-                        class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
-                      >
-                        <option>Normal</option>
-                        <option>High</option>
-                        <option>Urgent</option>
-                      </select>
-                    </div>
-
-                    <!-- Right Select -->
-                    <div class="flex-1">
-                      <label
-                        class="block text-sm font-medium text-gray-700 mb-1"
-                        >Target Audience</label
-                      >
-                      <select
-                        class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
-                      >
-                        <option>All</option>
-                        <option>Staff Only</option>
-                        <option>Students Only</option>
-                        <option>Parents Only</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <!-- Submit Button -->
-                  <div class="pt-3">
-                    <button
-                      type="submit"
-                      class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-lg shadow-sm transition-all"
-                    >
-                      Publish Announcement
-                    </button>
-                  </div>
-                </form>
               </div>
+
+              <!-- Form -->
+              <form class="space-y-5">
+                <!-- Title -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Title</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Enter announcement title"
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
+                  />
+                </div>
+
+                <!-- Content -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Content</label
+                  >
+                  <textarea
+                    rows="4"
+                    placeholder="Enter announcement content"
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all resize-none"
+                  ></textarea>
+                </div>
+
+                <!-- Selects -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Priority</label
+                    >
+                    <select
+                      class="w-full border border-gray-300 rounded-lg px-3 py-2.5 bg-white text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
+                    >
+                      <option>Normal</option>
+                      <option>High</option>
+                      <option>Urgent</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Target Audience</label
+                    >
+                    <select
+                      class="w-full border border-gray-300 rounded-lg px-3 py-2.5 bg-white text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all"
+                    >
+                      <option>All</option>
+                      <option>Staff Only</option>
+                      <option>Students Only</option>
+                      <option>Parents Only</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Buttons -->
+                <div
+                  class="flex flex-col sm:flex-row sm:justify-end gap-3 pt-4"
+                >
+                  <button
+                    type="button"
+                    id="cancelAnnouncementModal"
+                    class="w-full sm:w-auto px-5 py-2.5 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 font-medium transition-all"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    class="w-full sm:w-auto px-5 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium shadow-sm transition-all"
+                  >
+                    Publish Announcement
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
 
@@ -758,26 +771,44 @@
   <script src="navbar.js"></script>
   <script src="communication.js"></script>
   <script>
-    const openModal = document.getElementById("openModal");
-    const closeModal = document.getElementById("closeModal");
-    const modal = document.getElementById("modal");
+    const openAnnouncementModal = document.getElementById(
+      "openAnnouncementModal"
+    ); // your open button
+    const announcementModal = document.getElementById("announcementModal");
+    const closeAnnouncementModal = document.getElementById(
+      "closeAnnouncementModal"
+    );
+    const cancelAnnouncementModal = document.getElementById(
+      "cancelAnnouncementModal"
+    );
 
-    openModal.addEventListener("click", () => {
+    function openModal(modal) {
       modal.classList.remove("hidden");
       modal.classList.add("flex");
-    });
+      document.body.style.overflow = "hidden";
+    }
 
-    closeModal.addEventListener("click", () => {
+    function closeModal(modal) {
       modal.classList.add("hidden");
       modal.classList.remove("flex");
+      document.body.style.overflow = "";
+    }
+
+    // Open
+    if (openAnnouncementModal)
+      openAnnouncementModal.addEventListener("click", () =>
+        openModal(announcementModal)
+      );
+
+    // Close buttons
+    [closeAnnouncementModal, cancelAnnouncementModal].forEach((btn) => {
+      if (btn)
+        btn.addEventListener("click", () => closeModal(announcementModal));
     });
 
-    // Optional: close modal when clicking outside
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.add("hidden");
-        modal.classList.remove("flex");
-      }
+    // Close on backdrop click
+    announcementModal.addEventListener("click", (e) => {
+      if (e.target === announcementModal) closeModal(announcementModal);
     });
   </script>
 </html>
