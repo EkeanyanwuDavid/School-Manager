@@ -13,6 +13,664 @@
   </head>
   <body>
     <div id="navbar"></div>
+
+    <main class="max-w-full mx-auto p-6 bg-gray-50 min-h-screen w-full">
+      <header class="mb-6"></header>
+
+      <div
+        class="flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+      >
+        <!-- Title + Description -->
+        <div class="ml-4 flex items-center gap-2">
+          <div>
+            <h2
+              class="flex items-center gap-2 text-3xl text-green-700 font-bold"
+            >
+              Meal Ticket System
+            </h2>
+            <p class="text-gray-500 mt-3">
+              Manage student meal accounts, and vendor services
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-7">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-600 font-medium">Total Students</h4>
+            <button
+              class="flex items-center justify-center w-10 h-10 rounded-full transition"
+            >
+              <i data-lucide="users" class="w-5 h-5 text-gray-600"></i>
+            </button>
+          </div>
+          <p class="text-3xl mt-4 font-bold">1,247</p>
+          <p class="text-sm text-gray-400 mt-2">+12% from last month</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-600 font-medium">Active Accounts</h4>
+            <button
+              class="flex items-center justify-center w-10 h-10 rounded-full transition"
+            >
+              <i data-lucide="wallet" class="w-5 h-5 text-gray-600"></i>
+            </button>
+          </div>
+          <p class="text-3xl mt-4 font-bold">1,158</p>
+          <p class="text-sm text-gray-400 mt-2">92.9% participation rate</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-600 font-medium">Daily Revenue</h4>
+            <button
+              class="flex items-center justify-center w-10 h-10 rounded-full transition"
+            >
+              <i data-lucide="dollar-sign" class="w-5 h-5 text-gray-600"></i>
+            </button>
+          </div>
+          <p class="text-3xl mt-4 font-bold">$2,847</p>
+          <p class="text-sm text-gray-400 mt-2">+8% from yesterday</p>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-5 hover:shadow-lg transition">
+          <div class="flex items-center justify-between">
+            <h4 class="text-gray-600 font-medium">Active Vendors</h4>
+            <button
+              class="flex items-center justify-center w-10 h-10 rounded-full transition"
+            >
+              <i data-lucide="shopping-bag" class="w-5 h-5 text-gray-600"></i>
+            </button>
+          </div>
+          <p class="text-3xl mt-4 font-bold">5</p>
+
+          <p class="text-sm text-gray-400 mt-2">2 external partners</p>
+        </div>
+      </div>
+
+      <div
+        id="tabButtons"
+        class="flex flex-wrap justify-center gap-4 mt-8 px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl shadow-sm"
+      >
+        <button
+          id="btnStudent"
+          class="tab-btn cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
+        >
+          <i data-lucide="user" class="w-4 h-4"></i>
+          <span>Student Accounts</span>
+        </button>
+
+        <button
+          id="btnVendor"
+          class="tab-btn cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
+        >
+          <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+          <span>Vendors</span>
+        </button>
+
+        <button
+          id="btnTransaction"
+          class="tab-btn cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
+        >
+          <i data-lucide="dollar-sign" class="w-4 h-4"></i>
+          <span>Transactions</span>
+        </button>
+      </div>
+      <div id="Student">
+        <div class="bg-white border border-gray-100 rounded mt-7 shadow-sm p-6">
+          <!-- Header -->
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6"
+          >
+            <div>
+              <h2 class="text-lg font-semibold text-gray-900">
+                Student Meal Accounts
+              </h2>
+              <p class="text-sm text-gray-500">
+                Manage student balances and account status
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <div class="relative">
+                <i
+                  data-lucide="search"
+                  class="absolute left-3 top-2.5 w-4 h-4 text-gray-400"
+                ></i>
+                <input
+                  type="text"
+                  placeholder="Search students..."
+                  class="pl-9 pr-4 py-2.5 border border-gray-200 rounded-lg text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                />
+              </div>
+              <button
+                id="openModal"
+                class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2.5 rounded-lg shadow-sm flex items-center gap-2 transition-all"
+              >
+                <i data-lucide="plus" class="w-4 h-4"></i> Top Up Account
+              </button>
+            </div>
+
+            <!-- Top Up Modal -->
+            <div
+              id="studentModal"
+              class="fixed inset-0 bg-black/50 items-center justify-center z-50 hidden"
+            >
+              <div
+                class="relative bg-white rounded-xl shadow-lg border border-gray-200 w-full max-w-lg p-6"
+              >
+                <button
+                  id="closeStudentModal"
+                  class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+                >
+                  <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+
+                <h2 class="text-lg font-semibold text-gray-800 mb-4">
+                  Top Up Account
+                </h2>
+                <form class="space-y-4">
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Student ID</label
+                    >
+                    <input
+                      type="text"
+                      class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      placeholder="Enter student ID"
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Amount</label
+                    >
+                    <input
+                      type="number"
+                      class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      placeholder="0.00"
+                    />
+                  </div>
+
+                  <select
+                    name=""
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                    id=""
+                  >
+                    <option value="" disabled selected>Payment Method</option>
+                    <option value="cash">Cash</option>
+                    <option value="card">Card</option>
+                    <option value="online">Online Transfer</option>
+                  </select>
+                  <button
+                    type="button"
+                    class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-lg font-medium"
+                  >
+                    Process Top Up
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-t border-gray-100">
+              <thead>
+                <tr class="text-left text-gray-600 bg-gray-50">
+                  <th class="py-3 px-4 font-medium">Student ID</th>
+                  <th class="py-3 px-4 font-medium">Name</th>
+                  <th class="py-3 px-4 font-medium">Class</th>
+                  <th class="py-3 px-4 font-medium">Balance</th>
+                  <th class="py-3 px-4 font-medium">Status</th>
+                  <th class="py-3 px-4 font-medium">Last Transaction</th>
+                  <th class="py-3 px-4 font-medium text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <!-- Row 1 -->
+                <tr class="hover:bg-gray-50 transition">
+                  <td class="py-3 px-4 font-medium text-gray-800">ST001</td>
+                  <td class="py-3 px-4 text-gray-700">Alice Johnson</td>
+                  <td class="py-3 px-4 text-gray-600">Grade 10A</td>
+                  <td class="py-3 px-4 text-gray-800">$150.50</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-emerald-100 text-emerald-700 text-xs font-medium px-3 py-1 rounded-full"
+                      >Active</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-500">2024-01-15</td>
+                  <td class="py-3 px-4 text-center">
+                    <div class="flex items-center justify-center gap-2">
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-emerald-700 border-emerald-200 hover:bg-emerald-50 transition text-xs font-medium"
+                      >
+                        <i data-lucide="credit-card" class="w-3.5 h-3.5"></i>
+                        Top Up
+                      </button>
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-gray-600 border-gray-200 hover:bg-gray-50 transition text-xs font-medium"
+                      >
+                        <i
+                          data-lucide="clock-rotate-left"
+                          class="w-3.5 h-3.5"
+                        ></i>
+                        History
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr class="hover:bg-gray-50 transition">
+                  <td class="py-3 px-4 font-medium text-gray-800">ST002</td>
+                  <td class="py-3 px-4 text-gray-700">Bob Smith</td>
+                  <td class="py-3 px-4 text-gray-600">Grade 9B</td>
+                  <td class="py-3 px-4 text-red-600 font-medium">$25.75</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-gray-100 text-gray-700 text-xs font-medium px-3 py-1 rounded-full"
+                      >Low Balance</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-500">2024-01-14</td>
+                  <td class="py-3 px-4 text-center">
+                    <div class="flex items-center justify-center gap-2">
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-emerald-700 border-emerald-200 hover:bg-emerald-50 transition text-xs font-medium"
+                      >
+                        <i data-lucide="credit-card" class="w-3.5 h-3.5"></i>
+                        Top Up
+                      </button>
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-gray-600 border-gray-200 hover:bg-gray-50 transition text-xs font-medium"
+                      >
+                        <i
+                          data-lucide="clock-rotate-left"
+                          class="w-3.5 h-3.5"
+                        ></i>
+                        History
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr class="hover:bg-gray-50 transition">
+                  <td class="py-3 px-4 font-medium text-gray-800">ST003</td>
+                  <td class="py-3 px-4 text-gray-700">Carol Davis</td>
+                  <td class="py-3 px-4 text-gray-600">Grade 11C</td>
+                  <td class="py-3 px-4 text-red-600 font-medium">$0.00</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-red-100 text-red-700 text-xs font-medium px-3 py-1 rounded-full"
+                      >Inactive</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-500">2024-01-10</td>
+                  <td class="py-3 px-4 text-center">
+                    <div class="flex items-center justify-center gap-2">
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-emerald-700 border-emerald-200 hover:bg-emerald-50 transition text-xs font-medium"
+                      >
+                        <i data-lucide="credit-card" class="w-3.5 h-3.5"></i>
+                        Top Up
+                      </button>
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-gray-600 border-gray-200 hover:bg-gray-50 transition text-xs font-medium"
+                      >
+                        <i
+                          data-lucide="clock-rotate-left"
+                          class="w-3.5 h-3.5"
+                        ></i>
+                        History
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="Vendor">
+        <div class="bg-white border border-gray-100 rounded mt-7 shadow-sm p-6">
+          <!-- Header -->
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6"
+          >
+            <div>
+              <h2 class="text-lg font-semibold text-gray-900">
+                Vendor Management
+              </h2>
+              <p class="text-sm text-gray-500">
+                Manage meal service providers and their settings
+              </p>
+            </div>
+            <div class="flex items-center gap-2">
+              <button
+                id="openVendorModal"
+                class="bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2.5 rounded-lg shadow-sm flex items-center gap-2 transition-all"
+              >
+                <i data-lucide="plus" class="w-4 h-4"></i> Add Vendor
+              </button>
+              <!-- Add Vendor Modal -->
+              <div
+                id="vendorModal"
+                class="fixed inset-0 bg-black/50 items-center justify-center z-50 hidden"
+              >
+                <div
+                  class="relative bg-white rounded-xl shadow-lg border border-gray-200 w-full max-w-lg p-6"
+                >
+                  <!-- Close -->
+                  <button
+                    id="closeVendorModal"
+                    class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+                  >
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                  </button>
+
+                  <h2 class="text-lg font-semibold text-gray-800 mb-4">
+                    Add New Vendor
+                  </h2>
+                  <form class="space-y-4">
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-700 mb-1"
+                        >Vendor Name</label
+                      >
+                      <input
+                        type="text"
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                        placeholder="Enter vendor name"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-700 mb-1"
+                        >Vendor Type</label
+                      >
+                      <select
+                        name=""
+                        class="w-full border border-gray-300 mb-4 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                        id=""
+                      >
+                        <option value="" disabled selected>
+                          Select Vendor Type
+                        </option>
+                        <option value="internal">Internal</option>
+                        <option value="external">External</option>
+                      </select>
+                      <label
+                        class="block text-sm font-medium text-gray-700 mb-1"
+                        >Commission Rate (%)</label
+                      >
+                      <input
+                        type="number"
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                        placeholder="0"
+                      />
+                    </div>
+
+                    <button
+                      type="button"
+                      class="w-full bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 rounded-lg font-medium"
+                    >
+                      Save Vendor
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-t border-gray-100">
+              <thead>
+                <tr class="text-left text-gray-600 bg-gray-50">
+                  <th class="py-3 px-4 font-medium">Vendor ID</th>
+                  <th class="py-3 px-4 font-medium">Name</th>
+                  <th class="py-3 px-4 font-medium">Type</th>
+                  <th class="py-3 px-4 font-medium">Commision</th>
+                  <th class="py-3 px-4 font-medium">Total Sales</th>
+                  <th class="py-3 px-4 font-medium">Status</th>
+                  <th class="py-3 px-4 font-medium text-center">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <!-- Row 1 -->
+                <tr class="hover:bg-gray-50 transition">
+                  <td class="py-3 px-4 font-medium text-gray-800">V001</td>
+                  <td class="py-3 px-4 text-gray-700">School Cafeteria</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-green-700 text-white text-xs font-medium px-3 py-1 rounded-full"
+                      >internal</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-800">0%</td>
+                  <td class="py-3 px-4 text-gray-800">$2450.00</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-green-700 text-white text-xs font-medium px-3 py-1 rounded-full"
+                      >Active</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-center">
+                    <div class="flex items-center justify-center gap-2">
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-emerald-700 border-emerald-200 hover:bg-emerald-50 transition text-xs font-medium"
+                      >
+                        <i data-lucide="edit" class="w-3.5 h-3.5"></i>
+                        Edit
+                      </button>
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-gray-600 border-gray-200 hover:bg-gray-50 transition text-xs font-medium"
+                      >
+                        <i data-lucide="trending-up" class="w-3.5 h-3.5"></i>
+                        Reports
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr class="hover:bg-gray-50 transition">
+                  <td class="py-3 px-4 font-medium text-gray-800">V002</td>
+                  <td class="py-3 px-4 text-gray-700">Healthy Bites Co.</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-gray-400 text-white text-xs font-medium px-3 py-1 rounded-full"
+                      >external</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-800">15%</td>
+                  <td class="py-3 px-4 text-gray-800">$1875.00</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-green-700 text-white text-xs font-medium px-3 py-1 rounded-full"
+                      >Active</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-center">
+                    <div class="flex items-center justify-center gap-2">
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-emerald-700 border-emerald-200 hover:bg-emerald-50 transition text-xs font-medium"
+                      >
+                        <i data-lucide="edit" class="w-3.5 h-3.5"></i>
+                        Edit
+                      </button>
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-gray-600 border-gray-200 hover:bg-gray-50 transition text-xs font-medium"
+                      >
+                        <i data-lucide="trending-up" class="w-3.5 h-3.5"></i>
+                        Reports
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr class="hover:bg-gray-50 transition">
+                  <td class="py-3 px-4 font-medium text-gray-800">V003</td>
+                  <td class="py-3 px-4 text-gray-700">Fresh Foods Ltd.</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-gray-400 text-white text-xs font-medium px-3 py-1 rounded-full"
+                      >external</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-800">12%</td>
+                  <td class="py-3 px-4 text-gray-800">$980.00</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-gray-400 text-white text-xs font-medium px-3 py-1 rounded-full"
+                      >Pending</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-center">
+                    <div class="flex items-center justify-center gap-2">
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-emerald-700 border-emerald-200 hover:bg-emerald-50 transition text-xs font-medium"
+                      >
+                        <i data-lucide="edit" class="w-3.5 h-3.5"></i>
+                        Edit
+                      </button>
+                      <button
+                        class="flex items-center gap-1 px-3 py-1.5 rounded-lg border text-gray-600 border-gray-200 hover:bg-gray-50 transition text-xs font-medium"
+                      >
+                        <i data-lucide="trending-up" class="w-3.5 h-3.5"></i>
+                        Reports
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div id="Transaction">
+        <div class="bg-white border border-gray-100 rounded mt-7 shadow-sm p-6">
+          <!-- Header -->
+          <div
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-3 mb-6"
+          >
+            <div>
+              <h2 class="text-lg font-semibold text-gray-900">
+                Recent Transactions
+              </h2>
+              <p class="text-sm text-gray-500">
+                Track all meal purchase and account top-ups
+              </p>
+            </div>
+            <div class="flex items-center gap-3">
+              <!-- Vendor Filter -->
+              <div class="relative">
+                <select
+                  name=""
+                  id=""
+                  class="appearance-none w-48 border border-gray-200 rounded-lg pl-9 pr-8 py-2.5 text-sm text-gray-700 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none transition-all cursor-pointer"
+                >
+                  <option>All Vendors</option>
+                  <option>School Cafeteria</option>
+                  <option>Healthy Bites Co.</option>
+                  <option>Fresh Foods Ltd</option>
+                </select>
+                <i
+                  data-lucide="chevron-down"
+                  class="absolute right-3 top-2.5 w-4 h-4 text-gray-400 pointer-events-none"
+                ></i>
+              </div>
+
+              <!-- Export Button -->
+              <button
+                class="flex items-center gap-2 px-4 py-2.5 rounded-lg border border-gray-200 text-gray-700 text-sm font-medium hover:bg-gray-50 hover:text-gray-900 shadow-sm transition-all"
+              >
+                <i data-lucide="download" class="w-4 h-4"></i>
+                Export
+              </button>
+            </div>
+          </div>
+
+          <div class="overflow-x-auto">
+            <table class="w-full text-sm border-t border-gray-100">
+              <thead>
+                <tr class="text-left text-gray-600 bg-gray-50">
+                  <th class="py-3 px-4 font-medium">Transaction ID</th>
+                  <th class="py-3 px-4 font-medium">Student</th>
+                  <th class="py-3 px-4 font-medium">Vendor</th>
+                  <th class="py-3 px-4 font-medium">Amount</th>
+                  <th class="py-3 px-4 font-medium">Type</th>
+                  <th class="py-3 px-4 font-medium">Date & Time</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                <!-- Row 1 -->
+                <tr class="hover:bg-gray-50 transition">
+                  <td class="py-3 px-4 font-medium text-gray-800">T001</td>
+                  <td class="py-3 px-4 text-gray-700">Alice Johnson</td>
+                  <td class="py-3 px-4 text-gray-600">School Cafeteria</td>
+                  <td class="py-3 px-4 text-red-600 font-medium">$12.50</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-red-600 text-white text-xs font-medium px-3 py-1 rounded-full"
+                      >Purchase</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-500">
+                    2024-01-15
+                    <p class="text-sm">12:30</p>
+                  </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr class="hover:bg-gray-50 transition">
+                  <td class="py-3 px-4 font-medium text-gray-800">T002</td>
+                  <td class="py-3 px-4 text-gray-700">Bob Smith</td>
+                  <td class="py-3 px-4 text-gray-600">Healthy Bites Co.</td>
+                  <td class="py-3 px-4 text-red-600 font-medium">$8.75</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-red-600 text-white text-xs font-medium px-3 py-1 rounded-full"
+                      >Purchase</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-500">
+                    2024-01-15
+                    <p class="text-sm">12:30</p>
+                  </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr class="hover:bg-gray-50 transition">
+                  <td class="py-3 px-4 font-medium text-gray-800">T003</td>
+                  <td class="py-3 px-4 text-gray-700">Alice Johnson</td>
+                  <td class="py-3 px-4 text-gray-600">Bob Smith</td>
+                  <td class="py-3 px-4 text-green-600 font-medium">$50.00</td>
+                  <td class="py-3 px-4">
+                    <span
+                      class="bg-green-600 text-white text-xs font-medium px-3 py-1 rounded-full"
+                      >Top Up</span
+                    >
+                  </td>
+                  <td class="py-3 px-4 text-gray-500">
+                    2024-01-15
+                    <p class="text-sm">12:30</p>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
   <script src="navbar.js"></script>
+  <script src="meal_tickets.js"></script>
 </html>

@@ -95,6 +95,7 @@
         class="flex flex-wrap justify-center gap-4 mt-8 px-6 py-4 bg-gray-50 border border-gray-200 rounded-xl shadow-sm"
       >
         <button
+          id="btnAnnouncement"
           class="tab-btn cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
         >
           <i data-lucide="megaphone" class="w-4 h-4"></i>
@@ -102,6 +103,7 @@
         </button>
 
         <button
+          id="btnParent"
           class="tab-btn cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
         >
           <i data-lucide="message-square" class="w-4 h-4"></i>
@@ -109,18 +111,327 @@
         </button>
 
         <button
+          id="btnEngage"
           class="tab-btn cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
         >
           <i data-lucide="users" class="w-4 h-4"></i>
           <span>Engagement Analytics</span>
         </button>
       </div>
-
-      <div
-        class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 mt-7 gap-3"
-      >
+      <div id="Announce">
         <div
-          class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full"
+          class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 mt-7 gap-3"
+        >
+          <div
+            class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full"
+          >
+            <!-- Search -->
+            <div class="relative flex-1">
+              <i
+                data-lucide="search"
+                class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400"
+              ></i>
+              <input
+                type="text"
+                placeholder="Search announcements..."
+                class="w-full border border-gray-300 rounded-lg pl-10 pr-3 py-[6px] text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+              />
+            </div>
+
+            <select
+              class="border border-gray-300 rounded-lg px-3 py-[6px] text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+            >
+              <option value="">All Priorities</option>
+              <option value="high">High Priority</option>
+              <option value="medium">Medium Priority</option>
+              <option value="low">Low Priority</option>
+            </select>
+          </div>
+
+          <button
+            id="openModal"
+            class="flex items-center gap-1.5 bg-emerald-600 text-white px-3.5 py-[6px] text-sm rounded-md hover:bg-emerald-700 transition-all"
+          >
+            <i data-lucide="plus" class="w-4 h-4"></i>
+            New
+          </button>
+        </div>
+        <!-- Modal -->
+        <div
+          id="modal"
+          class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+        >
+          <!-- Close button -->
+          <button
+            id="closeModal"
+            class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+          >
+            <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
+          </button>
+
+          <div class="flex flex-col h-full w-full">
+            <!-- Header -->
+
+            <!-- Form card -->
+            <div class="p-8 mt-7 bg-white rounded shadow-sm">
+              <h2 class="text-xl font-semibold text-gray-800 gap-2 mb-1">
+                Create New Announcement
+              </h2>
+
+              <form class="space-y-4">
+                <!-- Announcement Name -->
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Title</label
+                  >
+                  <input
+                    type="text"
+                    placeholder="Enter announcement title"
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Content</label
+                  >
+                  <textarea
+                    placeholder="Enter announcement content..."
+                    rows="3"
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                  ></textarea>
+                </div>
+                <div
+                  class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
+                >
+                  <!-- Left Select -->
+                  <div class="flex-1">
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Priority</label
+                    >
+                    <select
+                      class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                    >
+                      <option>High Priority</option>
+                      <option>Medium Priority</option>
+                      <option>Low Priority</option>
+                    </select>
+                  </div>
+
+                  <!-- Right Select -->
+                  <div class="flex-1">
+                    <label class="block text-sm font-medium text-gray-700 mb-1"
+                      >Target Audience</label
+                    >
+                    <select
+                      class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                    >
+                      <option>Select audience</option>
+                      <option>All Parents</option>
+                      <option>Specific Class</option>
+                      <option>Fee Defaulters</option>
+                      <option>New Parents</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-3 flex flex-col sm:flex-row gap-3">
+                  <!-- Save as Draft -->
+                  <button
+                    type="button"
+                    class="w-full sm:w-auto flex-1 border border-gray-300 text-gray-700 font-medium py-2.5 rounded-lg hover:bg-gray-100 transition-all"
+                  >
+                    Save as Draft
+                  </button>
+
+                  <!-- Publish -->
+                  <button
+                    type="submit"
+                    class="w-full sm:w-auto flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-lg shadow-sm transition-all"
+                  >
+                    Publish Announcement
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div
+          class="bg-gray-50 p-5 rounded shadow-sm hover:shadow-md transition-all"
+        >
+          <div class="space-y-4">
+            <div class="bg-white p-5 rounded shadow-md transition-all">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3"
+              >
+                <div>
+                  <h2 class="text-lg font-semibold text-gray-900">
+                    Parent-Teacher Meeting Schedule
+                  </h2>
+                  <p class="text-sm text-gray-500">
+                    By Admin Office &centerdot; <span>2024-01-15</span>
+                  </p>
+                  <p class="mt-2 text-gray-700 text-sm">
+                    We have scheduled parent-teacher meetings for all classes.
+                    Please confirm your attendance.
+                  </p>
+                  <p class="text-gray-500 text-sm mt-1">
+                    Audience: All Parents
+                  </p>
+                </div>
+                <div class="flex gap-2 flex-wrap sm:justify-end">
+                  <span
+                    class="px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-600"
+                    >High</span
+                  >
+                  <span
+                    class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-600"
+                    >Published</span
+                  >
+                </div>
+              </div>
+              <div
+                class="mt-4 flex items-center justify-between text-sm text-gray-500"
+              >
+                <div class="flex items-center gap-4">
+                  <span class="flex items-center gap-1"
+                    ><i data-lucide="eye" class="w-4 h-4"></i> 145 views</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><i data-lucide="message-square" class="w-4 h-4"></i> 23
+                    responses</span
+                  >
+                </div>
+                <div class="flex items-center gap-3 text-gray-500">
+                  <button class="hover:text-blue-600">
+                    <i data-lucide="edit" class="w-4 h-4"></i>
+                  </button>
+                  <button class="hover:text-blue-600">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                  </button>
+                  <button class="hover:text-blue-600">
+                    <i data-lucide="trash-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-5 rounded shadow-md transition-all mt-7">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3"
+              >
+                <div>
+                  <h2 class="text-lg font-semibold text-gray-900">
+                    School Fee Payment Reminder
+                  </h2>
+                  <p class="text-sm text-gray-500">
+                    By Accounts Department &centerdot; <span>2024-01-15</span>
+                  </p>
+                  <p class="mt-2 text-gray-700 text-sm">
+                    Friendly reminder that the second term fees are due by
+                    January 30th,2024
+                  </p>
+                  <p class="text-gray-500 text-sm mt-1">
+                    Audience: Fee Defaulters
+                  </p>
+                </div>
+                <div class="flex gap-2 flex-wrap sm:justify-end">
+                  <span
+                    class="px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-600"
+                    >Medium</span
+                  >
+                  <span
+                    class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-600"
+                    >Published</span
+                  >
+                </div>
+              </div>
+              <div
+                class="mt-4 flex items-center justify-between text-sm text-gray-500"
+              >
+                <div class="flex items-center gap-4">
+                  <span class="flex items-center gap-1"
+                    ><i data-lucide="eye" class="w-4 h-4"></i> 87 views</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><i data-lucide="message-square" class="w-4 h-4"></i> 12
+                    responses</span
+                  >
+                </div>
+                <div class="flex items-center gap-3 text-gray-500">
+                  <button class="hover:text-blue-600">
+                    <i data-lucide="edit" class="w-4 h-4"></i>
+                  </button>
+                  <button class="hover:text-blue-600">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                  </button>
+                  <button class="hover:text-blue-600">
+                    <i data-lucide="trash-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-5 rounded shadow-md transition-all mt-7">
+              <div
+                class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3"
+              >
+                <div>
+                  <h2 class="text-lg font-semibold text-gray-900">
+                    Sports Day Activities
+                  </h2>
+                  <p class="text-sm text-gray-500">
+                    By Sports Department &centerdot; <span>2024-01-15</span>
+                  </p>
+                  <p class="mt-2 text-gray-700 text-sm">
+                    Join us for our annual sports day celebration on February
+                    14th, 2024
+                  </p>
+                  <p class="text-gray-500 text-sm mt-1">
+                    Audience: All Parents
+                  </p>
+                </div>
+                <div class="flex gap-2 flex-wrap sm:justify-end">
+                  <span
+                    class="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600"
+                    >Low</span
+                  >
+                  <span
+                    class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-600"
+                    >Published</span
+                  >
+                </div>
+              </div>
+              <div
+                class="mt-4 flex items-center justify-between text-sm text-gray-500"
+              >
+                <div class="flex items-center gap-4">
+                  <span class="flex items-center gap-1"
+                    ><i data-lucide="eye" class="w-4 h-4"></i> 234 views</span
+                  >
+                  <span class="flex items-center gap-1"
+                    ><i data-lucide="message-square" class="w-4 h-4"></i> 45
+                    responses</span
+                  >
+                </div>
+                <div class="flex items-center gap-3 text-gray-500">
+                  <button class="hover:text-blue-600">
+                    <i data-lucide="edit" class="w-4 h-4"></i>
+                  </button>
+                  <button class="hover:text-blue-600">
+                    <i data-lucide="eye" class="w-4 h-4"></i>
+                  </button>
+                  <button class="hover:text-blue-600">
+                    <i data-lucide="trash-2" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="ParentMsg">
+        <div
+          class="flex flex-col mt-8 sm:flex-row items-stretch sm:items-center gap-3 w-full"
         >
           <!-- Search -->
           <div class="relative flex-1">
@@ -134,289 +445,393 @@
               class="w-full border border-gray-300 rounded-lg pl-10 pr-3 py-[6px] text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
             />
           </div>
-
-          <select
-            class="border border-gray-300 rounded-lg px-3 py-[6px] text-sm focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+          <button
+            class="flex items-center gap-1.5 bg-emerald-600 text-white px-3.5 py-[6px] text-sm rounded-md hover:bg-emerald-700 transition-all"
           >
-            <option value="">All Priorities</option>
-            <option value="high">High Priority</option>
-            <option value="medium">Medium Priority</option>
-            <option value="low">Low Priority</option>
-          </select>
+            <i data-lucide="send" class="w-4 h-4"></i>
+            Send Message
+          </button>
         </div>
 
-        <button
-          id="openModal"
-          class="flex items-center gap-1.5 bg-emerald-600 text-white px-3.5 py-[6px] text-sm rounded-md hover:bg-emerald-700 transition-all"
-        >
-          <i data-lucide="plus" class="w-4 h-4"></i>
-          New
-        </button>
-      </div>
-      <!-- Modal -->
-      <div
-        id="modal"
-        class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
-      >
-        <!-- Close button -->
-        <button
-          id="closeModal"
-          class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
-        >
-          <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
-        </button>
+        <div class="bg-white rounded shadow-sm border border-gray-100 p-4 mt-8">
+          <div class="overflow-x-auto">
+            <table class="min-w-full border-collapse">
+              <thead>
+                <tr class="text-sm text-gray-800 border-b border-gray-200">
+                  <th class="py-3 px-4 text-left font-medium">Parent</th>
+                  <th class="py-3 px-4 text-left font-medium">Student</th>
+                  <th class="py-3 px-4 text-left font-medium">Subject</th>
+                  <th class="py-3 px-4 text-left font-medium">Date</th>
+                  <th class="py-3 px-4 text-left font-medium">Status</th>
+                  <th class="py-3 px-4 text-left font-medium">Priority</th>
+                  <th class="py-3 px-4 text-left font-medium">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="text-sm text-gray-700">
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-11 h-11 bg-gray-200 rounded-full flex items-center justify-center"
+                        >
+                          <span class="text-gray-700">MSJ</span>
+                        </span>
+                        <span class="font-semibold text-gray-900"
+                          >Mrs. Sarah Johnson</span
+                        >
+                      </div>
+                      <p
+                        class="text-gray-500 text-sm mt-1 flex items-center ml-9"
+                      >
+                        <i data-lucide="phone" class="w-4 h-4"></i> +23456789012
+                      </p>
+                    </div>
+                  </td>
 
-        <div class="flex flex-col h-full w-full">
-          <!-- Header -->
+                  <td class="py-3 px-4 align-middle">
+                    Michael Johnson
+                    <p class="text-sm text-gray-500">JSS 2A</p>
+                  </td>
 
-          <!-- Form card -->
-          <div class="p-8 mt-7 bg-white rounded shadow-sm">
-            <h2 class="text-xl font-semibold text-gray-800 gap-2 mb-1">
-              Create New Announcement
-            </h2>
+                  <td class="py-3 px-4 font-semibold align-middle">
+                    Academic Performance Inquiry
+                  </td>
 
-            <form class="space-y-4">
-              <!-- Announcement Name -->
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1"
-                  >Title</label
-                >
-                <input
-                  type="text"
-                  placeholder="Enter announcement title"
-                  class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
-                />
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-1"
-                  >Content</label
-                >
-                <textarea
-                  placeholder="Enter announcement content..."
-                  rows="3"
-                  class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
-                ></textarea>
-              </div>
-              <div
-                class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4"
-              >
-                <!-- Left Select -->
-                <div class="flex-1">
-                  <label class="block text-sm font-medium text-gray-700 mb-1"
-                    >Priority</label
-                  >
-                  <select
-                    class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
-                  >
-                    <option>High Priority</option>
-                    <option>Medium Priority</option>
-                    <option>Low Priority</option>
-                  </select>
-                </div>
+                  <td class="py-3 px-4 align-middle text-sm">
+                    2024-01-15
+                    <p class="text-sm text-gray-500">10:30AM</p>
+                  </td>
 
-                <!-- Right Select -->
-                <div class="flex-1">
-                  <label class="block text-sm font-medium text-gray-700 mb-1"
-                    >Target Audience</label
-                  >
-                  <select
-                    class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
-                  >
-                    <option>Select audience</option>
-                    <option>All Parents</option>
-                    <option>Specific Class</option>
-                    <option>Fee Defaulters</option>
-                    <option>New Parents</option>
-                  </select>
-                </div>
-              </div>
+                  <td class="py-3 px-4 align-middle">
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-red-600 text-white font-medium"
+                      >unread</span
+                    >
+                  </td>
 
-              <!-- Submit Button -->
-              <div class="pt-3 flex flex-col sm:flex-row gap-3">
-                <!-- Save as Draft -->
-                <button
-                  type="button"
-                  class="w-full sm:w-auto flex-1 border border-gray-300 text-gray-700 font-medium py-2.5 rounded-lg hover:bg-gray-100 transition-all"
-                >
-                  Save as Draft
-                </button>
+                  <td class="py-3 px-4 align-middle">
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-700 text-white font-medium"
+                      >medium</span
+                    >
+                  </td>
 
-                <!-- Publish -->
-                <button
-                  type="submit"
-                  class="w-full sm:w-auto flex-1 bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-lg shadow-sm transition-all"
-                >
-                  Publish Announcement
-                </button>
-              </div>
-            </form>
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i data-lucide="eye" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                      <button class="p-2 rounded-lg transition">
+                        <i data-lucide="send" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                      <button class="p-2 rounded-lg transition">
+                        <i
+                          data-lucide="phone"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-11 h-11 bg-gray-200 rounded-full flex items-center justify-center"
+                        >
+                          <span class="text-gray-700">MDQ</span>
+                        </span>
+                        <span class="font-semibold text-gray-900"
+                          >Mr. David Okafor</span
+                        >
+                      </div>
+                      <p
+                        class="text-gray-500 text-sm mt-1 flex items-center ml-9"
+                      >
+                        <i data-lucide="phone" class="w-4 h-4"></i> +23456789012
+                      </p>
+                    </div>
+                  </td>
+
+                  <td class="py-3 px-4 align-middle">
+                    Grace Okafor
+                    <p class="text-sm text-gray-500">SS 1B</p>
+                  </td>
+
+                  <td class="py-3 px-4 font-semibold align-middle">
+                    Permission for school trip
+                  </td>
+
+                  <td class="py-3 px-4 align-middle text-sm">
+                    2024-01-15
+                    <p class="text-sm text-gray-500">10:30AM</p>
+                  </td>
+
+                  <td class="py-3 px-4 align-middle">
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-700 text-white font-medium"
+                      >read</span
+                    >
+                  </td>
+
+                  <td class="py-3 px-4 align-middle">
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-gray-500 text-white font-medium"
+                      >low</span
+                    >
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i data-lucide="eye" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                      <button class="p-2 rounded-lg transition">
+                        <i data-lucide="send" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                      <button class="p-2 rounded-lg transition">
+                        <i
+                          data-lucide="phone"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50 border-b border-gray-100">
+                  <td class="py-4 px-6 align-middle">
+                    <div class="flex flex-col">
+                      <div class="flex items-center gap-2">
+                        <span
+                          class="w-11 h-11 bg-gray-200 rounded-full flex items-center justify-center"
+                        >
+                          <span class="text-gray-700">MFA</span>
+                        </span>
+                        <span class="font-semibold text-gray-900"
+                          >Mr. Fatima Abdullahi</span
+                        >
+                      </div>
+                      <p
+                        class="text-gray-500 text-sm mt-1 flex items-center ml-9"
+                      >
+                        <i data-lucide="phone" class="w-4 h-4"></i> +23456789012
+                      </p>
+                    </div>
+                  </td>
+
+                  <td class="py-3 px-4 align-middle">
+                    Grace Okafor
+                    <p class="text-sm text-gray-500">SS 1B</p>
+                  </td>
+
+                  <td class="py-3 px-4 font-semibold align-middle">
+                    Medical Leave Request
+                  </td>
+
+                  <td class="py-3 px-4 align-middle text-sm">
+                    2024-01-15
+                    <p class="text-sm text-gray-500">10:30AM</p>
+                  </td>
+
+                  <td class="py-3 px-4 align-middle">
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-green-700 text-white font-medium"
+                      >replied</span
+                    >
+                  </td>
+
+                  <td class="py-3 px-4 align-middle">
+                    <span
+                      class="px-4 py-1 text-xs rounded-full bg-red-600 text-white font-medium"
+                      >high</span
+                    >
+                  </td>
+
+                  <!-- Actions -->
+                  <td class="py-3 px-4 align-middle">
+                    <span class="inline-flex justify-center gap-2">
+                      <button
+                        class="p-2 rounded-lg hover:bg-gray-100 transition"
+                      >
+                        <i data-lucide="eye" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                      <button class="p-2 rounded-lg transition">
+                        <i data-lucide="send" class="w-4 h-4 text-gray-600"></i>
+                      </button>
+                      <button class="p-2 rounded-lg transition">
+                        <i
+                          data-lucide="phone"
+                          class="w-4 h-4 text-gray-600"
+                        ></i>
+                      </button>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
-      <div
-        class="bg-gray-50 p-5 rounded shadow-sm hover:shadow-md transition-all"
-      >
-        <div class="space-y-4">
-          <div class="bg-white p-5 rounded shadow-md transition-all">
-            <div
-              class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3"
-            >
-              <div>
-                <h2 class="text-lg font-semibold text-gray-900">
-                  Parent-Teacher Meeting Schedule
-                </h2>
-                <p class="text-sm text-gray-500">
-                  By Admin Office &centerdot; <span>2024-01-15</span>
-                </p>
-                <p class="mt-2 text-gray-700 text-sm">
-                  We have scheduled parent-teacher meetings for all classes.
-                  Please confirm your attendance.
-                </p>
-                <p class="text-gray-500 text-sm mt-1">Audience: All Parents</p>
-              </div>
-              <div class="flex gap-2 flex-wrap sm:justify-end">
-                <span
-                  class="px-2 py-1 rounded-full text-xs font-medium bg-red-100 text-red-600"
-                  >High</span
-                >
-                <span
-                  class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-600"
-                  >Published</span
-                >
+      <div id="Engage">
+        <div class="bg-white rounded mt-8 p-6">
+          <div>
+            <h1 class="text-2xl font-semibold text-gray-800">
+              Communication Trends
+            </h1>
+            <p class="text-gray-500 text-sm">
+              Message and announcement analytics overtime
+            </p>
+          </div>
+          <section class="mb-8 mt-6">
+            <div class="space-y-6">
+              <div class="space-y-1">
+                <div class="flex justify-between">
+                  <span class="text-gray-500">Messages Sent</span
+                  ><span class="font-semibold text-gray-800"
+                    >89 this month</span
+                  >
+                </div>
+                <div class="flex justify-between mt-3">
+                  <span class="text-gray-500">Response Rate</span
+                  ><span class="text-green-600 font-semibold">69%</span>
+                </div>
+                <div class="flex justify-between mt-3">
+                  <span class="text-gray-500">Average Response Time</span
+                  ><span class="text-gray-800 font-semibold">2.3 hours</span>
+                </div>
               </div>
             </div>
-            <div
-              class="mt-4 flex items-center justify-between text-sm text-gray-500"
-            >
-              <div class="flex items-center gap-4">
-                <span class="flex items-center gap-1"
-                  ><i data-lucide="eye" class="w-4 h-4"></i> 145 views</span
-                >
-                <span class="flex items-center gap-1"
-                  ><i data-lucide="message-square" class="w-4 h-4"></i> 23
-                  responses</span
-                >
+          </section>
+        </div>
+        <div class="bg-white rounded mt-8 p-6">
+          <div>
+            <h1 class="text-2xl font-semibold text-gray-800">
+              Parent Engagement Levels
+            </h1>
+            <p class="text-gray-500 text-sm">
+              Active vs inactive parent participation
+            </p>
+          </div>
+          <section class="mb-8 mt-6">
+            <div class="space-y-6">
+              <div class="space-y-1">
+                <div class="flex justify-between">
+                  <span class="text-gray-500">Highly Engaged</span
+                  ><span class="font-semibold text-green-700">156 parents</span>
+                </div>
+                <div class="flex justify-between mt-3">
+                  <span class="text-gray-500">Moderately Engaged</span
+                  ><span class="text-yellow-600 font-semibold"
+                    >171 parents</span
+                  >
+                </div>
+                <div class="flex justify-between mt-3">
+                  <span class="text-gray-500">Low Engagement</span
+                  ><span class="text-red-600 font-semibold">123 parents</span>
+                </div>
               </div>
-              <div class="flex items-center gap-3 text-gray-500">
-                <button class="hover:text-blue-600">
-                  <i data-lucide="edit" class="w-4 h-4"></i>
-                </button>
-                <button class="hover:text-blue-600">
-                  <i data-lucide="eye" class="w-4 h-4"></i>
-                </button>
-                <button class="hover:text-blue-600">
-                  <i data-lucide="trash-2" class="w-4 h-4"></i>
-                </button>
-              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="bg-white p-5 mt-8 rounded transition-all">
+          <div
+            class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3"
+          >
+            <div>
+              <h2 class="text-2xl font-semibold text-gray-800">
+                Recent Engagement Activity
+              </h2>
+              <p class="text-sm text-gray-500">
+                Latest parent interaction and feedback
+              </p>
             </div>
           </div>
-          <div class="bg-white p-5 rounded shadow-md transition-all mt-7">
-            <div
-              class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3"
-            >
+          <div
+            class="flex items-center justify-between mt-4 bg-gray-50 border border-gray-100 rounded p-4 hover:bg-gray-100 transition"
+          >
+            <div class="flex items-start gap-3">
+              <span
+                class="w-2 h-2 rounded-full bg-green-500 mt-2 flex-shrink-0"
+              ></span>
               <div>
-                <h2 class="text-lg font-semibold text-gray-900">
-                  School Fee Payment Reminder
-                </h2>
-                <p class="text-sm text-gray-500">
-                  By Accounts Department &centerdot; <span>2024-01-15</span>
+                <h3 class="font-medium text-gray-800">Mrs. Johnson</h3>
+                <p class="text-sm text-gray-600">
+                  Responded to the fee reminder
                 </p>
-                <p class="mt-2 text-gray-700 text-sm">
-                  Friendly reminder that the second term fees are due by January
-                  30th,2024
-                </p>
-                <p class="text-gray-500 text-sm mt-1">
-                  Audience: Fee Defaulters
-                </p>
-              </div>
-              <div class="flex gap-2 flex-wrap sm:justify-end">
-                <span
-                  class="px-2 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-600"
-                  >Medium</span
-                >
-                <span
-                  class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-600"
-                  >Published</span
-                >
               </div>
             </div>
-            <div
-              class="mt-4 flex items-center justify-between text-sm text-gray-500"
-            >
-              <div class="flex items-center gap-4">
-                <span class="flex items-center gap-1"
-                  ><i data-lucide="eye" class="w-4 h-4"></i> 87 views</span
-                >
-                <span class="flex items-center gap-1"
-                  ><i data-lucide="message-square" class="w-4 h-4"></i> 12
-                  responses</span
-                >
-              </div>
-              <div class="flex items-center gap-3 text-gray-500">
-                <button class="hover:text-blue-600">
-                  <i data-lucide="edit" class="w-4 h-4"></i>
-                </button>
-                <button class="hover:text-blue-600">
-                  <i data-lucide="eye" class="w-4 h-4"></i>
-                </button>
-                <button class="hover:text-blue-600">
-                  <i data-lucide="trash-2" class="w-4 h-4"></i>
-                </button>
-              </div>
-            </div>
+            <p class="text-sm text-gray-400 whitespace-nowrap">2 hrs ago</p>
           </div>
-          <div class="bg-white p-5 rounded shadow-md transition-all mt-7">
-            <div
-              class="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-3"
-            >
+          <div
+            class="flex items-center justify-between mt-4 bg-gray-50 border border-gray-100 rounded p-4 hover:bg-gray-100 transition"
+          >
+            <div class="flex items-start gap-3">
+              <span
+                class="w-2 h-2 rounded-full bg-green-500 mt-2 flex-shrink-0"
+              ></span>
               <div>
-                <h2 class="text-lg font-semibold text-gray-900">
-                  Sports Day Activities
-                </h2>
-                <p class="text-sm text-gray-500">
-                  By Sports Department &centerdot; <span>2024-01-15</span>
+                <h3 class="font-medium text-gray-800">Mr. Okafor</h3>
+                <p class="text-sm text-gray-600">
+                  Viewed sports day announcement
                 </p>
-                <p class="mt-2 text-gray-700 text-sm">
-                  Join us for our annual sports day celebration on February
-                  14th, 2024
-                </p>
-                <p class="text-gray-500 text-sm mt-1">Audience: All Parents</p>
-              </div>
-              <div class="flex gap-2 flex-wrap sm:justify-end">
-                <span
-                  class="px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600"
-                  >Low</span
-                >
-                <span
-                  class="px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-600"
-                  >Published</span
-                >
               </div>
             </div>
-            <div
-              class="mt-4 flex items-center justify-between text-sm text-gray-500"
-            >
-              <div class="flex items-center gap-4">
-                <span class="flex items-center gap-1"
-                  ><i data-lucide="eye" class="w-4 h-4"></i> 234 views</span
-                >
-                <span class="flex items-center gap-1"
-                  ><i data-lucide="message-square" class="w-4 h-4"></i> 45
-                  responses</span
-                >
-              </div>
-              <div class="flex items-center gap-3 text-gray-500">
-                <button class="hover:text-blue-600">
-                  <i data-lucide="edit" class="w-4 h-4"></i>
-                </button>
-                <button class="hover:text-blue-600">
-                  <i data-lucide="eye" class="w-4 h-4"></i>
-                </button>
-                <button class="hover:text-blue-600">
-                  <i data-lucide="trash-2" class="w-4 h-4"></i>
-                </button>
+            <p class="text-sm text-gray-400 whitespace-nowrap">4 hrs ago</p>
+          </div>
+          <div
+            class="flex items-center justify-between mt-4 bg-gray-50 border border-gray-100 rounded p-4 hover:bg-gray-100 transition"
+          >
+            <div class="flex items-start gap-3">
+              <span
+                class="w-2 h-2 rounded-full bg-green-500 mt-2 flex-shrink-0"
+              ></span>
+              <div>
+                <h3 class="font-medium text-gray-800">Mrs. Abdullahi</h3>
+                <p class="text-sm text-gray-600">
+                  Sent message about medical leave
+                </p>
               </div>
             </div>
+            <p class="text-sm text-gray-400 whitespace-nowrap">6 hrs ago</p>
+          </div>
+          <div
+            class="flex items-center justify-between mt-4 bg-gray-50 border border-gray-100 rounded p-4 hover:bg-gray-100 transition"
+          >
+            <div class="flex items-start gap-3">
+              <span
+                class="w-2 h-2 rounded-full bg-green-500 mt-2 flex-shrink-0"
+              ></span>
+              <div>
+                <h3 class="font-medium text-gray-800">Mr. Adebayo</h3>
+                <p class="text-sm text-gray-600">
+                  Confirmed parent teacher meeting
+                </p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-400 whitespace-nowrap">8 hrs ago</p>
+          </div>
+          <div
+            class="flex items-center justify-between mt-4 bg-gray-50 border border-gray-100 rounded p-4 hover:bg-gray-100 transition"
+          >
+            <div class="flex items-start gap-3">
+              <span
+                class="w-2 h-2 rounded-full bg-green-500 mt-2 flex-shrink-0"
+              ></span>
+              <div>
+                <h3 class="font-medium text-gray-800">Mrs. Okwu</h3>
+                <p class="text-sm text-gray-600">Downloaded exam timetable</p>
+              </div>
+            </div>
+            <p class="text-sm text-gray-400 whitespace-nowrap">12 hrs ago</p>
           </div>
         </div>
       </div>
@@ -446,4 +861,6 @@
       }
     });
   </script>
+
+  <script src="parent_engagement.js"></script>
 </html>
