@@ -44,87 +44,94 @@
 
           <div
             id="modal"
-            class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+            class="fixed inset-0 hidden items-center justify-center bg-black/40 backdrop-blur-sm z-50"
           >
-            <!-- Close button -->
-            <button
-              id="closeModal"
-              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            <div
+              class="relative bg-white shadow-xl rounded-2xl border border-gray-200 w-full max-w-5xl p-8 overflow-y-auto max-h-[90vh]"
             >
-              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
-            </button>
-
-            <div class="p-6 bg-white rounded-2xl shadow-sm">
-              <h2
-                class="text-xl font-semibold text-gray-800 flex items-center gap-2 mb-1"
+              <!-- Close button -->
+              <button
+                id="closeModal"
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition"
               >
-                <i
-                  data-lucide="utensils-crossed"
-                  class="w-5 h-5 text-green-600"
-                ></i>
-                Add New Cafeteria Item
-              </h2>
-              <p class="text-gray-500 text-sm mb-6">
-                Enter the details of the new cafeteria item
-              </p>
+                <i data-lucide="x" class="w-6 h-6"></i>
+              </button>
 
-              <form action="" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Header -->
+              <div class="mb-6 border-b border-gray-100 pb-4">
+                <h2
+                  class="text-2xl font-semibold text-gray-800 flex items-center gap-2"
+                >
+                  <i
+                    data-lucide="utensils-crossed"
+                    class="w-6 h-6 text-emerald-600"
+                  ></i>
+                  Add New Cafeteria Item
+                </h2>
+                <p class="text-gray-500 text-sm mt-1">
+                  Enter the details of the new cafeteria item below
+                </p>
+              </div>
+
+              <!-- Form -->
+              <form action="" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Basic Info -->
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-3">
                     Basic Information
                   </h3>
                   <div class="space-y-4">
                     <div>
-                      <label for="" class="block text-sm text-gray-600 mb-1"
+                      <label class="block text-sm text-gray-600 mb-1"
                         >Item Name *</label
                       >
                       <input
                         type="text"
                         placeholder="Enter item name"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                       />
                     </div>
+
                     <div class="grid grid-cols-2 gap-3">
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Category</label
                         >
                         <select
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                         >
                           <option>Select category</option>
-                          <option value="">Fruits & Vegetables</option>
-                          <option value="">Meat & Poultry</option>
-                          <option value="">Dairy Products</option>
-                          <option value="">Grains & Cereals</option>
-                          <option value="">Beverages</option>
-                          <option value="">Spices & Seasonings</option>
-                          <option value="">Frozen Foods</option>
-                          <option value="">Snacks</option>
-                          <option value="">Cleaning Supplies</option>
-                          <option value="">Kitchen Equipments</option>
+                          <option>Fruits & Vegetables</option>
+                          <option>Meat & Poultry</option>
+                          <option>Dairy Products</option>
+                          <option>Grains & Cereals</option>
+                          <option>Beverages</option>
+                          <option>Spices & Seasonings</option>
+                          <option>Frozen Foods</option>
+                          <option>Snacks</option>
+                          <option>Cleaning Supplies</option>
+                          <option>Kitchen Equipments</option>
                           <option>Other</option>
                         </select>
                       </div>
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Brand</label
                         >
                         <input
                           type="text"
                           placeholder="Enter brand name"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                         />
                       </div>
                     </div>
+
                     <div>
-                      <label for="" class="block text-sm text-gray-600 mb-1"
+                      <label class="block text-sm text-gray-600 mb-1"
                         >Supplier *</label
                       >
                       <select
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                       >
                         <option>Select supplier</option>
                         <option>Main Market Suppliers</option>
@@ -144,6 +151,8 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- Quantity & Pricing -->
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-3">
                     Quantity & Pricing
@@ -151,23 +160,21 @@
                   <div class="space-y-4">
                     <div class="grid grid-cols-2 gap-3">
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Quantity</label
                         >
                         <input
                           type="number"
-                          name=""
                           placeholder="0"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                         />
                       </div>
                       <div>
-                        <label for="" class="text-sm block text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Unit *</label
                         >
                         <select
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                         >
                           <option>kg</option>
                           <option>g</option>
@@ -181,35 +188,33 @@
                         </select>
                       </div>
                     </div>
+
                     <div class="grid grid-cols-2 gap-3">
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Unit Price (₦)</label
                         >
                         <input
                           type="number"
                           placeholder="0.00"
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                         />
                       </div>
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Minimum Stock Level *</label
                         >
                         <input
                           type="number"
-                          name=""
                           placeholder="0"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                         />
                       </div>
                     </div>
                   </div>
                 </div>
 
+                <!-- Additional Sections -->
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-3">
                     Status & Condition
@@ -217,30 +222,26 @@
                   <div class="space-y-4">
                     <div class="grid grid-cols-2 gap-3">
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Condition</label
                         >
                         <select
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                         >
-                          <option value="">Select condition</option>
-                          <option value="">Fresh</option>
-                          <option value="">Good</option>
-                          <option value="">Fair</option>
-                          <option value="">Expired</option>
-                          <option value="">Damaged</option>
+                          <option>Select condition</option>
+                          <option>Fresh</option>
+                          <option>Good</option>
+                          <option>Fair</option>
+                          <option>Expired</option>
+                          <option>Damaged</option>
                         </select>
                       </div>
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
-                          >Status
-                        </label>
+                        <label class="block text-sm text-gray-600 mb-1"
+                          >Status</label
+                        >
                         <select
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                         >
                           <option>Select status</option>
                           <option>In Stock</option>
@@ -251,118 +252,102 @@
                         </select>
                       </div>
                     </div>
+
                     <div>
-                      <label for="" class="block text-sm text-gray-600 mb-1"
+                      <label class="block text-sm text-gray-600 mb-1"
                         >Storage Location *</label
                       >
                       <select
-                        name=""
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        id=""
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                       >
                         <option>Select storage location</option>
                         <option>Freezer</option>
-                        <option>Refridgerator</option>
+                        <option>Refrigerator</option>
                         <option>Pantry</option>
                         <option>Dry Storage</option>
-                        <option>Kitchen counter</option>
+                        <option>Kitchen Counter</option>
                       </select>
                     </div>
                   </div>
                 </div>
 
                 <div>
-                  <h3 class="font-semibold text-gray-700 mb-3">
-                    Dates & Additional Info
-                  </h3>
-                  <div class="space-y-3">
+                  <h3 class="font-semibold text-gray-700 mb-3">Dates & Info</h3>
+                  <div class="space-y-4">
                     <div class="grid grid-cols-2 gap-3">
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Purchase Date</label
                         >
                         <input
                           type="date"
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                         />
                       </div>
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Expiry Date</label
                         >
                         <input
                           type="date"
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                         />
                       </div>
                     </div>
-                    <div>
-                      <label for="" class="block text-sm text-gray-600 mb-1"
-                        >Barcode</label
-                      >
-                      <input
-                        type="text"
-                        name=""
-                        placeholder="Enter barcode"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        id=""
-                      />
-                    </div>
-                    <div>
-                      <label for="" class="block text-sm text-gray-600 mb-1"
-                        >Allergens</label
-                      >
-                      <input
-                        type="text"
-                        name=""
-                        placeholder="e.g., Dairy, Nuts, Gluten"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        id=""
-                      />
-                    </div>
+
+                    <input
+                      type="text"
+                      placeholder="Barcode"
+                      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                    />
+                    <input
+                      type="text"
+                      placeholder="Allergens (e.g., Dairy, Nuts, Gluten)"
+                      class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                    />
                   </div>
                 </div>
 
+                <!-- Description Fields -->
                 <div class="md:col-span-2">
-                  <label for="" class="block text-sm text-gray-600 mb-1"
+                  <label class="block text-sm text-gray-600 mb-1"
                     >Description</label
                   >
                   <textarea
-                    name=""
                     placeholder="Enter item description"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                    id=""
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                    rows="3"
                   ></textarea>
                 </div>
+
                 <div class="md:col-span-2">
-                  <label for="" class="block text-sm text-gray-600 mb-1"
+                  <label class="block text-sm text-gray-600 mb-1"
                     >Nutritional Information</label
                   >
                   <textarea
-                    name=""
                     placeholder="Enter nutritional information (optional)"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                    id=""
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                    rows="3"
                   ></textarea>
                 </div>
               </form>
-              <div class="flex justify-end gap-3 mt-6">
+
+              <!-- Footer Buttons -->
+              <div
+                class="flex justify-end gap-3 mt-8 border-t border-gray-100 pt-5"
+              >
                 <button
                   type="button"
-                  class="px-5 py-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100"
+                  class="px-5 py-2.5 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100 transition"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  class="px-6 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 flex items-center gap-2"
+                  class="px-6 py-2.5 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 flex items-center gap-2 transition"
                 >
                   <i data-lucide="plus" class="w-4 h-4"></i>
-                  Add item to Inventory
+                  Add Item to Inventory
                 </button>
               </div>
             </div>
@@ -376,7 +361,7 @@
           <div class="flex items-center justify-between">
             <h4 class="text-gray-600 font-medium">Total Items</h4>
             <button
-              class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-green-200 transition"
+              class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-green-20 transition"
             >
               <i data-lucide="box" class="w-5 h-5 text-gray-600"></i>
             </button>
@@ -398,7 +383,7 @@
           <div class="flex items-center justify-between">
             <h4 class="text-gray-600 font-medium">Total Value</h4>
             <button
-              class="flex items-center justify-center w-10 h-10 bg-emerald-100 rounded-full hover:bg-emerald-200 transition"
+              class="flex items-center justify-center w-10 h-10 rounded-full transition"
             >
               <i data-lucide="trending-up" class="text-green-700 w-5 h-5"></i>
             </button>
@@ -420,7 +405,7 @@
           <div class="flex items-center justify-between">
             <h4 class="text-gray-600 font-medium">Low Stock Alert</h4>
             <button
-              class="flex items-center justify-center w-10 h-10 bg-yellow-100 rounded-full hover:bg-blue-200 transition"
+              class="flex items-center justify-center w-10 h-10 rounded-full transition"
             >
               <i
                 data-lucide="alert-triangle"
@@ -443,7 +428,7 @@
           <div class="flex items-center justify-between">
             <h4 class="text-gray-600 font-medium">Expiring Soon</h4>
             <button
-              class="flex items-center justify-center w-10 h-10 bg-red-100 rounded-full hover:bg-blue-200 transition"
+              class="flex items-center justify-center w-10 h-10 rounded-full transition"
             >
               <i data-lucide="calendar" class="w-5 h-5 text-red-600"></i>
             </button>

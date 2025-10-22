@@ -159,21 +159,21 @@
         <!-- Modal -->
         <div
           id="modal"
-          class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+          class="fixed inset-0 bg-black/50 items-center justify-center z-50 hidden"
         >
-          <!-- Close button -->
-          <button
-            id="closeModal"
-            class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+          <div
+            class="relative bg-white rounded-xl shadow-lg border border-gray-200 w-full max-w-lg p-6"
           >
-            <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
-          </button>
+            <!-- Close button -->
+            <button
+              id="closeModal"
+              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            >
+              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
+            </button>
 
-          <div class="flex flex-col h-full w-full">
-            <!-- Header -->
-
-            <!-- Form card -->
-            <div class="p-8 mt-7 bg-white rounded shadow-sm">
+            <div class="flex flex-col h-full w-full">
+              <!-- Form card -->
               <h2 class="text-xl font-semibold text-gray-800 gap-2 mb-1">
                 Create New Announcement
               </h2>

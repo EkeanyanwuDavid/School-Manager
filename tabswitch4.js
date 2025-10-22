@@ -30,18 +30,43 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("Cafeteria"),
   ];
 
+  if (!tabBtns.length) return;
+
   tabBtns.forEach((btn, idx) => {
     btn.addEventListener("click", () => {
+      // Reset all tabs to inactive (white/gray)
       tabBtns.forEach((b) => {
-        b.classList.remove("bg-green-600", "text-white");
-        b.classList.add("bg-gray-200", "text-gray-400");
+        b.classList.remove(
+          "bg-emerald-600",
+          "text-white",
+          "border-emerald-600",
+          "shadow"
+        );
+        b.classList.add(
+          "bg-white",
+          "text-gray-700",
+          "border",
+          "border-gray-200"
+        );
       });
 
-      btn.classList.add("bg-green-600", "text-gray-400");
-      btn.classList.remove("bg-gray-200", "text-green-700");
-      tabContent.forEach((content) => content.classList.add("hidden"));
-      tabContent[idx].classList.remove("hidden");
+      // Activate clicked tab: stronger emerald + white text + subtle shadow
+      btn.classList.remove("bg-white", "text-gray-700", "border-gray-200");
+      btn.classList.add(
+        "bg-emerald-600",
+        "text-white",
+        "border-emerald-600",
+        "shadow"
+      );
+
+      // Hide all tab contents, then show selected
+      tabContent.forEach((content) => {
+        if (content) content.classList.add("hidden");
+      });
+      if (tabContent[idx]) tabContent[idx].classList.remove("hidden");
     });
-    tabBtns[0].click();
   });
+
+  // Set default active tab once (first tab)
+  tabBtns[0].click();
 });

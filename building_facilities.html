@@ -42,354 +42,371 @@
               <i class="bi bi-plus"></i> Add Building/Facility
             </button>
           </div>
-          <!-- Modal -->
+          <!-- Vehicle Modal -->
           <div
             id="modal"
-            class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+            class="hidden fixed inset-0 items-center justify-center bg-black/40 backdrop-blur-sm z-50"
           >
-            <!-- Close button -->
-            <button
-              id="closeModal"
-              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            <div
+              class="relative bg-white rounded-2xl shadow-xl border border-gray-100 w-full max-w-5xl p-8 overflow-y-auto max-h-[90vh]"
             >
-              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
-            </button>
+              <!-- Close Button -->
+              <button
+                id="closeModal"
+                class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition"
+              >
+                <i data-lucide="x" class="w-6 h-6"></i>
+              </button>
 
-            <div class="flex flex-col h-full w-full">
               <!-- Header -->
-              <div class="flex flex-col mb-6">
-                <div class="flex items-center gap-2 mb-2">
-                  <i
-                    data-lucide="building-2"
-                    class="w-6 h-6 text-green-700"
-                  ></i>
-                  <h3 class="text-xl font-semibold text-gray-700">
-                    Add New Building/Facility
-                  </h3>
-                </div>
-                <p class="text-gray-400 text-sm">
-                  Add a new facility to the school's infrastructure inventory
-                </p>
+              <div class="flex items-center gap-2 mb-1">
+                <i data-lucide="truck" class="w-6 h-6 text-green-700"></i>
+                <h2 class="text-xl font-semibold text-gray-800">
+                  Add New Vehicle
+                </h2>
               </div>
+              <p class="text-gray-500 text-sm mb-6">
+                Add a new vehicle to the school's transportation fleet
+              </p>
 
-              <!-- Form card -->
-              <div class="bg-white shadow rounded-lg p-3">
-                <form id="admissionForm" class="space-y-6 w-full">
-                  <!-- Form Fields -->
-                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                    <!-- Facility Name -->
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Facility Name *</label
+              <!-- Form -->
+              <form class="space-y-10">
+                <!-- Basic Information -->
+                <div>
+                  <h3
+                    class="font-semibold text-gray-700 mb-3 flex items-center gap-2"
+                  >
+                    <i data-lucide="file" class="w-5 h-5 text-gray-600"></i>
+                    Basic Information
+                  </h3>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Vehicle Name *</label
                       >
                       <input
                         type="text"
-                        required
-                        placeholder="e.g., Main Academic Block"
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        placeholder="e.g., School Bus Alpha"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                       />
                     </div>
 
-                    <!-- Equipment Type -->
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Equipment Type *</label
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Vehicle Type *</label
                       >
                       <select
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
                       >
-                        <option value="">Select equipment</option>
-                        <option value="">Classroom Block</option>
-                        <option value="">Laboratory</option>
-                        <option value="">Sports Facility</option>
-                        <option value="">Hostel</option>
-                        <option value="">Cafeteria</option>
-                        <option value="">Auditorium</option>
-                        <option value="">Other</option>
+                        <option value="">Select Type</option>
+                        <option>School Bus</option>
+                        <option>Staff Car</option>
+                        <option>Delivery Van</option>
+                        <option>Maintenance Vehicle</option>
+                        <option>Emergency Vehicle</option>
+                        <option>Other</option>
                       </select>
                     </div>
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Location *</label
+
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Make *</label
                       >
                       <input
                         type="text"
-                        placeholder="eg., Central Campus"
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        placeholder="e.g., Toyota"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                       />
                     </div>
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
+
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Model *</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="e.g., Hiace"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Year *</label
+                      >
+                      <input
+                        type="number"
+                        placeholder="e.g., 2023"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Plate Number *</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="e.g., EDU-001-AA"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
                         >Capacity *</label
                       >
                       <input
-                        type="text"
-                        placeholder="Total people capacity"
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                      />
-                    </div>
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Total Rooms *</label
-                      >
-                      <input
                         type="number"
-                        placeholder="Number of rooms"
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        placeholder="e.g., 34 passengers"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none"
                       />
                     </div>
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Year Built *</label
+
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Fuel Type *</label
                       >
-                      <input
-                        type="number"
-                        placeholder="e.g; 2020"
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                      />
-                    </div>
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Property Value (₦) *</label
+                      <select
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
                       >
-                      <input
-                        type="number"
-                        placeholder="e.g; 500,000,000"
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                      />
+                        <option value="">Select Fuel Type</option>
+                        <option>Petrol</option>
+                        <option>Diesel</option>
+                        <option>Electric</option>
+                        <option>Hybrid</option>
+                      </select>
                     </div>
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Floor Area (sqm) *</label
-                      >
-                      <input
-                        type="number"
-                        placeholder="e.g; 2500"
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                      />
-                    </div>
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
+                  </div>
+                </div>
+
+                <!-- Status & Condition -->
+                <div class="pt-6">
+                  <h3
+                    class="font-semibold text-gray-700 mb-3 flex items-center gap-2"
+                  >
+                    <i data-lucide="settings" class="w-5 h-5 text-gray-600"></i>
+                    Status & Condition
+                  </h3>
+
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
                         >Condition *</label
                       >
                       <select
-                        name=""
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        id=""
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
                       >
-                        <option value="">Select Condition</option>
-                        <option value="">Excellent</option>
-                        <option value="">Good</option>
-                        <option value="">Fair</option>
-                        <option value="">Poor</option>
+                        <option>Excellent</option>
+                        <option>Good</option>
+                        <option>Fair</option>
+                        <option>Poor</option>
                       </select>
                     </div>
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Select Status *</label
+
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Status *</label
                       >
                       <select
-                        name=""
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        id=""
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
                       >
-                        <option value="">Select Status</option>
-                        <option value="">Active</option>
-                        <option value="">Under Maintenance</option>
-                        <option value="">Renovation</option>
-                        <option value="">Closed</option>
+                        <option>Active</option>
+                        <option>Under Maintenance</option>
+                        <option>Repair Needed</option>
+                        <option>Out of Service</option>
                       </select>
                     </div>
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Last Maintenance *</label
+
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Mileage (km)</label
+                      >
+                      <input
+                        type="number"
+                        placeholder="e.g., 120000"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Service & Documentation -->
+                <div class="pt-6">
+                  <h3
+                    class="font-semibold text-gray-700 mb-3 flex items-center gap-2"
+                  >
+                    <i
+                      data-lucide="file-text"
+                      class="w-5 h-5 text-gray-600"
+                    ></i>
+                    Service & Documentation
+                  </h3>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Last Service Date</label
                       >
                       <input
                         type="date"
-                        placeholder="e.g; 2500"
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
                       />
                     </div>
-                    <div class="w-full">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Next Maintenance *</label
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Next Service Date</label
                       >
                       <input
                         type="date"
-                        placeholder="e.g; 2500"
-                        class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
                       />
                     </div>
-                    <div class="w-full md:col-span-2">
-                      <label for="" class="block text-sm font-semibold mb-1"
-                        >Description *</label
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Insurance Expiry</label
                       >
-                      <textarea
-                        id=""
-                        placeholder="Brief description of the facility and its purpose"
-                        rows="3"
-                        required
-                        class="w-full border border-gray-400 rounded-md px-3 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
-                      ></textarea>
+                      <input
+                        type="date"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
+                      />
                     </div>
-
-                    <!-- Available Utilities -->
-                    <div class="w-full md:col-span-2">
-                      <label for="" class="block font-medium mb-3"
-                        >Available Utilities *</label
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Roadworthy Expiry</label
                       >
-
-                      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-                        <!-- Electricity -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="electricity"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Electricity</span>
-                        </label>
-
-                        <!-- Water -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="water"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Water</span>
-                        </label>
-
-                        <!-- Internet -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="internet"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Internet</span>
-                        </label>
-
-                        <!-- HVAC -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="hvac"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>HVAC</span>
-                        </label>
-
-                        <!-- Security System -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="security_system"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Security System</span>
-                        </label>
-
-                        <!-- Fire Safety -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="fire_safety"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Fire Safety</span>
-                        </label>
-
-                        <!-- Gas Lines -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="gas_lines"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Gas Lines</span>
-                        </label>
-
-                        <!-- Ventilation -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="ventilation"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Ventilation</span>
-                        </label>
-
-                        <!-- Sound System -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="sound_system"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Sound System</span>
-                        </label>
-
-                        <!-- Emergency Systems -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="emergency_systems"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Emergency Systems</span>
-                        </label>
-
-                        <!-- Laundry -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="laundry"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Laundry</span>
-                        </label>
-
-                        <!-- Parking -->
-                        <label class="inline-flex text-sm items-center gap-2">
-                          <input
-                            type="checkbox"
-                            name="utilities"
-                            value="parking"
-                            class="w-4 h-4 text-green-600 border-gray-400 rounded focus:ring-green-500"
-                          />
-                          <span>Parking</span>
-                        </label>
-                      </div>
+                      <input
+                        type="date"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
+                      />
                     </div>
                   </div>
-                  <div class="flex justify-end gap-4 mt-6 w-full">
-                    <button
-                      type="reset"
-                      class="border border-gray-400 px-6 py-2 rounded-md hover:bg-gray-500 cursor-pointer transition"
-                    >
-                      Cancel</button
-                    ><button
-                      type="submit"
-                      class="bg-green-600 text-white px-6 py-2 cursor-pointer rounded-md hover:bg-green-700 transition flex items-center gap-2"
-                    >
-                      <i data-lucide="plus" class="w-5 h-5"></i>
-                      Add Building
-                    </button>
+                </div>
+
+                <!-- Assignment -->
+                <div class="pt-6">
+                  <h3
+                    class="font-semibold text-gray-700 mb-3 flex items-center gap-2"
+                  >
+                    <i data-lucide="user" class="w-5 h-5 text-gray-600"></i>
+                    Assignment & Operation
+                  </h3>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Assigned Route *</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="e.g., Route A - Main Campus"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Assigned Driver *</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="e.g., John Adebayo"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
+                      />
+                    </div>
                   </div>
-                </form>
-              </div>
+                </div>
+
+                <!-- Financial Info -->
+                <div class="pt-6">
+                  <h3
+                    class="font-semibold text-gray-700 mb-3 flex items-center gap-2"
+                  >
+                    <i data-lucide="wallet" class="w-5 h-5 text-gray-600"></i>
+                    Financial Information
+                  </h3>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Purchase Date *</label
+                      >
+                      <input
+                        type="date"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Purchase Value (₦) *</label
+                      >
+                      <input
+                        type="number"
+                        placeholder="e.g., 15,000,000"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Current Value (₦)</label
+                      >
+                      <input
+                        type="number"
+                        placeholder="e.g., 12,500,000"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        class="block text-sm font-medium text-gray-600 mb-1"
+                        >Monthly Fuel Cost (₦)</label
+                      >
+                      <input
+                        type="number"
+                        placeholder="e.g., 250,000"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-green-500 outline-none"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Buttons -->
+                <div class="flex justify-end gap-3 pt-5">
+                  <button
+                    type="button"
+                    class="px-5 py-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100 transition"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    class="px-6 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 flex items-center gap-2 transition"
+                  >
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                    Add Vehicle
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

@@ -49,14 +49,14 @@
       >
         <button
           id="btnEducational"
-          class="bg-gray-100 border tab-btns font-medium border-gray-300 text-gray-700 px-4 flex gap-2 py-2 rounded-md transition"
+          class="tab-btns cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
         >
           <i data-lucide="book" class="w-5 h-5"></i>
           Educational Materials
         </button>
         <button
           id="btnMaterials"
-          class="bg-gray-100 tab-btns border font-medium border-gray-300 text-gray-700 px-4 flex gap-2 py-2 rounded-md transition"
+          class="tab-btns cursor-pointer bg-white text-gray-700 px-5 py-2.5 rounded-lg border border-gray-200 font-semibold flex items-center gap-2 transition-all duration-150 hover:bg-emerald-50 hover:text-emerald-700"
         >
           <i data-lucide="utensils-crossed" class="w-5 h-5"></i>
           Cafeteria Inventory
@@ -71,7 +71,7 @@
             <div class="flex items-center justify-between">
               <h4 class="text-gray-600 font-medium">Total Items</h4>
               <button
-                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-green-200 transition"
+                class="flex items-center justify-center w-10 h-10 rounded-full transition"
               >
                 <i data-lucide="box" class="w-5 h-5 text-gray-600"></i>
               </button>
@@ -86,7 +86,7 @@
             <div class="flex items-center justify-between">
               <h4 class="text-gray-600 font-medium">Available</h4>
               <button
-                class="flex items-center justify-center w-10 h-10 bg-emerald-100 rounded-full hover:bg-emerald-200 transition"
+                class="flex items-center justify-center w-10 h-10 rounded-full transition"
               >
                 <i
                   data-lucide="check-circle"
@@ -104,7 +104,7 @@
             <div class="flex items-center justify-between">
               <h4 class="text-gray-600 font-medium">Low Stock</h4>
               <button
-                class="flex items-center justify-center w-10 h-10 bg-yellow-100 rounded-full hover:bg-blue-200 transition"
+                class="flex items-center justify-center w-10 h-10 rounded-full transition"
               >
                 <i
                   data-lucide="alert-triangle"
@@ -121,7 +121,7 @@
             <div class="flex items-center justify-between">
               <h4 class="text-gray-600 font-medium">Out of Stock</h4>
               <button
-                class="flex items-center justify-center w-10 h-10 bg-red-100 rounded-full hover:bg-blue-200 transition"
+                class="flex items-center justify-center w-10 h-10 rounded-full transition"
               >
                 <i data-lucide="clock" class="w-5 h-5 text-red-600"></i>
               </button>
@@ -134,7 +134,7 @@
             <div class="flex items-center justify-between">
               <h4 class="text-gray-600 font-medium">Total Value</h4>
               <button
-                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+                class="flex items-center justify-center w-10 h-10 rounded-full transition"
               >
                 <i data-lucide="box" class="w-5 h-5 text-gray-600"></i>
               </button>
@@ -185,366 +185,218 @@
 
           <button
             id="openModal"
-            class="bg-green-700 font-semibold rounded-lg px-4 py-2 text-sm text-white flex items-center gap-2 w-full sm:w-auto"
+            class="bg-emerald-700 font-semibold rounded-lg px-4 py-2 text-sm text-white flex items-center gap-2 w-full sm:w-auto"
           >
             <i class="bi bi-plus"></i> Add Material
           </button>
 
-          <!-- Modal -->
+          <!-- Add Educational Material Modal -->
           <div
             id="modal"
-            class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+            class="fixed inset-0 hidden items-center justify-center bg-black/50 backdrop-blur-sm z-50"
           >
-            <!-- Close button -->
-            <button
-              id="closeModal"
-              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            <div
+              class="relative bg-white rounded-2xl shadow-xl border border-gray-100 w-full max-w-5xl p-8 overflow-y-auto max-h-[90vh]"
             >
-              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
-            </button>
+              <!-- Close button -->
+              <button
+                id="closeModal"
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition"
+              >
+                <i data-lucide="x" class="w-6 h-6"></i>
+              </button>
 
-            <div class="flex flex-col h-full w-full">
               <!-- Header -->
-              <div class="flex flex-col mb-6">
+              <div class="mb-6">
                 <div class="flex items-center gap-2 mb-2">
-                  <i data-lucide="school" class="w-6 h-6 text-green-700"></i>
-                  <h2 class="text-xl font-semibold text-gray-700">
+                  <i data-lucide="school" class="w-6 h-6 text-emerald-600"></i>
+                  <h2 class="text-xl font-semibold text-gray-800">
                     Add New Educational Material
                   </h2>
                 </div>
-                <p class="text-gray-400 text-sm">
-                  Add new educational material, supply, or equipment to the
-                  inventory
+                <p class="text-gray-500 text-sm">
+                  Add new textbooks, equipment, or teaching aids to your
+                  inventory.
                 </p>
               </div>
 
-              <!-- Form card -->
-              <div class="bg-white shadow rounded-lg p-6 w-full">
-                <form id="" class="space-y-10 w-full">
-                  <!-- Basic Information -->
-                  <div>
-                    <div class="flex items-center gap-2 mb-4">
-                      <i data-lucide="file" class="w-6 h-6 text-gray-700"></i>
-                      <h2 class="font-semibold text-gray-700">
-                        Basic Information
-                      </h2>
-                    </div>
-                    <div class="w-full mb-6">
-                      <label class="block text-sm font-semibold mb-1"
+              <!-- Form -->
+              <form class="space-y-10">
+                <!-- Basic Information -->
+                <section>
+                  <div class="flex items-center gap-2 mb-4">
+                    <i
+                      data-lucide="file-text"
+                      class="w-5 h-5 text-gray-700"
+                    ></i>
+                    <h3 class="font-semibold text-gray-700">
+                      Basic Information
+                    </h3>
+                  </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label class="block text-sm font-medium mb-1"
                         >Material Name *</label
                       >
                       <input
                         type="text"
-                        required
-                        placeholder="e.g., Mathematics Textboook Grade 10"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        placeholder="e.g., Mathematics Textbook Grade 10"
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
                       />
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                      <!-- Category -->
-                      <div class="w-full">
-                        <label class="block text-sm font-semibold mb-1"
-                          >Category *</label
-                        >
-                        <select
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        >
-                          <option value="">Select Category</option>
-                          <option>Textbooks</option>
-                          <option>Stationary</option>
-                          <option>Science Equipment</option>
-                          <option>Art Supplies</option>
-                          <option>Sports Equipment</option>
-                          <option>Music Instruments</option>
-                          <option>Digital Resources</option>
-                          <option>Teaching Aids</option>
-                          <option value="">Other</option>
-                        </select>
-                      </div>
 
-                      <div class="w-full">
-                        <label class="block text-sm font-semibold mb-1"
-                          >Subject *</label
-                        >
-                        <select
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        >
-                          <option value="">Select Subject (optional)</option>
-                          <option>Mathematics</option>
-                          <option>English</option>
-                          <option>Science</option>
-                          <option>Physics</option>
-                          <option>Chemistry</option>
-                          <option>Biology</option>
-                          <option>History</option>
-                          <option>Geography</option>
-                          <option value="">Civic Education</option>
-                          <option>French</option>
-                          <option>Economics</option>
-                          <option>Government</option>
-                          <option>Computer Science</option>
-                          <option>Technical Drawing</option>
-                          <option>Visual Arts</option>
-                          <option>Music</option>
-                          <option>Physical Education</option>
-                          <option>Agricultural Science</option>
-                          <option>Home Economics</option>
-                          <option>Business Studies</option>
-                          <option>Accounting</option>
-                        </select>
-                      </div>
+                    <div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Category *</label
+                      >
+                      <select
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      >
+                        <option>Select category</option>
+                        <option>Textbooks</option>
+                        <option>Science Equipment</option>
+                        <option>Sports Equipment</option>
+                        <option>Digital Resources</option>
+                        <option>Teaching Aids</option>
+                      </select>
+                    </div>
 
-                      <div class="w-full">
-                        <label class="block text-sm font-semibold mb-1"
-                          >Grade Level *</label
-                        >
+                    <div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Brand/Manufacturer</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="e.g., Macmillan, Casio"
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      />
+                    </div>
 
-                        <select
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        >
-                          <option>Nursery 1</option>
-                          <option>Nursery 2</option>
-                          <option>Primary 1</option>
-                          <option>Primary 2</option>
-                          <option>Primary 3</option>
-                          <option>Primary 4</option>
-                          <option>Primary 5</option>
-                          <option>Primary 6</option>
-                          <option>JSS 1</option>
-                          <option>JSS 2</option>
-                          <option>JSS 3</option>
-                          <option>SS 1</option>
-                          <option>SS 2</option>
-                          <option>SS 3</option>
-                        </select>
-                      </div>
-
-                      <div class="w-full">
-                        <label class="block text-sm font-semibold mb-1"
-                          >Brand/Manufacturer *</label
-                        >
-                        <input
-                          type="text"
-                          placeholder="e.g., Macmillan, Casio"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        />
-                      </div>
-
-                      <div class="w-full">
-                        <label class="block text-sm font-semibold mb-1"
-                          >Model/Edition *</label
-                        >
-                        <input
-                          type="text"
-                          placeholder="e.g., 2024 Edition, FX-991EX"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        />
-                      </div>
-
-                      <div class="w-full">
-                        <label class="block text-sm font-semibold mb-1"
-                          >ISBN (for books) *</label
-                        >
-                        <input
-                          type="number"
-                          placeholder="e.g., 978-0230434874"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        />
-                      </div>
-
-                      <div class="w-full">
-                        <label class="block text-sm font-semibold mb-1"
-                          >Barcode/SKU *</label
-                        >
-                        <input
-                          type="text"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          placeholder="e.g., SCU001234567"
-                        />
-                      </div>
+                    <div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Model/Edition</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="e.g., 2024 Edition"
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      />
                     </div>
                   </div>
+                </section>
 
-                  <!-- Inventiry Details -->
-                  <div class="pt-8 border-t border-gray-200">
-                    <div class="items-center gap-2 mb-8">
-                      <h3 class="font-semibold text-gray-700">
-                        Inventory Details
-                      </h3>
-                    </div>
+                <!-- Inventory Details -->
+                <section>
+                  <div class="flex items-center gap-2 mb-4">
+                    <i data-lucide="box" class="w-5 h-5 text-gray-700"></i>
+                    <h3 class="font-semibold text-gray-700">
+                      Inventory Details
+                    </h3>
+                  </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div>
-                        <label class="block text-sm font-semibold mb-1"
-                          >Quantity *</label
-                        >
-                        <input
-                          type="number"
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
-                          placeholder="e.g, 150"
-                        />
-                      </div>
-
-                      <div>
-                        <label class="block text-sm font-semibold mb-1"
-                          >Unit Price (₦) *</label
-                        >
-                        <input
-                          type="number"
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
-                          placeholder="e.g, 2500"
-                        />
-                      </div>
-
-                      <div>
-                        <label class="block text-sm font-semibold mb-1"
-                          >Total Value (₦) *</label
-                        >
-                        <input
-                          type="text"
-                          placeholder="e.g., ₦0"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        />
-                      </div>
-                      <div>
-                        <label class="block text-sm font-semibold mb-1"
-                          >Minimum Stock Level *</label
-                        >
-                        <input
-                          type="number"
-                          placeholder="e.g., 20"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        />
-                      </div>
-                      <div>
-                        <label class="block text-sm font-semibold mb-1"
-                          >Condition *</label
-                        >
-                        <select
-                          name=""
-                          class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
-                        >
-                          <option value="">Select Condition</option>
-                          <option value="">New</option>
-                          <option value="">Good</option>
-                          <option value="">Fair</option>
-                          <option value="">Poor</option>
-                          <option value="">Damaged</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label class="block text-sm font-semibold mb-1"
-                          >Stock Status *</label
-                        >
-                        <select
-                          name=""
-                          class="w-full border border-gray-400 rounded-md px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
-                        >
-                          <option value="">Select Status</option>
-                          <option value="">In Stock</option>
-                          <option value="">Low Stock</option>
-                          <option value="">Out of Stock</option>
-                          <option value="">Ordered</option>
-                          <option value="">Damaged</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <!-- Purchase & Location -->
+                  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div>
-                      <div class="items-center gap-2 mt-7 mb-8">
-                        <h3 class="font-semibold text-gray-700">
-                          Purchase & Location
-                        </h3>
-                      </div>
-
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                        <div class="w-full">
-                          <label class="block text-sm font-semibold mb-1"
-                            >Supplier *</label
-                          >
-                          <input
-                            type="text"
-                            required
-                            placeholder="e.g., Educational Publishers Ltd"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          />
-                        </div>
-                        <div class="w-full">
-                          <label class="block text-sm font-semibold mb-1"
-                            >Storage Location *</label
-                          >
-                          <input
-                            type="text"
-                            required
-                            placeholder="e.g., Main Library - Section A"
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          />
-                        </div>
-                        <div class="w-full">
-                          <label class="block text-sm font-semibold mb-1"
-                            >Purchase Date *</label
-                          >
-                          <input
-                            type="date"
-                            required
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          />
-                        </div>
-                        <div class="w-full">
-                          <label class="block text-sm font-semibold mb-1"
-                            >Expiry Date (if applicable) *</label
-                          >
-                          <input
-                            type="date"
-                            required
-                            class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          />
-                        </div>
-                      </div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Quantity *</label
+                      >
+                      <input
+                        type="number"
+                        placeholder="e.g., 50"
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      />
                     </div>
                     <div>
-                      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
-                        <div class="w-full md:col-span-2 mt-6">
-                          <label for="" class="block text-sm font-semibold mb-1"
-                            >Description *</label
-                          >
-                          <textarea
-                            id=""
-                            placeholder="Brief description of the education material and its use"
-                            rows="3"
-                            required
-                            class="w-full border border-gray-400 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          ></textarea>
-                        </div>
-                      </div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Unit Price (₦) *</label
+                      >
+                      <input
+                        type="number"
+                        placeholder="e.g., 2500"
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Condition *</label
+                      >
+                      <select
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 bg-white focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      >
+                        <option>Select condition</option>
+                        <option>New</option>
+                        <option>Good</option>
+                        <option>Used</option>
+                        <option>Damaged</option>
+                      </select>
                     </div>
                   </div>
+                </section>
 
-                  <!-- Buttons -->
-                  <div class="flex justify-end gap-4 mt-8">
-                    <button
-                      type="reset"
-                      class="border border-gray-400 px-6 py-2 rounded-md hover:bg-gray-100 cursor-pointer transition"
-                    >
-                      Cancel
-                    </button>
-                    <button
-                      type="submit"
-                      class="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition flex items-center gap-2"
-                    >
-                      <i data-lucide="plus" class="w-5 h-5"></i>
-                      Add Material
-                    </button>
+                <!-- Purchase Info -->
+                <section>
+                  <div class="flex items-center gap-2 mb-4">
+                    <i data-lucide="map-pin" class="w-5 h-5 text-gray-700"></i>
+                    <h3 class="font-semibold text-gray-700">
+                      Purchase & Location
+                    </h3>
                   </div>
-                </form>
-              </div>
+
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Supplier *</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="e.g., Educational Publishers Ltd"
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label class="block text-sm font-medium mb-1"
+                        >Storage Location *</label
+                      >
+                      <input
+                        type="text"
+                        placeholder="e.g., Main Library Section A"
+                        class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                      />
+                    </div>
+                  </div>
+                </section>
+
+                <!-- Description -->
+                <section>
+                  <label class="block text-sm font-medium mb-1"
+                    >Description</label
+                  >
+                  <textarea
+                    rows="3"
+                    placeholder="Brief description of the material"
+                    class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none resize-none"
+                  ></textarea>
+                </section>
+
+                <!-- Buttons -->
+                <div
+                  class="flex justify-end gap-3 pt-4 border-t border-gray-200"
+                >
+                  <button
+                    type="button"
+                    id="closeMaterialModalBtn"
+                    class="px-5 py-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100 transition"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    class="px-6 py-2 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 flex items-center gap-2 transition"
+                  >
+                    <i data-lucide="plus" class="w-4 h-4"></i> Add Material
+                  </button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -823,7 +675,7 @@
                           class="w-7 h-7 bg-gray-200 flex items-center justify-center rounded-md"
                         >
                           <i
-                            data-lucide="television"
+                            data-lucide="presentation"
                             class="w-4 h-4 text-green-700"
                           ></i>
                         </span>
@@ -903,7 +755,7 @@
             <div class="flex items-center justify-between">
               <h4 class="text-gray-600 font-medium">Total Items</h4>
               <button
-                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-green-200 transition"
+                class="flex items-center justify-center w-10 h-10 rounded-full transition"
               >
                 <i
                   data-lucide="utensils-crossed"
@@ -921,7 +773,7 @@
             <div class="flex items-center justify-between">
               <h4 class="text-gray-600 font-medium">In Stock</h4>
               <button
-                class="flex items-center justify-center w-10 h-10 bg-emerald-100 rounded-full hover:bg-emerald-200 transition"
+                class="flex items-center justify-center w-10 h-10= rounded-full transition"
               >
                 <i
                   data-lucide="check-circle"
@@ -939,7 +791,7 @@
             <div class="flex items-center justify-between">
               <h4 class="text-gray-600 font-medium">Low Stock</h4>
               <button
-                class="flex items-center justify-center w-10 h-10 bg-yellow-100 rounded-full hover:bg-blue-200 transition"
+                class="flex items-center justify-center w-10 h-10 rounded-full transition"
               >
                 <i
                   data-lucide="alert-triangle"
@@ -956,7 +808,7 @@
             <div class="flex items-center justify-between">
               <h4 class="text-gray-600 font-medium">Out of Stock</h4>
               <button
-                class="flex items-center justify-center w-10 h-10 bg-red-100 rounded-full hover:bg-blue-200 transition"
+                class="flex items-center justify-center w-10 h-10 rounded-full transition"
               >
                 <i data-lucide="clock" class="w-5 h-5 text-red-600"></i>
               </button>
@@ -969,7 +821,7 @@
             <div class="flex items-center justify-between">
               <h4 class="text-gray-600 font-medium">Total Value</h4>
               <button
-                class="flex items-center justify-center w-10 h-10 bg-gray-100 rounded-full hover:bg-gray-200 transition"
+                class="flex items-center justify-center w-10 h-10 rounded-full transition"
               >
                 <i
                   data-lucide="utensils-crossed"
@@ -1022,46 +874,52 @@
           </select>
 
           <button
-            id="openModal"
-            class="bg-green-700 font-semibold rounded-lg px-4 py-2 text-sm text-white flex items-center gap-2 w-full sm:w-auto"
+            id="openIngredientModal"
+            class="bg-emerald-700 font-semibold rounded-lg px-4 py-2 text-sm text-white flex items-center gap-2 w-full sm:w-auto hover:bg-green-800 transition-all shadow-sm"
           >
-            <i class="bi bi-plus"></i> Add Material
+            <i data-lucide="plus" class="w-4 h-4"></i>
+            Add Ingredients
           </button>
 
           <div
-            id="modal"
-            class="hidden absolute top-20 left-1/2 transform -translate-x-1/2 bg-gray-100 shadow-lg rounded-lg border border-gray-300 w-full max-w-5xl p-8 z-50 min-h-[500px]"
+            id="ingredientModal"
+            class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm justify-center items-center z-50 opacity-0 transition-opacity duration-200"
           >
-            <!-- Close button -->
-            <button
-              id="closeModal"
-              class="absolute top-3 right-3 text-gray-500 hover:text-gray-700"
+            <div
+              class="bg-white rounded-2xl shadow-lg w-full max-w-5xl max-h-[90vh] overflow-y-auto p-6 relative"
             >
-              <i data-lucide="x" class="w-6 h-6 cursor-pointer"></i>
-            </button>
-
-            <div class="p-6 bg-white rounded-2xl shadow-sm">
-              <h2
-                class="text-xl font-semibold text-gray-800 flex items-center gap-2 mb-1"
+              <!-- Close button -->
+              <button
+                id="closeIngredientModal"
+                class="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-all"
               >
+                <i data-lucide="x" class="w-6 h-6"></i>
+              </button>
+
+              <!-- Header -->
+              <div class="flex items-center gap-2 mb-2">
                 <i
                   data-lucide="utensils-crossed"
                   class="w-5 h-5 text-green-600"
                 ></i>
-                Add New Cafeteria Item
-              </h2>
+                <h2 class="text-xl font-semibold text-gray-800">
+                  Add New Cafeteria Item
+                </h2>
+              </div>
               <p class="text-gray-500 text-sm mb-6">
-                Enter the details of the new cafeteria item
+                Enter the details of the new cafeteria item below.
               </p>
 
-              <form action="" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <!-- Form -->
+              <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Left Section -->
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-3">
                     Basic Information
                   </h3>
                   <div class="space-y-4">
                     <div>
-                      <label for="" class="block text-sm text-gray-600 mb-1"
+                      <label class="block text-sm text-gray-600 mb-1"
                         >Item Name *</label
                       >
                       <input
@@ -1070,47 +928,47 @@
                         class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
                       />
                     </div>
+
                     <div class="grid grid-cols-2 gap-3">
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Category</label
                         >
                         <select
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                         >
                           <option>Select category</option>
-                          <option value="">Fruits & Vegetables</option>
-                          <option value="">Meat & Poultry</option>
-                          <option value="">Dairy Products</option>
-                          <option value="">Grains & Cereals</option>
-                          <option value="">Beverages</option>
-                          <option value="">Spices & Seasonings</option>
-                          <option value="">Frozen Foods</option>
-                          <option value="">Snacks</option>
-                          <option value="">Cleaning Supplies</option>
-                          <option value="">Kitchen Equipments</option>
+                          <option>Fruits & Vegetables</option>
+                          <option>Meat & Poultry</option>
+                          <option>Dairy Products</option>
+                          <option>Grains & Cereals</option>
+                          <option>Beverages</option>
+                          <option>Spices & Seasonings</option>
+                          <option>Frozen Foods</option>
+                          <option>Snacks</option>
+                          <option>Cleaning Supplies</option>
+                          <option>Kitchen Equipments</option>
                           <option>Other</option>
                         </select>
                       </div>
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Brand</label
                         >
                         <input
                           type="text"
                           placeholder="Enter brand name"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
                       </div>
                     </div>
+
                     <div>
-                      <label for="" class="block text-sm text-gray-600 mb-1"
+                      <label class="block text-sm text-gray-600 mb-1"
                         >Supplier *</label
                       >
                       <select
-                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                        class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
                       >
                         <option>Select supplier</option>
                         <option>Main Market Suppliers</option>
@@ -1130,6 +988,8 @@
                     </div>
                   </div>
                 </div>
+
+                <!-- Right Section -->
                 <div>
                   <h3 class="font-semibold text-gray-700 mb-3">
                     Quantity & Pricing
@@ -1137,23 +997,21 @@
                   <div class="space-y-4">
                     <div class="grid grid-cols-2 gap-3">
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Quantity</label
                         >
                         <input
                           type="number"
-                          name=""
                           placeholder="0"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
                       </div>
                       <div>
-                        <label for="" class="text-sm block text-gray-600 mb-1"
+                        <label class="text-sm block text-gray-600 mb-1"
                           >Unit *</label
                         >
                         <select
-                          class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
+                          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                         >
                           <option>kg</option>
                           <option>g</option>
@@ -1167,178 +1025,49 @@
                         </select>
                       </div>
                     </div>
+
                     <div class="grid grid-cols-2 gap-3">
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Unit Price (₦)</label
                         >
                         <input
                           type="number"
                           placeholder="0.00"
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
                       </div>
                       <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
+                        <label class="block text-sm text-gray-600 mb-1"
                           >Minimum Stock Level *</label
                         >
                         <input
                           type="number"
-                          name=""
                           placeholder="0"
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
+                          class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
                         />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div>
-                  <h3 class="font-semibold text-gray-700 mb-3">
-                    Status & Condition
-                  </h3>
-                  <div class="space-y-4">
-                    <div class="grid grid-cols-2 gap-3">
-                      <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
-                          >Condition</label
-                        >
-                        <select
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
-                        >
-                          <option value="">Select condition</option>
-                          <option value="">Fresh</option>
-                          <option value="">Good</option>
-                          <option value="">Fair</option>
-                          <option value="">Expired</option>
-                          <option value="">Damaged</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
-                          >Status
-                        </label>
-                        <select
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
-                        >
-                          <option>Select status</option>
-                          <option>In Stock</option>
-                          <option>Low Stock</option>
-                          <option>Out of Stock</option>
-                          <option>Ordered</option>
-                          <option>Expired</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div>
-                      <label for="" class="block text-sm text-gray-600 mb-1"
-                        >Storage Location *</label
-                      >
-                      <select
-                        name=""
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        id=""
-                      >
-                        <option>Select storage location</option>
-                        <option>Freezer</option>
-                        <option>Refridgerator</option>
-                        <option>Pantry</option>
-                        <option>Dry Storage</option>
-                        <option>Kitchen counter</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 class="font-semibold text-gray-700 mb-3">
-                    Dates & Additional Info
-                  </h3>
-                  <div class="space-y-3">
-                    <div class="grid grid-cols-2 gap-3">
-                      <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
-                          >Purchase Date</label
-                        >
-                        <input
-                          type="date"
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
-                        />
-                      </div>
-                      <div>
-                        <label for="" class="block text-sm text-gray-600 mb-1"
-                          >Expiry Date</label
-                        >
-                        <input
-                          type="date"
-                          name=""
-                          class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                          id=""
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label for="" class="block text-sm text-gray-600 mb-1"
-                        >Barcode</label
-                      >
-                      <input
-                        type="text"
-                        name=""
-                        placeholder="Enter barcode"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        id=""
-                      />
-                    </div>
-                    <div>
-                      <label for="" class="block text-sm text-gray-600 mb-1"
-                        >Allergens</label
-                      >
-                      <input
-                        type="text"
-                        name=""
-                        placeholder="e.g., Dairy, Nuts, Gluten"
-                        class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                        id=""
-                      />
-                    </div>
-                  </div>
-                </div>
-
+                <!-- Description -->
                 <div class="md:col-span-2">
-                  <label for="" class="block text-sm text-gray-600 mb-1"
+                  <label class="block text-sm text-gray-600 mb-1"
                     >Description</label
                   >
                   <textarea
-                    name=""
                     placeholder="Enter item description"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                    id=""
-                  ></textarea>
-                </div>
-                <div class="md:col-span-2">
-                  <label for="" class="block text-sm text-gray-600 mb-1"
-                    >Nutritional Information</label
-                  >
-                  <textarea
-                    name=""
-                    placeholder="Enter nutritional information (optional)"
-                    class="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500"
-                    id=""
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-green-500"
                   ></textarea>
                 </div>
               </form>
+
+              <!-- Actions -->
               <div class="flex justify-end gap-3 mt-6">
                 <button
                   type="button"
+                  id="closeIngredientModalBtn"
                   class="px-5 py-2 rounded-lg border border-gray-300 text-gray-600 hover:bg-gray-100"
                 >
                   Cancel
@@ -1348,14 +1077,14 @@
                   class="px-6 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700 flex items-center gap-2"
                 >
                   <i data-lucide="plus" class="w-4 h-4"></i>
-                  Add item to Inventory
+                  Add Item to Inventory
                 </button>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Education Materials Table Tabswitch -->
+        <!--  Tabswitch -->
         <div
           class="bg-white rounded-xl shadow-sm border border-gray-100 p-4 mt-8"
         >
@@ -1685,25 +1414,54 @@
   <script src="navbar.js"></script>
   <script src="tabswitch3.js"></script>
   <script>
-    const openModal = document.getElementById("openModal");
-    const closeModal = document.getElementById("closeModal");
-    const modal = document.getElementById("modal");
+    // ===== Educational Material Modal =====
+    const openMaterialModalBtn = document.getElementById("openModal");
+    const closeMaterialModalBtn = document.getElementById("closeModal");
+    const materialModal = document.getElementById("modal");
 
-    openModal.addEventListener("click", () => {
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
+    openMaterialModalBtn.addEventListener("click", () => {
+      materialModal.classList.remove("hidden");
+      materialModal.classList.add("flex");
     });
 
-    closeModal.addEventListener("click", () => {
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
+    closeMaterialModalBtn.addEventListener("click", () => {
+      materialModal.classList.add("hidden");
+      materialModal.classList.remove("flex");
     });
 
-    // Optional: close modal when clicking outside
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        modal.classList.add("hidden");
-        modal.classList.remove("flex");
+    materialModal.addEventListener("click", (e) => {
+      if (e.target === materialModal) {
+        materialModal.classList.add("hidden");
+        materialModal.classList.remove("flex");
+      }
+    });
+
+    // ===== Cafeteria Item Modal =====
+    const openIngredientModalBtn = document.getElementById(
+      "openIngredientModal"
+    );
+    const closeIngredientModalBtn = document.getElementById(
+      "closeIngredientModal"
+    );
+    const ingredientModal = document.getElementById("ingredientModal");
+
+    openIngredientModalBtn.addEventListener("click", () => {
+      ingredientModal.classList.remove("hidden");
+      ingredientModal.classList.add("flex");
+      ingredientModal.classList.add("opacity-100");
+    });
+
+    closeIngredientModalBtn.addEventListener("click", () => {
+      ingredientModal.classList.add("hidden");
+      ingredientModal.classList.remove("flex");
+      ingredientModal.classList.remove("opacity-100");
+    });
+
+    ingredientModal.addEventListener("click", (e) => {
+      if (e.target === ingredientModal) {
+        ingredientModal.classList.add("hidden");
+        ingredientModal.classList.remove("flex");
+        ingredientModal.classList.remove("opacity-100");
       }
     });
   </script>
