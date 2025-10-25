@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings - SchoolPass</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <header class="border-b border-gray-300 bg-white shadow-sm">
+      <div
+        class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <h1 class="text-2xl font-semibold text-green-700">System Settings</h1>
+        <button
+          class="inline-flex items-center gap-2 bg-emerald-700 text-white hover:bg-green-800 px-4 py-2 rounded shadow-sm transition"
+        >
+          <i data-lucide="save"></i> Save All Changes
+        </button>
+      </div>
+    </header>
+    <main class="max-w-7xl mx-auto p-6 space-y-6">
+      <div class="pb-3 border-b border-gray-200">
+        <nav id="settings-tab" class="flex gap-6 text-sm font-medium">
+          <button
+            data-tab="general"
+            class="pb-3 border-b-2 tab-btn border-emerald-700 text-emerald-700 cursor-pointer"
+          >
+            General
+          </button>
+          <button
+            data-tab="users"
+            class="pb-3 tab-btn border-b-2 border-transparent hover:text-emerald-800 cursor-pointer"
+          >
+            Users
+          </button>
+          <button
+            data-tab="academic"
+            class="pb-3 tab-btn border-b-2 border-transparent hover:text-emerald-800 cursor-pointer"
+          >
+            Academic
+          </button>
+          <button
+            data-tab="notifications"
+            class="pb-3 tab-btn border-b-2 border-transparent hover:text-emerald-800 cursor-pointer"
+          >
+            Notifications
+          </button>
+          <button
+            data-tab="security"
+            class="pb-3 tab-btn border-b-2 border-transparent hover:text-emerald-800 cursor-pointer"
+          >
+            Security
+          </button>
+          <button
+            data-tab="system"
+            class="pb-3 tab-btn border-b-2 border-transparent hover:text-emerald-800 cursor-pointer"
+          >
+            System
+          </button>
+        </nav>
+      </div>
+      <section id="general" class="grid tab-content md:grid-cols-2 gap-6">
+        <div class="bg-white rounded shadow-sm border border-gray-100 p-6">
+          <div class="mb-4">
+            <h3
+              class="flex items-center gap-2 text-lg font-semibold text-green-800"
+            >
+              <i data-lucide="building-2" class="w-5 h-5 text-green-800"></i>
+              School Information
+            </h3>
+            <p class="text-sm text-gray-500">
+              Basic information about your school
+            </p>
+          </div>
+          <form action="" class="space-y-4">
+            <div>
+              <label for="" class="text-sm block font-medium text-gray-700"
+                >School Name</label
+              >
+              <input
+                type="text"
+                name=""
+                value="EduManage High School"
+                class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none resize-none transition-all"
+                id=""
+              />
+            </div>
+            <div>
+              <label for="" class="text-sm block font-medium text-gray-700"
+                >Address</label
+              >
+              <textarea
+                rows="2"
+                value=""
+                class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none resize-none transition-all"
+                id=""
+              >
+123 Education street, Lagos, Nigeria</textarea
+              >
+            </div>
+            <div>
+              <label for="" class="block text-sm text-gray-700"
+                >Phone Number</label
+              >
+              <input
+                type="text"
+                value="www.edumanage.edu.ng"
+                class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none resize-none transition-all"
+              />
+            </div>
+            <div>
+              <label for="" class="block text-sm text-gray-700"
+                >Email Address</label
+              >
+              <input
+                type="text"
+                value="info@edumanage.edu.ng"
+                class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none resize-none transition-all"
+              />
+            </div>
+            <div>
+              <label for="" class="block text-sm text-gray-700">Website</label>
+              <input
+                type="text"
+                value="www.edumanage.edu.ng"
+                class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+              />
+            </div>
+          </form>
+        </div>
+        <div class="bg-white rounded shadow-sm border border-gray-100 p-6">
+          <div class="mb-4">
+            <h3
+              class="flex items-center gap-2 text-lg font-semibold text-green-800"
+            >
+              <i data-lucide="palette" class="w-5 h-5 text-green-700"></i>
+              Display Preferences
+            </h3>
+            <p class="text-sm text-gray-500">
+              Customize appearance and language
+            </p>
+          </div>
+          <form action="" class="space-y-4">
+            <div>
+              <label for="" class="block text-sm text-gray-700 font-medium">
+                <select
+                  name=""
+                  class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none resize-none transition-all"
+                  id=""
+                >
+                  <option selected>English</option>
+                  <option>Yoruba</option>
+                  <option>Hausa</option>
+                  <option>Igbo</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <label for="" class="block text-sm text-gray-700 font-medium">
+                <select
+                  name=""
+                  class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none resize-none transition-all"
+                  id=""
+                >
+                  <option selected>Nigerian Naira (₦)</option>
+                  <option>US Dollar ($)</option>
+                  <option>Euro (€)</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <label for="" class="block text-sm text-gray-700 font-medium">
+                <select
+                  name=""
+                  class="w-full border border-gray-300 rounded-lg px-3 py-2.5 text-gray-800 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none resize-none transition-all"
+                  id=""
+                >
+                  <option selected>DD-MM-YYYY</option>
+                  <option>MM-DD-YYYY</option>
+                  <option>YYYY-MM-DD</option>
+                </select>
+              </label>
+            </div>
+          </form>
+        </div>
+      </section>
+      <section id="users" class="hidden tab-content">
+        <div class="grid">
+          <div class="bg-white rounded shadow-sm border border-gray-100 p-6">
+            <div class="flex items-center justify-between flex-wrap gap-3 mb-6">
+              <div class="mb-4">
+                <h3
+                  class="flex items-center gap-2 text-lg font-semibold text-green-800"
+                >
+                  <i data-lucide="users-2" class="w-5 h-5 text-green-700"></i>
+                  User Management
+                </h3>
+
+                <p class="text-sm text-gray-500">
+                  Add and manage user account & permissions
+                </p>
+              </div>
+
+              <button
+                id="openUserModal"
+                class="flex items-center gap-2 bg-emerald-700 hover:bg-emerald-800 text-white font-medium px-4 py-2.5 rounded transition-all"
+              >
+                Add New User
+              </button>
+            </div>
+            <div class="overflow-x-auto">
+              <table
+                class="min-w-full text-sm text-gray-700 border-separate border-spacing-y-2"
+              >
+                <thead
+                  class="bg-gray-50 text-gray-600 font-medium border-gray-100"
+                >
+                  <tr>
+                    <th class="py-3 px-4 text-left rounded-l-lg">Name</th>
+                    <th class="py-3 px-4 text-left">Email</th>
+                    <th class="py-3 px-4 text-left">Role</th>
+                    <th class="py-3 px-4 text-left">Status</th>
+                    <th class="py-3 px-4 text-left">Last Login</th>
+                    <th class="py-3 px-4 text-left rounded-r-lg">Actions</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr class="hover:bg-gray-50">
+                    <td class="py-3 px-4 font-medium">John Doe</td>
+                    <td class="py-3 px-4">john@schoolpass.com</td>
+                    <td class="py-3 px-4">Administrator</td>
+                    <td class="py-3 px-4">
+                      <span
+                        class="px-2.5 py-1 text-xs font-medium bg-green-100 text-green-700 rounded-full"
+                        >Active</span
+                      >
+                    </td>
+                    <td class="py-3 px-4 text-sm">Oct 20, 2025</td>
+                    <td class="py-3 px-4 text-right flex justify-end gap-2">
+                      <button class="ml-3 text-red-500 hover:text-red-600">
+                        <i data-lucide="trash-2" class="w-4 h-4"></i>
+                      </button>
+                      <button class="text-emerald-600 hover:text-emerald-700">
+                        <i data-lucide="edit" class="w-4 h-4"></i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="py-3 px-4 font-medium">Jane Smith</td>
+                    <td class="py-3 px-4">jane@schoolpass.com</td>
+                    <td class="py-3 px-4">Teacher</td>
+                    <td class="py-3 px-4">
+                      <span
+                        class="px-2 py-1 text-xs rounded-full bg-green-50 text-green-700 font-medium"
+                        >Active</span
+                      >
+                    </td>
+                    <td class="py-3 px-4 text-sm">Oct 18, 2025</td>
+                    <td class="py-3 px-4 text-right flex justify-end gap-2">
+                      <button class="text-emerald-600 hover:text-emerald-700">
+                        <i data-lucide="edit" class="w-4 h-4"></i>
+                      </button>
+                      <button class="ml-3 text-red-500 hover:text-red-600">
+                        <i data-lucide="trash-2" class="w-4 h-4"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Add User Modal -->
+      <div
+        id="userModal"
+        class="fixed inset-0 w-screen h-screen top-0 left-0 hidden items-center justify-center bg-black/50 backdrop-blur-sm z-[9999]"
+      >
+        <div
+          class="relative bg-white rounded shadow-xl border border-gray-100 w-full max-w-md p-6"
+        >
+          <button
+            class="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+            id="closeUserModal"
+          >
+            <i data-lucide="x" class="w-5 h-5"></i>
+          </button>
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">Add New User</h2>
+
+          <form action="" class="space-y-4">
+            <div>
+              <label for="" class="text-sm block font-medium text-gray-700"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                placeholder="Enter Full Name"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+              />
+            </div>
+            <div>
+              <label for="" class="text-sm text-gray-700 font-medium block"
+                >Email</label
+              >
+
+              <input
+                type="email"
+                placeholder="Enter User Email"
+                name=""
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                id=""
+              />
+            </div>
+            <div>
+              <label for="" class="block font-medium text-sm text-gray-700"
+                >Role</label
+              >
+              <select
+                name=""
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                id=""
+              >
+                <option selected>Teacher</option>
+                <option>Student</option>
+                <option>Administrator</option>
+                <option>Accountant</option>
+              </select>
+            </div>
+            <div class="pt-2">
+              <button
+                type="submit"
+                class="w-full bg-emerald-700 hover:bg-emerald-800 text-white font-medium py-2.5 rounded-lg transition-all"
+              >
+                Save User
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <section id="academic" class="hidden tab-content">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white rounded p-6 border-gray-100 border shadow-sm">
+            <div class="mb-4">
+              <h3
+                class="flex items-center gap-2 text-lg font-semibold text-green-800"
+              >
+                <i data-lucide="book-open" class="w-5 h-5 text-emerald-700"></i>
+                Academic Year
+              </h3>
+              <p class="text-sm text-gray-500">
+                Configure academic year and terms
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <label for="" class="text-sm block text-gray-700 font-medium"
+                  >Current Academic Year</label
+                >
+                <input
+                  type="text"
+                  value="2023/2024"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                />
+              </div>
+              <div>
+                <label for="" class="text-sm block text-gray-700 font-medium"
+                  >Current Term Start</label
+                >
+                <input
+                  type="text"
+                  value="2024-01-04"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                />
+              </div>
+              <div>
+                <label for="" class="text-sm block text-gray-700 font-medium"
+                  >Current Term End</label
+                >
+                <input
+                  type="text"
+                  value="2024-04-05"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                />
+              </div>
+
+              <div>
+                <label for="" class="text-sm block text-gray-700 font-medium"
+                  >Current Term</label
+                >
+                <select
+                  name=""
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 mb-6 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                  id=""
+                >
+                  <option value="">First Term</option>
+                  <option value="" selected>Second Term</option>
+                  <option value="">Third Term</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white rounded shadow-sm border border-gray-100 p-6">
+            <div class="mb-4">
+              <h3
+                class="flex items-center gap-2 text-lg font-semibold text-green-800"
+              >
+                <i data-lucide="palette" class="w-5 h-5 text-green-700"></i>
+                Grade Configuration
+              </h3>
+              <p class="text-sm text-gray-500">
+                Set up grading scales and assessment periods
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div>
+                <label
+                  for=""
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Grading Scale</label
+                >
+                <select
+                  name=""
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 mb-6 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                  id=""
+                >
+                  <option value="" selected>Percentage (0-100)</option>
+                  <option value="">Letter Grade (A-F)</option>
+                  <option value="">Points (1-5)</option>
+                </select>
+              </div>
+              <div>
+                <label for="" class="block text-sm text-gray-700 font-medium"
+                  >Minimum Passing Grade</label
+                >
+                <input
+                  type="number"
+                  value="40"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 mb-6 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                />
+              </div>
+
+              <div class="flex items-center justify-between pt-2">
+                <span class="text-sm font-medium text-gray-700"
+                  >Enable Continuous Assessment</span
+                >
+                <button
+                  id="toggleCA"
+                  class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-emerald-600 transition-colors"
+                >
+                  <span
+                    class="dot absolute left-1 h-4 w-4 bg-white rounded-full transition-transform transform translate-x-5"
+                  ></span>
+                </button>
+              </div>
+              <div class="flex items-center justify-between pt-2">
+                <span class="text-sm font-medium text-gray-700"
+                  >Enable Final Exams</span
+                >
+                <button
+                  id="toggleExamAcad"
+                  class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-emerald-600 transition-colors"
+                >
+                  <span
+                    class="dot absolute left-1 h-4 w-4 bg-white rounded-full transition-transform transform translate-x-5"
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="notifications" class="hidden tab-content">
+        <div class="grid">
+          <div class="bg-white rounded shadow-sm border border-gray-100 p-6">
+            <div class="flex items-center justify-between flex-wrap gap-3 mb-6">
+              <div class="mb-4">
+                <h3
+                  class="flex items-center gap-2 text-lg font-semibold text-green-800"
+                >
+                  <i data-lucide="bell" class="w-5 h-5 text-green-700"></i>
+                  Notification Settings
+                </h3>
+
+                <p class="text-sm text-gray-500">
+                  Configure system notifications and alerts
+                </p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <h4 class="text-sm font-semibold text-gray-700">
+                Email Notifications
+              </h4>
+              <div class="items-center justify-between flex">
+                <div>
+                  <p class="text-gray-800 font-medium text-sm">
+                    Fee Payment Reminders
+                  </p>
+                  <p class="text-gray-500 font-medium text-xs">
+                    Send email reminders for pending fee payments
+                  </p>
+                </div>
+                <button
+                  id="toggleFee"
+                  class="relative inline-flex h-6 w-11 items-center rounded-full bg-emerald-600 transition-colors"
+                >
+                  <span
+                    class="dot absolute left-1 h-4 w-4 bg-white rounded-full transition-transform transform translate-x-5"
+                  ></span>
+                </button>
+              </div>
+              <div class="items-center justify-between flex">
+                <div>
+                  <p class="text-gray-800 font-medium text-sm">
+                    Attendance Alerts
+                  </p>
+                  <p class="text-gray-500 font-medium text-xs">
+                    Send alerts for low attendance
+                  </p>
+                </div>
+                <button
+                  id="toggleAttendance"
+                  class="relative inline-flex h-6 w-11 items-center rounded-full bg-emerald-600 transition-colors"
+                >
+                  <span
+                    class="dot absolute left-1 h-4 w-4 bg-white rounded-full transition-transform transform translate-x-5"
+                  ></span>
+                </button>
+              </div>
+              <div class="items-center justify-between flex">
+                <div>
+                  <p class="text-gray-800 font-medium text-sm">
+                    Exam Schedules
+                  </p>
+                  <p class="text-gray-500 font-medium text-xs">
+                    Notify about upcoming exams
+                  </p>
+                </div>
+                <button
+                  id="toggleExam"
+                  class="relative inline-flex h-6 w-11 items-center rounded-full bg-emerald-600 transition-colors"
+                >
+                  <span
+                    class="dot absolute left-1 h-4 w-4 bg-white rounded-full transition-transform transform translate-x-5"
+                  ></span>
+                </button>
+              </div>
+              <div class="items-center justify-between flex">
+                <div>
+                  <p class="text-gray-800 font-medium text-sm">
+                    SMS Notifications
+                  </p>
+                  <p class="text-gray-500 font-medium text-xs">
+                    Send SMS for emergency situations
+                  </p>
+                </div>
+                <button
+                  id="toggleEmergency"
+                  class="relative inline-flex h-6 w-11 items-center rounded-full bg-emerald-600 transition-colors"
+                >
+                  <span
+                    class="dot absolute left-1 h-4 w-4 bg-white rounded-full transition-transform transform translate-x-5"
+                  ></span>
+                </button>
+              </div>
+              <div class="items-center justify-between flex">
+                <div>
+                  <p class="text-gray-800 font-medium text-sm">
+                    School Announcements
+                  </p>
+                  <p class="text-gray-500 font-medium text-xs">
+                    Send important announcements via SMS
+                  </p>
+                </div>
+                <button
+                  id="toggleAnnouncement"
+                  class="relative inline-flex h-6 w-11 items-center rounded-full bg-emerald-600 transition-colors"
+                >
+                  <span
+                    class="dot absolute left-1 h-4 w-4 bg-white rounded-full transition-transform transform translate-x-5"
+                  ></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="security" class="hidden tab-content">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white border rounded border-gray-100 shadow-sm p-6">
+            <div class="mb-4">
+              <h3
+                class="flex items-center gap-2 text-lg font-semibold text-green-800"
+              >
+                <i data-lucide="shield" class="w-5 h-5 text-emerald-700"></i>
+                Security Settings
+              </h3>
+              <p class="text-sm text-gray-500">
+                Configure system security and access controls
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-700 text-sm">
+                    Two-Factor Authentication
+                  </p>
+                  <p class="text-sm text-gray-500">
+                    Require 2FA for admin accounts
+                  </p>
+                </div>
+                <button
+                  id="toggleFA"
+                  class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-gray-300 transition-colors"
+                >
+                  <span
+                    class="dot absolute left-1 h-4 w-4 bg-white rounded-full transition-transform transform translate-x-5"
+                  ></span>
+                </button>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-700 text-sm">
+                    Strong Password Policy
+                  </p>
+                  <p class="text-sm text-gray-500">Enforce complex passwords</p>
+                </div>
+                <button
+                  id="togglePas"
+                  class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-emerald-600 transition-colors"
+                >
+                  <span
+                    class="dot absolute left-1 h-4 w-4 bg-white rounded-full transition-transform transform translate-x-5"
+                  ></span>
+                </button>
+              </div>
+              <div>
+                <label for="" class="text-sm block text-gray-700 font-medium">
+                  Session Timeout (minutes)
+                </label>
+                <input
+                  type="number"
+                  name=""
+                  value="60"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                  id=""
+                />
+              </div>
+              <div>
+                <label for="" class="text-sm block text-gray-700 font-medium">
+                  Max Login Attempts
+                </label>
+                <input
+                  type="number"
+                  name=""
+                  value="5"
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                  id=""
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded p-6 shadow-sm border border-gray-100">
+            <div class="mb-4">
+              <h3
+                class="flex items-center gap-2 text-lg font-semibold text-green-800"
+              >
+                <i data-lucide="database" class="w-5 h-5"></i> Backup & Recovery
+              </h3>
+              <p class="text-sm text-gray-500">
+                Manage system backups and data recovery
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-700 text-sm">
+                    Automatic Backup
+                  </p>
+                  <p class="text-gray-500 text-sm">
+                    Daily automatic system backups
+                  </p>
+                </div>
+                <button
+                  id="toggleBackup"
+                  class="toggle-btn relative inline-flex h-6 w-11 items-center rounded-full bg-emerald-600 transition-colors"
+                >
+                  <span
+                    class="dot absolute left-1 h-4 w-4 bg-white rounded-full transition-transform transform translate-x-5"
+                  ></span>
+                </button>
+              </div>
+
+              <div>
+                <label
+                  for=""
+                  class="text-sm block text-gray-700 font-medium mb-1"
+                >
+                  Backup Frequency
+                </label>
+                <select
+                  name=""
+                  class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 outline-none"
+                  id=""
+                >
+                  <option value="" selected>Daily</option>
+                  <option value="">Weekly</option>
+                  <option value="">Monthly</option>
+                </select>
+              </div>
+
+              <div class="space-y-3 pt-1">
+                <button
+                  class="w-full flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2.5 rounded-lg transition-all"
+                >
+                  <i data-lucide="download"></i> Download Backup
+                </button>
+                <button
+                  class="w-full flex items-center justify-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 font-medium py-2.5 rounded-lg transition-all"
+                >
+                  <i data-lucide="upload"></i> Restore from Backup
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="system" class="hidden tab-content">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white border rounded border-gray-100 shadow-sm p-6">
+            <div class="mb-4">
+              <h3
+                class="flex items-center gap-2 text-lg font-semibold text-green-800"
+              >
+                <i data-lucide="settings" class="w-5 h-5 text-emerald-700"></i>
+                System Information
+              </h3>
+              <p class="text-sm text-gray-500">
+                Current system status and information
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <h4 class="text-gray-700 font-medium">Version</h4>
+                <p class="text-sm text-gray-500">v2.1.0</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <h4 class="text-gray-700 font-medium">Database Status</h4>
+                <p class="text-sm text-gray-500">
+                  <span
+                    class="bg-green-700 text-white px-2.5 py-1 text-xs font-medium rounded-full"
+                    >Connected</span
+                  >
+                </p>
+              </div>
+              <div class="flex items-center justify-between">
+                <h4 class="text-gray-700 font-medium">Storage Used</h4>
+                <p class="text-sm text-gray-500">2.4GB / 10GB</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <h4 class="text-gray-700 font-medium">Last Backup</h4>
+                <p class="text-sm text-gray-500">
+                  2024-01-15 &centerdot; 03:00AM
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="bg-white border rounded border-gray-100 shadow-sm p-6">
+            <div class="mb-4">
+              <h3
+                class="flex items-center gap-2 text-lg font-semibold text-green-800"
+              >
+                <i data-lucide="network" class="w-5 h-5 text-emerald-700"></i>
+                Integration Settings
+              </h3>
+              <p class="text-sm text-gray-500">
+                Configure third party integrations
+              </p>
+            </div>
+            <div class="flex items-center justify-between">
+              <div>
+                <h4 class="text-sm text-gray-700 font-medium">Email Service</h4>
+                <p class="text-xs text-gray-500">SMTP email integration</p>
+              </div>
+              <p class="">
+                <span
+                  class="bg-green-700 text-white px-2.5 py-1 text-xs font-medium rounded-full"
+                  >Active</span
+                >
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-4">
+              <div>
+                <h4 class="text-sm text-gray-700 font-medium">SMS Gateaway</h4>
+                <p class="text-xs text-gray-500">SMS notification service</p>
+              </div>
+              <p class="">
+                <span
+                  class="bg-gray-400 text-white px-2.5 py-1 text-xs font-medium rounded-full"
+                  >Inactive</span
+                >
+              </p>
+            </div>
+            <div class="flex items-center justify-between mt-4">
+              <div>
+                <h4 class="text-sm text-gray-700 font-medium">
+                  Payment Gateaway
+                </h4>
+                <p class="text-xs text-gray-500">Online payment processing</p>
+              </div>
+              <p class="">
+                <span
+                  class="bg-green-700 text-white px-2.5 py-1 text-xs font-medium rounded-full"
+                  >Active</span
+                >
+              </p>
+            </div>
+            <div class="space-y-3 pt-1">
+              <button
+                class="w-full items-center justify-center bg-gray-100 mt-6 hover:bg-gray-200 text-gray-700 font-medium py-2.5 rounded-lg transition-all"
+              >
+                Configure Integrations
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+
+  <script src="navbar.js"></script>
+  <script src="settings.js"></script>
+</html>
