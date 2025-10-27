@@ -38,29 +38,34 @@
             <p
               class="border-gray-400 rounded-lg px-4 py-2 text-sm hover:bg-gray-100 flex items-center gap-2 w-full sm:w-auto"
             >
-              <i class="bi bi-bell"></i>October 3rd, 2025
+              <i
+                data-lucide="calendar-days"
+                class="w-4 h-4 text-emerald-600"
+              ></i>
+              October 3rd, 2025
             </p>
           </div>
         </div>
 
         <!-- Stats Grid -->
         <section class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-10 mt-18">
-          <div class="bg-white rounded-lg shadow p-4 flex items-center gap-3">
-            <div class="relative inline-block">
-              <i class="bi bi-person text-5xl text-green-600"></i>
-
+          <div class="bg-white rounded-lg shadow p-4 flex items-center gap-4">
+            <!-- Icon -->
+            <div class="flex-shrink-0">
               <i
-                class="bi bi-check absolute bottom-0 right-0 text-4xl text-green-800"
+                data-lucide="user-check"
+                class="w-10 h-10 text-emerald-600"
               ></i>
             </div>
-            <div>
-              <p class="text-4xl font-bold text-green-600">5</p>
-              <span class="ml-2 font-medium text-gray-600">Present</span>
+
+            <div class="flex flex-col items-start justify-center leading-tight">
+              <p class="text-4xl font-bold text-emerald-600 leading-none">5</p>
+              <span class="text-sm font-medium text-gray-600">Present</span>
             </div>
           </div>
 
           <div class="bg-white rounded-lg shadow p-4 flex items-center gap-3">
-            <i class="bi bi-x-circle text-red-700 text-4xl font-bold"></i>
+            <i data-lucide="user-x" class="w-10 h-10 text-red-600"></i>
             <div>
               <p class="text-4xl font-bold text-red-700">1</p>
               <p class="text-gray-600 text-sm">Absent</p>
@@ -68,7 +73,7 @@
           </div>
 
           <div class="bg-white rounded-lg shadow p-4 flex items-center gap-3">
-            <i class="bi bi-clock text-yellow-700 font-extrabold text-4xl"></i>
+            <i data-lucide="clock" class="w-10 h-10 text-yellow-600"></i>
             <div>
               <p class="text-4xl font-bold text-yellow-600">1</p>
               <p class="text-gray-600 text-sm">Avg Attendance</p>
@@ -76,7 +81,7 @@
           </div>
 
           <div class="bg-white rounded-lg shadow p-4 flex items-center gap-3">
-            <i class="bi bi-people text-green-700 text-4xl"></i>
+            <i data-lucide="users" class="w-10 h-10 text-emerald-700"></i>
             <div>
               <p class="text-4xl font-bold text-green-800">5</p>
               <p class="text-gray-600 text-sm">Total</p>
@@ -89,42 +94,44 @@
         >
           <button
             id="btnTakeAttendance"
-            class="bg-gray-400 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition"
+            class="tab-btn flex items-center gap-2 bg-emerald-600 text-white font-medium px-4 py-2 rounded-lg shadow-sm transition"
           >
+            <i data-lucide="clipboard-check" class="w-4 h-4"></i>
             Take Attendance
           </button>
           <button
             id="btnViewRecords"
-            class="bg-gray-400 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition"
+            class="tab-btn flex items-center gap-2 bg-white text-emerald-600 border border-emerald-600 font-medium px-4 py-2 rounded-lg shadow-sm transition"
           >
+            <i data-lucide="list" class="w-4 h-4"></i>
             View Records
           </button>
           <button
             id="btnStaffAttendance"
-            class="bg-gray-400 text-white px-4 py-2 rounded-md hover:bg-gray-500 transition"
+            class="tab-btn flex items-center gap-2 bg-white text-emerald-600 border border-emerald-600 font-medium px-4 py-2 rounded-lg shadow-sm transition"
           >
+            <i data-lucide="briefcase" class="w-4 h-4"></i>
             Staff Attendance
           </button>
         </div>
 
         <!-- Tabs Content -->
         <div id="tabsContent" class="space-y-6 px-6">
-          <!-- Take Attendance Content -->
           <div id="takeAttendanceTab" class="bg-white p-6 rounded-lg shadow">
-            <h2 class="text-xl font-bold mb-2 text-green-500">
+            <h2 class="text-xl font-bold mb-2 text-emerald-600">
               Mark Attendance
             </h2>
-            <p class="mb-4 text-gray-400">Select date to mark attendance</p>
+            <p class="mb-4 text-gray-500">Select date to mark attendance</p>
 
             <input
               type="date"
               id="date"
-              placeholder="Select Date"
-              class="border date border-gray-400 rounded-md px-3 focus:outline-none focus:ring-2 focus:ring-green-500 py-2 mb-3 block w-full"
+              class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:ring-2 focus:ring-emerald-500 focus:outline-none mb-3"
             />
+
             <select
               id="classSelect"
-              class="border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 px-3 py-2 mb-3 block w-full"
+              class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:ring-2 focus:ring-emerald-500 focus:outline-none mb-3"
             >
               <option value="">Select Class</option>
               <option value="JSS1">JSS1</option>
@@ -137,49 +144,44 @@
 
             <button
               id="loadClassBtn"
-              class="bg-green-600 text-white px-4 py-2 rounded-md"
+              class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2 rounded-lg shadow-sm transition"
             >
+              <i data-lucide="download" class="w-4 h-4"></i>
               Load Class
             </button>
 
-            <!-- Student Table Placeholder -->
             <div id="studentTable" class="mt-6 hidden"></div>
           </div>
 
-          <!-- Staff Attendance Content -->
           <div
             id="staffAttendanceTab"
             class="bg-white p-6 rounded-lg shadow hidden"
           >
-            <h2 class="text-xl font-bold mb-2 text-green-500">
+            <h2 class="text-xl font-bold mb-2 text-emerald-600">
               Staff Attendance
             </h2>
-            <p class="mb-4 text-gray-400">Mark attendance for staff members</p>
-
-            <!-- Staff Table Placeholder -->
+            <p class="mb-4 text-gray-500">Mark attendance for staff members</p>
             <div id="staffTable"></div>
           </div>
 
-          <!-- View Records Content -->
           <div
             id="viewRecordsTab"
             class="bg-white p-6 rounded-lg shadow hidden"
           >
-            <h2 class="text-xl text-green-500 font-bold">View Records</h2>
-            <p class="text-gray-600">
+            <h2 class="text-xl font-bold text-emerald-600">View Records</h2>
+            <p class="text-gray-600 mb-3">
               Search attendance history by date and class
             </p>
 
             <input
               id="recordDate"
               type="date"
-              placeholder="Select Date"
-              class="border border-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-md px-3 py-2 mb-2 block"
+              class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:ring-2 focus:ring-emerald-500 focus:outline-none mb-2"
             />
 
             <select
               id="recordClass"
-              class="w-full border border-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-md px-3 py-2 mb-2"
+              class="border border-gray-300 rounded-lg px-3 py-2 w-full focus:ring-2 focus:ring-emerald-500 focus:outline-none mb-2"
             >
               <option value="">Select Class</option>
               <option value="JSS1">JSS1</option>
@@ -192,41 +194,18 @@
 
             <button
               id="viewRecordsBtn"
-              class="bg-green-600 text-white px-4 py-2 rounded-md mb-4"
+              class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-medium px-4 py-2 rounded-lg shadow-sm transition"
             >
+              <i data-lucide="search" class="w-4 h-4"></i>
               View Records
             </button>
 
-            <!-- Records Table Container -->
             <div id="recordsTable" class="hidden"></div>
-          </div>
-
-          <div
-            id="staffAttendance"
-            class="bg-white shadow rounded-lg p-6 hidden"
-          >
-            <h2 class="text-2xl font-bold text-green-700 mb-2">
-              Staff Attendance
-            </h2>
-            <p class="text-gray-600">Track staff attendance here.</p>
           </div>
         </div>
       </header>
     </main>
-    <!-- Footer -->
-    <footer class="bg-green-700 mt-10 py-4">
-      <div class="text-center text-gray-600">
-        <p>
-          Powered by
-          <a
-            href="https://veritas.com"
-            target="_blank"
-            class="text-black hover:underline"
-            >Veritas</a
-          >
-        </p>
-      </div>
-    </footer>
+
     <script src="app.js"></script>
   </body>
 
@@ -237,25 +216,57 @@
       records: document.getElementById("viewRecordsTab"),
     };
 
+    const tabButtons = document.querySelectorAll(".tab-btn");
+
+    function setActiveTab(activeId) {
+      tabButtons.forEach((btn) => {
+        if (btn.id === activeId) {
+          btn.classList.remove(
+            "bg-white",
+            "text-emerald-600",
+            "border",
+            "border-emerald-600"
+          );
+          btn.classList.add("bg-emerald-600", "text-white");
+        } else {
+          btn.classList.remove("bg-emerald-600", "text-white");
+          btn.classList.add(
+            "bg-white",
+            "text-emerald-600",
+            "border",
+            "border-emerald-600"
+          );
+        }
+      });
+    }
+
     document
       .getElementById("btnTakeAttendance")
       .addEventListener("click", () => {
         showTab("take");
+        setActiveTab("btnTakeAttendance");
       });
+
     document
       .getElementById("btnStaffAttendance")
       .addEventListener("click", () => {
         showTab("staff");
-        loadStaffTable(); // load staff automatically when staff tab is clicked
+        setActiveTab("btnStaffAttendance");
+        loadStaffTable(); // load staff automatically
       });
+
     document.getElementById("btnViewRecords").addEventListener("click", () => {
       showTab("records");
+      setActiveTab("btnViewRecords");
     });
 
     function showTab(tabName) {
       Object.values(tabs).forEach((tab) => tab.classList.add("hidden"));
       tabs[tabName].classList.remove("hidden");
     }
+
+    // Initially set Take Attendance as active
+    setActiveTab("btnTakeAttendance");
 
     // Load class table
     document.getElementById("loadClassBtn").addEventListener("click", () => {
@@ -270,13 +281,13 @@
 
       if (!date) {
         alert("Please select a date before loading!");
-        return; // stop further execution
+        return;
       }
 
       studentTable.innerHTML = `
-    <h2 class="text-lg font-bold text-green-600 mb-2">${selectedClass}</h2>
-    <p class="mb-4 text-gray-600">Mark attendance for each student</p>
-   <table class="w-full border border-gray-400 text-left">
+      <h2 class="text-lg font-bold text-emerald-600 mb-2">${selectedClass}</h2>
+      <p class="mb-4 text-gray-600">Mark attendance for each student</p>
+      <table class="w-full border border-gray-400 text-left">
         <thead class="bg-gray-400 text-white">
           <tr>
             <th class="p-2 border border-gray-400">Roll No</th>
@@ -284,8 +295,7 @@
             <th class="p-2 border border-gray-400">Status</th>
             <th class="p-2 border border-gray-400">Check-in Time</th>
             <th class="p-2 border border-gray-400">Actions</th>
-         
-            </tr>
+          </tr>
         </thead>
         <tbody>
           <tr>
@@ -293,26 +303,26 @@
             <td class="p-2 border border-gray-400">Micheal Okeke</td>
             <td class="p-2 border border-gray-400">Present</td>
             <td class="p-2 border border-gray-400">08:00 AM</td>
-            <td class="p-2   border border-gray-400 gap-2">
-            <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
-            <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
-            <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
-          </td>
+            <td class="p-2 border border-gray-400 flex gap-2">
+              <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
+              <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
+            </td>
           </tr>
           <tr>
             <td class="p-2 border border-gray-400">2</td>
             <td class="p-2 border border-gray-400">Amadi Ukoha</td>
             <td class="p-2 border border-gray-400">Late</td>
             <td class="p-2 border border-gray-400">08:30 AM</td>
-            <td class="p-2  border-gray-400 flex gap-2">
-            <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
-            <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
-            <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
-          </td>
+            <td class="p-2 border border-gray-400 flex gap-2">
+              <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
+              <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
+            </td>
           </tr>
         </tbody>
       </table>
-  `;
+    `;
       studentTable.classList.remove("hidden");
     });
 
@@ -320,7 +330,7 @@
     function loadStaffTable() {
       const staffTable = document.getElementById("staffTable");
       staffTable.innerHTML = `
- <table class="w-full border border-gray-400 text-left">
+      <table class="w-full border border-gray-400 text-left">
         <thead class="bg-gray-400 text-white">
           <tr>
             <th class="p-2 border border-gray-400">Staff ID</th>
@@ -328,8 +338,7 @@
             <th class="p-2 border border-gray-400">Status</th>
             <th class="p-2 border border-gray-400">Check-in Time</th>
             <th class="p-2 border border-gray-400">Actions</th>
-         
-            </tr>
+          </tr>
         </thead>
         <tbody>
           <tr>
@@ -337,36 +346,35 @@
             <td class="p-2 border border-gray-400">Mr. Justice</td>
             <td class="p-2 border border-gray-400">Present</td>
             <td class="p-2 border border-gray-400">08:00 AM</td>
-            <td class="p-2   border border-gray-400 gap-2">
-            <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
-            <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
-            <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
-          </td>
+            <td class="p-2 border border-gray-400 flex gap-2">
+              <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
+              <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
+            </td>
           </tr>
           <tr>
             <td class="p-2 border border-gray-400">2</td>
             <td class="p-2 border border-gray-400">Mr. Ukoha</td>
             <td class="p-2 border border-gray-400">Late</td>
             <td class="p-2 border border-gray-400">12:30 AM</td>
-            <td class="p-2  border-gray-400 flex gap-2">
-            <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
-            <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
-            <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
-          </td>
+            <td class="p-2 border border-gray-400 flex gap-2">
+              <button class="bg-green-500 text-white px-2 py-1 rounded">Early</button>
+              <button class="bg-yellow-500 text-white px-2 py-1 rounded">Late</button>
+              <button class="bg-red-500 text-white px-2 py-1 rounded">Absent</button>
+            </td>
           </tr>
         </tbody>
       </table>
-  `;
+    `;
     }
+
+    // Navbar fetch
     fetch("navbar.html")
       .then((res) => res.text())
       .then((data) => {
         document.getElementById("navbar").innerHTML = data;
-
-        // initialize lucide icons
         lucide.createIcons();
 
-        // dropdown toggle
         const dropdowns = document.querySelectorAll(".dropdown-btn");
         dropdowns.forEach((btn) => {
           const menu = btn.nextElementSibling;
@@ -376,14 +384,12 @@
           });
         });
 
-        // close when clicking outside
         document.addEventListener("click", () => {
           document
             .querySelectorAll(".dropdown-menu")
             .forEach((menu) => menu.classList.add("hidden"));
         });
 
-        // burger toggle
         const burger = document.getElementById("mobileMenuButton");
         const menu = document.getElementById("mobileMenu");
         if (burger && menu) {
