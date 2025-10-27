@@ -32,3 +32,27 @@ fetch("navbar.html")
       });
     }
   });
+
+const toggle = document.getElementById("darkModeToggle");
+const html = document.documentElement;
+
+// Load preference
+if (
+  localStorage.theme === "dark" ||
+  (!("theme" in localStorage) &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches)
+) {
+  html.classList.add("dark");
+} else {
+  html.classList.remove("dark");
+}
+
+// Toggle on click
+toggle?.addEventListener("click", () => {
+  html.classList.toggle("dark");
+  if (html.classList.contains("dark")) {
+    localStorage.theme = "dark";
+  } else {
+    localStorage.theme = "light";
+  }
+});
