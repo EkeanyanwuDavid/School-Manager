@@ -11,8 +11,8 @@ document
     }
 
     tableDiv.innerHTML = `
-      <h2 class="text-lg font-bold mb-2">${selectedClass} Attendance Records</h2>
-      <p class="mb-4">Showing records for <strong>${date}</strong></p>
+      <h2 class="text-lg text-emerald-700 font-bold mb-2">${selectedClass} Attendance Records</h2>
+      <p class="mb-4 text-emerald-700">Showing records for <strong>${date}</strong></p>
       <table class="w-full border border-gray-400 text-left">
         <thead class="bg-gray-400 text-white">
           <tr>
